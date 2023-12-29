@@ -132,4 +132,4 @@ dist
 .idea
 
 # Project-specific files
-*.openapi.json
+/tmp/*
