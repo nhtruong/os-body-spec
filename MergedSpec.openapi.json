@@ -75236,7 +75236,8 @@
                   }
                 ]
               },
-              "description": "The operation definition and data (action-data pairs), separated by newlines"
+              "description": "The operation definition and data (action-data pairs), separated by newlines",
+              "x-serialize": "bulk"
             }
           }
         },
@@ -75964,7 +75965,8 @@
               "items": {
                 "$ref": "#/components/schemas/_global.msearch:RequestItem"
               },
-              "description": "The request definitions (metadata-search request definition pairs), separated by newlines"
+              "description": "The request definitions (metadata-search request definition pairs), separated by newlines",
+              "x-serialize": "bulk"
             }
           }
         },
@@ -75978,7 +75980,8 @@
               "items": {
                 "$ref": "#/components/schemas/_global.msearch_template:RequestItem"
               },
-              "description": "The request definitions (metadata-search request definition pairs), separated by newlines"
+              "description": "The request definitions (metadata-search request definition pairs), separated by newlines",
+              "x-serialize": "bulk"
             }
           }
         },
