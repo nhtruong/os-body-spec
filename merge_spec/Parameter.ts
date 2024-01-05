@@ -34,7 +34,7 @@ export default class Parameter {
         if(es === undefined) return os.spec;
         const es_schema = resolve(es.resolved.schema, global.es_root)!;
         const os_schema = resolve(os.resolved.schema, global.os_root)!;
-        if(os_schema['x-data-type']) es_schema['x-data-type'] = os_schema['x-data-type'];
+        if(os_schema['x-data-type'] === 'time') es_schema['x-data-type'] = os_schema['x-data-type'];
         es.resolved = { ...os.resolved,
             description: es.resolved.description,
             schema: es.resolved.schema };

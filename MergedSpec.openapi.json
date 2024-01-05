@@ -22432,8 +22432,7 @@
   "components": {
     "schemas": {
       "_types:Id": {
-        "type": "string",
-        "x-data-type": "array"
+        "type": "string"
       },
       "_types:AcknowledgedResponseBase": {
         "type": "object",
@@ -25525,8 +25524,7 @@
         ]
       },
       "_types:IndexName": {
-        "type": "string",
-        "x-data-type": "array"
+        "type": "string"
       },
       "_global.explain:Explanation": {
         "type": "object",
@@ -27008,8 +27006,7 @@
               "$ref": "#/components/schemas/_types:IndexName"
             }
           }
-        ],
-        "x-data-type": "array"
+        ]
       },
       "_types.query_dsl:Operator": {
         "type": "string",
@@ -27029,8 +27026,7 @@
               "$ref": "#/components/schemas/_types:Field"
             }
           }
-        ],
-        "x-data-type": "array"
+        ]
       },
       "_types:ExpandWildcards": {
         "oneOf": [
@@ -28619,8 +28615,7 @@
         }
       },
       "_types:Name": {
-        "type": "string",
-        "x-data-type": "array"
+        "type": "string"
       },
       "_global.search._types:FieldCollapse": {
         "type": "object",
@@ -35012,8 +35007,7 @@
               "$ref": "#/components/schemas/_types:Name"
             }
           }
-        ],
-        "x-data-type": "array"
+        ]
       },
       "cat.aliases:AliasesRecord": {
         "type": "object",
@@ -35054,8 +35048,7 @@
               "$ref": "#/components/schemas/_types:NodeId"
             }
           }
-        ],
-        "x-data-type": "array"
+        ]
       },
       "_types:NodeId": {
         "type": "string"
@@ -37267,8 +37260,7 @@
               "$ref": "#/components/schemas/_types:ScrollId"
             }
           }
-        ],
-        "x-data-type": "array"
+        ]
       },
       "cluster.allocation_explain:Decision": {
         "type": "string",
@@ -44147,8 +44139,7 @@
               "type": "string"
             }
           }
-        ],
-        "x-data-type": "array"
+        ]
       },
       "cluster.reroute:Command": {
         "type": "object",
@@ -46903,8 +46894,7 @@
               "$ref": "#/components/schemas/_types:DataStreamName"
             }
           }
-        ],
-        "x-data-type": "array"
+        ]
       },
       "indices.forcemerge._types:ForceMergeResponseBody": {
         "allOf": [
