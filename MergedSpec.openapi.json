@@ -26847,9 +26847,6 @@
         ]
       },
       "_global.search._types:Context": {
-        "externalDocs": {
-          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-mlt-query.html#_document_input_parameters"
-        },
         "description": "Text or location that we want similar documents for or a lookup to a document's field for the text.",
         "oneOf": [
           {
@@ -27365,9 +27362,6 @@
         ]
       },
       "_types.query_dsl:QueryContainer": {
-        "externalDocs": {
-          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html"
-        },
         "type": "object",
         "properties": {
           "bool": {
@@ -27404,9 +27398,6 @@
             "$ref": "#/components/schemas/_types.query_dsl:FunctionScoreQuery"
           },
           "fuzzy": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-fuzzy-query.html"
-            },
             "description": "Returns documents that contain terms similar to the search term, as measured by a Levenshtein edit distance.",
             "type": "object",
             "additionalProperties": {
@@ -27437,9 +27428,6 @@
             "$ref": "#/components/schemas/_types.query_dsl:IdsQuery"
           },
           "intervals": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-intervals-query.html"
-            },
             "description": "Returns documents based on the order and proximity of matching terms.",
             "type": "object",
             "additionalProperties": {
@@ -27449,9 +27437,6 @@
             "maxProperties": 1
           },
           "match": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html"
-            },
             "description": "Returns documents that match a provided text, number, date or boolean value.\nThe provided text is analyzed before matching.",
             "type": "object",
             "additionalProperties": {
@@ -27464,9 +27449,6 @@
             "$ref": "#/components/schemas/_types.query_dsl:MatchAllQuery"
           },
           "match_bool_prefix": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-bool-prefix-query.html"
-            },
             "description": "Analyzes its input and constructs a `bool` query from the terms.\nEach term except the last is used in a `term` query.\nThe last term is used in a prefix query.",
             "type": "object",
             "additionalProperties": {
@@ -27479,9 +27461,6 @@
             "$ref": "#/components/schemas/_types.query_dsl:MatchNoneQuery"
           },
           "match_phrase": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query-phrase.html"
-            },
             "description": "Analyzes the text and creates a phrase query out of the analyzed text.",
             "type": "object",
             "additionalProperties": {
@@ -27491,9 +27470,6 @@
             "maxProperties": 1
           },
           "match_phrase_prefix": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query-phrase-prefix.html"
-            },
             "description": "Returns documents that contain the words of a provided text, in the same order as provided.\nThe last term of the provided text is treated as a prefix, matching any words that begin with that term.",
             "type": "object",
             "additionalProperties": {
@@ -27521,9 +27497,6 @@
             "$ref": "#/components/schemas/_types.query_dsl:PinnedQuery"
           },
           "prefix": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-prefix-query.html"
-            },
             "description": "Returns documents that contain a specific prefix in a provided field.",
             "type": "object",
             "additionalProperties": {
@@ -27536,9 +27509,6 @@
             "$ref": "#/components/schemas/_types.query_dsl:QueryStringQuery"
           },
           "range": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-query.html"
-            },
             "description": "Returns documents that contain terms within a provided range.",
             "type": "object",
             "additionalProperties": {
@@ -27551,9 +27521,6 @@
             "$ref": "#/components/schemas/_types.query_dsl:RankFeatureQuery"
           },
           "regexp": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-regexp-query.html"
-            },
             "description": "Returns documents that contain terms matching a regular expression.",
             "type": "object",
             "additionalProperties": {
@@ -27599,9 +27566,6 @@
             "$ref": "#/components/schemas/_types.query_dsl:SpanOrQuery"
           },
           "span_term": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-span-term-query.html"
-            },
             "description": "Matches spans containing a term.",
             "type": "object",
             "additionalProperties": {
@@ -27614,9 +27578,6 @@
             "$ref": "#/components/schemas/_types.query_dsl:SpanWithinQuery"
           },
           "term": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html"
-            },
             "description": "Returns documents that contain an exact term in a provided field.\nTo return a document, the query term must exactly match the queried field's value, including whitespace and capitalization.",
             "type": "object",
             "additionalProperties": {
@@ -27629,9 +27590,6 @@
             "$ref": "#/components/schemas/_types.query_dsl:TermsQuery"
           },
           "terms_set": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-set-query.html"
-            },
             "description": "Returns documents that contain a minimum number of exact terms in a provided field.\nTo return a document, a required number of terms must exactly match the field values, including whitespace and capitalization.",
             "type": "object",
             "additionalProperties": {
@@ -27641,9 +27599,6 @@
             "maxProperties": 1
           },
           "text_expansion": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-text-expansion-query.html"
-            },
             "description": "Uses a natural language processing model to convert the query text into a list of token-weight pairs which are then used in a query against a sparse vector or rank features field.",
             "type": "object",
             "additionalProperties": {
@@ -27662,9 +27617,6 @@
             "maxProperties": 1
           },
           "wildcard": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-wildcard-query.html"
-            },
             "description": "Returns documents that contain terms matching a wildcard pattern.",
             "type": "object",
             "additionalProperties": {
@@ -27755,9 +27707,6 @@
         ]
       },
       "_types:MinimumShouldMatch": {
-        "externalDocs": {
-          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-minimum-should-match.html"
-        },
         "description": "The minimum number of terms that should match as integer, percentage or range",
         "oneOf": [
           {
@@ -28393,15 +28342,9 @@
         ]
       },
       "_types:MultiTermQueryRewrite": {
-        "externalDocs": {
-          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-term-rewrite.html"
-        },
         "type": "string"
       },
       "_types:Fuzziness": {
-        "externalDocs": {
-          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#fuzziness"
-        },
         "oneOf": [
           {
             "type": "string"
@@ -29383,9 +29326,6 @@
         ]
       },
       "_types:SortOptions": {
-        "externalDocs": {
-          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/sort-search-results.html"
-        },
         "type": "object",
         "properties": {
           "_score": {
@@ -29749,9 +29689,6 @@
         "type": "object",
         "properties": {
           "analyzer": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html"
-            },
             "description": "Analyzer used to normalize the term.",
             "type": "string"
           },
@@ -29782,9 +29719,6 @@
         "type": "object",
         "properties": {
           "analyzer": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html"
-            },
             "description": "Analyzer used to analyze terms in the query.",
             "type": "string"
           },
@@ -29815,9 +29749,6 @@
         "type": "object",
         "properties": {
           "analyzer": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html"
-            },
             "description": "Analyzer used to analyze the `prefix`.",
             "type": "string"
           },
@@ -29861,9 +29792,6 @@
             "type": "object",
             "properties": {
               "analyzer": {
-                "externalDocs": {
-                  "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html"
-                },
                 "description": "Analyzer used to convert the text in the query value into tokens.",
                 "type": "string"
               },
@@ -29953,9 +29881,6 @@
             "type": "object",
             "properties": {
               "analyzer": {
-                "externalDocs": {
-                  "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html"
-                },
                 "description": "Analyzer used to convert the text in the query value into tokens.",
                 "type": "string"
               },
@@ -30013,9 +29938,6 @@
             "type": "object",
             "properties": {
               "analyzer": {
-                "externalDocs": {
-                  "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html"
-                },
                 "description": "Analyzer used to convert the text in the query value into tokens.",
                 "type": "string"
               },
@@ -30046,9 +29968,6 @@
             "type": "object",
             "properties": {
               "analyzer": {
-                "externalDocs": {
-                  "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html"
-                },
                 "description": "Analyzer used to convert text in the query value into tokens.",
                 "type": "string"
               },
@@ -30083,9 +30002,6 @@
             "type": "object",
             "properties": {
               "analyzer": {
-                "externalDocs": {
-                  "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html"
-                },
                 "description": "The analyzer that is used to analyze the free form text.\nDefaults to the analyzer associated with the first field in fields.",
                 "type": "string"
               },
@@ -30190,9 +30106,6 @@
         ]
       },
       "_types.query_dsl:Like": {
-        "externalDocs": {
-          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-mlt-query.html#_document_input_parameters"
-        },
         "description": "Text that we want similar documents for or a lookup to a document's field for the text.",
         "oneOf": [
           {
@@ -30257,9 +30170,6 @@
             "type": "object",
             "properties": {
               "analyzer": {
-                "externalDocs": {
-                  "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html"
-                },
                 "description": "Analyzer used to convert the text in the query value into tokens.",
                 "type": "string"
               },
@@ -30538,9 +30448,6 @@
                 "type": "boolean"
               },
               "analyzer": {
-                "externalDocs": {
-                  "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html"
-                },
                 "description": "Analyzer used to convert text in the query string into tokens.",
                 "type": "string"
               },
@@ -30703,9 +30610,6 @@
         ]
       },
       "_types:DateFormat": {
-        "externalDocs": {
-          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html"
-        },
         "type": "string"
       },
       "_types.query_dsl:RangeQueryBase": {
@@ -30896,9 +30800,6 @@
                 "type": "boolean"
               },
               "flags": {
-                "externalDocs": {
-                  "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/regexp-syntax.html"
-                },
                 "description": "Enables optional operators for the regular expression.",
                 "type": "string"
               },
@@ -30910,9 +30811,6 @@
                 "$ref": "#/components/schemas/_types:MultiTermQueryRewrite"
               },
               "value": {
-                "externalDocs": {
-                  "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/regexp-syntax.html"
-                },
                 "description": "Regular expression for terms you wish to find in the provided field.",
                 "type": "string"
               }
@@ -31018,9 +30916,6 @@
             "type": "object",
             "properties": {
               "analyzer": {
-                "externalDocs": {
-                  "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis.html"
-                },
                 "description": "Analyzer used to convert text in the query string into tokens.",
                 "type": "string"
               },
@@ -31080,9 +30975,6 @@
         ]
       },
       "_types.query_dsl:SimpleQueryStringFlags": {
-        "externalDocs": {
-          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html#supported-flags"
-        },
         "description": "Query flags can be either a single flag or a combination of flags, e.g. `OR|AND|PREFIX`",
         "allOf": [
           {
@@ -33127,9 +33019,6 @@
             "$ref": "#/components/schemas/_types:Field"
           },
           "num_top_feature_importance_values": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/machine-learning/current/ml-feature-importance.html"
-            },
             "description": "Specifies the maximum number of feature importance values per document.",
             "type": "number"
           }
@@ -33143,9 +33032,6 @@
             "type": "number"
           },
           "num_top_feature_importance_values": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/machine-learning/current/ml-feature-importance.html"
-            },
             "description": "Specifies the maximum number of feature importance values per document.",
             "type": "number"
           },
@@ -34672,9 +34558,6 @@
             }
           },
           "format": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html"
-            },
             "description": "A custom format for `date` type runtime fields.",
             "type": "string"
           },
@@ -34726,9 +34609,6 @@
         ]
       },
       "_types:NodeName": {
-        "externalDocs": {
-          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html"
-        },
         "type": "string"
       },
       "_types:Refresh": {
@@ -35162,9 +35042,6 @@
         }
       },
       "_types:ByteSize": {
-        "externalDocs": {
-          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/api-conventions.html#byte-units"
-        },
         "oneOf": [
           {
             "type": "number"
@@ -40340,9 +40217,6 @@
         ]
       },
       "_types.analysis:Normalizer": {
-        "externalDocs": {
-          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-normalizers.html"
-        },
         "discriminator": {
           "propertyName": "type"
         },
@@ -41634,9 +41508,6 @@
         "type": "object",
         "properties": {
           "meta": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-meta-field.html"
-            },
             "description": "Metadata about the field.",
             "type": "object",
             "additionalProperties": {
@@ -41953,9 +41824,6 @@
             ]
           },
           "fields": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/multi-fields.html"
-            },
             "description": "Multi-fields allow the same string value to be indexed in multiple ways for different purposes, such as one\nfield for search and a multi-field for sorting and aggregations, or the same string value analyzed by different analyzers.",
             "type": "object",
             "additionalProperties": {
@@ -41963,9 +41831,6 @@
             }
           },
           "meta": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-meta-field.html"
-            },
             "description": "Metadata about the field.",
             "type": "object",
             "additionalProperties": {
@@ -44016,9 +43881,6 @@
         }
       },
       "_types:DataStreamName": {
-        "externalDocs": {
-          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-data-stream.html#indices-create-data-stream-api-path-params"
-        },
         "type": "string"
       },
       "indices._types:DataStreamLifecycle": {
@@ -44395,9 +44257,6 @@
             "$ref": "#/components/schemas/cluster.stats:FieldTypesMappings"
           },
           "versions": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analyzer-anatomy.html"
-            },
             "description": "Contains statistics about analyzers and analyzer components used in selected nodes.",
             "type": "array",
             "items": {
@@ -45031,9 +44890,6 @@
             "$ref": "#/components/schemas/cluster.stats:ClusterNodeCount"
           },
           "discovery_types": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-discovery-hosts-providers.html"
-            },
             "description": "Contains statistics about the discovery types used by selected nodes.",
             "type": "object",
             "additionalProperties": {
@@ -46066,9 +45922,6 @@
             "type": "string"
           },
           "metadata_field": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-fields.html"
-            },
             "description": "Whether this field is registered as a metadata field.",
             "type": "boolean"
           },
@@ -50806,9 +50659,6 @@
             }
           },
           "total_indexing_buffer": {
-            "externalDocs": {
-              "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/indexing-buffer.html"
-            },
             "description": "Total heap allowed to be used to hold recently indexed documents before they must be written to disk. This size is a shared pool across all shards on this node, and is controlled by Indexing Buffer settings.",
             "type": "number"
           },
@@ -60794,9 +60644,6 @@
               "type": "object",
               "properties": {
                 "analyzer": {
-                  "externalDocs": {
-                    "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-analyzers.html"
-                  },
                   "description": "The name of the analyzer that should be applied to the provided `text`.\nThis could be a built-in analyzer, or an analyzer that’s been configured in the index.",
                   "type": "string"
                 },
@@ -60808,9 +60655,6 @@
                   }
                 },
                 "char_filter": {
-                  "externalDocs": {
-                    "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-charfilters.html"
-                  },
                   "description": "Array of character filters used to preprocess characters before the tokenizer.",
                   "type": "array",
                   "items": {
@@ -60825,9 +60669,6 @@
                   "$ref": "#/components/schemas/_types:Field"
                 },
                 "filter": {
-                  "externalDocs": {
-                    "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-tokenfilters.html"
-                  },
                   "description": "Array of token filters used to apply after the tokenizer.",
                   "type": "array",
                   "items": {
@@ -60835,9 +60676,6 @@
                   }
                 },
                 "normalizer": {
-                  "externalDocs": {
-                    "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-normalizers.html"
-                  },
                   "description": "Normalizer to use to convert text into a single token.",
                   "type": "string"
                 },
@@ -60867,9 +60705,6 @@
                   }
                 },
                 "settings": {
-                  "externalDocs": {
-                    "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules.html#index-modules-settings"
-                  },
                   "description": "Configuration options for the target index.",
                   "type": "object",
                   "additionalProperties": {

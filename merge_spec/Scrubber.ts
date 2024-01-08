@@ -20,16 +20,23 @@ export default class Scrubber {
     }
 
     scrub(): void {
-        this.removed_unused_refs();
-        // TODO: remove elastic external docs
+        this.remove_unused_refs();
+        this.remove_elastic_urls(this.doc);
         // TODO: replace ES with OS
 
         if (this.file) fs.writeFileSync(this.file, JSON.stringify(this.doc, null, 2));
     }
 
-    removed_unused_refs(): void {
+    remove_unused_refs(): void {
         this.#find_refs(this.doc.paths);
         Object.keys(this.refs).forEach(k => this.remove_keys(this.doc.components[k], this.refs[k]));
+    }
+
+    remove_elastic_urls(obj: Record<string, any>): void {
+        if(obj.externalDocs?.url?.includes('elastic.co')) delete obj.externalDocs;
+        for(const key in obj) {
+            if(typeof obj[key] === 'object') this.remove_elastic_urls(obj[key]);
+        }
     }
 
     remove_keys(obj: Record<string, any>, keys: Set<string>): void {
