@@ -37736,7 +37736,8 @@
           "store": {
             "$ref": "#/components/schemas/indices._types:Storage"
           }
-        }
+        },
+        "description": "The index settings to be updated"
       },
       "indices._types:SoftDeletes": {
         "type": "object",
@@ -46978,7 +46979,8 @@
         "required": [
           "index_patterns",
           "composed_of"
-        ]
+        ],
+        "description": "New index template definition to be simulated, if no index template name is specified"
       },
       "indices._types:IndexTemplateSummary": {
         "type": "object",
@@ -60858,8 +60860,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/indices._types:IndexSettings",
-              "description": "The index settings to be updated"
+              "$ref": "#/components/schemas/indices._types:IndexSettings"
             }
           }
         },
@@ -60978,8 +60979,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/indices._types:IndexTemplate",
-              "description": "New index template definition to be simulated, if no index template name is specified"
+              "$ref": "#/components/schemas/indices._types:IndexTemplate"
             }
           }
         }

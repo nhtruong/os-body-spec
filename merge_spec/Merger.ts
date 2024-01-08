@@ -78,7 +78,7 @@ export default class Merger {
         if(resolved_schema === undefined) return;
 
         const es_requestBody = resolve(es.requestBody, global.es_root) as OpenAPIV3.RequestBodyObject;
-        const schema = es_requestBody.content['application/json']!.schema as OpenAPIV3.SchemaObject;
+        const schema = resolve(es_requestBody.content['application/json']!.schema, global.es_root)!;
         schema.description = resolved_schema?.description;
         schema['x-serialize' as keyof OpenAPIV3.SchemaObject] = resolved_schema['x-serialize' as keyof OpenAPIV3.SchemaObject];
     }
