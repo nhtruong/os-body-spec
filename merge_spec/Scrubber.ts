@@ -22,7 +22,7 @@ export default class Scrubber {
     scrub(): void {
         this.remove_unused_refs();
         this.remove_elastic_urls(this.doc);
-        // TODO: replace ES with OS
+        this.replace_es_with_os(this.doc);
 
         if (this.file) fs.writeFileSync(this.file, JSON.stringify(this.doc, null, 2));
     }
@@ -33,9 +33,27 @@ export default class Scrubber {
     }
 
     remove_elastic_urls(obj: Record<string, any>): void {
-        if(obj.externalDocs?.url?.includes('elastic.co')) delete obj.externalDocs;
+        if(obj.externalDocs?.url?.includes('elastic')) delete obj.externalDocs;
         for(const key in obj) {
             if(typeof obj[key] === 'object') this.remove_elastic_urls(obj[key]);
+        }
+    }
+
+    replace_es_with_os(obj: Record<string, any>): void {
+        for(const key in obj) {
+            let value = obj[key];
+            if(typeof value === 'string') {
+                value = value.replaceAll('Elasticsearch', 'Opensearch')
+                             .replaceAll('elasticsearch', 'opensearch')
+                             .replaceAll('Elastic ', 'Opensearch ');
+            }
+            const new_key = key.replaceAll('Elasticsearch', 'Opensearch')
+                               .replaceAll('elasticsearch', 'opensearch');
+            obj[new_key] = value;
+            if(new_key !== key) delete obj[key];
+        }
+        for(const key in obj) {
+            if(typeof obj[key] === 'object') this.replace_es_with_os(obj[key]);
         }
     }
 
