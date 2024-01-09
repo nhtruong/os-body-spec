@@ -27,7 +27,7 @@ export default class OperationsRenderer extends BaseRenderer {
                 output_id: op.outputId(),
                 deprecated: op.deprecated,
                 documentation: op.spec.description,
-                method: op.verb,
+                method: op.verb.toUpperCase(),
                 uri: op.path,
                 readonly: op.verb === 'get',
                 idempotent: op.verb === 'put',
