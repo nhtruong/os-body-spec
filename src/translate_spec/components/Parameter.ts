@@ -19,7 +19,7 @@ export default class Parameter implements ParameterLike {
         this.description = spec.description;
         this.required = spec.required || false;
         this.deprecated = spec.deprecated || false;
-        this.default = spec.schema.default;
+        this.default = spec.schema?.default;
 
         this.inPath = spec.in === 'path';
         this.inQuery = spec.in === 'query';

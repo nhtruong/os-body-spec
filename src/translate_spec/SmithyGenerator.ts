@@ -24,7 +24,7 @@ export default class SmithyGenerator {
      * @param spec path to the spec file
      */
     static async init(spec: string) {
-        return new SmithyGenerator(await SwaggerParser.parse(spec) as OpenAPIV3.Document);
+        return new SmithyGenerator(await SwaggerParser.dereference(spec) as OpenAPIV3.Document);
     }
 
     generate(rootDir: string = '../'): void {
@@ -40,12 +40,12 @@ export default class SmithyGenerator {
         });
 
         const groups = Object.entries(_.groupBy(operations, 'group')).map(([group, operations]) => {
-            return new OperationGroup(group, operations.filter((o) => !o.ignored));
+            return new OperationGroup(group, operations);
         });
 
         const namespaces: _.Dictionary<any> = _.groupBy(groups, (group) => group.namespace);
-        Object.entries(namespaces).forEach(([name, methods]) => {
-            namespaces[name] = new Namespace(name, methods);
+        Object.entries(namespaces).forEach(([name, groups]) => {
+            namespaces[name] = new Namespace(name, groups);
         });
         return namespaces;
     }
