@@ -1,0 +1,18 @@
+
+
+{{#readonly}}
+@readonly
+{{/readonly}}
+{{#idempotent}}
+@idempotent
+{{/idempotent}}
+@suppress(["HttpUriConflict"])
+{{#extensions}}
+@{{{name}}}({{{value}}})
+{{/extensions}}
+@documentation("{{{documentation}}}")
+@http(method: "{{method}}", uri: "{{{uri}}})
+operation {{id}} {
+    input: {{input_id}},
+    output: {{output_id}},
+}
