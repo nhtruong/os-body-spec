@@ -23,7 +23,7 @@ export default class SmithyGenerator {
      * Initialize the generator. Use this instead of the constructor directly.
      * @param spec path to the spec file
      */
-    static async init(spec: string = './OpenSearch.openapi.json') {
+    static async init(spec: string) {
         return new SmithyGenerator(await SwaggerParser.parse(spec) as OpenAPIV3.Document);
     }
 
