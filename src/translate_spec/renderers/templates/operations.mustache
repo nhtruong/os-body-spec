@@ -1,5 +1,16 @@
+{{{opensearch_license}}}
 
+$version: "2"
+namespace OpenSearch
 
+@externalDocumentation(
+    "API Reference": "{{{api_reference}}}"
+)
+
+{{#operations}}
+{{#deprecated}}
+@deprecated
+{{/deprecated}}
 {{#readonly}}
 @readonly
 {{/readonly}}
@@ -16,3 +27,5 @@ operation {{id}} {
     input: {{input_id}},
     output: {{output_id}},
 }
+
+{{/operations}}

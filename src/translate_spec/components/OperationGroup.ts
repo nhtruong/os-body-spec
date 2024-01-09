@@ -17,11 +17,11 @@ export default class OperationGroup {
 
     #sortOperations(operations: Operation[]): Array<Operation> {
         return operations.sort((a, b) => {
-            if(a.deprecated && !b.deprecated) return 1;
-            if(!a.deprecated && b.deprecated) return -1;
-
-            if(a.ignored && !b.ignored) return 1;
             if(!a.ignored && b.ignored) return -1;
+            if(a.ignored && !b.ignored) return 1;
+
+            if(!a.deprecated && b.deprecated) return -1;
+            if(a.deprecated && !b.deprecated) return 1;
 
             if(a.path.length < b.path.length) return -1;
             if(a.path.length > b.path.length) return 1;

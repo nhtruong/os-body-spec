@@ -13,6 +13,7 @@ export default class Operation {
     order: number | null = null;
     parameters: Array<Parameter>;
     body: Body | undefined;
+    api_ref: string | undefined;
 
     constructor(path: string, verb: string, spec: OperationSpec) {
         this.path = path;
@@ -23,6 +24,7 @@ export default class Operation {
         this.group = spec['x-operation-group'];
         this.parameters = (spec.parameters as ParameterSpec[] || []).map((p) => new Parameter(p));
         this.body = spec.requestBody ? new Body(spec.requestBody as OpenAPIV3.RequestBodyObject) : undefined;
+        this.api_ref = spec.externalDocs?.url;
     }
 
     id(): string {
@@ -37,5 +39,4 @@ export default class Operation {
     outputId(): string {
         return this.id() + '_output';
     }
-
 }
