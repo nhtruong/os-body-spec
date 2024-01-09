@@ -1,5 +1,5 @@
 import {OpenAPIV3} from "openapi-types";
-import {resolve} from "./helpers";
+import {resolve} from "../helpers";
 
 export default class Parameter {
     spec: OpenAPIV3.ParameterObject | OpenAPIV3.ReferenceObject;

@@ -1,5 +1,5 @@
 import fs from 'fs';
-import {resolve} from './helpers';
+import {resolve} from '../helpers';
 
 export default class Scrubber {
     file: string | undefined;

@@ -1,7 +1,7 @@
 import SwaggerParser from "@apidevtools/swagger-parser";
 import {OpenAPIV3} from "openapi-types";
 import fs from "fs";
-import { resolve } from "./helpers";
+import { resolve } from "../helpers";
 import OperationParameters from "./OperationParameters";
 
 declare global {
@@ -51,7 +51,7 @@ export default class Merger {
             for(const method in methods) {
                 const m = method as OpenAPIV3.HttpMethods
                 if(es[path]![m] === undefined) continue;
-                console.log(`\n\n${path} ${method}`);
+                // console.log(`\n\n${path} ${method}`);
 
                 const os_op = os[path]![m]!;
                 const es_op = es[path]![m]!;
