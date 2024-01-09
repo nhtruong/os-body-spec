@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "merge_spec": "ts-node merge.ts",
-    "download_os_spec": "curl -X GET \"https://raw.githubusercontent.com/opensearch-project/opensearch-api-specification/main/OpenSearch.openapi.json\" -o tmp/OpenSearch.openapi.json",
-    "download_es_spec": "curl -X GET \"https://raw.githubusercontent.com/elastic/elasticsearch-specification/main/output/openapi/elasticsearch-serverless-openapi.json\" -o tmp/ElasticSearch.openapi.json"
+    "download_os_spec": "curl -X GET \"https://raw.githubusercontent.com/opensearch-project/opensearch-api-specification/main/OpenSearch.openapi.json\" -o tmp/OpenSearch.openapi.json"
   },
   "keywords": [],
   "author": "opensearch-project",
