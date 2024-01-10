@@ -20,10 +20,10 @@ export default class Scrubber {
     }
 
     scrub(): void {
+        this.correct_schema_refs(this.doc);
         this.remove_unused_refs();
         this.remove_elastic_urls(this.doc);
         this.replace_es_with_os(this.doc);
-        this.correct_schema_refs(this.doc);
 
         this.doc.components!.schemas!['_types:Duration'].pattern = "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$";
 
@@ -71,6 +71,9 @@ export default class Scrubber {
                 obj['deprecated'] = true;
             }
         }
+
+        if(obj.name === 'time') obj.schema = {"$ref": "#/components/schemas/_types:TimeUnit"};
+
         for(const key in obj) {
             if(typeof obj[key] === 'object') this.correct_schema_refs(obj[key]);
         }

@@ -2039,17 +2039,7 @@
             "in": "query",
             "description": "The unit in which to display time values.",
             "schema": {
-              "type": "string",
-              "description": "The unit in which to display time values.",
-              "enum": [
-                "d",
-                "h",
-                "m",
-                "s",
-                "ms",
-                "micros",
-                "nanos"
-              ]
+              "$ref": "#/components/schemas/_types:TimeUnit"
             }
           },
           {
@@ -2173,17 +2163,7 @@
             "in": "query",
             "description": "The unit in which to display time values.",
             "schema": {
-              "type": "string",
-              "description": "The unit in which to display time values.",
-              "enum": [
-                "d",
-                "h",
-                "m",
-                "s",
-                "ms",
-                "micros",
-                "nanos"
-              ]
+              "$ref": "#/components/schemas/_types:TimeUnit"
             }
           },
           {
@@ -2594,17 +2574,7 @@
             "in": "query",
             "description": "The unit in which to display time values.",
             "schema": {
-              "type": "string",
-              "description": "The unit in which to display time values.",
-              "enum": [
-                "d",
-                "h",
-                "m",
-                "s",
-                "ms",
-                "micros",
-                "nanos"
-              ]
+              "$ref": "#/components/schemas/_types:TimeUnit"
             }
           },
           {
@@ -2710,17 +2680,7 @@
             "in": "query",
             "description": "The unit in which to display time values.",
             "schema": {
-              "type": "string",
-              "description": "The unit in which to display time values.",
-              "enum": [
-                "d",
-                "h",
-                "m",
-                "s",
-                "ms",
-                "micros",
-                "nanos"
-              ]
+              "$ref": "#/components/schemas/_types:TimeUnit"
             }
           },
           {
@@ -3000,17 +2960,7 @@
             "in": "query",
             "description": "The unit in which to display time values.",
             "schema": {
-              "type": "string",
-              "description": "The unit in which to display time values.",
-              "enum": [
-                "d",
-                "h",
-                "m",
-                "s",
-                "ms",
-                "micros",
-                "nanos"
-              ]
+              "$ref": "#/components/schemas/_types:TimeUnit"
             }
           },
           {
@@ -3182,17 +3132,7 @@
             "in": "query",
             "description": "The unit in which to display time values.",
             "schema": {
-              "type": "string",
-              "description": "The unit in which to display time values.",
-              "enum": [
-                "d",
-                "h",
-                "m",
-                "s",
-                "ms",
-                "micros",
-                "nanos"
-              ]
+              "$ref": "#/components/schemas/_types:TimeUnit"
             }
           },
           {
@@ -3506,17 +3446,7 @@
             "in": "query",
             "description": "The unit in which to display time values.",
             "schema": {
-              "type": "string",
-              "description": "The unit in which to display time values.",
-              "enum": [
-                "d",
-                "h",
-                "m",
-                "s",
-                "ms",
-                "micros",
-                "nanos"
-              ]
+              "$ref": "#/components/schemas/_types:TimeUnit"
             }
           },
           {
@@ -3632,17 +3562,7 @@
             "in": "query",
             "description": "The unit in which to display time values.",
             "schema": {
-              "type": "string",
-              "description": "The unit in which to display time values.",
-              "enum": [
-                "d",
-                "h",
-                "m",
-                "s",
-                "ms",
-                "micros",
-                "nanos"
-              ]
+              "$ref": "#/components/schemas/_types:TimeUnit"
             }
           },
           {
@@ -3749,17 +3669,7 @@
             "in": "query",
             "description": "The unit in which to display time values.",
             "schema": {
-              "type": "string",
-              "description": "The unit in which to display time values.",
-              "enum": [
-                "d",
-                "h",
-                "m",
-                "s",
-                "ms",
-                "micros",
-                "nanos"
-              ]
+              "$ref": "#/components/schemas/_types:TimeUnit"
             }
           },
           {
@@ -3865,17 +3775,7 @@
             "in": "query",
             "description": "The unit in which to display time values.",
             "schema": {
-              "type": "string",
-              "description": "The unit in which to display time values.",
-              "enum": [
-                "d",
-                "h",
-                "m",
-                "s",
-                "ms",
-                "micros",
-                "nanos"
-              ]
+              "$ref": "#/components/schemas/_types:TimeUnit"
             }
           },
           {
@@ -4006,17 +3906,7 @@
             "in": "query",
             "description": "The unit in which to display time values.",
             "schema": {
-              "type": "string",
-              "description": "The unit in which to display time values.",
-              "enum": [
-                "d",
-                "h",
-                "m",
-                "s",
-                "ms",
-                "micros",
-                "nanos"
-              ]
+              "$ref": "#/components/schemas/_types:TimeUnit"
             }
           },
           {
