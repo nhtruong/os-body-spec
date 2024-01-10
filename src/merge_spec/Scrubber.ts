@@ -73,6 +73,7 @@ export default class Scrubber {
         }
 
         if(obj.name === 'time') obj.schema = {"$ref": "#/components/schemas/_types:TimeUnit"};
+        if(obj.name === 'bytes') obj.schema = {"$ref": "#/components/schemas/_types:Bytes"};
 
         for(const key in obj) {
             if(typeof obj[key] === 'object') this.correct_schema_refs(obj[key]);

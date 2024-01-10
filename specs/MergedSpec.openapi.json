@@ -2862,21 +2862,7 @@
             "in": "query",
             "description": "The unit in which to display byte values.",
             "schema": {
-              "type": "string",
-              "description": "The unit in which to display byte values.",
-              "enum": [
-                "b",
-                "k",
-                "kb",
-                "m",
-                "mb",
-                "g",
-                "gb",
-                "t",
-                "tb",
-                "p",
-                "pb"
-              ]
+              "$ref": "#/components/schemas/_types:Bytes"
             }
           },
           {
@@ -3034,21 +3020,7 @@
             "in": "query",
             "description": "The unit in which to display byte values.",
             "schema": {
-              "type": "string",
-              "description": "The unit in which to display byte values.",
-              "enum": [
-                "b",
-                "k",
-                "kb",
-                "m",
-                "mb",
-                "g",
-                "gb",
-                "t",
-                "tb",
-                "p",
-                "pb"
-              ]
+              "$ref": "#/components/schemas/_types:Bytes"
             }
           },
           {
