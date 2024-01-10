@@ -23,6 +23,9 @@ export default class Scrubber {
         this.remove_unused_refs();
         this.remove_elastic_urls(this.doc);
         this.replace_es_with_os(this.doc);
+        this.correct_schema_refs(this.doc);
+
+        this.doc.components!.schemas!['_types:Duration'].pattern = "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$";
 
         if (this.file) fs.writeFileSync(this.file, JSON.stringify(this.doc, null, 2));
     }
@@ -54,6 +57,22 @@ export default class Scrubber {
         }
         for(const key in obj) {
             if(typeof obj[key] === 'object') this.replace_es_with_os(obj[key]);
+        }
+    }
+
+    correct_schema_refs(obj: Record<string, any>): void {
+        if(obj.schema?.['x-data-type'] === 'time') {
+            obj.schema = {"$ref": "#/components/schemas/_types:Duration"};
+            if(obj.name === 'cluster_manager_timeout') {
+                obj['x-version-added'] = '2.0.0';
+            } else if(obj.name === 'master_timeout') {
+                obj['x-version-deprecated'] = '2.0.0';
+                obj['x-deprecation-message'] = "To promote inclusive language, use 'cluster_manager_timeout' instead.";
+                obj['deprecated'] = true;
+            }
+        }
+        for(const key in obj) {
+            if(typeof obj[key] === 'object') this.correct_schema_refs(obj[key]);
         }
     }
 

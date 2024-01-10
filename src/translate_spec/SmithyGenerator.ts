@@ -7,10 +7,6 @@ import {OpenAPIV3} from "openapi-types";
 import {OperationSpec} from "./components/types";
 import OperationGroup from "./components/OperationGroup";
 
-declare global {
-    var spec_root: OpenAPIV3.Document;
-}
-
 const HTTP_VERBS = ['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'];
 
 export default class SmithyGenerator {

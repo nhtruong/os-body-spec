@@ -1,3 +1,8 @@
+
+declare global {
+    var spec_root: Record<string, any>;
+}
+
 export function resolve(obj: Record<string, any> | undefined, root: Record<string, any> = global.spec_root): Record<string, any> | undefined {
     if(obj === undefined || obj.$ref === undefined) return obj;
 

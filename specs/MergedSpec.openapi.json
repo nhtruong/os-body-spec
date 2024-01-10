@@ -729,13 +729,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -843,13 +837,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -955,26 +943,20 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
-            }
+              "$ref": "#/components/schemas/_types:Duration"
+            },
+            "x-version-deprecated": "2.0.0",
+            "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
+            "deprecated": true
           },
           {
             "name": "cluster_manager_timeout",
             "in": "query",
             "description": "Operation timeout for connection to cluster-manager node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to cluster-manager node.",
-              "x-version-added": "2.0.0",
-              "x-data-type": "time"
-            }
+              "$ref": "#/components/schemas/_types:Duration"
+            },
+            "x-version-added": "2.0.0"
           },
           {
             "name": "h",
@@ -1490,13 +1472,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -1619,13 +1595,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -1747,13 +1717,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -1871,13 +1835,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -2023,13 +1981,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -2163,13 +2115,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -2481,13 +2427,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -2836,13 +2776,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -3307,13 +3241,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -3411,13 +3339,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -3526,13 +3448,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -3658,13 +3574,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -3781,13 +3691,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -3903,13 +3807,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -4184,13 +4082,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -4295,13 +4187,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -4417,13 +4303,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -4538,13 +4418,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -4909,10 +4783,7 @@
             "in": "query",
             "description": "The interval for the second sampling of threads.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "The interval for the second sampling of threads.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           },
           {
@@ -4966,10 +4837,7 @@
             "in": "query",
             "description": "Operation timeout.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           }
         ],
@@ -4996,10 +4864,7 @@
             "in": "query",
             "description": "The interval for the second sampling of threads.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "The interval for the second sampling of threads.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           },
           {
@@ -5053,10 +4918,7 @@
             "in": "query",
             "description": "Operation timeout.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           }
         ],
@@ -5095,10 +4957,7 @@
             "in": "query",
             "description": "The interval for the second sampling of threads.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "The interval for the second sampling of threads.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           },
           {
@@ -5152,10 +5011,7 @@
             "in": "query",
             "description": "Operation timeout.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           }
         ],
@@ -5194,10 +5050,7 @@
             "in": "query",
             "description": "The interval for the second sampling of threads.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "The interval for the second sampling of threads.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           },
           {
@@ -5251,10 +5104,7 @@
             "in": "query",
             "description": "Operation timeout.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           }
         ],
@@ -6260,10 +6110,7 @@
             "in": "query",
             "description": "Operation timeout.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           },
           {
@@ -6309,10 +6156,7 @@
             "in": "query",
             "description": "Operation timeout.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           },
           {
@@ -7468,13 +7312,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -7530,13 +7368,7 @@
             "in": "query",
             "description": "Operation timeout for connection to master node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to master node.",
-              "x-version-deprecated": "2.0.0",
-              "x-data-type": "time",
-              "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
-              "deprecated": true
+              "$ref": "#/components/schemas/_types:Duration"
             },
             "x-version-deprecated": "2.0.0",
             "x-deprecation-message": "To promote inclusive language, use 'cluster_manager_timeout' instead.",
@@ -8410,10 +8242,7 @@
             "in": "query",
             "description": "The interval for the second sampling of threads.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "The interval for the second sampling of threads.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           },
           {
@@ -8467,10 +8296,7 @@
             "in": "query",
             "description": "Operation timeout.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           }
         ],
@@ -8767,10 +8593,7 @@
             "in": "query",
             "description": "The interval for the second sampling of threads.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "The interval for the second sampling of threads.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           },
           {
@@ -8824,10 +8647,7 @@
             "in": "query",
             "description": "Operation timeout.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           }
         ],
@@ -12637,12 +12457,9 @@
             "in": "query",
             "description": "Operation timeout for connection to cluster-manager node.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Operation timeout for connection to cluster-manager node.",
-              "x-version-added": "2.0.0",
-              "x-data-type": "time"
-            }
+              "$ref": "#/components/schemas/_types:Duration"
+            },
+            "x-version-added": "2.0.0"
           },
           {
             "name": "wait_for_completion",
@@ -20209,10 +20026,7 @@
             "in": "query",
             "description": "Specify the keep alive for point in time.",
             "schema": {
-              "type": "string",
-              "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$",
-              "description": "Specify the keep alive for point in time.",
-              "x-data-type": "time"
+              "$ref": "#/components/schemas/_types:Duration"
             }
           },
           {
@@ -22465,7 +22279,8 @@
             ]
           }
         ],
-        "x-data-type": "time"
+        "x-data-type": "time",
+        "pattern": "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$"
       },
       "_types.aggregations:Aggregate": {
         "oneOf": [
