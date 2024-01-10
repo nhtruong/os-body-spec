@@ -28,6 +28,7 @@ export default class InputsRenderer extends BaseRenderer {
         return this.group.operations[0].queryParams.map((p) => {
             return {
                 name: p.name,
+                id: p.schema.id,
                 type: p.type,
                 required: p.required,
                 description: p.description,
