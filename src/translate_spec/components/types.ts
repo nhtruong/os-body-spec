@@ -13,14 +13,3 @@ export interface ParameterSpec extends OpenAPIV3.ParameterObject {
     schema: OpenAPIV3.SchemaObject;
     'x-data-type'?: string;
 }
-
-export interface ParameterLike {
-    name: string;
-    type: string;
-    description?: string;
-    default?: any;
-    required: boolean;
-    deprecated: boolean;
-    inPath: boolean;
-    inQuery: boolean;
-}

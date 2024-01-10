@@ -1,7 +1,10 @@
-import {ParameterLike, ParameterSpec} from "./types";
+import {ParameterSpec} from "./types";
+import {resolve} from "../../helpers";
+import {OpenAPIV3} from "openapi-types";
 
-export default class Parameter implements ParameterLike {
+export default class Parameter {
     spec: ParameterSpec;
+    schema: OpenAPIV3.SchemaObject;
 
     name: string;
     type: string;
@@ -9,19 +12,15 @@ export default class Parameter implements ParameterLike {
     default?: any;
     required: boolean;
     deprecated: boolean;
-    inPath: boolean;
-    inQuery: boolean;
 
-    constructor(spec: ParameterSpec) {
-        this.spec = spec
-        this.name = spec.name;
-        this.type = spec.schema?.type || spec['x-data-type'] || 'UNKNOWN';
-        this.description = spec.description;
-        this.required = spec.required || false;
-        this.deprecated = spec.deprecated || false;
-        this.default = spec.schema?.default;
-
-        this.inPath = spec.in === 'path';
-        this.inQuery = spec.in === 'query';
+    constructor(spec: OpenAPIV3.ParameterObject | OpenAPIV3.ReferenceObject) {
+        this.spec = resolve(spec) as ParameterSpec;
+        this.schema = resolve(this.spec.schema) as OpenAPIV3.SchemaObject;
+        this.name = this.spec.name;
+        this.type = this.schema?.type || this.spec['x-data-type'] || 'UNKNOWN';
+        this.description = this.spec.description;
+        this.required = this.spec.required || false;
+        this.deprecated = this.spec.deprecated || false;
+        this.default = this.schema?.default;
     }
 }

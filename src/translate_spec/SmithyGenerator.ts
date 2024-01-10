@@ -24,7 +24,7 @@ export default class SmithyGenerator {
      * @param spec path to the spec file
      */
     static async init(spec: string) {
-        return new SmithyGenerator(await SwaggerParser.dereference(spec) as OpenAPIV3.Document);
+        return new SmithyGenerator(await SwaggerParser.parse(spec) as OpenAPIV3.Document);
     }
 
     generate(rootDir: string = '../'): void {

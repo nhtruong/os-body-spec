@@ -1,8 +1,8 @@
 import {OperationSpec, ParameterSpec} from "./types";
 import Parameter from "./Parameter";
-import Body from "./Body";
+import RequestBody from "./RequestBody";
 import {OpenAPIV3} from "openapi-types";
-import {snake2Camel} from "../../helpers";
+import {resolve, snake2Camel} from "../../helpers";
 export default class Operation {
     spec: OperationSpec;
     ignored: boolean;
@@ -13,21 +13,21 @@ export default class Operation {
     order: number | null = null;
     pathParams: Array<Parameter>;
     queryParams: Array<Parameter>;
-    body: Body | undefined;
+    body: RequestBody | undefined;
     api_ref: string | undefined;
 
-    constructor(path: string, verb: string, spec: OperationSpec) {
+    constructor(path: string, verb: string, spec: OpenAPIV3.OperationObject | OpenAPIV3.ReferenceObject) {
         this.path = path;
         this.verb = verb;
-        this.spec = spec;
-        this.deprecated = spec.deprecated || false;
-        this.ignored = spec['x-ignorable'] || false;
-        this.group = spec['x-operation-group'];
-        const parameters = (spec.parameters as ParameterSpec[] || []).map((p) => new Parameter(p));
-        this.pathParams = parameters.filter((p) => p.inPath);
-        this.queryParams = parameters.filter((p) => p.inQuery);
-        this.body = spec.requestBody ? new Body(spec.requestBody as OpenAPIV3.RequestBodyObject) : undefined;
-        this.api_ref = spec.externalDocs?.url;
+        this.spec = resolve(spec) as OperationSpec;
+        this.deprecated = this.spec.deprecated || false;
+        this.ignored = this.spec['x-ignorable'] || false;
+        this.group = this.spec['x-operation-group'];
+        const parameters = (this.spec.parameters as ParameterSpec[] || []).map((p) => new Parameter(p));
+        this.pathParams = parameters.filter((p) => p.spec.in === 'path');
+        this.queryParams = parameters.filter((p) => p.spec.in === 'query');
+        this.body = this.spec.requestBody ? new RequestBody(this.spec.requestBody as OpenAPIV3.RequestBodyObject) : undefined;
+        this.api_ref = this.spec.externalDocs?.url;
     }
 
     id(): string {
