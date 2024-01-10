@@ -1,4 +1,4 @@
-export function resolve(obj: Record<string, any> | undefined, root: Record<string, any>): Record<string, any> | undefined {
+export function resolve(obj: Record<string, any> | undefined, root: Record<string, any> = global.spec_root): Record<string, any> | undefined {
     if(obj === undefined || obj.$ref === undefined) return obj;
 
     const paths = obj.$ref.split('/');

@@ -15,6 +15,7 @@ export default class OperationsRenderer extends BaseRenderer {
     view(): Record<string, any> {
         return {
             api_reference: this.group.operations.map((op) => op.api_ref).find((ref) => ref !== undefined),
+            documentation: this.group.operations.map((op) => op.spec.description).find((desc) => desc !== undefined),
             operations: this.#operations(),
         }
     }
@@ -26,7 +27,6 @@ export default class OperationsRenderer extends BaseRenderer {
                 input_id: op.inputId(),
                 output_id: op.outputId(),
                 deprecated: op.deprecated,
-                documentation: op.spec.description,
                 method: op.verb.toUpperCase(),
                 uri: op.path,
                 readonly: op.verb === 'get',

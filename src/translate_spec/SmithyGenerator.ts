@@ -8,7 +8,7 @@ import {OperationSpec} from "./components/types";
 import OperationGroup from "./components/OperationGroup";
 
 declare global {
-    var os_spec: OpenAPIV3.Document
+    var spec_root: OpenAPIV3.Document;
 }
 
 const HTTP_VERBS = ['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'];
@@ -16,7 +16,7 @@ const HTTP_VERBS = ['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 
 export default class SmithyGenerator {
 
     constructor(spec: OpenAPIV3.Document) {
-        global.os_spec = spec;
+        global.spec_root = spec;
     }
 
     /**
@@ -32,7 +32,7 @@ export default class SmithyGenerator {
     }
 
     namespaces(): _.Dictionary<Namespace> {
-        const paths = Object.entries(global.os_spec.paths as OpenAPIV3.PathsObject);
+        const paths = Object.entries(global.spec_root.paths as OpenAPIV3.PathsObject);
         const operations = paths.flatMap(([path, spec]) => {
             return Object.entries(_.pick(spec, HTTP_VERBS)).map(([verb, spec]) => {
                 return new Operation(path, verb, spec as OperationSpec);

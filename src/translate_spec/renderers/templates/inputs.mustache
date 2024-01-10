@@ -1,0 +1,20 @@
+{{{opensearch_license}}}
+
+$version: "2"
+namespace OpenSearch
+
+@mixin
+structure {{query_id}} {
+{{#query_params}}
+
+    {{name}}: {{id}},
+{{/query_params}}
+}
+
+{{#inputs}}
+@input
+structure {{id}} with [{{query_id}}] {
+
+}
+
+{{/inputs}}

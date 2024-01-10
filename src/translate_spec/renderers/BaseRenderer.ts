@@ -5,6 +5,18 @@ import path from 'path';
 export default class BaseRenderer {
     protected templateFile: string = '';
 
+    constructor(..._args: any[]) {
+
+    }
+
+    static render(...args: any[]): string {
+        return new this(...args).render();
+    }
+
+    static generateFile(rootDir: string, ...args: any[]): void {
+        new this(...args).generateFile(rootDir);
+    }
+
     view(): Record<string, any> {
         throw 'Not implemented';
     }

@@ -3,9 +3,8 @@
 $version: "2"
 namespace OpenSearch
 
-@externalDocumentation(
-    "API Reference": "{{{api_reference}}}"
-)
+@externalDocumentation("API Reference": "{{{api_reference}}}")
+@documentation("{{{documentation}}}")
 
 {{#operations}}
 {{#deprecated}}
@@ -21,7 +20,6 @@ namespace OpenSearch
 {{#extensions}}
 @{{{name}}}({{{value}}})
 {{/extensions}}
-@documentation("{{{documentation}}}")
 @http(method: "{{method}}", uri: "{{{uri}}})
 operation {{id}} {
     input: {{input_id}},

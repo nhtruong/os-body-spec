@@ -11,7 +11,8 @@ export default class Operation {
     path: string; // path to endpoint
     verb: string; // HTTP verb
     order: number | null = null;
-    parameters: Array<Parameter>;
+    pathParams: Array<Parameter>;
+    queryParams: Array<Parameter>;
     body: Body | undefined;
     api_ref: string | undefined;
 
@@ -22,7 +23,9 @@ export default class Operation {
         this.deprecated = spec.deprecated || false;
         this.ignored = spec['x-ignorable'] || false;
         this.group = spec['x-operation-group'];
-        this.parameters = (spec.parameters as ParameterSpec[] || []).map((p) => new Parameter(p));
+        const parameters = (spec.parameters as ParameterSpec[] || []).map((p) => new Parameter(p));
+        this.pathParams = parameters.filter((p) => p.inPath);
+        this.queryParams = parameters.filter((p) => p.inQuery);
         this.body = spec.requestBody ? new Body(spec.requestBody as OpenAPIV3.RequestBodyObject) : undefined;
         this.api_ref = spec.externalDocs?.url;
     }
@@ -33,10 +36,10 @@ export default class Operation {
     }
 
     inputId(): string {
-        return this.id() + '_input';
+        return this.id() + '_INPUT';
     }
 
     outputId(): string {
-        return this.id() + '_output';
+        return this.id() + '_OUTPUT';
     }
 }
