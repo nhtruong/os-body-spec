@@ -15621,15 +15621,7 @@
             "in": "query",
             "description": "Whether to expand wildcard expression to concrete indices that are open, closed or both.",
             "schema": {
-              "type": "string",
-              "description": "Whether to expand wildcard expression to concrete indices that are open, closed or both.",
-              "enum": [
-                "all",
-                "open",
-                "closed",
-                "hidden",
-                "none"
-              ]
+              "$ref": "#/components/schemas/_types:ExpandWildcards"
             }
           }
         ],
@@ -15663,15 +15655,7 @@
             "in": "query",
             "description": "Whether to expand wildcard expression to concrete indices that are open, closed or both.",
             "schema": {
-              "type": "string",
-              "description": "Whether to expand wildcard expression to concrete indices that are open, closed or both.",
-              "enum": [
-                "all",
-                "open",
-                "closed",
-                "hidden",
-                "none"
-              ]
+              "$ref": "#/components/schemas/_types:ExpandWildcards"
             }
           },
           {
@@ -19920,15 +19904,7 @@
             "in": "query",
             "description": "Whether to expand wildcard expression to concrete indices that are open, closed or both.",
             "schema": {
-              "type": "string",
-              "description": "Whether to expand wildcard expression to concrete indices that are open, closed or both.",
-              "enum": [
-                "all",
-                "open",
-                "closed",
-                "hidden",
-                "none"
-              ]
+              "$ref": "#/components/schemas/_types:ExpandWildcards"
             }
           }
         ],
@@ -21893,15 +21869,7 @@
             "in": "query",
             "description": "Whether to expand wildcard expression to concrete indices that are open, closed or both.",
             "schema": {
-              "type": "string",
-              "description": "Whether to expand wildcard expression to concrete indices that are open, closed or both.",
-              "enum": [
-                "all",
-                "open",
-                "closed",
-                "hidden",
-                "none"
-              ]
+              "$ref": "#/components/schemas/_types:ExpandWildcards"
             }
           }
         ],
@@ -21943,15 +21911,7 @@
             "in": "query",
             "description": "Whether to expand wildcard expression to concrete indices that are open, closed or both.",
             "schema": {
-              "type": "string",
-              "description": "Whether to expand wildcard expression to concrete indices that are open, closed or both.",
-              "enum": [
-                "all",
-                "open",
-                "closed",
-                "hidden",
-                "none"
-              ]
+              "$ref": "#/components/schemas/_types:ExpandWildcards"
             }
           },
           {
