@@ -8,7 +8,6 @@ export default class Parameter {
     schema: Schema;
 
     name: string;
-    type: string;
     description?: string;
     default?: any;
     required: boolean;
@@ -18,10 +17,20 @@ export default class Parameter {
         this.spec = resolve(spec) as ParameterSpec;
         this.schema = Schema.fromObj(this.spec.schema);
         this.name = this.spec.name;
-        this.type = this.schema.type || this.spec['x-data-type'] || 'UNKNOWN';
         this.description = this.spec.description;
         this.required = this.spec.required || false;
         this.deprecated = this.spec.deprecated || false;
         this.default = this.schema.default;
+    }
+
+    view(): Record<string, any> {
+        return {
+            name: this.name,
+            id: this.schema.id,
+            required: this.required,
+            description: this.description,
+            default: this.default,
+            deprecated: this.deprecated,
+        }
     }
 }

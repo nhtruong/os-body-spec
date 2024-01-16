@@ -10,6 +10,6 @@ export interface OperationSpec extends OpenAPIV3.OperationObject {
 }
 
 export interface ParameterSpec extends OpenAPIV3.ParameterObject {
-    schema: OpenAPIV3.SchemaObject;
+    schema: OpenAPIV3.SchemaObject | OpenAPIV3.ReferenceObject;
     'x-data-type'?: string;
 }

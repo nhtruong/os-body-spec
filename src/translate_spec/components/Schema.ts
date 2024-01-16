@@ -10,8 +10,8 @@ export default class Schema {
     type: string;
     default?: any;
     constructor(spec: OpenAPIV3.SchemaObject, ref?: string) {
-        this.ref = ref
         this.spec = spec;
+        this.ref = ref
         this.type = this.#type();
         this.id = this.#id();
         this.default = this.spec.default;
@@ -41,7 +41,7 @@ export default class Schema {
     #type(): string {
         if(this.spec.type) return this.spec.type;
 
-        throw 'Unknown type';
+        return 'Unknown type';
     }
 
 }

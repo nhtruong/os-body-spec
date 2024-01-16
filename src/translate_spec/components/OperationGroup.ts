@@ -1,4 +1,5 @@
 import Operation from "./Operation";
+import {snake2Camel} from "../../helpers";
 
 // API Method
 export default class OperationGroup {
@@ -28,5 +29,10 @@ export default class OperationGroup {
 
             return a.verb.localeCompare(b.verb);
         });
+    }
+
+    query_id(): string {
+        const main = this.name.split('.').map((s) => snake2Camel(s)).join('_')
+        return `OP_${main}_QUERY_PARAMS`;
     }
 }

@@ -1,5 +1,6 @@
 import SmithyGenerator from "./src/translate_spec/SmithyGenerator";
 import InputsRenderer from "./src/translate_spec/renderers/InputsRenderer";
+import QueryParamsRenderer from "./src/translate_spec/renderers/QueryParamsRenderer";
 import OperationsRenderer from "./src/translate_spec/renderers/OperationsRenderer";
 
 

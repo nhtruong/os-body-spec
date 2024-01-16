@@ -1,0 +1,25 @@
+{{{opensearch_license}}}
+
+$version: "2"
+namespace OpenSearch
+
+@mixin
+structure {{query_id}} {
+{{#query_params}}
+
+    @httpQuery("{{name}}")
+    {{#required}}
+    @required
+    {{/required}}
+    {{#description}}
+    @documentation("{{{description}}}")
+    {{/description}}
+    {{#default}}
+    @default({{{default}}})
+    {{/default}}
+    {{#deprecated}}
+    @deprecated
+    {{/deprecated}}
+    {{name}}: {{id}},
+{{/query_params}}
+}
