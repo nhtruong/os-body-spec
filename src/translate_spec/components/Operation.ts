@@ -13,7 +13,7 @@ export default class Operation {
     order: number | null = null;
     pathParams: Array<Parameter>;
     queryParams: Array<Parameter>;
-    body: RequestBody | undefined;
+    requestBody: RequestBody | undefined;
     api_ref: string | undefined;
 
     constructor(path: string, verb: string, spec: OpenAPIV3.OperationObject | OpenAPIV3.ReferenceObject) {
@@ -26,7 +26,7 @@ export default class Operation {
         const parameters = (this.spec.parameters as ParameterSpec[] || []).map((p) => new Parameter(p));
         this.pathParams = parameters.filter((p) => p.spec.in === 'path');
         this.queryParams = parameters.filter((p) => p.spec.in === 'query');
-        this.body = this.spec.requestBody ? new RequestBody(this.spec.requestBody as OpenAPIV3.RequestBodyObject) : undefined;
+        this.requestBody = this.spec.requestBody ? new RequestBody(this.spec.requestBody as OpenAPIV3.RequestBodyObject) : undefined;
         this.api_ref = this.spec.externalDocs?.url;
     }
 

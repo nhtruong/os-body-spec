@@ -13,33 +13,20 @@ export default class InputsRenderer extends BaseRenderer {
 
     view(): Record<string, any> {
         return {
-            query_id: this.#queryId(),
-            query_params:this.#queryParams(),
+            query_id: this.group.query_id(),
             inputs: this.#inputs(),
         }
-    }
-
-    #queryId(): string {
-        const main = this.group.name.split('.').map((s) => snake2Camel(s)).join('_')
-        return `OP_${main}_QUERY_PARAMS`;
-    }
-
-    #queryParams(): Array<Record<string, any>> {
-        return this.group.operations[0].queryParams.map((p) => {
-            return {
-                name: p.name,
-                id: p.schema.id,
-                type: p.type,
-                required: p.required,
-                description: p.description,
-            }
-        });
     }
 
     #inputs(): Array<Record<string, any>> {
         return this.group.operations.map((op) => {
             return {
                 id: op.inputId(),
+                params: op.pathParams.map((p) => p.view()),
+                body: op.requestBody ? {
+                    id: this.group.requestBody_id(),
+                    required: op.requestBody.required,
+                } : undefined,
             }
         });
     }

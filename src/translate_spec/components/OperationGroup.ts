@@ -6,6 +6,7 @@ export default class OperationGroup {
     group: string;
     operations: Array<Operation>;
 
+    _id: string; // Used to build IDs for its components
     name: string;
     namespace: string;
 
@@ -14,6 +15,8 @@ export default class OperationGroup {
         this.operations = this.#sortOperations(operations);
         if(operations.length > 1) this.operations.forEach((op, i) => { op.order = i });
         [this.name, this.namespace] = group.split('.').reverse();
+
+        this._id = this.name.split('.').map((s) => snake2Camel(s)).join('_')
     }
 
     #sortOperations(operations: Operation[]): Array<Operation> {
@@ -31,8 +34,12 @@ export default class OperationGroup {
         });
     }
 
+
     query_id(): string {
-        const main = this.name.split('.').map((s) => snake2Camel(s)).join('_')
-        return `OP_${main}_QUERY_PARAMS`;
+        return `OP_${this._id}_QUERY_PARAMS`;
+    }
+
+    requestBody_id(): string {
+        return `OP_${this._id}_REQUEST_BODY`;
     }
 }

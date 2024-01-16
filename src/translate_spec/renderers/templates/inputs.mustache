@@ -3,18 +3,31 @@
 $version: "2"
 namespace OpenSearch
 
-@mixin
-structure {{query_id}} {
-{{#query_params}}
-
-    {{name}}: {{id}},
-{{/query_params}}
-}
-
 {{#inputs}}
 @input
 structure {{id}} with [{{query_id}}] {
+{{#params}}
+    @required
+    @httpLabel
+    {{#description}}
+    @documentation("{{{description}}}")
+    {{/description}}
+    {{#default}}
+    @default({{{default}}})
+    {{/default}}
+    {{#deprecated}}
+    @deprecated
+    {{/deprecated}}
+    {{name}}: {{id}},
 
+{{/params}}
+{{#body}}
+    {{#required}}
+    @required
+    {{/required}}
+    @httpPayload
+    content: {{id}},
+{{/body}}
 }
 
 {{/inputs}}
