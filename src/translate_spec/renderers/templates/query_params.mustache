@@ -8,18 +8,7 @@ structure {{query_id}} {
 {{#query_params}}
 
     @httpQuery("{{name}}")
-    {{#required}}
-    @required
-    {{/required}}
-    {{#description}}
-    @documentation("{{{description}}}")
-    {{/description}}
-    {{#default}}
-    @default({{{default}}})
-    {{/default}}
-    {{#deprecated}}
-    @deprecated
-    {{/deprecated}}
+    {{> _parameter_traits }}
     {{name}}: {{id}},
 {{/query_params}}
 }

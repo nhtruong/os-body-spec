@@ -7,25 +7,14 @@ namespace OpenSearch
 @input
 structure {{id}} with [{{query_id}}] {
 {{#params}}
-    @required
     @httpLabel
-    {{#description}}
-    @documentation("{{{description}}}")
-    {{/description}}
-    {{#default}}
-    @default({{{default}}})
-    {{/default}}
-    {{#deprecated}}
-    @deprecated
-    {{/deprecated}}
+    {{> _parameter_traits }}
     {{name}}: {{id}},
 
 {{/params}}
 {{#body}}
-    {{#required}}
-    @required
-    {{/required}}
     @httpPayload
+    {{> _parameter_traits }}
     content: {{id}},
 {{/body}}
 }

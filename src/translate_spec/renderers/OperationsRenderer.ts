@@ -1,7 +1,7 @@
 import BaseRenderer from "./BaseRenderer";
 import OperationGroup from "../components/OperationGroup";
 import Operation from "../components/Operation";
-import {disp_value, snake2Camel} from "../../helpers";
+import {trait_value, hyphen2Camel} from "../../helpers";
 
 export default class OperationsRenderer extends BaseRenderer {
     templateFile = 'operations.mustache';
@@ -42,8 +42,8 @@ export default class OperationsRenderer extends BaseRenderer {
                            .filter((k) => k !== 'x-operation-group').sort();
         return keys.map((k) => {
             return {
-                name: snake2Camel(k.replaceAll('-', '_'), false),
-                value: disp_value(op.spec[k as keyof Operation['spec']])
+                name: hyphen2Camel(k, false),
+                value: trait_value(op.spec[k as keyof Operation['spec']])
             }
         });
     }

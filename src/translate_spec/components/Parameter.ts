@@ -1,5 +1,5 @@
 import {ParameterSpec} from "./types";
-import {resolve} from "../../helpers";
+import {trait_value, hyphen2Camel, resolve} from "../../helpers";
 import {OpenAPIV3} from "openapi-types";
 import Schema from "./Schema";
 
@@ -31,6 +31,16 @@ export default class Parameter {
             description: this.description,
             default: this.default,
             deprecated: this.deprecated,
+            extensions: this.#extensions(),
         }
+    }
+
+    #extensions(): Record<string, any> {
+        return Object.keys(this.spec).filter((k) => k.startsWith('x-')).map((k) => {
+            return {
+                name: hyphen2Camel(k, false),
+                value: trait_value(this.spec[k as keyof ParameterSpec]),
+            }
+        })
     }
 }

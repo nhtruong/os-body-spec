@@ -9,6 +9,11 @@ export default class BaseRenderer {
 
     }
 
+    static partialLookup(name: string): string {
+        const templatePath = path.join(__dirname, './templates', `${name}.mustache`);
+        return fs.readFileSync(templatePath, 'utf8');
+    }
+
     static render(...args: any[]): string {
         return new this(...args).render();
     }
@@ -24,7 +29,7 @@ export default class BaseRenderer {
     render(): string {
         const templatePath = path.join(__dirname, './templates', this.templateFile);
         const template = fs.readFileSync(templatePath, 'utf8');
-        return Mustache.render(template, {...this.#commons(), ...this.view()});
+        return Mustache.render(template, {...this.#commons(), ...this.view()}, BaseRenderer.partialLookup);
     }
 
     outputPath(rootDir: string): string {
