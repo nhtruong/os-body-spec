@@ -31,7 +31,7 @@ export default class Schema {
         if (this.ref) {
             const name = this.ref.split(':').pop()!;
             const components = this.ref.split(':')[0].split('.');
-            const prefix = components.filter((c) => c !== '_global' && c !== '_types')
+            const prefix = components.filter((c) => !c.startsWith('_'))
                                      .map((c) => snake2Camel(c)).join('_');
             return prefix ? `${prefix}_${name}` : name;
         }

@@ -12,8 +12,9 @@ export function resolve(obj: Record<string, any> | undefined, root: Record<strin
     return root;
 }
 
-export function trait_value(value: any): string {
-    return typeof value === 'string' ? `"${value}"` : value;
+export function trait_value(value: any): string | undefined {
+    if(value === undefined) return undefined;
+    return typeof value === 'string' ? `"${value}"` : `${value}`;
 }
 
 export const snake2Camel = (str: string, upper = true) => {

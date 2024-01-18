@@ -29,7 +29,7 @@ export default class Parameter {
             id: this.schema.id,
             required: this.required,
             description: this.description,
-            default: this.default,
+            default: trait_value(this.default),
             deprecated: this.deprecated,
             extensions: this.#extensions(),
         }
