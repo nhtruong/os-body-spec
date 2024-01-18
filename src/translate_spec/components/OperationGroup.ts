@@ -34,9 +34,12 @@ export default class OperationGroup {
         });
     }
 
-
     query_id(): string {
         return `OP_${this._id}_QUERY_PARAMS`;
+    }
+
+    output_id(): string {
+        return `OP_${this._id}_OUTPUT`;
     }
 
     requestBody_id(): string {

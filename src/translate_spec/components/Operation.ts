@@ -38,8 +38,4 @@ export default class Operation {
     inputId(): string {
         return this.id() + '_INPUT';
     }
-
-    outputId(): string {
-        return this.id() + '_OUTPUT';
-    }
 }

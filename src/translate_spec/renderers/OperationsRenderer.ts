@@ -25,13 +25,14 @@ export default class OperationsRenderer extends BaseRenderer {
             return {
                 id: op.id(),
                 input_id: op.inputId(),
-                output_id: op.outputId(),
+                output_id: this.group.output_id(),
                 deprecated: op.deprecated,
                 method: op.verb.toUpperCase(),
                 uri: op.path,
                 readonly: op.verb === 'get',
                 idempotent: op.verb === 'put',
                 extensions: this.#extensions(op),
+                del_body: op.verb === 'delete' && op.requestBody !== undefined,
             }
         });
     }

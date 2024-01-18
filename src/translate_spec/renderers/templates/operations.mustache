@@ -16,9 +16,9 @@ namespace OpenSearch
 {{#idempotent}}
 @idempotent
 {{/idempotent}}
-@suppress(["HttpUriConflict"])
+@suppress(["HttpUriConflict"{{#del_body}}, "HttpMethodSemantics.UnexpectedPayload"{{/del_body}}])
 {{#extensions}}
-@{{{name}}}({{{value}}})
+@{{name}}({{{value}}})
 {{/extensions}}
 @http(method: "{{method}}", uri: "{{{uri}}})
 operation {{id}} {
