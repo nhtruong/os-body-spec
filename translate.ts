@@ -15,4 +15,11 @@ const start = async () => {
     // console.log(Array.from(set).sort());
 };
 
+// TODO: Comma-separated path params
+// TODO: OneOf schemas
+// TODO: AllOf schemas
+// TODO: minProperties, maxProperties
+// TODO: enum
+// TODO: Where to put request and response bodies components?
+
 start();

@@ -1,11 +1,11 @@
 import {ParameterSpec} from "./types";
 import {trait_value, hyphen2Camel, resolve} from "../../helpers";
 import {OpenAPIV3} from "openapi-types";
-import Schema from "./Schema";
+import BaseSchema from "./schemas/BaseSchema";
 
 export default class Parameter {
     spec: ParameterSpec;
-    schema: Schema;
+    schema: BaseSchema;
 
     name: string;
     description?: string;
@@ -15,7 +15,7 @@ export default class Parameter {
 
     constructor(spec: OpenAPIV3.ParameterObject | OpenAPIV3.ReferenceObject) {
         this.spec = resolve(spec) as ParameterSpec;
-        this.schema = Schema.fromObj(this.spec.schema);
+        this.schema = BaseSchema.fromObj(this.spec.schema);
         this.name = this.spec.name;
         this.description = this.spec.description;
         this.required = this.spec.required || false;

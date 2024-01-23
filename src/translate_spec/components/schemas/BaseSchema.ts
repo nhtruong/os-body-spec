@@ -1,30 +1,32 @@
 import {OpenAPIV3} from "openapi-types";
-import {resolve, snake2Camel} from "../../helpers";
+import {resolve, snake2Camel} from "../../../helpers";
 import _ from "lodash";
 
-export default class Schema {
+export default class BaseSchema {
     spec: OpenAPIV3.SchemaObject;
     ref: string | undefined; // Reference key used to build Smithy model ID
     id: string | undefined; // Smithy model ID
 
-    type: string;
     default?: any;
     constructor(spec: OpenAPIV3.SchemaObject, ref?: string) {
         this.spec = spec;
         this.ref = ref
-        this.type = this.#type();
         this.id = this.#id();
         this.default = this.spec.default;
     }
 
-    static fromObj(obj: OpenAPIV3.SchemaObject | OpenAPIV3.ReferenceObject): Schema {
+    static fromObj(obj: OpenAPIV3.SchemaObject | OpenAPIV3.ReferenceObject): BaseSchema {
         const ref = (obj as OpenAPIV3.ReferenceObject).$ref?.split('/').pop();
-        return new Schema(resolve(obj) as OpenAPIV3.SchemaObject, ref);
+        return new BaseSchema(resolve(obj) as OpenAPIV3.SchemaObject, ref);
     }
 
-    static fromComponentKey(ref: string): Schema {
+    static fromComponentKey(ref: string): BaseSchema {
         const spec = global.spec_root.components.schemas[ref];
-        return new Schema(spec, ref);
+        return new BaseSchema(spec, ref);
+    }
+
+    view(): Record<string, any> {
+        throw new Error('Not implemented');
     }
 
     #id(): string {
@@ -35,13 +37,6 @@ export default class Schema {
                                      .map((c) => snake2Camel(c)).join('_');
             return prefix ? `${prefix}_${name}` : name;
         }
-        return _.capitalize(this.type);
+        return 'unknown'; // TODO Handle this case
     }
-
-    #type(): string {
-        if(this.spec.type) return this.spec.type;
-
-        return 'Unknown type';
-    }
-
 }
