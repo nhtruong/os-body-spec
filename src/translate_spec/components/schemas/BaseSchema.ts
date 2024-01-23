@@ -1,32 +1,56 @@
 import {OpenAPIV3} from "openapi-types";
-import {resolve, snake2Camel} from "../../../helpers";
-import _ from "lodash";
+import {resolve, snake2Camel, trait_value} from "../../../helpers";
+import SchemaRenderer from "../../renderers/SchemaRenderer";
 
 export default class BaseSchema {
+    templateFile: string = '';
+    basic_type?: string;
     spec: OpenAPIV3.SchemaObject;
     ref: string | undefined; // Reference key used to build Smithy model ID
-    id: string | undefined; // Smithy model ID
+    id: string; // Smithy model ID
 
     default?: any;
+    description?: string;
+
     constructor(spec: OpenAPIV3.SchemaObject, ref?: string) {
         this.spec = spec;
         this.ref = ref
         this.id = this.#id();
         this.default = this.spec.default;
+        this.description = this.spec.description;
+    }
+
+    static create(spec: OpenAPIV3.SchemaObject, ref?: string): BaseSchema {
+        if (spec.type === 'boolean') return new (require('./BooleanSchema').default)(spec, ref);
+        if (spec.enum) return new (require('./EnumSchema').default)(spec, ref);
+        throw new Error('Unknown schema type');
     }
 
     static fromObj(obj: OpenAPIV3.SchemaObject | OpenAPIV3.ReferenceObject): BaseSchema {
         const ref = (obj as OpenAPIV3.ReferenceObject).$ref?.split('/').pop();
-        return new BaseSchema(resolve(obj) as OpenAPIV3.SchemaObject, ref);
+        return BaseSchema.create(resolve(obj) as OpenAPIV3.SchemaObject, ref);
     }
 
     static fromComponentKey(ref: string): BaseSchema {
         const spec = global.spec_root.components.schemas[ref];
-        return new BaseSchema(spec, ref);
+        return BaseSchema.create(spec, ref);
     }
 
     view(): Record<string, any> {
         throw new Error('Not implemented');
+    }
+
+    common(): Record<string, any> {
+        return {
+            id: this.id,
+            basic_type: this.basic_type,
+            default: trait_value(this.default),
+            description: this.description,
+        }
+    }
+
+    render(): string {
+        return SchemaRenderer.render(this);
     }
 
     #id(): string {
