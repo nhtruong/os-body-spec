@@ -17,9 +17,7 @@ const start = async () => {
 
 // TODO: Comma-separated path params
 // TODO: OneOf schemas
-// TODO: AllOf schemas
-// TODO: minProperties, maxProperties
-// TODO: enum
+
 // TODO: Where to put request and response bodies components?
 
 start();

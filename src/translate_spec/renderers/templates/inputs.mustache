@@ -8,13 +8,13 @@ namespace OpenSearch
 structure {{id}} with [{{query_id}}] {
 {{#params}}
     @httpLabel
-    {{> _parameter_traits }}
+    {{> _schema_traits }}
     {{name}}: {{id}},
 
 {{/params}}
 {{#body}}
     @httpPayload
-    {{> _parameter_traits }}
+    {{> _schema_traits }}
     content: {{id}},
 {{/body}}
 }

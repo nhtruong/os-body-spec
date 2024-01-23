@@ -8,7 +8,7 @@ structure {{query_id}} {
 {{#query_params}}
 
     @httpQuery("{{name}}")
-    {{> _parameter_traits }}
+    {{> _schema_traits }}
     {{name}}: {{id}},
 {{/query_params}}
 }
