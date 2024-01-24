@@ -9,7 +9,7 @@ export default class BaseSchema {
 
     spec: OpenAPIV3.SchemaObject;
     ref: string | undefined; // Reference key used to build Smithy model ID
-    id: string; // Smithy model ID
+    _id?: string; // Cached Smithy model ID
 
     default?: any;
     description?: string;
@@ -17,13 +17,14 @@ export default class BaseSchema {
     constructor(spec: OpenAPIV3.SchemaObject, ref?: string) {
         this.spec = spec;
         this.ref = ref
-        this.id = this.#id();
         this.default = this.spec.default;
         this.description = this.spec.description;
     }
 
     static create(spec: OpenAPIV3.SchemaObject, ref?: string): BaseSchema {
+        if (spec.oneOf) return new (require('./UnionSchema').default)(spec, ref);
         if (spec.enum) return new (require('./EnumSchema').default)(spec, ref);
+        if (spec.additionalProperties) return new (require('./MapSchema').default)(spec, ref);
         if (spec.type === 'string') return new (require('./StringSchema').default)(spec, ref);
         if (spec.type === 'number') return new (require('./IntegerSchema').default)(spec, ref);
         if (spec.type === 'boolean') return new (require('./BooleanSchema').default)(spec, ref);
@@ -51,7 +52,7 @@ export default class BaseSchema {
 
     common(): Record<string, any> {
         return {
-            id: this.id,
+            id: this.id(),
             basic_type: this.basic_type,
             default: trait_value(this.default),
             description: this.description,
@@ -62,14 +63,24 @@ export default class BaseSchema {
         return SchemaRenderer.render(this);
     }
 
-    #id(): string {
-        if (this.ref) {
-            const name = snake2Camel(this.ref.split(':').pop()!);
-            const components = this.ref.split(':')[0].split('.');
-            const prefix = components.filter((c) => !c.startsWith('_'))
-                                     .map((c) => snake2Camel(c)).join('_');
-            return prefix ? `${prefix}_${name}` : name;
-        }
-        return 'unknown'; // TODO Handle this case
+    id(): string {
+        if(!this._id) this._id = this.ref_id() || this.native_id();
+        return this._id;
+    }
+
+    ref_id(): string | undefined {
+        if(!this.ref) return undefined;
+
+        const name = snake2Camel(this.ref.split(':').pop()!);
+        const components = this.ref.split(':')[0].split('.');
+        const prefix = components.filter((c) => !c.startsWith('_'))
+                                 .map((c) => snake2Camel(c)).join('_');
+        return prefix ? `${prefix}_${name}` : name;
+    }
+
+    native_id(): string {
+        // TODO uncomment this line
+        // throw new Error('Not implemented');
+        return 'native_id';
     }
 }

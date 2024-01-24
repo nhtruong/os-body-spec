@@ -26,7 +26,7 @@ export default class Parameter {
     view(): Record<string, any> {
         return {
             name: this.name,
-            id: this.schema.id,
+            id: this.schema.id(),
             required: this.required,
             description: this.description,
             default: trait_value(this.default),

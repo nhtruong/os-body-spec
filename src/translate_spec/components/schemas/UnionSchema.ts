@@ -2,7 +2,14 @@ import BaseSchema from "./BaseSchema";
 import {OpenAPIV3} from "openapi-types";
 
 export default class UnionSchema extends BaseSchema {
-    constructor(spec: OpenAPIV3.SchemaObject, ref?: string) {
-        super(spec, ref);
+    templateFile = 'schema.union.mustache'
+
+    view(): Record<string, any> {
+        return {
+            types: (this.spec as OpenAPIV3.SchemaObject).oneOf!.map((e) => {
+                console.log(BaseSchema.fromObj(e).templateFile)
+               return BaseSchema.fromObj(e).id();
+            }),
+        }
     }
 }
