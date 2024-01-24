@@ -1,6 +1,6 @@
 import BaseSchema from "./BaseSchema";
 
-export default class BooleanSchema extends BaseSchema {
+export default class IntegerSchema extends BaseSchema {
     templateFile = 'schema.basic.mustache'
-    basic_type = 'boolean'
+    basic_type = 'integer'
 }

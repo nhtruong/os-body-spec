@@ -3,6 +3,7 @@ import InputsRenderer from "./src/translate_spec/renderers/InputsRenderer";
 import QueryParamsRenderer from "./src/translate_spec/renderers/QueryParamsRenderer";
 import OperationsRenderer from "./src/translate_spec/renderers/OperationsRenderer";
 import BaseSchema from "./src/translate_spec/components/schemas/BaseSchema";
+import {OpenAPIV3} from "openapi-types";
 
 const start = async () => {
     const translator = await SmithyGenerator.init('./specs/MergedSpec.openapi.json');
@@ -12,7 +13,12 @@ const start = async () => {
     // console.log(InputsRenderer.render(group));
 
     Object.entries(global.spec_root.components.schemas).forEach(([key, spec]) => {
-        if((spec as any).type === 'boolean') console.log(BaseSchema.fromComponentKey(key).render());
+        const s = spec as OpenAPIV3.SchemaObject;
+        // if(s.type === 'boolean') console.log(BaseSchema.fromComponentKey(key).render());
+        // if(s.enum) console.log(BaseSchema.fromComponentKey(key).render());
+        // if(s.type === 'array') console.log(BaseSchema.fromComponentKey(key).render());
+        if(s.type === 'number') console.log(BaseSchema.fromComponentKey(key).render());
+        // if(s.type === 'string') console.log(BaseSchema.fromComponentKey(key).render());
     });
 };
 

@@ -4,7 +4,9 @@ import SchemaRenderer from "../../renderers/SchemaRenderer";
 
 export default class BaseSchema {
     templateFile: string = '';
+
     basic_type?: string;
+
     spec: OpenAPIV3.SchemaObject;
     ref: string | undefined; // Reference key used to build Smithy model ID
     id: string; // Smithy model ID
@@ -21,9 +23,16 @@ export default class BaseSchema {
     }
 
     static create(spec: OpenAPIV3.SchemaObject, ref?: string): BaseSchema {
-        if (spec.type === 'boolean') return new (require('./BooleanSchema').default)(spec, ref);
         if (spec.enum) return new (require('./EnumSchema').default)(spec, ref);
-        throw new Error('Unknown schema type');
+        if (spec.type === 'string') return new (require('./StringSchema').default)(spec, ref);
+        if (spec.type === 'number') return new (require('./IntegerSchema').default)(spec, ref);
+        if (spec.type === 'boolean') return new (require('./BooleanSchema').default)(spec, ref);
+        if (spec.type === 'array') return new (require('./ListSchema').default)(spec, ref);
+
+        // TODO uncomment this line
+        // throw new Error('Unknown schema type');
+
+        return new BaseSchema(spec, ref);
     }
 
     static fromObj(obj: OpenAPIV3.SchemaObject | OpenAPIV3.ReferenceObject): BaseSchema {
@@ -37,7 +46,7 @@ export default class BaseSchema {
     }
 
     view(): Record<string, any> {
-        throw new Error('Not implemented');
+        return {};
     }
 
     common(): Record<string, any> {
@@ -55,7 +64,7 @@ export default class BaseSchema {
 
     #id(): string {
         if (this.ref) {
-            const name = this.ref.split(':').pop()!;
+            const name = snake2Camel(this.ref.split(':').pop()!);
             const components = this.ref.split(':')[0].split('.');
             const prefix = components.filter((c) => !c.startsWith('_'))
                                      .map((c) => snake2Camel(c)).join('_');
