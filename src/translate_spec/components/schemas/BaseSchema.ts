@@ -42,6 +42,7 @@ export default class BaseSchema {
         return BaseSchema.create(resolve(obj) as OpenAPIV3.SchemaObject, ref);
     }
 
+    // Should only be used during development
     static fromComponentKey(ref: string): BaseSchema {
         const spec = global.spec_root.components.schemas[ref];
         return BaseSchema.create(spec, ref);
@@ -83,5 +84,10 @@ export default class BaseSchema {
         // TODO uncomment this line
         // throw new Error('Not implemented');
         return 'UNKNOWN NATIVE ID'
+    }
+
+    member_description(): string | undefined {
+        if(this.ref) return undefined;
+        return this.description;
     }
 }

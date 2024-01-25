@@ -4,6 +4,10 @@ structure {{id}}{{#mixins}} with [{{{.}}}]{{/mixins}} {
     {{#required}}
     @required
     {{/required}}
+    {{#description}}
+    @documentation("{{{description}}}")
+    {{/description}}
     {{key}}: {{value_id}},
+
     {{/entries}}
 }

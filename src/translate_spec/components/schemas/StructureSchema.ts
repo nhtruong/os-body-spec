@@ -3,12 +3,11 @@ import {OpenAPIV3} from "openapi-types";
 
 export default class StructureSchema extends BaseSchema {
     templateFile = 'schema.structure.mustache'
-    // TODO: AllOf schemas
-    // TODO: minProperties, maxProperties
-    // TODO: required
+    requires: Set<string>;
 
     constructor(spec: OpenAPIV3.SchemaObject, ref?: string) {
         super(spec, ref);
+        this.requires = new Set<string>(spec.required || []);
     }
 
     view(): Record<string, any> {
@@ -18,6 +17,8 @@ export default class StructureSchema extends BaseSchema {
                 return {
                     key: k,
                     value_id: v.id(),
+                    required: this.requires.has(k),
+                    description: v.member_description(),
                 }
             }),
         }
