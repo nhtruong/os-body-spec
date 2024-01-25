@@ -26,6 +26,9 @@ export default class Scrubber {
         this.replace_es_with_os(this.doc);
 
         this.doc.components!.schemas!['_types:Duration'].pattern = "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$";
+        this.doc.components!.schemas!['_types:Duration'].type = "string";
+        delete this.doc.components!.schemas!['_types:Duration'].oneOf;
+
 
         if (this.file) fs.writeFileSync(this.file, JSON.stringify(this.doc, null, 2));
     }
