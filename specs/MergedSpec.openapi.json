@@ -2208,18 +2208,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "pit_id": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "required": [
-                  "pit_id"
-                ]
+                "$ref": "#/components/schemas/CatPitSegments_BodyParams"
               }
             }
           }
@@ -2230,62 +2219,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "content": {
-                      "type": "object",
-                      "properties": {
-                        "index": {
-                          "type": "string"
-                        },
-                        "shard": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "prirep": {
-                          "type": "boolean",
-                          "description": "Set to true to return stats only for primary shards."
-                        },
-                        "ip": {
-                          "type": "string"
-                        },
-                        "segment": {
-                          "type": "string"
-                        },
-                        "generation": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "docs_count": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "docs_deleted": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "size": {
-                          "type": "string"
-                        },
-                        "size_memory": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "committed": {
-                          "type": "boolean"
-                        },
-                        "searchable": {
-                          "type": "boolean"
-                        },
-                        "version": {
-                          "type": "string"
-                        },
-                        "compound": {
-                          "type": "boolean"
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/CatPitSegmentsResponseContent"
                 }
               }
             }
@@ -2309,62 +2243,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "content": {
-                      "type": "object",
-                      "properties": {
-                        "index": {
-                          "type": "string"
-                        },
-                        "shard": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "prirep": {
-                          "type": "boolean",
-                          "description": "Set to true to return stats only for primary shards."
-                        },
-                        "ip": {
-                          "type": "string"
-                        },
-                        "segment": {
-                          "type": "string"
-                        },
-                        "generation": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "docs_count": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "docs_deleted": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "size": {
-                          "type": "string"
-                        },
-                        "size_memory": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "committed": {
-                          "type": "boolean"
-                        },
-                        "searchable": {
-                          "type": "boolean"
-                        },
-                        "version": {
-                          "type": "string"
-                        },
-                        "compound": {
-                          "type": "boolean"
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/CatAllPitSegmentsResponseContent"
                 }
               }
             }
@@ -4685,13 +4564,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "type": "string",
-              "description": "The type to sample.",
-              "enum": [
-                "cpu",
-                "wait",
-                "block"
-              ]
+              "$ref": "#/components/schemas/SampleType"
             }
           },
           {
@@ -4766,13 +4639,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "type": "string",
-              "description": "The type to sample.",
-              "enum": [
-                "cpu",
-                "wait",
-                "block"
-              ]
+              "$ref": "#/components/schemas/SampleType"
             }
           },
           {
@@ -4859,13 +4726,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "type": "string",
-              "description": "The type to sample.",
-              "enum": [
-                "cpu",
-                "wait",
-                "block"
-              ]
+              "$ref": "#/components/schemas/SampleType"
             }
           },
           {
@@ -4952,13 +4813,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "type": "string",
-              "description": "The type to sample.",
-              "enum": [
-                "cpu",
-                "wait",
-                "block"
-              ]
+              "$ref": "#/components/schemas/SampleType"
             }
           },
           {
@@ -6456,8 +6311,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "description": "The data stream definition"
+                "$ref": "#/components/schemas/IndicesCreateDataStream_BodyParams"
               }
             }
           }
@@ -8144,13 +7998,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "type": "string",
-              "description": "The type to sample.",
-              "enum": [
-                "cpu",
-                "wait",
-                "block"
-              ]
+              "$ref": "#/components/schemas/SampleType"
             }
           },
           {
@@ -8495,13 +8343,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "type": "string",
-              "description": "The type to sample.",
-              "enum": [
-                "cpu",
-                "wait",
-                "block"
-              ]
+              "$ref": "#/components/schemas/SampleType"
             }
           },
           {
@@ -8770,56 +8612,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "user_name": {
-                      "type": "string"
-                    },
-                    "is_reserved": {
-                      "type": "boolean"
-                    },
-                    "is_hidden": {
-                      "type": "boolean"
-                    },
-                    "is_internal_user": {
-                      "type": "boolean"
-                    },
-                    "user_requested_tenant": {
-                      "type": "string"
-                    },
-                    "backend_roles": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "custom_attribute_names": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "tenants": {
-                      "type": "object",
-                      "properties": {
-                        "global_tenant": {
-                          "type": "boolean"
-                        },
-                        "admin_tenant": {
-                          "type": "boolean"
-                        },
-                        "admin": {
-                          "type": "boolean"
-                        }
-                      }
-                    },
-                    "roles": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/AccountDetails"
                 }
               }
             }
@@ -8839,21 +8632,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "current_password": {
-                    "type": "string",
-                    "description": "The current password"
-                  },
-                  "password": {
-                    "type": "string",
-                    "description": "The new password to set"
-                  }
-                },
-                "required": [
-                  "current_password",
-                  "password"
-                ]
+                "$ref": "#/components/schemas/ChangePasswordRequestContent"
               }
             }
           },
@@ -8865,17 +8644,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/ChangePasswordResponseContent"
                 }
               }
             }
@@ -8897,27 +8666,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "op": {
-                      "type": "string",
-                      "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
-                    },
-                    "path": {
-                      "type": "string",
-                      "description": "The path to the resource."
-                    },
-                    "value": {
-                      "description": "The new values used for the update."
-                    }
-                  },
-                  "required": [
-                    "op",
-                    "path"
-                  ]
-                }
+                "$ref": "#/components/schemas/PatchActionGroupsInputPayload"
               }
             }
           },
@@ -8929,17 +8678,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/PatchActionGroupsResponseContent"
                 }
               }
             }
@@ -8963,33 +8702,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object",
-                    "properties": {
-                      "reserved": {
-                        "type": "boolean"
-                      },
-                      "hidden": {
-                        "type": "boolean"
-                      },
-                      "allowed_actions": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "type": {
-                        "type": "string"
-                      },
-                      "description": {
-                        "type": "string"
-                      },
-                      "static": {
-                        "type": "boolean"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/ActionGroupsMap"
                 }
               }
             }
@@ -9025,17 +8738,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/DeleteActionGroupResponseContent"
                 }
               }
             }
@@ -9069,33 +8772,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object",
-                    "properties": {
-                      "reserved": {
-                        "type": "boolean"
-                      },
-                      "hidden": {
-                        "type": "boolean"
-                      },
-                      "allowed_actions": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "type": {
-                        "type": "string"
-                      },
-                      "description": {
-                        "type": "string"
-                      },
-                      "static": {
-                        "type": "boolean"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/ActionGroupsMap"
                 }
               }
             }
@@ -9115,27 +8792,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "op": {
-                      "type": "string",
-                      "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
-                    },
-                    "path": {
-                      "type": "string",
-                      "description": "The path to the resource."
-                    },
-                    "value": {
-                      "description": "The new values used for the update."
-                    }
-                  },
-                  "required": [
-                    "op",
-                    "path"
-                  ]
-                }
+                "$ref": "#/components/schemas/PatchActionGroupInputPayload"
               }
             }
           },
@@ -9157,17 +8814,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/PatchActionGroupResponseContent"
                 }
               }
             }
@@ -9187,30 +8834,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "reserved": {
-                    "type": "boolean"
-                  },
-                  "hidden": {
-                    "type": "boolean"
-                  },
-                  "allowed_actions": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "type": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "static": {
-                    "type": "boolean"
-                  }
-                }
+                "$ref": "#/components/schemas/Action_Group"
               }
             }
           },
@@ -9234,17 +8858,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/CreateActionGroupResponseContent"
                 }
               }
             }
@@ -9268,112 +8882,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "_readonly": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "config": {
-                      "type": "object",
-                      "properties": {
-                        "compliance": {
-                          "type": "object",
-                          "properties": {
-                            "enabled": {
-                              "type": "boolean"
-                            },
-                            "write_log_diffs": {
-                              "type": "boolean"
-                            },
-                            "read_watched_fields": {},
-                            "read_ignore_users": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "write_watched_indices": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "write_ignore_users": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "read_metadata_only": {
-                              "type": "boolean"
-                            },
-                            "write_metadata_only": {
-                              "type": "boolean"
-                            },
-                            "external_config": {
-                              "type": "boolean"
-                            },
-                            "internal_config": {
-                              "type": "boolean"
-                            }
-                          }
-                        },
-                        "enabled": {
-                          "type": "boolean"
-                        },
-                        "audit": {
-                          "type": "object",
-                          "properties": {
-                            "ignore_users": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "ignore_requests": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "disabled_rest_categories": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "disabled_transport_categories": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "log_request_body": {
-                              "type": "boolean"
-                            },
-                            "resolve_indices": {
-                              "type": "boolean"
-                            },
-                            "resolve_bulk_requests": {
-                              "type": "boolean"
-                            },
-                            "exclude_sensitive_headers": {
-                              "type": "boolean"
-                            },
-                            "enable_transport": {
-                              "type": "boolean"
-                            },
-                            "enable_rest": {
-                              "type": "boolean"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/AuditConfigWithReadOnly"
                 }
               }
             }
@@ -9393,27 +8902,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "op": {
-                      "type": "string",
-                      "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
-                    },
-                    "path": {
-                      "type": "string",
-                      "description": "The path to the resource."
-                    },
-                    "value": {
-                      "description": "The new values used for the update."
-                    }
-                  },
-                  "required": [
-                    "op",
-                    "path"
-                  ]
-                }
+                "$ref": "#/components/schemas/PatchAuditConfigurationInputPayload"
               }
             }
           },
@@ -9440,101 +8929,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "compliance": {
-                    "type": "object",
-                    "properties": {
-                      "enabled": {
-                        "type": "boolean"
-                      },
-                      "write_log_diffs": {
-                        "type": "boolean"
-                      },
-                      "read_watched_fields": {},
-                      "read_ignore_users": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "write_watched_indices": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "write_ignore_users": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "read_metadata_only": {
-                        "type": "boolean"
-                      },
-                      "write_metadata_only": {
-                        "type": "boolean"
-                      },
-                      "external_config": {
-                        "type": "boolean"
-                      },
-                      "internal_config": {
-                        "type": "boolean"
-                      }
-                    }
-                  },
-                  "enabled": {
-                    "type": "boolean"
-                  },
-                  "audit": {
-                    "type": "object",
-                    "properties": {
-                      "ignore_users": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "ignore_requests": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "disabled_rest_categories": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "disabled_transport_categories": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "log_request_body": {
-                        "type": "boolean"
-                      },
-                      "resolve_indices": {
-                        "type": "boolean"
-                      },
-                      "resolve_bulk_requests": {
-                        "type": "boolean"
-                      },
-                      "exclude_sensitive_headers": {
-                        "type": "boolean"
-                      },
-                      "enable_transport": {
-                        "type": "boolean"
-                      },
-                      "enable_rest": {
-                        "type": "boolean"
-                      }
-                    }
-                  }
-                }
+                "$ref": "#/components/schemas/AuditConfig"
               }
             }
           },
@@ -9546,17 +8941,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/UpdateAuditConfigurationResponseContent"
                 }
               }
             }
@@ -9580,17 +8965,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/FlushCacheResponseContent"
                 }
               }
             }
@@ -9614,45 +8989,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object",
-                    "properties": {
-                      "hash": {
-                        "type": "string"
-                      },
-                      "reserved": {
-                        "type": "boolean"
-                      },
-                      "hidden": {
-                        "type": "boolean"
-                      },
-                      "backend_roles": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "attributes": {
-                        "type": "object",
-                        "additionalProperties": {
-                          "type": "string"
-                        }
-                      },
-                      "description": {
-                        "type": "string"
-                      },
-                      "opendistro_security_roles": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "static": {
-                        "type": "boolean"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/UsersMap"
                 }
               }
             }
@@ -9672,27 +9009,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "op": {
-                      "type": "string",
-                      "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
-                    },
-                    "path": {
-                      "type": "string",
-                      "description": "The path to the resource."
-                    },
-                    "value": {
-                      "description": "The new values used for the update."
-                    }
-                  },
-                  "required": [
-                    "op",
-                    "path"
-                  ]
-                }
+                "$ref": "#/components/schemas/PatchUsersInputPayload"
               }
             }
           },
@@ -9704,17 +9021,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/PatchUsersResponseContent"
                 }
               }
             }
@@ -9748,17 +9055,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/DeleteUserResponseContent"
                 }
               }
             }
@@ -9790,45 +9087,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object",
-                    "properties": {
-                      "hash": {
-                        "type": "string"
-                      },
-                      "reserved": {
-                        "type": "boolean"
-                      },
-                      "hidden": {
-                        "type": "boolean"
-                      },
-                      "backend_roles": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "attributes": {
-                        "type": "object",
-                        "additionalProperties": {
-                          "type": "string"
-                        }
-                      },
-                      "description": {
-                        "type": "string"
-                      },
-                      "opendistro_security_roles": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "static": {
-                        "type": "boolean"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/UsersMap"
                 }
               }
             }
@@ -9848,27 +9107,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "op": {
-                      "type": "string",
-                      "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
-                    },
-                    "path": {
-                      "type": "string",
-                      "description": "The path to the resource."
-                    },
-                    "value": {
-                      "description": "The new values used for the update."
-                    }
-                  },
-                  "required": [
-                    "op",
-                    "path"
-                  ]
-                }
+                "$ref": "#/components/schemas/PatchUserInputPayload"
               }
             }
           },
@@ -9890,17 +9129,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/PatchUserResponseContent"
                 }
               }
             }
@@ -9920,42 +9149,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "hash": {
-                    "type": "string"
-                  },
-                  "reserved": {
-                    "type": "boolean"
-                  },
-                  "hidden": {
-                    "type": "boolean"
-                  },
-                  "backend_roles": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "attributes": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "string"
-                    }
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "opendistro_security_roles": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "static": {
-                    "type": "boolean"
-                  }
-                }
+                "$ref": "#/components/schemas/User"
               }
             }
           },
@@ -9977,17 +9171,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/CreateUserResponseContent"
                 }
               }
             }
@@ -10011,18 +9195,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object",
-                    "properties": {
-                      "nodes_dn": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/DistinguishedNamesMap"
                 }
               }
             }
@@ -10042,27 +9215,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "op": {
-                      "type": "string",
-                      "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
-                    },
-                    "path": {
-                      "type": "string",
-                      "description": "The path to the resource."
-                    },
-                    "value": {
-                      "description": "The new values used for the update."
-                    }
-                  },
-                  "required": [
-                    "op",
-                    "path"
-                  ]
-                }
+                "$ref": "#/components/schemas/PatchDistinguishedNamesInputPayload"
               }
             }
           },
@@ -10074,17 +9227,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/PatchDistinguishedNamesResponseContent"
                 }
               }
             }
@@ -10118,17 +9261,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/DeleteDistinguishedNamesResponseContent"
                 }
               }
             }
@@ -10156,18 +9289,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object",
-                    "properties": {
-                      "nodes_dn": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/DistinguishedNamesMap"
                 }
               }
             }
@@ -10187,15 +9309,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "nodes_dn": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                }
+                "$ref": "#/components/schemas/DistinguishedNames"
               }
             }
           }
@@ -10216,17 +9330,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/UpdateDistinguishedNamesResponseContent"
                 }
               }
             }
@@ -10248,27 +9352,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "op": {
-                      "type": "string",
-                      "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
-                    },
-                    "path": {
-                      "type": "string",
-                      "description": "The path to the resource."
-                    },
-                    "value": {
-                      "description": "The new values used for the update."
-                    }
-                  },
-                  "required": [
-                    "op",
-                    "path"
-                  ]
-                }
+                "$ref": "#/components/schemas/PatchRolesInputPayload"
               }
             }
           },
@@ -10280,17 +9364,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/PatchRolesResponseContent"
                 }
               }
             }
@@ -10314,85 +9388,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object",
-                    "properties": {
-                      "reserved": {
-                        "type": "boolean"
-                      },
-                      "hidden": {
-                        "type": "boolean"
-                      },
-                      "description": {
-                        "type": "string"
-                      },
-                      "cluster_permissions": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "index_permissions": {
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "index_patterns": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "dls": {
-                              "type": "string"
-                            },
-                            "fls": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "masked_fields": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "allowed_actions": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            }
-                          }
-                        }
-                      },
-                      "tenant_permissions": {
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "tenant_patterns": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "allowed_actions": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            }
-                          }
-                        }
-                      },
-                      "static": {
-                        "type": "boolean"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/RolesMap"
                 }
               }
             }
@@ -10426,17 +9422,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/DeleteRoleResponseContent"
                 }
               }
             }
@@ -10468,85 +9454,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object",
-                    "properties": {
-                      "reserved": {
-                        "type": "boolean"
-                      },
-                      "hidden": {
-                        "type": "boolean"
-                      },
-                      "description": {
-                        "type": "string"
-                      },
-                      "cluster_permissions": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "index_permissions": {
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "index_patterns": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "dls": {
-                              "type": "string"
-                            },
-                            "fls": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "masked_fields": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "allowed_actions": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            }
-                          }
-                        }
-                      },
-                      "tenant_permissions": {
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "tenant_patterns": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "allowed_actions": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            }
-                          }
-                        }
-                      },
-                      "static": {
-                        "type": "boolean"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/RolesMap"
                 }
               }
             }
@@ -10566,27 +9474,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "op": {
-                      "type": "string",
-                      "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
-                    },
-                    "path": {
-                      "type": "string",
-                      "description": "The path to the resource."
-                    },
-                    "value": {
-                      "description": "The new values used for the update."
-                    }
-                  },
-                  "required": [
-                    "op",
-                    "path"
-                  ]
-                }
+                "$ref": "#/components/schemas/PatchRoleInputPayload"
               }
             }
           },
@@ -10608,17 +9496,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/PatchRoleResponseContent"
                 }
               }
             }
@@ -10638,82 +9516,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "reserved": {
-                    "type": "boolean"
-                  },
-                  "hidden": {
-                    "type": "boolean"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "cluster_permissions": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "index_permissions": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "index_patterns": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "dls": {
-                          "type": "string"
-                        },
-                        "fls": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "masked_fields": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "allowed_actions": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
-                  },
-                  "tenant_permissions": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "tenant_patterns": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "allowed_actions": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
-                  },
-                  "static": {
-                    "type": "boolean"
-                  }
-                }
+                "$ref": "#/components/schemas/Role"
               }
             }
           },
@@ -10735,17 +9538,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/CreateRoleResponseContent"
                 }
               }
             }
@@ -10769,45 +9562,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object",
-                    "properties": {
-                      "hosts": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "users": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "reserved": {
-                        "type": "boolean"
-                      },
-                      "hidden": {
-                        "type": "boolean"
-                      },
-                      "backend_roles": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "and_backend_roles": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "description": {
-                        "type": "string"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/RoleMappings"
                 }
               }
             }
@@ -10827,27 +9582,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "op": {
-                      "type": "string",
-                      "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
-                    },
-                    "path": {
-                      "type": "string",
-                      "description": "The path to the resource."
-                    },
-                    "value": {
-                      "description": "The new values used for the update."
-                    }
-                  },
-                  "required": [
-                    "op",
-                    "path"
-                  ]
-                }
+                "$ref": "#/components/schemas/PatchRoleMappingsInputPayload"
               }
             }
           },
@@ -10859,17 +9594,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/PatchRoleMappingsResponseContent"
                 }
               }
             }
@@ -10903,17 +9628,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/DeleteRoleMappingResponseContent"
                 }
               }
             }
@@ -10945,45 +9660,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object",
-                    "properties": {
-                      "hosts": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "users": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "reserved": {
-                        "type": "boolean"
-                      },
-                      "hidden": {
-                        "type": "boolean"
-                      },
-                      "backend_roles": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "and_backend_roles": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "description": {
-                        "type": "string"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/RoleMappings"
                 }
               }
             }
@@ -11003,27 +9680,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "op": {
-                      "type": "string",
-                      "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
-                    },
-                    "path": {
-                      "type": "string",
-                      "description": "The path to the resource."
-                    },
-                    "value": {
-                      "description": "The new values used for the update."
-                    }
-                  },
-                  "required": [
-                    "op",
-                    "path"
-                  ]
-                }
+                "$ref": "#/components/schemas/PatchRoleMappingInputPayload"
               }
             }
           },
@@ -11045,17 +9702,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/PatchRoleMappingResponseContent"
                 }
               }
             }
@@ -11075,42 +9722,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "hosts": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "users": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "reserved": {
-                    "type": "boolean"
-                  },
-                  "hidden": {
-                    "type": "boolean"
-                  },
-                  "backend_roles": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "and_backend_roles": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                }
+                "$ref": "#/components/schemas/RoleMapping"
               }
             }
           },
@@ -11132,17 +9744,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/CreateRoleMappingResponseContent"
                 }
               }
             }
@@ -11166,43 +9768,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "dynamic": {
-                      "type": "object",
-                      "properties": {
-                        "filteredAliasMode": {
-                          "type": "string"
-                        },
-                        "disableRestAuth": {
-                          "type": "boolean"
-                        },
-                        "disableIntertransportAuth": {
-                          "type": "boolean"
-                        },
-                        "respectRequestIndicesOptions": {
-                          "type": "boolean"
-                        },
-                        "kibana": {},
-                        "http": {},
-                        "authc": {},
-                        "authz": {},
-                        "authFailureListeners": {},
-                        "doNotFailOnForbidden": {
-                          "type": "boolean"
-                        },
-                        "multiRolespanEnabled": {
-                          "type": "boolean"
-                        },
-                        "hostsResolverMode": {
-                          "type": "string"
-                        },
-                        "doNotFailOnForbiddenEmpty": {
-                          "type": "boolean"
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/DynamicConfig"
                 }
               }
             }
@@ -11222,27 +9788,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "op": {
-                      "type": "string",
-                      "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
-                    },
-                    "path": {
-                      "type": "string",
-                      "description": "The path to the resource."
-                    },
-                    "value": {
-                      "description": "The new values used for the update."
-                    }
-                  },
-                  "required": [
-                    "op",
-                    "path"
-                  ]
-                }
+                "$ref": "#/components/schemas/PatchConfigurationInputPayload"
               }
             }
           },
@@ -11254,17 +9800,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/PatchConfigurationResponseContent"
                 }
               }
             }
@@ -11286,43 +9822,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "dynamic": {
-                    "type": "object",
-                    "properties": {
-                      "filteredAliasMode": {
-                        "type": "string"
-                      },
-                      "disableRestAuth": {
-                        "type": "boolean"
-                      },
-                      "disableIntertransportAuth": {
-                        "type": "boolean"
-                      },
-                      "respectRequestIndicesOptions": {
-                        "type": "boolean"
-                      },
-                      "kibana": {},
-                      "http": {},
-                      "authc": {},
-                      "authz": {},
-                      "authFailureListeners": {},
-                      "doNotFailOnForbidden": {
-                        "type": "boolean"
-                      },
-                      "multiRolespanEnabled": {
-                        "type": "boolean"
-                      },
-                      "hostsResolverMode": {
-                        "type": "string"
-                      },
-                      "doNotFailOnForbiddenEmpty": {
-                        "type": "boolean"
-                      }
-                    }
-                  }
-                }
+                "$ref": "#/components/schemas/DynamicConfig"
               }
             }
           },
@@ -11334,17 +9834,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/UpdateConfigurationResponseContent"
                 }
               }
             }
@@ -11368,55 +9858,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "http_certificates_list": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "issuer_dn": {
-                            "type": "string"
-                          },
-                          "subject_dn": {
-                            "type": "string"
-                          },
-                          "san": {
-                            "type": "string"
-                          },
-                          "not_before": {
-                            "type": "string"
-                          },
-                          "not_after": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "transport_certificates_list": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "issuer_dn": {
-                            "type": "string"
-                          },
-                          "subject_dn": {
-                            "type": "string"
-                          },
-                          "san": {
-                            "type": "string"
-                          },
-                          "not_before": {
-                            "type": "string"
-                          },
-                          "not_after": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/GetCertificatesResponseContent"
                 }
               }
             }
@@ -11440,17 +9882,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/ReloadHttpCertificatesResponseContent"
                 }
               }
             }
@@ -11474,17 +9906,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/ReloadTransportCertificatesResponseContent"
                 }
               }
             }
@@ -11508,24 +9930,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object",
-                    "properties": {
-                      "reserved": {
-                        "type": "boolean"
-                      },
-                      "hidden": {
-                        "type": "boolean"
-                      },
-                      "description": {
-                        "type": "string"
-                      },
-                      "static": {
-                        "type": "boolean"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/TenantsMap"
                 }
               }
             }
@@ -11545,27 +9950,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "op": {
-                      "type": "string",
-                      "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
-                    },
-                    "path": {
-                      "type": "string",
-                      "description": "The path to the resource."
-                    },
-                    "value": {
-                      "description": "The new values used for the update."
-                    }
-                  },
-                  "required": [
-                    "op",
-                    "path"
-                  ]
-                }
+                "$ref": "#/components/schemas/PatchTenantsInputPayload"
               }
             }
           },
@@ -11577,17 +9962,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/PatchTenantsResponseContent"
                 }
               }
             }
@@ -11621,17 +9996,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/DeleteTenantResponseContent"
                 }
               }
             }
@@ -11663,24 +10028,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object",
-                    "properties": {
-                      "reserved": {
-                        "type": "boolean"
-                      },
-                      "hidden": {
-                        "type": "boolean"
-                      },
-                      "description": {
-                        "type": "string"
-                      },
-                      "static": {
-                        "type": "boolean"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/TenantsMap"
                 }
               }
             }
@@ -11700,27 +10048,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "op": {
-                      "type": "string",
-                      "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
-                    },
-                    "path": {
-                      "type": "string",
-                      "description": "The path to the resource."
-                    },
-                    "value": {
-                      "description": "The new values used for the update."
-                    }
-                  },
-                  "required": [
-                    "op",
-                    "path"
-                  ]
-                }
+                "$ref": "#/components/schemas/PatchTenantInputPayload"
               }
             }
           },
@@ -11742,17 +10070,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/PatchTenantResponseContent"
                 }
               }
             }
@@ -11772,12 +10090,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "description": {
-                    "type": "string"
-                  }
-                }
+                "$ref": "#/components/schemas/CreateTenantParams"
               }
             }
           },
@@ -11799,17 +10112,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
+                  "$ref": "#/components/schemas/CreateTenantResponseContent"
                 }
               }
             }
@@ -11833,18 +10136,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    },
-                    "mode": {
-                      "type": "string"
-                    },
-                    "status": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/SecurityHealthResponseContent"
                 }
               }
             }
@@ -12284,19 +10576,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "description": "Comma-separated list of index IDs",
-                "properties": {
-                  "indices": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "required": [
-                  "indices"
-                ]
+                "$ref": "#/components/schemas/RemoteStoreRestore_BodyParams"
               },
               "examples": {
                 "RemoteStoreRestore_example1": {
@@ -12340,43 +10620,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "accepted": {
-                      "type": "boolean"
-                    },
-                    "remote_store": {
-                      "type": "object",
-                      "properties": {
-                        "snapshot": {
-                          "type": "string"
-                        },
-                        "indices": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "shards": {
-                          "type": "object",
-                          "properties": {
-                            "total": {
-                              "type": "integer",
-                              "format": "int32"
-                            },
-                            "failed": {
-                              "type": "integer",
-                              "format": "int32"
-                            },
-                            "successful": {
-                              "type": "integer",
-                              "format": "int32"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/RemoteStoreRestoreResponseContent"
                 },
                 "examples": {
                   "RemoteStoreRestore_example1": {
@@ -13256,19 +11500,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "description": "The point-in-time ids to be deleted",
-                "properties": {
-                  "pit_id": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "required": [
-                  "pit_id"
-                ]
+                "$ref": "#/components/schemas/DeletePit_BodyParams"
               }
             }
           }
@@ -13279,23 +11511,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "pits": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "successful": {
-                            "type": "boolean"
-                          },
-                          "pit_id": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/DeletePitResponseContent"
                 }
               }
             }
@@ -13319,23 +11535,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "pits": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "successful": {
-                            "type": "boolean"
-                          },
-                          "pit_id": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/DeleteAllPitsResponseContent"
                 }
               }
             }
@@ -13357,28 +11557,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "pits": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "pit_id": {
-                            "type": "string"
-                          },
-                          "creation_time": {
-                            "type": "integer",
-                            "format": "int64"
-                          },
-                          "keep_alive": {
-                            "type": "integer",
-                            "format": "int64"
-                          }
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/GetAllPitsResponseContent"
                 }
               }
             }
@@ -19914,37 +18093,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "pit_id": {
-                      "type": "string"
-                    },
-                    "_shards": {
-                      "type": "object",
-                      "properties": {
-                        "total": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "successful": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "skipped": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "failed": {
-                          "type": "integer",
-                          "format": "int32"
-                        }
-                      }
-                    },
-                    "creation_time": {
-                      "type": "integer",
-                      "format": "int64"
-                    }
-                  }
+                  "$ref": "#/components/schemas/CreatePitResponseContent"
                 }
               }
             }
@@ -22067,6 +20216,1315 @@
   },
   "components": {
     "schemas": {
+      "AccountDetails": {
+        "type": "object",
+        "properties": {
+          "user_name": {
+            "type": "string"
+          },
+          "is_reserved": {
+            "type": "boolean"
+          },
+          "is_hidden": {
+            "type": "boolean"
+          },
+          "is_internal_user": {
+            "type": "boolean"
+          },
+          "user_requested_tenant": {
+            "type": "string"
+          },
+          "backend_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "custom_attribute_names": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tenants": {
+            "$ref": "#/components/schemas/UserTenants"
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ActionGroupsMap": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Action_Group"
+        }
+      },
+      "Action_Group": {
+        "type": "object",
+        "properties": {
+          "reserved": {
+            "type": "boolean"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "allowed_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "type": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "static": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AuditConfig": {
+        "type": "object",
+        "properties": {
+          "compliance": {
+            "$ref": "#/components/schemas/ComplianceConfig"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "audit": {
+            "$ref": "#/components/schemas/AuditLogsConfig"
+          }
+        }
+      },
+      "AuditConfigWithReadOnly": {
+        "type": "object",
+        "properties": {
+          "_readonly": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "config": {
+            "$ref": "#/components/schemas/AuditConfig"
+          }
+        }
+      },
+      "AuditLogsConfig": {
+        "type": "object",
+        "properties": {
+          "ignore_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ignore_requests": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "disabled_rest_categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "disabled_transport_categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "log_request_body": {
+            "type": "boolean"
+          },
+          "resolve_indices": {
+            "type": "boolean"
+          },
+          "resolve_bulk_requests": {
+            "type": "boolean"
+          },
+          "exclude_sensitive_headers": {
+            "type": "boolean"
+          },
+          "enable_transport": {
+            "type": "boolean"
+          },
+          "enable_rest": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CatAllPitSegmentsResponseContent": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "$ref": "#/components/schemas/CatPitSegment"
+          }
+        }
+      },
+      "CatPitSegment": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "string"
+          },
+          "shard": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "prirep": {
+            "type": "boolean",
+            "description": "Set to true to return stats only for primary shards."
+          },
+          "ip": {
+            "type": "string"
+          },
+          "segment": {
+            "type": "string"
+          },
+          "generation": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "docs_count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "docs_deleted": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "string"
+          },
+          "size_memory": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "committed": {
+            "type": "boolean"
+          },
+          "searchable": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "string"
+          },
+          "compound": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CatPitSegmentsResponseContent": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "$ref": "#/components/schemas/CatPitSegment"
+          }
+        }
+      },
+      "CatPitSegments_BodyParams": {
+        "type": "object",
+        "properties": {
+          "pit_id": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "pit_id"
+        ]
+      },
+      "CertificatesDetail": {
+        "type": "object",
+        "properties": {
+          "issuer_dn": {
+            "type": "string"
+          },
+          "subject_dn": {
+            "type": "string"
+          },
+          "san": {
+            "type": "string"
+          },
+          "not_before": {
+            "type": "string"
+          },
+          "not_after": {
+            "type": "string"
+          }
+        }
+      },
+      "ChangePasswordRequestContent": {
+        "type": "object",
+        "properties": {
+          "current_password": {
+            "type": "string",
+            "description": "The current password"
+          },
+          "password": {
+            "type": "string",
+            "description": "The new password to set"
+          }
+        },
+        "required": [
+          "current_password",
+          "password"
+        ]
+      },
+      "ChangePasswordResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "ComplianceConfig": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "write_log_diffs": {
+            "type": "boolean"
+          },
+          "read_watched_fields": {},
+          "read_ignore_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "write_watched_indices": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "write_ignore_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "read_metadata_only": {
+            "type": "boolean"
+          },
+          "write_metadata_only": {
+            "type": "boolean"
+          },
+          "external_config": {
+            "type": "boolean"
+          },
+          "internal_config": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CreateActionGroupResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "CreatePitResponseContent": {
+        "type": "object",
+        "properties": {
+          "pit_id": {
+            "type": "string"
+          },
+          "_shards": {
+            "$ref": "#/components/schemas/ShardStatistics"
+          },
+          "creation_time": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "CreateRoleMappingResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "CreateRoleResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "CreateTenantParams": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateTenantResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "CreateUserResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "DeleteActionGroupResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "DeleteAllPitsResponseContent": {
+        "type": "object",
+        "properties": {
+          "pits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PitsDetailsDeleteAll"
+            }
+          }
+        }
+      },
+      "DeleteDistinguishedNamesResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "DeletePitResponseContent": {
+        "type": "object",
+        "properties": {
+          "pits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeletedPit"
+            }
+          }
+        }
+      },
+      "DeletePit_BodyParams": {
+        "type": "object",
+        "description": "The point-in-time ids to be deleted",
+        "properties": {
+          "pit_id": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "pit_id"
+        ]
+      },
+      "DeleteRoleMappingResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "DeleteRoleResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "DeleteTenantResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "DeleteUserResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "DeletedPit": {
+        "type": "object",
+        "properties": {
+          "successful": {
+            "type": "boolean"
+          },
+          "pit_id": {
+            "type": "string"
+          }
+        }
+      },
+      "DistinguishedNames": {
+        "type": "object",
+        "properties": {
+          "nodes_dn": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "DistinguishedNamesMap": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DistinguishedNames"
+        }
+      },
+      "DynamicConfig": {
+        "type": "object",
+        "properties": {
+          "dynamic": {
+            "$ref": "#/components/schemas/DynamicOptions"
+          }
+        }
+      },
+      "DynamicOptions": {
+        "type": "object",
+        "properties": {
+          "filteredAliasMode": {
+            "type": "string"
+          },
+          "disableRestAuth": {
+            "type": "boolean"
+          },
+          "disableIntertransportAuth": {
+            "type": "boolean"
+          },
+          "respectRequestIndicesOptions": {
+            "type": "boolean"
+          },
+          "kibana": {},
+          "http": {},
+          "authc": {},
+          "authz": {},
+          "authFailureListeners": {},
+          "doNotFailOnForbidden": {
+            "type": "boolean"
+          },
+          "multiRolespanEnabled": {
+            "type": "boolean"
+          },
+          "hostsResolverMode": {
+            "type": "string"
+          },
+          "doNotFailOnForbiddenEmpty": {
+            "type": "boolean"
+          }
+        }
+      },
+      "FlushCacheResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "GetAllPitsResponseContent": {
+        "type": "object",
+        "properties": {
+          "pits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PitDetail"
+            }
+          }
+        }
+      },
+      "GetCertificatesResponseContent": {
+        "type": "object",
+        "properties": {
+          "http_certificates_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CertificatesDetail"
+            }
+          },
+          "transport_certificates_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CertificatesDetail"
+            }
+          }
+        }
+      },
+      "IndexPermission": {
+        "type": "object",
+        "properties": {
+          "index_patterns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dls": {
+            "type": "string"
+          },
+          "fls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "masked_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "allowed_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "IndicesCreateDataStream_BodyParams": {
+        "type": "object",
+        "description": "The data stream definition"
+      },
+      "PatchActionGroupInputPayload": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PatchOperation"
+        }
+      },
+      "PatchActionGroupResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "PatchActionGroupsInputPayload": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PatchOperation"
+        }
+      },
+      "PatchActionGroupsResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "PatchAuditConfigurationInputPayload": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PatchOperation"
+        }
+      },
+      "PatchConfigurationInputPayload": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PatchOperation"
+        }
+      },
+      "PatchConfigurationResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "PatchDistinguishedNamesInputPayload": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PatchOperation"
+        }
+      },
+      "PatchDistinguishedNamesResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "PatchOperation": {
+        "type": "object",
+        "properties": {
+          "op": {
+            "type": "string",
+            "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
+          },
+          "path": {
+            "type": "string",
+            "description": "The path to the resource."
+          },
+          "value": {
+            "description": "The new values used for the update."
+          }
+        },
+        "required": [
+          "op",
+          "path"
+        ]
+      },
+      "PatchRoleInputPayload": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PatchOperation"
+        }
+      },
+      "PatchRoleMappingInputPayload": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PatchOperation"
+        }
+      },
+      "PatchRoleMappingResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "PatchRoleMappingsInputPayload": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PatchOperation"
+        }
+      },
+      "PatchRoleMappingsResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "PatchRoleResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "PatchRolesInputPayload": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PatchOperation"
+        }
+      },
+      "PatchRolesResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "PatchTenantInputPayload": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PatchOperation"
+        }
+      },
+      "PatchTenantResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "PatchTenantsInputPayload": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PatchOperation"
+        }
+      },
+      "PatchTenantsResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "PatchUserInputPayload": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PatchOperation"
+        }
+      },
+      "PatchUserResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "PatchUsersInputPayload": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PatchOperation"
+        }
+      },
+      "PatchUsersResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "PitDetail": {
+        "type": "object",
+        "properties": {
+          "pit_id": {
+            "type": "string"
+          },
+          "creation_time": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "keep_alive": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "PitsDetailsDeleteAll": {
+        "type": "object",
+        "properties": {
+          "successful": {
+            "type": "boolean"
+          },
+          "pit_id": {
+            "type": "string"
+          }
+        }
+      },
+      "ReloadHttpCertificatesResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "ReloadTransportCertificatesResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "RemoteStoreRestoreInfo": {
+        "type": "object",
+        "properties": {
+          "snapshot": {
+            "type": "string"
+          },
+          "indices": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "shards": {
+            "$ref": "#/components/schemas/RemoteStoreRestoreShardsInfo"
+          }
+        }
+      },
+      "RemoteStoreRestoreResponseContent": {
+        "type": "object",
+        "properties": {
+          "accepted": {
+            "type": "boolean"
+          },
+          "remote_store": {
+            "$ref": "#/components/schemas/RemoteStoreRestoreInfo"
+          }
+        }
+      },
+      "RemoteStoreRestoreShardsInfo": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "failed": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "successful": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "RemoteStoreRestore_BodyParams": {
+        "type": "object",
+        "description": "Comma-separated list of index IDs",
+        "properties": {
+          "indices": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "indices"
+        ]
+      },
+      "Role": {
+        "type": "object",
+        "properties": {
+          "reserved": {
+            "type": "boolean"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "cluster_permissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "index_permissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IndexPermission"
+            }
+          },
+          "tenant_permissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TenantPermission"
+            }
+          },
+          "static": {
+            "type": "boolean"
+          }
+        }
+      },
+      "RoleMapping": {
+        "type": "object",
+        "properties": {
+          "hosts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "reserved": {
+            "type": "boolean"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "backend_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "and_backend_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "RoleMappings": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/RoleMapping"
+        }
+      },
+      "RolesMap": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Role"
+        }
+      },
+      "SampleType": {
+        "type": "string",
+        "description": "The type to sample.",
+        "enum": [
+          "cpu",
+          "wait",
+          "block"
+        ]
+      },
+      "SecurityHealthResponseContent": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "ShardStatistics": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "successful": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skipped": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "failed": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Tenant": {
+        "type": "object",
+        "properties": {
+          "reserved": {
+            "type": "boolean"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "static": {
+            "type": "boolean"
+          }
+        }
+      },
+      "TenantPermission": {
+        "type": "object",
+        "properties": {
+          "tenant_patterns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "allowed_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "TenantsMap": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Tenant"
+        }
+      },
+      "UpdateAuditConfigurationResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "UpdateConfigurationResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "UpdateDistinguishedNamesResponseContent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Security Operation Status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Security Operation Message"
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "hash": {
+            "type": "string"
+          },
+          "reserved": {
+            "type": "boolean"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "backend_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/UserAttributes"
+          },
+          "description": {
+            "type": "string"
+          },
+          "opendistro_security_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "static": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UserAttributes": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "UserTenants": {
+        "type": "object",
+        "properties": {
+          "global_tenant": {
+            "type": "boolean"
+          },
+          "admin_tenant": {
+            "type": "boolean"
+          },
+          "admin": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UsersMap": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/User"
+        }
+      },
       "_types:Id": {
         "type": "string"
       },
