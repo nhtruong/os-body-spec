@@ -7,7 +7,6 @@ export default class UnionSchema extends BaseSchema {
     view(): Record<string, any> {
         return {
             types: (this.spec as OpenAPIV3.SchemaObject).oneOf!.map((e) => {
-                console.log(BaseSchema.fromObj(e).templateFile)
                return BaseSchema.fromObj(e).id();
             }),
         }

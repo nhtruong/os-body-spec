@@ -6,6 +6,7 @@ export default class BaseSchema {
     templateFile: string = '';
 
     basic_type?: string;
+    intrinsic: boolean = false;
 
     spec: OpenAPIV3.SchemaObject;
     ref: string | undefined; // Reference key used to build Smithy model ID
@@ -22,19 +23,18 @@ export default class BaseSchema {
     }
 
     static create(spec: OpenAPIV3.SchemaObject, ref?: string): BaseSchema {
-        if (spec.oneOf) return new (require('./UnionSchema').default)(spec, ref);
         if (spec.enum) return new (require('./EnumSchema').default)(spec, ref);
+        if (spec.oneOf) return new (require('./UnionSchema').default)(spec, ref);
         if (spec.additionalProperties) return new (require('./MapSchema').default)(spec, ref);
-        if (spec.allOf || spec.type === 'object') return new (require('./StructureSchema').default)(spec, ref);
+        if (spec.allOf) return new (require('./StructureSchema').default)(spec, ref);
+        if (spec.type === undefined) return new (require('./AnySchema').default)(spec, ref);
+        if (spec.type === 'object') return new (require('./StructureSchema').default)(spec, ref);
         if (spec.type === 'string') return new (require('./StringSchema').default)(spec, ref);
-        if (spec.type === 'number') return new (require('./IntegerSchema').default)(spec, ref);
         if (spec.type === 'boolean') return new (require('./BooleanSchema').default)(spec, ref);
         if (spec.type === 'array') return new (require('./ListSchema').default)(spec, ref);
+        if (['number', 'integer'].includes(spec.type!)) return new (require('./NumberSchema').default)(spec, ref);
 
-        // TODO uncomment this line
-        // throw new Error('Unknown schema type');
-
-        return new BaseSchema(spec, ref);
+        throw new Error('Unknown schema type');
     }
 
     static fromObj(obj: OpenAPIV3.SchemaObject | OpenAPIV3.ReferenceObject): BaseSchema {
@@ -82,6 +82,6 @@ export default class BaseSchema {
     native_id(): string {
         // TODO uncomment this line
         // throw new Error('Not implemented');
-        return 'native_id';
+        return 'UNKNOWN NATIVE ID'
     }
 }

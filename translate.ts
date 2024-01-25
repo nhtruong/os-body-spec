@@ -12,6 +12,7 @@ const start = async () => {
     // console.log(QueryParamsRenderer.render(group));
     // console.log(InputsRenderer.render(group));
 
+
     Object.entries(global.spec_root.components.schemas).forEach(([key, spec]) => {
         const s = spec as OpenAPIV3.SchemaObject;
         // if(s.type === 'boolean') console.log(BaseSchema.fromComponentKey(key).render());
@@ -20,7 +21,8 @@ const start = async () => {
         // if(s.type === 'number') console.log(BaseSchema.fromComponentKey(key).render());
         // if(s.type === 'string') console.log(BaseSchema.fromComponentKey(key).render());
         // if(s.oneOf) console.log(BaseSchema.fromComponentKey(key).render());
-        if(s.type == 'object') console.log(BaseSchema.fromComponentKey(key).render());
+        // if(s.type == 'object') console.log(BaseSchema.fromComponentKey(key).render());
+        console.log(BaseSchema.fromComponentKey(key).render());
     });
 };
 
