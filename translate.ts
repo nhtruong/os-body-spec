@@ -19,7 +19,8 @@ const start = async () => {
         // if(s.type === 'array') console.log(BaseSchema.fromComponentKey(key).render());
         // if(s.type === 'number') console.log(BaseSchema.fromComponentKey(key).render());
         // if(s.type === 'string') console.log(BaseSchema.fromComponentKey(key).render());
-        if(s.oneOf) console.log(BaseSchema.fromComponentKey(key).render());
+        // if(s.oneOf) console.log(BaseSchema.fromComponentKey(key).render());
+        if(s.type == 'object') console.log(BaseSchema.fromComponentKey(key).render());
     });
 };
 

@@ -25,6 +25,7 @@ export default class BaseSchema {
         if (spec.oneOf) return new (require('./UnionSchema').default)(spec, ref);
         if (spec.enum) return new (require('./EnumSchema').default)(spec, ref);
         if (spec.additionalProperties) return new (require('./MapSchema').default)(spec, ref);
+        if (spec.allOf || spec.type === 'object') return new (require('./StructureSchema').default)(spec, ref);
         if (spec.type === 'string') return new (require('./StringSchema').default)(spec, ref);
         if (spec.type === 'number') return new (require('./IntegerSchema').default)(spec, ref);
         if (spec.type === 'boolean') return new (require('./BooleanSchema').default)(spec, ref);

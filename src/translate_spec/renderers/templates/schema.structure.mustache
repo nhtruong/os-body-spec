@@ -1,0 +1,9 @@
+{{> _schema_traits }}
+structure {{id}}{{#mixins}} with [{{{.}}}]{{/mixins}} {
+    {{#entries}}
+    {{#required}}
+    @required
+    {{/required}}
+    {{key}}: {{value_id}},
+    {{/entries}}
+}
