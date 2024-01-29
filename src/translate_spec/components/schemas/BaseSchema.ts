@@ -3,6 +3,9 @@ import {resolve, snake2Camel, trait_value} from "../../../helpers";
 import SchemaRenderer from "../../renderers/SchemaRenderer";
 
 export default class BaseSchema {
+    // TODO: pattern
+    // TODO: x-data-type
+    
     templateFile: string = '';
 
     basic_type?: string;

@@ -6,7 +6,7 @@
   "scripts": {
     "merge_spec": "ts-node merge.ts",
     "translate_spec": "ts-node translate.ts",
-    "download_os_spec": "curl -X GET \"https://raw.githubusercontent.com/opensearch-project/opensearch-api-specification/main/OpenSearch.openapi.json\" -o ./OpenSearch.openapi.json"
+    "download_os_spec": "curl -X GET \"https://raw.githubusercontent.com/opensearch-project/opensearch-api-specification/main/OpenSearch.openapi.json\" -o ./specs/OpenSearch.openapi.json"
   },
   "keywords": [],
   "author": "opensearch-project",
