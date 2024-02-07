@@ -15,7 +15,7 @@ export default class Parameter {
 
     constructor(spec: OpenAPIV3.ParameterObject | OpenAPIV3.ReferenceObject) {
         this.spec = resolve(spec) as ParameterSpec;
-        this.schema = BaseSchema.fromObj(this.spec.schema);
+        this.schema = BaseSchema.fromObj(this.spec.schema, this.spec.in === 'path');
         this.name = this.spec.name;
         this.description = this.spec.description;
         this.required = this.spec.required || false;

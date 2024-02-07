@@ -40,8 +40,9 @@ export default class BaseSchema {
         throw new Error('Unknown schema type');
     }
 
-    static fromObj(obj: OpenAPIV3.SchemaObject | OpenAPIV3.ReferenceObject): BaseSchema {
+    static fromObj(obj: OpenAPIV3.SchemaObject | OpenAPIV3.ReferenceObject, path: boolean = false): BaseSchema {
         const ref = (obj as OpenAPIV3.ReferenceObject).$ref?.split('/').pop();
+        if(path) return new (require('./ParameterSchema').default)(obj as OpenAPIV3.SchemaObject, ref);
         return BaseSchema.create(resolve(obj) as OpenAPIV3.SchemaObject, ref);
     }
 

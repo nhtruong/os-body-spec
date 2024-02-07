@@ -1,12 +1,13 @@
 import Operation from "./Operation";
 import {snake2Camel} from "../../helpers";
+import ParameterSchema from "./schemas/ParameterSchema";
 
 // API Method
 export default class OperationGroup {
     group: string;
     operations: Array<Operation>;
 
-    _id: string; // Used to build IDs for its components
+    _id: string; // Used to build smithy IDs for its components
     name: string;
     namespace: string;
 
@@ -32,6 +33,22 @@ export default class OperationGroup {
 
             return a.verb.localeCompare(b.verb);
         });
+    }
+
+    #uniquePathSchemas(): Array<ParameterSchema> {
+        const names = new Set<string>();
+        return this.operations.flatMap((op) => op.pathParams).filter((p) => {
+            if(names.has(p.name)) return false;
+            names.add(p.name);
+            return true;
+        }).map((p) => p.schema);
+    }
+    crawl_schemas() {
+        // Crawl path parameters
+        console.log(this.#uniquePathSchemas().map((p) => p.id()));
+        // TODO: Crawl shared query parameters
+        // TODO: Crawl shared request body
+        // TODO: Crawl shared response body
     }
 
     query_id(): string {
