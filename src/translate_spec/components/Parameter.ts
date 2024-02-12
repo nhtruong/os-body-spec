@@ -1,4 +1,4 @@
-import {ParameterSpec} from "./types";
+import {ParameterSpec} from "../../types";
 import {trait_value, hyphen2Camel, resolve} from "../../helpers";
 import {OpenAPIV3} from "openapi-types";
 import BaseSchema from "./schemas/BaseSchema";

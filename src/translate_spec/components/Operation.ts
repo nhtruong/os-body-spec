@@ -1,4 +1,4 @@
-import {OperationSpec, ParameterSpec} from "./types";
+import {OperationSpec, ParameterSpec} from "../../types";
 import Parameter from "./Parameter";
 import RequestBody from "./RequestBody";
 import {OpenAPIV3} from "openapi-types";

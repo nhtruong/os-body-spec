@@ -4,7 +4,7 @@ import Operation from "./components/Operation";
 import SwaggerParser from "@apidevtools/swagger-parser";
 import _ from "lodash";
 import {OpenAPIV3} from "openapi-types";
-import {OperationSpec} from "./components/types";
+import {OperationSpec} from "../types";
 import OperationGroup from "./components/OperationGroup";
 
 const HTTP_VERBS = ['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'];
