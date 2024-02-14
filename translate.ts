@@ -20,17 +20,8 @@ const start = async () => {
     //     });
     // });
 
-    Object.entries(global.spec_root.paths).forEach(([path, methods]) => {
-        const namespaces = Object.values(methods as OperationSpec[]).map((method) => {
-            const [_, namespace] = method['x-operation-group'].split('.').reverse();
-            return namespace;
-        });
-
-        const uniqueNamespaces = Array.from(new Set(namespaces));
-        if(uniqueNamespaces.length !== 1) {
-            console.log(`Path: ${path}`);
-            console.log(`Namespaces: ${uniqueNamespaces.join(', ')}`);
-        }
+    Object.entries(global.spec_root.components.schemas).forEach(([name, content]) => {
+        console.log(name);
     });
 
     // Object.entries(global.spec_root.components.schemas).forEach(([key, spec]) => {
