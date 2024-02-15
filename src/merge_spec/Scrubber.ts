@@ -24,13 +24,45 @@ export default class Scrubber {
         this.remove_unused_refs();
         this.remove_elastic_urls(this.doc);
         this.replace_es_with_os(this.doc);
+        this.rename_schemas();
+        this.rename_schema_refs(this.doc);
 
-        this.doc.components!.schemas!['_types:Duration'].pattern = "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$";
-        this.doc.components!.schemas!['_types:Duration'].type = "string";
-        delete this.doc.components!.schemas!['_types:Duration'].oneOf;
+        this.doc.components!.schemas!['_core._common:Duration'].pattern = "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$";
+        this.doc.components!.schemas!['_core._common:Duration'].type = "string";
+        delete this.doc.components!.schemas!['_core._common:Duration'].oneOf;
 
 
         if (this.file) fs.writeFileSync(this.file, JSON.stringify(this.doc, null, 2));
+    }
+
+    newSchemaName(name: string): string {
+        const [category, type] = name.split(':');
+        const parts = category.split('.');
+        if(['_types', '_spec_utils'].includes(category)) return `_core._common:${type}`;
+        if(parts[0] === '_global') return `_core.${parts[1]}:${type}`;
+        if(parts[0] === '_types') return `_core._${parts[1]}:${type}`;
+        if(parts[1] === '_types') return `${parts[0]}._common:${type}`;
+        return name;
+    }
+
+    rename_schema_refs(obj: Record<string, any>): void {
+        const ref = obj.$ref;
+        if(ref?.startsWith('#/components/schemas/') && ref.includes(':')) {
+            const name = ref.split('#/components/schemas/')[1];
+            obj.$ref = '#/components/schemas/' + this.newSchemaName(name);
+        }
+
+        for(const key in obj) {
+            if(typeof obj[key] === 'object') this.rename_schema_refs(obj[key]);
+        }
+    }
+
+    rename_schemas(): void {
+        const schemas = this.doc.components.schemas;
+        Object.entries(schemas).forEach(([k, v]) => {
+            delete schemas[k];
+            schemas[this.newSchemaName(k)] = v;
+        });
     }
 
     remove_unused_refs(): void {
