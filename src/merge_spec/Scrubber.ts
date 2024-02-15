@@ -27,9 +27,9 @@ export default class Scrubber {
         this.rename_schemas();
         this.rename_schema_refs(this.doc);
 
-        this.doc.components!.schemas!['_core._common:Duration'].pattern = "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$";
-        this.doc.components!.schemas!['_core._common:Duration'].type = "string";
-        delete this.doc.components!.schemas!['_core._common:Duration'].oneOf;
+        this.doc.components!.schemas!['_common:Duration'].pattern = "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$";
+        this.doc.components!.schemas!['_common:Duration'].type = "string";
+        delete this.doc.components!.schemas!['_common:Duration'].oneOf;
 
 
         if (this.file) fs.writeFileSync(this.file, JSON.stringify(this.doc, null, 2));
@@ -38,9 +38,9 @@ export default class Scrubber {
     newSchemaName(name: string): string {
         const [category, type] = name.split(':');
         const parts = category.split('.');
-        if(['_types', '_spec_utils'].includes(category)) return `_core._common:${type}`;
+        if(['_types', '_spec_utils'].includes(category)) return `_common:${type}`;
         if(parts[0] === '_global') return `_core.${parts[1]}:${type}`;
-        if(parts[0] === '_types') return `_core._${parts[1]}:${type}`;
+        if(parts[0] === '_types') return `_common.${parts[1]}:${type}`;
         if(parts[1] === '_types') return `${parts[0]}._common:${type}`;
         return name;
     }
