@@ -1,10 +1,9 @@
 import {OpenAPIV3} from "openapi-types";
 import SwaggerParser from "@apidevtools/swagger-parser";
-import Path from "./Path";
+import NamespaceFileBuilder from "./NamespaceFileBuilder";
+import SchemaFileBuilder from "./SchemaFileBuilder";
 
 export default class SpecSplitter {
-    paths: Record<string, OpenAPIV3.PathsObject>;
-    requestBodies: Record<string, OpenAPIV3.ReferenceObject | OpenAPIV3.RequestBodyObject>;
 
     /**
      * Initialize the splitter. Use this instead of the constructor directly.
@@ -19,11 +18,23 @@ export default class SpecSplitter {
     }
 
     split(outputDir: string): void {
-        Object.entries(global.spec_root.paths as OpenAPIV3.PathsObject).forEach(([path, spec]) => {
-            const p = new Path(path, spec as OpenAPIV3.PathItemObject);
-            console.log(p.path, p.namespace)
+        const ns = new NamespaceFileBuilder();
+        Object.entries(global.spec_root.paths).forEach(([path, spec]) => {
+            ns.parsePath(path, spec as OpenAPIV3.PathItemObject);
+        });
+        Object.entries(global.spec_root.components.requestBodies).forEach(([name, spec]) => {
+            ns.parseRequestBody(name, spec as OpenAPIV3.RequestBodyObject);
+        });
+        Object.entries(global.spec_root.components.responses).forEach(([name, spec]) => {
+            ns.parseResponse(name, spec as OpenAPIV3.ResponseObject);
+        });
+        Object.entries(global.spec_root.components.parameters).forEach(([name, spec]) => {
+            ns.parseParameter(name, spec as OpenAPIV3.ParameterObject);
+        });
+
+        const sk = new SchemaFileBuilder();
+        Object.entries(global.spec_root.components.schemas).forEach(([name, spec]) => {
+            sk.parseSchema(name, spec as OpenAPIV3.SchemaObject);
         });
     }
-
-
 }
