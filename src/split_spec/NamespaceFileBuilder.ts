@@ -3,6 +3,7 @@ import {OpenAPIV3} from "openapi-types";
 import {extractNamespace} from "../helpers";
 import _ from "lodash";
 import {OperationSpec} from "../types";
+import fs from 'fs';
 
 
 const HTTP_VERBS = ['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'];
@@ -15,6 +16,15 @@ export default class NamespaceFileBuilder {
             this.namespaces[name] = new NamespaceFile(name);
         }
         return this.namespaces[name];
+    }
+
+    writeToFiles(outputDir: string): void {
+        Object.entries(this.namespaces).forEach(([name, ns]) => {
+            const folder = `${outputDir}/namespaces`;
+            const file = `${folder}/${name}.json`;
+            fs.mkdirSync(folder, {recursive: true});
+            fs.writeFileSync(file, JSON.stringify(ns.contents(), null, 2));
+        });
     }
 
     parsePath(path: string, spec: OpenAPIV3.PathItemObject): void {

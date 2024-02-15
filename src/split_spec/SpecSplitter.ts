@@ -31,6 +31,7 @@ export default class SpecSplitter {
         Object.entries(global.spec_root.components.parameters).forEach(([name, spec]) => {
             ns.parseParameter(name, spec as OpenAPIV3.ParameterObject);
         });
+        ns.writeToFiles(outputDir);
 
         const sk = new SchemaFileBuilder();
         Object.entries(global.spec_root.components.schemas).forEach(([name, spec]) => {
