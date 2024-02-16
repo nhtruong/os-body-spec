@@ -3,6 +3,7 @@ import SwaggerParser from "@apidevtools/swagger-parser";
 import NamespaceFileBuilder from "./NamespaceFileBuilder";
 import SchemaFileBuilder from "./SchemaFileBuilder";
 import fs from 'fs';
+import RootFileBuilder from "./RootFileBuilder";
 
 export default class SpecSplitter {
 
@@ -28,5 +29,8 @@ export default class SpecSplitter {
         const sk = new SchemaFileBuilder();
         sk.parse(global.spec_root as OpenAPIV3.Document);
         sk.writeToFiles(outputDir);
+
+        const rt = new RootFileBuilder(ns.namespaces)
+        rt.writeToFile(outputDir);
     }
 }
