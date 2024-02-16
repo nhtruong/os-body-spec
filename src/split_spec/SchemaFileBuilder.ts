@@ -12,6 +12,12 @@ export default class SchemaFileBuilder {
         return this.schemas[category];
     }
 
+    parse(spec: OpenAPIV3.Document): void {
+        Object.entries(spec.components!.schemas!).forEach(([name, spec]) => {
+            this.parseSchema(name, spec as OpenAPIV3.SchemaObject);
+        });
+    }
+
     writeToFiles(outputDir: string): void {
         const folder = `${outputDir}/schemas`;
         fs.mkdirSync(folder, {recursive: true});

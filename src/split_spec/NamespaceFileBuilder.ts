@@ -18,6 +18,24 @@ export default class NamespaceFileBuilder {
         return this.namespaces[name];
     }
 
+    parse(spec: OpenAPIV3.Document): void {
+        Object.entries(spec.paths).forEach(([path, pathSpec]) => {
+            this.parsePath(path, pathSpec as OpenAPIV3.PathItemObject);
+        });
+
+        Object.entries(spec.components!.requestBodies!).forEach(([name, requestBodySpec]) => {
+            this.parseRequestBody(name, requestBodySpec as OpenAPIV3.RequestBodyObject);
+        });
+
+        Object.entries(spec.components!.responses!).forEach(([name, responseSpec]) => {
+            this.parseResponse(name, responseSpec as OpenAPIV3.ResponseObject);
+        });
+
+        Object.entries(spec.components!.parameters!).forEach(([name, parameterSpec]) => {
+            this.parseParameter(name, parameterSpec as OpenAPIV3.ParameterObject);
+        });
+    }
+
     writeToFiles(outputDir: string): void {
         Object.entries(this.namespaces).forEach(([name, ns]) => {
             const folder = `${outputDir}/namespaces`;
