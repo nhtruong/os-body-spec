@@ -31,7 +31,7 @@ export default class NamespaceFile {
         if(ref?.startsWith('#/components/schemas/')) {
             const name = ref.split('#/components/schemas/')[1];
             const [category, type] = name.split(':');
-            obj.$ref = `../schemas/${category}.json#/${type}`;
+            obj.$ref = `../schemas/${category}.json#/components/schemas/${type}`;
         }
 
         for(const key in obj) {
