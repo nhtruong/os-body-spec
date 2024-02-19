@@ -19,6 +19,8 @@ export default class Polisher {
         this.deref_bodies(this.doc.paths);
         _.values(this.doc.paths).flatMap(_.values).forEach((op: OperationSpec) => { this.move_bodies(op); });
         this.determineSchemaNamespace(this.doc, undefined);
+        this.applySchemaNamespace();
+        this.applySchemaNamespaceRefs(this.doc);
         fs.writeFileSync(output, JSON.stringify(this.doc, null, 2));
     }
 
@@ -91,6 +93,26 @@ export default class Polisher {
             schemas[this.newSchemaName(k)] = v;
         });
     }
+
+    applySchemaNamespace() {
+        const schemas = this.doc.components.schemas;
+        for(const [name, namespace] of Object.entries(this.schemaNamespaces)) {
+            const schema = schemas[name];
+            delete schemas[name];
+            schemas[`${namespace}._common:${name}`] = schema;
+        }
+    };
+    applySchemaNamespaceRefs(obj: Record<string, any>) {
+        const ref = obj.$ref;
+        if(ref?.startsWith('#/components/schemas/') && !ref.includes(':')) {
+            const name = ref.split('#/components/schemas/')[1];
+            obj.$ref = '#/components/schemas/' + this.schemaNamespaces[name] + '._common:' + name;
+        }
+
+        for(const key in obj) {
+            if(typeof obj[key] === 'object') this.applySchemaNamespaceRefs(obj[key]);
+        }
+    };
 
     newSchemaName(name: string): string {
         const [category, type] = name.split(':');

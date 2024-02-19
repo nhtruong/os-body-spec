@@ -4616,7 +4616,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "$ref": "#/components/schemas/SampleType"
+              "$ref": "#/components/schemas/nodes._common:SampleType"
             }
           },
           {
@@ -4691,7 +4691,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "$ref": "#/components/schemas/SampleType"
+              "$ref": "#/components/schemas/nodes._common:SampleType"
             }
           },
           {
@@ -4778,7 +4778,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "$ref": "#/components/schemas/SampleType"
+              "$ref": "#/components/schemas/nodes._common:SampleType"
             }
           },
           {
@@ -4865,7 +4865,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "$ref": "#/components/schemas/SampleType"
+              "$ref": "#/components/schemas/nodes._common:SampleType"
             }
           },
           {
@@ -7715,7 +7715,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "$ref": "#/components/schemas/SampleType"
+              "$ref": "#/components/schemas/nodes._common:SampleType"
             }
           },
           {
@@ -8060,7 +8060,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "$ref": "#/components/schemas/SampleType"
+              "$ref": "#/components/schemas/nodes._common:SampleType"
             }
           },
           {
@@ -18718,211 +18718,16 @@
   },
   "components": {
     "schemas": {
-      "AccountDetails": {
-        "type": "object",
-        "properties": {
-          "user_name": {
-            "type": "string"
-          },
-          "is_reserved": {
-            "type": "boolean"
-          },
-          "is_hidden": {
-            "type": "boolean"
-          },
-          "is_internal_user": {
-            "type": "boolean"
-          },
-          "user_requested_tenant": {
-            "type": "string"
-          },
-          "backend_roles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "custom_attribute_names": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "tenants": {
-            "$ref": "#/components/schemas/UserTenants"
-          },
-          "roles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "ActionGroupsMap": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Action_Group"
-        }
-      },
-      "Action_Group": {
-        "type": "object",
-        "properties": {
-          "reserved": {
-            "type": "boolean"
-          },
-          "hidden": {
-            "type": "boolean"
-          },
-          "allowed_actions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "type": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "static": {
-            "type": "boolean"
-          }
-        }
-      },
-      "AuditConfig": {
-        "type": "object",
-        "properties": {
-          "compliance": {
-            "$ref": "#/components/schemas/ComplianceConfig"
-          },
-          "enabled": {
-            "type": "boolean"
-          },
-          "audit": {
-            "$ref": "#/components/schemas/AuditLogsConfig"
-          }
-        }
-      },
-      "AuditConfigWithReadOnly": {
-        "type": "object",
-        "properties": {
-          "_readonly": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "config": {
-            "$ref": "#/components/schemas/AuditConfig"
-          }
-        }
-      },
-      "AuditLogsConfig": {
-        "type": "object",
-        "properties": {
-          "ignore_users": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "ignore_requests": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "disabled_rest_categories": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "disabled_transport_categories": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "log_request_body": {
-            "type": "boolean"
-          },
-          "resolve_indices": {
-            "type": "boolean"
-          },
-          "resolve_bulk_requests": {
-            "type": "boolean"
-          },
-          "exclude_sensitive_headers": {
-            "type": "boolean"
-          },
-          "enable_transport": {
-            "type": "boolean"
-          },
-          "enable_rest": {
-            "type": "boolean"
-          }
-        }
-      },
       "CatAllPitSegmentsOutputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/CatPitSegmentsRecord"
+          "$ref": "#/components/schemas/cat._common:CatPitSegmentsRecord"
         }
       },
       "CatPitSegmentsOutputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/CatPitSegmentsRecord"
-        }
-      },
-      "CatPitSegmentsRecord": {
-        "type": "object",
-        "properties": {
-          "index": {
-            "type": "string"
-          },
-          "shard": {
-            "type": "string"
-          },
-          "prirep": {
-            "type": "string"
-          },
-          "ip": {
-            "type": "string"
-          },
-          "segment": {
-            "type": "string"
-          },
-          "generation": {
-            "type": "string"
-          },
-          "docs.count": {
-            "type": "string"
-          },
-          "docs.deleted": {
-            "type": "string"
-          },
-          "size": {
-            "type": "string"
-          },
-          "size.memory": {
-            "type": "string"
-          },
-          "committed": {
-            "type": "string"
-          },
-          "searchable": {
-            "type": "string"
-          },
-          "version": {
-            "type": "string"
-          },
-          "compound": {
-            "type": "string"
-          }
+          "$ref": "#/components/schemas/cat._common:CatPitSegmentsRecord"
         }
       },
       "CatPitSegments_BodyParams": {
@@ -18942,131 +18747,14 @@
       "CatSegmentReplicationOutputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/CatSegmentReplicationRecord"
-        }
-      },
-      "CatSegmentReplicationRecord": {
-        "type": "object",
-        "properties": {
-          "shardId": {
-            "type": "string"
-          },
-          "target_node": {
-            "type": "string"
-          },
-          "target_host": {
-            "type": "string"
-          },
-          "checkpoints_behind": {
-            "type": "string"
-          },
-          "bytes_behind": {
-            "type": "string"
-          },
-          "current_lag": {
-            "type": "string"
-          },
-          "last_completed_lag": {
-            "type": "string"
-          },
-          "rejected_requests": {
-            "type": "string"
-          },
-          "stage": {
-            "type": "string"
-          },
-          "time": {
-            "type": "string"
-          },
-          "files_fetched": {
-            "type": "string"
-          },
-          "files_percent": {
-            "type": "string"
-          },
-          "bytes_fetched": {
-            "type": "string"
-          },
-          "bytes_percent": {
-            "type": "string"
-          },
-          "start_time": {
-            "type": "string"
-          },
-          "stop_time": {
-            "type": "string"
-          },
-          "files": {
-            "type": "string"
-          },
-          "files_total": {
-            "type": "string"
-          },
-          "bytes": {
-            "type": "string"
-          },
-          "bytes_total": {
-            "type": "string"
-          },
-          "replicating_stage_time_taken": {
-            "type": "string"
-          },
-          "get_checkpoint_info_stage_time_taken": {
-            "type": "string"
-          },
-          "file_diff_stage_time_taken": {
-            "type": "string"
-          },
-          "get_files_stage_time_taken": {
-            "type": "string"
-          },
-          "finalize_replication_stage_time_taken": {
-            "type": "string"
-          }
+          "$ref": "#/components/schemas/cat._common:CatSegmentReplicationRecord"
         }
       },
       "CatSegmentReplication_WithIndexOutputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/CatSegmentReplicationRecord"
+          "$ref": "#/components/schemas/cat._common:CatSegmentReplicationRecord"
         }
-      },
-      "CertificatesDetail": {
-        "type": "object",
-        "properties": {
-          "issuer_dn": {
-            "type": "string"
-          },
-          "subject_dn": {
-            "type": "string"
-          },
-          "san": {
-            "type": "string"
-          },
-          "not_before": {
-            "type": "string"
-          },
-          "not_after": {
-            "type": "string"
-          }
-        }
-      },
-      "ChangePasswordRequestContent": {
-        "type": "object",
-        "properties": {
-          "current_password": {
-            "type": "string",
-            "description": "The current password"
-          },
-          "password": {
-            "type": "string",
-            "description": "The new password to set"
-          }
-        },
-        "required": [
-          "current_password",
-          "password"
-        ]
       },
       "ChangePasswordResponseContent": {
         "type": "object",
@@ -19078,48 +18766,6 @@
           "message": {
             "type": "string",
             "description": "Security Operation Message"
-          }
-        }
-      },
-      "ComplianceConfig": {
-        "type": "object",
-        "properties": {
-          "enabled": {
-            "type": "boolean"
-          },
-          "write_log_diffs": {
-            "type": "boolean"
-          },
-          "read_watched_fields": {},
-          "read_ignore_users": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "write_watched_indices": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "write_ignore_users": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "read_metadata_only": {
-            "type": "boolean"
-          },
-          "write_metadata_only": {
-            "type": "boolean"
-          },
-          "external_config": {
-            "type": "boolean"
-          },
-          "internal_config": {
-            "type": "boolean"
           }
         }
       },
@@ -19143,7 +18789,7 @@
             "type": "string"
           },
           "_shards": {
-            "$ref": "#/components/schemas/ShardStatistics"
+            "$ref": "#/components/schemas/_core._common:ShardStatistics"
           },
           "creation_time": {
             "type": "integer",
@@ -19174,14 +18820,6 @@
           "message": {
             "type": "string",
             "description": "Security Operation Message"
-          }
-        }
-      },
-      "CreateTenantParams": {
-        "type": "object",
-        "properties": {
-          "description": {
-            "type": "string"
           }
         }
       },
@@ -19230,7 +18868,7 @@
           "pits": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PitsDetailsDeleteAll"
+              "$ref": "#/components/schemas/_core._common:PitsDetailsDeleteAll"
             }
           }
         }
@@ -19254,7 +18892,7 @@
           "pits": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/DeletedPit"
+              "$ref": "#/components/schemas/_core._common:DeletedPit"
             }
           }
         }
@@ -19326,76 +18964,6 @@
           }
         }
       },
-      "DeletedPit": {
-        "type": "object",
-        "properties": {
-          "successful": {
-            "type": "boolean"
-          },
-          "pit_id": {
-            "type": "string"
-          }
-        }
-      },
-      "DistinguishedNames": {
-        "type": "object",
-        "properties": {
-          "nodes_dn": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "DistinguishedNamesMap": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/DistinguishedNames"
-        }
-      },
-      "DynamicConfig": {
-        "type": "object",
-        "properties": {
-          "dynamic": {
-            "$ref": "#/components/schemas/DynamicOptions"
-          }
-        }
-      },
-      "DynamicOptions": {
-        "type": "object",
-        "properties": {
-          "filteredAliasMode": {
-            "type": "string"
-          },
-          "disableRestAuth": {
-            "type": "boolean"
-          },
-          "disableIntertransportAuth": {
-            "type": "boolean"
-          },
-          "respectRequestIndicesOptions": {
-            "type": "boolean"
-          },
-          "kibana": {},
-          "http": {},
-          "authc": {},
-          "authz": {},
-          "authFailureListeners": {},
-          "doNotFailOnForbidden": {
-            "type": "boolean"
-          },
-          "multiRolespanEnabled": {
-            "type": "boolean"
-          },
-          "hostsResolverMode": {
-            "type": "string"
-          },
-          "doNotFailOnForbiddenEmpty": {
-            "type": "boolean"
-          }
-        }
-      },
       "FlushCacheResponseContent": {
         "type": "object",
         "properties": {
@@ -19415,7 +18983,7 @@
           "pits": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PitDetail"
+              "$ref": "#/components/schemas/_core._common:PitDetail"
             }
           }
         }
@@ -19426,45 +18994,13 @@
           "http_certificates_list": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CertificatesDetail"
+              "$ref": "#/components/schemas/security._common:CertificatesDetail"
             }
           },
           "transport_certificates_list": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CertificatesDetail"
-            }
-          }
-        }
-      },
-      "IndexPermission": {
-        "type": "object",
-        "properties": {
-          "index_patterns": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "dls": {
-            "type": "string"
-          },
-          "fls": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "masked_fields": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "allowed_actions": {
-            "type": "array",
-            "items": {
-              "type": "string"
+              "$ref": "#/components/schemas/security._common:CertificatesDetail"
             }
           }
         }
@@ -19476,7 +19012,7 @@
       "PatchActionGroupInputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/PatchOperation"
+          "$ref": "#/components/schemas/security._common:PatchOperation"
         }
       },
       "PatchActionGroupResponseContent": {
@@ -19495,7 +19031,7 @@
       "PatchActionGroupsInputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/PatchOperation"
+          "$ref": "#/components/schemas/security._common:PatchOperation"
         }
       },
       "PatchActionGroupsResponseContent": {
@@ -19514,13 +19050,13 @@
       "PatchAuditConfigurationInputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/PatchOperation"
+          "$ref": "#/components/schemas/security._common:PatchOperation"
         }
       },
       "PatchConfigurationInputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/PatchOperation"
+          "$ref": "#/components/schemas/security._common:PatchOperation"
         }
       },
       "PatchConfigurationResponseContent": {
@@ -19539,7 +19075,7 @@
       "PatchDistinguishedNamesInputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/PatchOperation"
+          "$ref": "#/components/schemas/security._common:PatchOperation"
         }
       },
       "PatchDistinguishedNamesResponseContent": {
@@ -19555,36 +19091,16 @@
           }
         }
       },
-      "PatchOperation": {
-        "type": "object",
-        "properties": {
-          "op": {
-            "type": "string",
-            "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
-          },
-          "path": {
-            "type": "string",
-            "description": "The path to the resource."
-          },
-          "value": {
-            "description": "The new values used for the update."
-          }
-        },
-        "required": [
-          "op",
-          "path"
-        ]
-      },
       "PatchRoleInputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/PatchOperation"
+          "$ref": "#/components/schemas/security._common:PatchOperation"
         }
       },
       "PatchRoleMappingInputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/PatchOperation"
+          "$ref": "#/components/schemas/security._common:PatchOperation"
         }
       },
       "PatchRoleMappingResponseContent": {
@@ -19603,7 +19119,7 @@
       "PatchRoleMappingsInputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/PatchOperation"
+          "$ref": "#/components/schemas/security._common:PatchOperation"
         }
       },
       "PatchRoleMappingsResponseContent": {
@@ -19635,7 +19151,7 @@
       "PatchRolesInputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/PatchOperation"
+          "$ref": "#/components/schemas/security._common:PatchOperation"
         }
       },
       "PatchRolesResponseContent": {
@@ -19654,7 +19170,7 @@
       "PatchTenantInputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/PatchOperation"
+          "$ref": "#/components/schemas/security._common:PatchOperation"
         }
       },
       "PatchTenantResponseContent": {
@@ -19673,7 +19189,7 @@
       "PatchTenantsInputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/PatchOperation"
+          "$ref": "#/components/schemas/security._common:PatchOperation"
         }
       },
       "PatchTenantsResponseContent": {
@@ -19692,7 +19208,7 @@
       "PatchUserInputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/PatchOperation"
+          "$ref": "#/components/schemas/security._common:PatchOperation"
         }
       },
       "PatchUserResponseContent": {
@@ -19711,7 +19227,7 @@
       "PatchUsersInputPayload": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/PatchOperation"
+          "$ref": "#/components/schemas/security._common:PatchOperation"
         }
       },
       "PatchUsersResponseContent": {
@@ -19724,33 +19240,6 @@
           "message": {
             "type": "string",
             "description": "Security Operation Message"
-          }
-        }
-      },
-      "PitDetail": {
-        "type": "object",
-        "properties": {
-          "pit_id": {
-            "type": "string"
-          },
-          "creation_time": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "keep_alive": {
-            "type": "integer",
-            "format": "int64"
-          }
-        }
-      },
-      "PitsDetailsDeleteAll": {
-        "type": "object",
-        "properties": {
-          "successful": {
-            "type": "boolean"
-          },
-          "pit_id": {
-            "type": "string"
           }
         }
       },
@@ -19780,23 +19269,6 @@
           }
         }
       },
-      "RemoteStoreRestoreInfo": {
-        "type": "object",
-        "properties": {
-          "snapshot": {
-            "type": "string"
-          },
-          "indices": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "shards": {
-            "$ref": "#/components/schemas/RemoteStoreRestoreShardsInfo"
-          }
-        }
-      },
       "RemoteStoreRestoreResponseContent": {
         "type": "object",
         "properties": {
@@ -19804,24 +19276,7 @@
             "type": "boolean"
           },
           "remote_store": {
-            "$ref": "#/components/schemas/RemoteStoreRestoreInfo"
-          }
-        }
-      },
-      "RemoteStoreRestoreShardsInfo": {
-        "type": "object",
-        "properties": {
-          "total": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "failed": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "successful": {
-            "type": "integer",
-            "format": "int32"
+            "$ref": "#/components/schemas/remote_store._common:RemoteStoreRestoreInfo"
           }
         }
       },
@@ -19840,100 +19295,6 @@
           "indices"
         ]
       },
-      "Role": {
-        "type": "object",
-        "properties": {
-          "reserved": {
-            "type": "boolean"
-          },
-          "hidden": {
-            "type": "boolean"
-          },
-          "description": {
-            "type": "string"
-          },
-          "cluster_permissions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "index_permissions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/IndexPermission"
-            }
-          },
-          "tenant_permissions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TenantPermission"
-            }
-          },
-          "static": {
-            "type": "boolean"
-          }
-        }
-      },
-      "RoleMapping": {
-        "type": "object",
-        "properties": {
-          "hosts": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "users": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "reserved": {
-            "type": "boolean"
-          },
-          "hidden": {
-            "type": "boolean"
-          },
-          "backend_roles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "and_backend_roles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "description": {
-            "type": "string"
-          }
-        }
-      },
-      "RoleMappings": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/RoleMapping"
-        }
-      },
-      "RolesMap": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Role"
-        }
-      },
-      "SampleType": {
-        "type": "string",
-        "description": "The type to sample.",
-        "enum": [
-          "cpu",
-          "wait",
-          "block"
-        ]
-      },
       "SecurityHealthResponseContent": {
         "type": "object",
         "properties": {
@@ -19946,67 +19307,6 @@
           "status": {
             "type": "string"
           }
-        }
-      },
-      "ShardStatistics": {
-        "type": "object",
-        "properties": {
-          "total": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "successful": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "skipped": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "failed": {
-            "type": "integer",
-            "format": "int32"
-          }
-        }
-      },
-      "Tenant": {
-        "type": "object",
-        "properties": {
-          "reserved": {
-            "type": "boolean"
-          },
-          "hidden": {
-            "type": "boolean"
-          },
-          "description": {
-            "type": "string"
-          },
-          "static": {
-            "type": "boolean"
-          }
-        }
-      },
-      "TenantPermission": {
-        "type": "object",
-        "properties": {
-          "tenant_patterns": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "allowed_actions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "TenantsMap": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Tenant"
         }
       },
       "UpdateAuditConfigurationResponseContent": {
@@ -20046,67 +19346,6 @@
             "type": "string",
             "description": "Security Operation Message"
           }
-        }
-      },
-      "User": {
-        "type": "object",
-        "properties": {
-          "hash": {
-            "type": "string"
-          },
-          "reserved": {
-            "type": "boolean"
-          },
-          "hidden": {
-            "type": "boolean"
-          },
-          "backend_roles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "attributes": {
-            "$ref": "#/components/schemas/UserAttributes"
-          },
-          "description": {
-            "type": "string"
-          },
-          "opendistro_security_roles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "static": {
-            "type": "boolean"
-          }
-        }
-      },
-      "UserAttributes": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "UserTenants": {
-        "type": "object",
-        "properties": {
-          "global_tenant": {
-            "type": "boolean"
-          },
-          "admin_tenant": {
-            "type": "boolean"
-          },
-          "admin": {
-            "type": "boolean"
-          }
-        }
-      },
-      "UsersMap": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/User"
         }
       },
       "_common:Id": {
@@ -51757,6 +50996,767 @@
           "minimum_wire_compatibility_version",
           "number"
         ]
+      },
+      "cat._common:CatPitSegmentsRecord": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "string"
+          },
+          "shard": {
+            "type": "string"
+          },
+          "prirep": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          },
+          "segment": {
+            "type": "string"
+          },
+          "generation": {
+            "type": "string"
+          },
+          "docs.count": {
+            "type": "string"
+          },
+          "docs.deleted": {
+            "type": "string"
+          },
+          "size": {
+            "type": "string"
+          },
+          "size.memory": {
+            "type": "string"
+          },
+          "committed": {
+            "type": "string"
+          },
+          "searchable": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "compound": {
+            "type": "string"
+          }
+        }
+      },
+      "cat._common:CatSegmentReplicationRecord": {
+        "type": "object",
+        "properties": {
+          "shardId": {
+            "type": "string"
+          },
+          "target_node": {
+            "type": "string"
+          },
+          "target_host": {
+            "type": "string"
+          },
+          "checkpoints_behind": {
+            "type": "string"
+          },
+          "bytes_behind": {
+            "type": "string"
+          },
+          "current_lag": {
+            "type": "string"
+          },
+          "last_completed_lag": {
+            "type": "string"
+          },
+          "rejected_requests": {
+            "type": "string"
+          },
+          "stage": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          },
+          "files_fetched": {
+            "type": "string"
+          },
+          "files_percent": {
+            "type": "string"
+          },
+          "bytes_fetched": {
+            "type": "string"
+          },
+          "bytes_percent": {
+            "type": "string"
+          },
+          "start_time": {
+            "type": "string"
+          },
+          "stop_time": {
+            "type": "string"
+          },
+          "files": {
+            "type": "string"
+          },
+          "files_total": {
+            "type": "string"
+          },
+          "bytes": {
+            "type": "string"
+          },
+          "bytes_total": {
+            "type": "string"
+          },
+          "replicating_stage_time_taken": {
+            "type": "string"
+          },
+          "get_checkpoint_info_stage_time_taken": {
+            "type": "string"
+          },
+          "file_diff_stage_time_taken": {
+            "type": "string"
+          },
+          "get_files_stage_time_taken": {
+            "type": "string"
+          },
+          "finalize_replication_stage_time_taken": {
+            "type": "string"
+          }
+        }
+      },
+      "nodes._common:SampleType": {
+        "type": "string",
+        "description": "The type to sample.",
+        "enum": [
+          "cpu",
+          "wait",
+          "block"
+        ]
+      },
+      "security._common:AccountDetails": {
+        "type": "object",
+        "properties": {
+          "user_name": {
+            "type": "string"
+          },
+          "is_reserved": {
+            "type": "boolean"
+          },
+          "is_hidden": {
+            "type": "boolean"
+          },
+          "is_internal_user": {
+            "type": "boolean"
+          },
+          "user_requested_tenant": {
+            "type": "string"
+          },
+          "backend_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "custom_attribute_names": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tenants": {
+            "$ref": "#/components/schemas/security._common:UserTenants"
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "security._common:UserTenants": {
+        "type": "object",
+        "properties": {
+          "global_tenant": {
+            "type": "boolean"
+          },
+          "admin_tenant": {
+            "type": "boolean"
+          },
+          "admin": {
+            "type": "boolean"
+          }
+        }
+      },
+      "security._common:ChangePasswordRequestContent": {
+        "type": "object",
+        "properties": {
+          "current_password": {
+            "type": "string",
+            "description": "The current password"
+          },
+          "password": {
+            "type": "string",
+            "description": "The new password to set"
+          }
+        },
+        "required": [
+          "current_password",
+          "password"
+        ]
+      },
+      "security._common:ActionGroupsMap": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/security._common:Action_Group"
+        }
+      },
+      "security._common:Action_Group": {
+        "type": "object",
+        "properties": {
+          "reserved": {
+            "type": "boolean"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "allowed_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "type": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "static": {
+            "type": "boolean"
+          }
+        }
+      },
+      "security._common:PatchOperation": {
+        "type": "object",
+        "properties": {
+          "op": {
+            "type": "string",
+            "description": "The operation to perform. Possible values: remove,add, replace, move, copy, test."
+          },
+          "path": {
+            "type": "string",
+            "description": "The path to the resource."
+          },
+          "value": {
+            "description": "The new values used for the update."
+          }
+        },
+        "required": [
+          "op",
+          "path"
+        ]
+      },
+      "security._common:AuditConfigWithReadOnly": {
+        "type": "object",
+        "properties": {
+          "_readonly": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "config": {
+            "$ref": "#/components/schemas/security._common:AuditConfig"
+          }
+        }
+      },
+      "security._common:AuditConfig": {
+        "type": "object",
+        "properties": {
+          "compliance": {
+            "$ref": "#/components/schemas/security._common:ComplianceConfig"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "audit": {
+            "$ref": "#/components/schemas/security._common:AuditLogsConfig"
+          }
+        }
+      },
+      "security._common:ComplianceConfig": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "write_log_diffs": {
+            "type": "boolean"
+          },
+          "read_watched_fields": {},
+          "read_ignore_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "write_watched_indices": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "write_ignore_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "read_metadata_only": {
+            "type": "boolean"
+          },
+          "write_metadata_only": {
+            "type": "boolean"
+          },
+          "external_config": {
+            "type": "boolean"
+          },
+          "internal_config": {
+            "type": "boolean"
+          }
+        }
+      },
+      "security._common:AuditLogsConfig": {
+        "type": "object",
+        "properties": {
+          "ignore_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ignore_requests": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "disabled_rest_categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "disabled_transport_categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "log_request_body": {
+            "type": "boolean"
+          },
+          "resolve_indices": {
+            "type": "boolean"
+          },
+          "resolve_bulk_requests": {
+            "type": "boolean"
+          },
+          "exclude_sensitive_headers": {
+            "type": "boolean"
+          },
+          "enable_transport": {
+            "type": "boolean"
+          },
+          "enable_rest": {
+            "type": "boolean"
+          }
+        }
+      },
+      "security._common:UsersMap": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/security._common:User"
+        }
+      },
+      "security._common:User": {
+        "type": "object",
+        "properties": {
+          "hash": {
+            "type": "string"
+          },
+          "reserved": {
+            "type": "boolean"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "backend_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/security._common:UserAttributes"
+          },
+          "description": {
+            "type": "string"
+          },
+          "opendistro_security_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "static": {
+            "type": "boolean"
+          }
+        }
+      },
+      "security._common:UserAttributes": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "security._common:DistinguishedNamesMap": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/security._common:DistinguishedNames"
+        }
+      },
+      "security._common:DistinguishedNames": {
+        "type": "object",
+        "properties": {
+          "nodes_dn": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "security._common:RolesMap": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/security._common:Role"
+        }
+      },
+      "security._common:Role": {
+        "type": "object",
+        "properties": {
+          "reserved": {
+            "type": "boolean"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "cluster_permissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "index_permissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/security._common:IndexPermission"
+            }
+          },
+          "tenant_permissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/security._common:TenantPermission"
+            }
+          },
+          "static": {
+            "type": "boolean"
+          }
+        }
+      },
+      "security._common:IndexPermission": {
+        "type": "object",
+        "properties": {
+          "index_patterns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dls": {
+            "type": "string"
+          },
+          "fls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "masked_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "allowed_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "security._common:TenantPermission": {
+        "type": "object",
+        "properties": {
+          "tenant_patterns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "allowed_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "security._common:RoleMappings": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/security._common:RoleMapping"
+        }
+      },
+      "security._common:RoleMapping": {
+        "type": "object",
+        "properties": {
+          "hosts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "reserved": {
+            "type": "boolean"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "backend_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "and_backend_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "security._common:DynamicConfig": {
+        "type": "object",
+        "properties": {
+          "dynamic": {
+            "$ref": "#/components/schemas/security._common:DynamicOptions"
+          }
+        }
+      },
+      "security._common:DynamicOptions": {
+        "type": "object",
+        "properties": {
+          "filteredAliasMode": {
+            "type": "string"
+          },
+          "disableRestAuth": {
+            "type": "boolean"
+          },
+          "disableIntertransportAuth": {
+            "type": "boolean"
+          },
+          "respectRequestIndicesOptions": {
+            "type": "boolean"
+          },
+          "kibana": {},
+          "http": {},
+          "authc": {},
+          "authz": {},
+          "authFailureListeners": {},
+          "doNotFailOnForbidden": {
+            "type": "boolean"
+          },
+          "multiRolespanEnabled": {
+            "type": "boolean"
+          },
+          "hostsResolverMode": {
+            "type": "string"
+          },
+          "doNotFailOnForbiddenEmpty": {
+            "type": "boolean"
+          }
+        }
+      },
+      "security._common:CertificatesDetail": {
+        "type": "object",
+        "properties": {
+          "issuer_dn": {
+            "type": "string"
+          },
+          "subject_dn": {
+            "type": "string"
+          },
+          "san": {
+            "type": "string"
+          },
+          "not_before": {
+            "type": "string"
+          },
+          "not_after": {
+            "type": "string"
+          }
+        }
+      },
+      "security._common:TenantsMap": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/security._common:Tenant"
+        }
+      },
+      "security._common:Tenant": {
+        "type": "object",
+        "properties": {
+          "reserved": {
+            "type": "boolean"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "static": {
+            "type": "boolean"
+          }
+        }
+      },
+      "security._common:CreateTenantParams": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "remote_store._common:RemoteStoreRestoreInfo": {
+        "type": "object",
+        "properties": {
+          "snapshot": {
+            "type": "string"
+          },
+          "indices": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "shards": {
+            "$ref": "#/components/schemas/remote_store._common:RemoteStoreRestoreShardsInfo"
+          }
+        }
+      },
+      "remote_store._common:RemoteStoreRestoreShardsInfo": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "failed": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "successful": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "_core._common:DeletedPit": {
+        "type": "object",
+        "properties": {
+          "successful": {
+            "type": "boolean"
+          },
+          "pit_id": {
+            "type": "string"
+          }
+        }
+      },
+      "_core._common:PitsDetailsDeleteAll": {
+        "type": "object",
+        "properties": {
+          "successful": {
+            "type": "boolean"
+          },
+          "pit_id": {
+            "type": "string"
+          }
+        }
+      },
+      "_core._common:PitDetail": {
+        "type": "object",
+        "properties": {
+          "pit_id": {
+            "type": "string"
+          },
+          "creation_time": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "keep_alive": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "_core._common:ShardStatistics": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "successful": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "skipped": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "failed": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
       }
     },
     "securitySchemes": {
@@ -53394,7 +53394,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/CatPitSegmentsRecord"
+                "$ref": "#/components/schemas/cat._common:CatPitSegmentsRecord"
               }
             }
           }
@@ -53407,7 +53407,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/CatPitSegmentsRecord"
+                "$ref": "#/components/schemas/cat._common:CatPitSegmentsRecord"
               }
             }
           }
@@ -53446,7 +53446,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/CatSegmentReplicationRecord"
+                "$ref": "#/components/schemas/cat._common:CatSegmentReplicationRecord"
               }
             }
           }
@@ -53751,7 +53751,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/AccountDetails"
+              "$ref": "#/components/schemas/security._common:AccountDetails"
             }
           }
         }
@@ -53781,7 +53781,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ActionGroupsMap"
+              "$ref": "#/components/schemas/security._common:ActionGroupsMap"
             }
           }
         }
@@ -53831,7 +53831,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ActionGroupsMap"
+              "$ref": "#/components/schemas/security._common:ActionGroupsMap"
             }
           }
         }
@@ -53881,7 +53881,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/AuditConfigWithReadOnly"
+              "$ref": "#/components/schemas/security._common:AuditConfigWithReadOnly"
             }
           }
         }
@@ -53931,7 +53931,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/UsersMap"
+              "$ref": "#/components/schemas/security._common:UsersMap"
             }
           }
         }
@@ -53981,7 +53981,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/UsersMap"
+              "$ref": "#/components/schemas/security._common:UsersMap"
             }
           }
         }
@@ -54031,7 +54031,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/DistinguishedNamesMap"
+              "$ref": "#/components/schemas/security._common:DistinguishedNamesMap"
             }
           }
         }
@@ -54121,7 +54121,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/RolesMap"
+              "$ref": "#/components/schemas/security._common:RolesMap"
             }
           }
         }
@@ -54151,7 +54151,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/RolesMap"
+              "$ref": "#/components/schemas/security._common:RolesMap"
             }
           }
         }
@@ -54201,7 +54201,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/RoleMappings"
+              "$ref": "#/components/schemas/security._common:RoleMappings"
             }
           }
         }
@@ -54251,7 +54251,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/RoleMappings"
+              "$ref": "#/components/schemas/security._common:RoleMappings"
             }
           }
         }
@@ -54301,7 +54301,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/DynamicConfig"
+              "$ref": "#/components/schemas/security._common:DynamicConfig"
             }
           }
         }
@@ -54356,13 +54356,13 @@
                 "http_certificates_list": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/CertificatesDetail"
+                    "$ref": "#/components/schemas/security._common:CertificatesDetail"
                   }
                 },
                 "transport_certificates_list": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/CertificatesDetail"
+                    "$ref": "#/components/schemas/security._common:CertificatesDetail"
                   }
                 }
               }
@@ -54415,7 +54415,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/TenantsMap"
+              "$ref": "#/components/schemas/security._common:TenantsMap"
             }
           }
         }
@@ -54465,7 +54465,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/TenantsMap"
+              "$ref": "#/components/schemas/security._common:TenantsMap"
             }
           }
         }
@@ -54639,7 +54639,7 @@
                   "type": "boolean"
                 },
                 "remote_store": {
-                  "$ref": "#/components/schemas/RemoteStoreRestoreInfo"
+                  "$ref": "#/components/schemas/remote_store._common:RemoteStoreRestoreInfo"
                 }
               }
             },
@@ -54793,7 +54793,7 @@
                 "pits": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DeletedPit"
+                    "$ref": "#/components/schemas/_core._common:DeletedPit"
                   }
                 }
               }
@@ -54811,7 +54811,7 @@
                 "pits": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/PitsDetailsDeleteAll"
+                    "$ref": "#/components/schemas/_core._common:PitsDetailsDeleteAll"
                   }
                 }
               }
@@ -54829,7 +54829,7 @@
                 "pits": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/PitDetail"
+                    "$ref": "#/components/schemas/_core._common:PitDetail"
                   }
                 }
               }
@@ -55270,7 +55270,7 @@
                   "type": "string"
                 },
                 "_shards": {
-                  "$ref": "#/components/schemas/ShardStatistics"
+                  "$ref": "#/components/schemas/_core._common:ShardStatistics"
                 },
                 "creation_time": {
                   "type": "integer",
@@ -61515,7 +61515,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ChangePasswordRequestContent"
+              "$ref": "#/components/schemas/security._common:ChangePasswordRequestContent"
             }
           }
         },
@@ -61527,7 +61527,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PatchOperation"
+                "$ref": "#/components/schemas/security._common:PatchOperation"
               }
             }
           }
@@ -61540,7 +61540,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PatchOperation"
+                "$ref": "#/components/schemas/security._common:PatchOperation"
               }
             }
           }
@@ -61551,7 +61551,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Action_Group"
+              "$ref": "#/components/schemas/security._common:Action_Group"
             }
           }
         },
@@ -61563,7 +61563,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PatchOperation"
+                "$ref": "#/components/schemas/security._common:PatchOperation"
               }
             }
           }
@@ -61574,7 +61574,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/AuditConfig"
+              "$ref": "#/components/schemas/security._common:AuditConfig"
             }
           }
         },
@@ -61586,7 +61586,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PatchOperation"
+                "$ref": "#/components/schemas/security._common:PatchOperation"
               }
             }
           }
@@ -61599,7 +61599,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PatchOperation"
+                "$ref": "#/components/schemas/security._common:PatchOperation"
               }
             }
           }
@@ -61610,7 +61610,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/User"
+              "$ref": "#/components/schemas/security._common:User"
             }
           }
         },
@@ -61622,7 +61622,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PatchOperation"
+                "$ref": "#/components/schemas/security._common:PatchOperation"
               }
             }
           }
@@ -61633,7 +61633,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/DistinguishedNames"
+              "$ref": "#/components/schemas/security._common:DistinguishedNames"
             }
           }
         }
@@ -61644,7 +61644,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PatchOperation"
+                "$ref": "#/components/schemas/security._common:PatchOperation"
               }
             }
           }
@@ -61657,7 +61657,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PatchOperation"
+                "$ref": "#/components/schemas/security._common:PatchOperation"
               }
             }
           }
@@ -61668,7 +61668,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Role"
+              "$ref": "#/components/schemas/security._common:Role"
             }
           }
         },
@@ -61680,7 +61680,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PatchOperation"
+                "$ref": "#/components/schemas/security._common:PatchOperation"
               }
             }
           }
@@ -61693,7 +61693,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PatchOperation"
+                "$ref": "#/components/schemas/security._common:PatchOperation"
               }
             }
           }
@@ -61704,7 +61704,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/RoleMapping"
+              "$ref": "#/components/schemas/security._common:RoleMapping"
             }
           }
         },
@@ -61716,7 +61716,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PatchOperation"
+                "$ref": "#/components/schemas/security._common:PatchOperation"
               }
             }
           }
@@ -61727,7 +61727,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/DynamicConfig"
+              "$ref": "#/components/schemas/security._common:DynamicConfig"
             }
           }
         },
@@ -61739,7 +61739,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PatchOperation"
+                "$ref": "#/components/schemas/security._common:PatchOperation"
               }
             }
           }
@@ -61752,7 +61752,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/PatchOperation"
+                "$ref": "#/components/schemas/security._common:PatchOperation"
               }
             }
           }
@@ -61763,7 +61763,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/CreateTenantParams"
+              "$ref": "#/components/schemas/security._common:CreateTenantParams"
             }
           }
         },
