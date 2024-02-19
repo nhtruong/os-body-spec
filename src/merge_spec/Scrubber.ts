@@ -1,5 +1,8 @@
 import fs from 'fs';
-import {resolve} from '../helpers';
+import {extractNamespace, resolve} from '../helpers';
+import _ from "lodash";
+import {OperationSpec} from "../types";
+import {OpenAPIV3} from "openapi-types";
 
 export default class Scrubber {
     doc: Record<string, any>;
@@ -10,6 +13,7 @@ export default class Scrubber {
 
     constructor(file: string) {
         this.doc = JSON.parse(fs.readFileSync(file).toString());
+        global.spec_root = this.doc;
         this.usedRefs = {
             schemas: new Set(),
             parameters: new Set(),
@@ -21,9 +25,11 @@ export default class Scrubber {
     scrub(output: string): void {
         this.correct_duration_schema();
         this.correct_schema_refs(this.doc);
-        this.remove_unused_refs();
         this.remove_elastic_urls(this.doc);
         this.replace_es_with_os(this.doc);
+        this.correct_body_refs();
+        this.correct_schema_namespaces();
+        this.remove_unused_refs();
 
        fs.writeFileSync(output, JSON.stringify(this.doc, null, 2));
     }
@@ -106,5 +112,110 @@ export default class Scrubber {
         for(const key in target) {
             this.#find_refs(target[key]);
         }
+    }
+
+    correct_body_refs(): void {
+        this.#deref_bodies(this.doc.paths);
+        _.values(this.doc.paths).flatMap(_.values).forEach((op: OperationSpec) => { this.#move_bodies(op); });
+    }
+
+    correct_schema_namespaces(): void {
+        const schemas = this.doc.components.schemas;
+        Object.entries(schemas).forEach(([k, v]) => {
+            delete schemas[k];
+            schemas[this.#new_schema_name(k)] = v;
+        });
+        this.#rename_schema_refs(this.doc);
+
+        this.seenRefs = new Set();
+        this.#determine_schema_namespace(this.doc, undefined);
+        for(const [name, namespace] of Object.entries(this.schemaNamespaces)) {
+            const schema = schemas[name];
+            delete schemas[name];
+            schemas[`${namespace}._common:${name}`] = schema;
+        }
+        this.#apply_schema_namespace_refs(this.doc);
+    }
+
+    #deref_bodies(obj: Record<string, any>): void {
+        const app_json = obj['application/json'];
+        const ref = app_json?.schema?.$ref;
+        if(ref) {
+            if(ref.endsWith('ResponseContent') || ref.endsWith('InputPayload') || ref.endsWith('OutputPayload') || ref.endsWith('BodyParams')) {
+                app_json.schema = resolve(app_json.schema);
+            }
+            return;
+        }
+
+        for(const key in obj) {
+            if(typeof obj[key] === 'object') this.#deref_bodies(obj[key]);
+        }
+    }
+
+    #move_bodies(op: OperationSpec): void {
+        const requestBody = op.requestBody as OpenAPIV3.RequestBodyObject;
+        const requestContent = requestBody?.content;
+        if (requestContent) {
+            this.doc.components.requestBodies[op['x-operation-group']] = requestBody;
+            op.requestBody = {$ref: `#/components/requestBodies/${op['x-operation-group']}`};
+        }
+
+        const response = op.responses['200'] as OpenAPIV3.ResponseObject;
+        const responseContent = response?.content;
+        if (responseContent) {
+            this.doc.components.responses[op['x-operation-group'] + '#200'] = response;
+            op.responses['200'] = {$ref: `#/components/responses/${op['x-operation-group']}#200`};
+        }
+    }
+
+    #determine_schema_namespace(obj: Record<string, any>, namespace: string | undefined): void {
+        if(obj['x-operation-group']) namespace = extractNamespace(obj['x-operation-group']);
+        const ref = obj.$ref;
+        if(ref && this.seenRefs.has(ref)) return;
+        this.seenRefs.add(ref);
+
+        if(ref?.startsWith('#/components/schemas/') && !ref.includes(':')) {
+            const name = ref.split('#/components/schemas/')[1];
+            this.schemaNamespaces[name] = namespace!;
+        }
+
+        obj = resolve(obj)!;
+
+        for(const key in obj) {
+            if(typeof obj[key] === 'object') this.#determine_schema_namespace(obj[key], namespace);
+        }
+    }
+
+    #rename_schema_refs(obj: Record<string, any>): void {
+        const ref = obj.$ref;
+        if(ref?.startsWith('#/components/schemas/') && ref.includes(':')) {
+            const name = ref.split('#/components/schemas/')[1];
+            obj.$ref = '#/components/schemas/' + this.#new_schema_name(name);
+        }
+
+        for(const key in obj) {
+            if(typeof obj[key] === 'object') this.#rename_schema_refs(obj[key]);
+        }
+    }
+    #apply_schema_namespace_refs(obj: Record<string, any>) {
+        const ref = obj.$ref;
+        if(ref?.startsWith('#/components/schemas/') && !ref.includes(':')) {
+            const name = ref.split('#/components/schemas/')[1];
+            obj.$ref = '#/components/schemas/' + this.schemaNamespaces[name] + '._common:' + name;
+        }
+
+        for(const key in obj) {
+            if(typeof obj[key] === 'object') this.#apply_schema_namespace_refs(obj[key]);
+        }
+    };
+
+    #new_schema_name(name: string): string {
+        const [category, type] = name.split(':');
+        const parts = category.split('.');
+        if(['_types', '_spec_utils'].includes(category)) return `_common:${type}`;
+        if(parts[0] === '_global') return `_core.${parts[1]}:${type}`;
+        if(parts[0] === '_types') return `_common.${parts[1]}:${type}`;
+        if(parts[1] === '_types') return `${parts[0]}._common:${type}`;
+        return name;
     }
 }
