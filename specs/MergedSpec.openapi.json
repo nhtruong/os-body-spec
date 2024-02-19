@@ -18718,636 +18718,6 @@
   },
   "components": {
     "schemas": {
-      "CatAllPitSegmentsOutputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/cat._common:CatPitSegmentsRecord"
-        }
-      },
-      "CatPitSegmentsOutputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/cat._common:CatPitSegmentsRecord"
-        }
-      },
-      "CatPitSegments_BodyParams": {
-        "type": "object",
-        "properties": {
-          "pit_id": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "required": [
-          "pit_id"
-        ]
-      },
-      "CatSegmentReplicationOutputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/cat._common:CatSegmentReplicationRecord"
-        }
-      },
-      "CatSegmentReplication_WithIndexOutputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/cat._common:CatSegmentReplicationRecord"
-        }
-      },
-      "ChangePasswordResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "CreateActionGroupResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "CreatePitResponseContent": {
-        "type": "object",
-        "properties": {
-          "pit_id": {
-            "type": "string"
-          },
-          "_shards": {
-            "$ref": "#/components/schemas/_core._common:ShardStatistics"
-          },
-          "creation_time": {
-            "type": "integer",
-            "format": "int64"
-          }
-        }
-      },
-      "CreateRoleMappingResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "CreateRoleResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "CreateTenantResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "CreateUserResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "DeleteActionGroupResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "DeleteAllPitsResponseContent": {
-        "type": "object",
-        "properties": {
-          "pits": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/_core._common:PitsDetailsDeleteAll"
-            }
-          }
-        }
-      },
-      "DeleteDistinguishedNamesResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "DeletePitResponseContent": {
-        "type": "object",
-        "properties": {
-          "pits": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/_core._common:DeletedPit"
-            }
-          }
-        }
-      },
-      "DeletePit_BodyParams": {
-        "type": "object",
-        "description": "The point-in-time ids to be deleted",
-        "properties": {
-          "pit_id": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "required": [
-          "pit_id"
-        ]
-      },
-      "DeleteRoleMappingResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "DeleteRoleResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "DeleteTenantResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "DeleteUserResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "FlushCacheResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "GetAllPitsResponseContent": {
-        "type": "object",
-        "properties": {
-          "pits": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/_core._common:PitDetail"
-            }
-          }
-        }
-      },
-      "GetCertificatesResponseContent": {
-        "type": "object",
-        "properties": {
-          "http_certificates_list": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/security._common:CertificatesDetail"
-            }
-          },
-          "transport_certificates_list": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/security._common:CertificatesDetail"
-            }
-          }
-        }
-      },
-      "IndicesCreateDataStream_BodyParams": {
-        "type": "object",
-        "description": "The data stream definition"
-      },
-      "PatchActionGroupInputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/security._common:PatchOperation"
-        }
-      },
-      "PatchActionGroupResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "PatchActionGroupsInputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/security._common:PatchOperation"
-        }
-      },
-      "PatchActionGroupsResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "PatchAuditConfigurationInputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/security._common:PatchOperation"
-        }
-      },
-      "PatchConfigurationInputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/security._common:PatchOperation"
-        }
-      },
-      "PatchConfigurationResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "PatchDistinguishedNamesInputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/security._common:PatchOperation"
-        }
-      },
-      "PatchDistinguishedNamesResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "PatchRoleInputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/security._common:PatchOperation"
-        }
-      },
-      "PatchRoleMappingInputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/security._common:PatchOperation"
-        }
-      },
-      "PatchRoleMappingResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "PatchRoleMappingsInputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/security._common:PatchOperation"
-        }
-      },
-      "PatchRoleMappingsResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "PatchRoleResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "PatchRolesInputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/security._common:PatchOperation"
-        }
-      },
-      "PatchRolesResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "PatchTenantInputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/security._common:PatchOperation"
-        }
-      },
-      "PatchTenantResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "PatchTenantsInputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/security._common:PatchOperation"
-        }
-      },
-      "PatchTenantsResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "PatchUserInputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/security._common:PatchOperation"
-        }
-      },
-      "PatchUserResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "PatchUsersInputPayload": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/security._common:PatchOperation"
-        }
-      },
-      "PatchUsersResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "ReloadHttpCertificatesResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "ReloadTransportCertificatesResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "RemoteStoreRestoreResponseContent": {
-        "type": "object",
-        "properties": {
-          "accepted": {
-            "type": "boolean"
-          },
-          "remote_store": {
-            "$ref": "#/components/schemas/remote_store._common:RemoteStoreRestoreInfo"
-          }
-        }
-      },
-      "RemoteStoreRestore_BodyParams": {
-        "type": "object",
-        "description": "Comma-separated list of index IDs",
-        "properties": {
-          "indices": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "required": [
-          "indices"
-        ]
-      },
-      "SecurityHealthResponseContent": {
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string"
-          },
-          "mode": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          }
-        }
-      },
-      "UpdateAuditConfigurationResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "UpdateConfigurationResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
-      "UpdateDistinguishedNamesResponseContent": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Security Operation Status"
-          },
-          "message": {
-            "type": "string",
-            "description": "Security Operation Message"
-          }
-        }
-      },
       "_common:Id": {
         "type": "string"
       },
@@ -50425,6 +49795,79 @@
           }
         }
       },
+      "security._common:RoleMapping": {
+        "type": "object",
+        "properties": {
+          "hosts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "reserved": {
+            "type": "boolean"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "backend_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "and_backend_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "security._common:User": {
+        "type": "object",
+        "properties": {
+          "hash": {
+            "type": "string"
+          },
+          "reserved": {
+            "type": "boolean"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "backend_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/security._common:UserAttributes"
+          },
+          "description": {
+            "type": "string"
+          },
+          "opendistro_security_roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "static": {
+            "type": "boolean"
+          }
+        }
+      },
       "snapshot.cleanup_repository:CleanupRepositoryResults": {
         "type": "object",
         "properties": {
@@ -51380,41 +50823,6 @@
           "$ref": "#/components/schemas/security._common:User"
         }
       },
-      "security._common:User": {
-        "type": "object",
-        "properties": {
-          "hash": {
-            "type": "string"
-          },
-          "reserved": {
-            "type": "boolean"
-          },
-          "hidden": {
-            "type": "boolean"
-          },
-          "backend_roles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "attributes": {
-            "$ref": "#/components/schemas/security._common:UserAttributes"
-          },
-          "description": {
-            "type": "string"
-          },
-          "opendistro_security_roles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "static": {
-            "type": "boolean"
-          }
-        }
-      },
       "security._common:UserAttributes": {
         "type": "object",
         "additionalProperties": {
@@ -51532,44 +50940,6 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/security._common:RoleMapping"
-        }
-      },
-      "security._common:RoleMapping": {
-        "type": "object",
-        "properties": {
-          "hosts": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "users": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "reserved": {
-            "type": "boolean"
-          },
-          "hidden": {
-            "type": "boolean"
-          },
-          "backend_roles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "and_backend_roles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "description": {
-            "type": "string"
-          }
         }
       },
       "security._common:DynamicConfig": {
@@ -53146,6 +52516,56 @@
           }
         }
       },
+      "security.change_password#200": {
+        "description": "ChangePassword 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_role#200": {
+        "description": "GetRole 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/security._common:RolesMap"
+            }
+          }
+        }
+      },
+      "security.get_role_mapping#200": {
+        "description": "GetRoleMapping 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/security._common:RoleMappings"
+            }
+          }
+        }
+      },
+      "security.get_user#200": {
+        "description": "GetUser 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/security._common:UsersMap"
+            }
+          }
+        }
+      },
       "snapshot.create#200": {
         "description": "",
         "content": {
@@ -53756,26 +53176,6 @@
           }
         }
       },
-      "security.change_password#200": {
-        "description": "ChangePassword 200 response",
-        "content": {
-          "application/json": {
-            "schema": {
-              "type": "object",
-              "properties": {
-                "status": {
-                  "type": "string",
-                  "description": "Security Operation Status"
-                },
-                "message": {
-                  "type": "string",
-                  "description": "Security Operation Message"
-                }
-              }
-            }
-          }
-        }
-      },
       "security.get_action_groups#200": {
         "description": "GetActionGroups 200 response",
         "content": {
@@ -53976,16 +53376,6 @@
           }
         }
       },
-      "security.get_user#200": {
-        "description": "GetUser 200 response",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/security._common:UsersMap"
-            }
-          }
-        }
-      },
       "security.patch_user#200": {
         "description": "PatchUser 200 response",
         "content": {
@@ -54146,16 +53536,6 @@
           }
         }
       },
-      "security.get_role#200": {
-        "description": "GetRole 200 response",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/security._common:RolesMap"
-            }
-          }
-        }
-      },
       "security.patch_role#200": {
         "description": "PatchRole 200 response",
         "content": {
@@ -54242,16 +53622,6 @@
                   "description": "Security Operation Message"
                 }
               }
-            }
-          }
-        }
-      },
-      "security.get_role_mapping#200": {
-        "description": "GetRoleMapping 200 response",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/security._common:RoleMappings"
             }
           }
         }
@@ -61249,6 +60619,16 @@
         },
         "required": true
       },
+      "security.change_password": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/security._common:ChangePasswordRequestContent"
+            }
+          }
+        },
+        "required": true
+      },
       "snapshot.create": {
         "content": {
           "application/json": {
@@ -61506,16 +60886,6 @@
                 }
               },
               "description": "The ingest definition"
-            }
-          }
-        },
-        "required": true
-      },
-      "security.change_password": {
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/security._common:ChangePasswordRequestContent"
             }
           }
         },
