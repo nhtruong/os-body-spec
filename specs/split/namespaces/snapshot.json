@@ -128,14 +128,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/_common.json#/components/schemas/AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/snapshot.delete_repository#200"
           }
         },
         "x-operation-group": "snapshot.delete_repository",
@@ -305,22 +298,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "results": {
-                      "$ref": "../schemas/snapshot.cleanup_repository.json#/components/schemas/CleanupRepositoryResults"
-                    }
-                  },
-                  "required": [
-                    "results"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/snapshot.cleanup_repository#200"
           }
         },
         "x-operation-group": "snapshot.cleanup_repository",
@@ -414,25 +392,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "nodes": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "$ref": "../schemas/snapshot.verify_repository.json#/components/schemas/CompactNodeInfo"
-                      }
-                    }
-                  },
-                  "required": [
-                    "nodes"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/snapshot.verify_repository#200"
           }
         },
         "x-operation-group": "snapshot.verify_repository",
@@ -494,14 +454,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/_common.json#/components/schemas/AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/snapshot.delete#200"
           }
         },
         "x-operation-group": "snapshot.delete",
@@ -581,40 +534,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "responses": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "../schemas/snapshot.get.json#/components/schemas/SnapshotResponseItem"
-                      }
-                    },
-                    "snapshots": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "../schemas/snapshot._common.json#/components/schemas/SnapshotInfo"
-                      }
-                    },
-                    "total": {
-                      "description": "The total number of snapshots that match the request when ignoring size limit or after query parameter.",
-                      "type": "number"
-                    },
-                    "remaining": {
-                      "description": "The number of remaining snapshots that were not returned due to size limits and that can be fetched by additional requests using the next field value.",
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "total",
-                    "remaining"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/snapshot.get#200"
           }
         },
         "x-operation-group": "snapshot.get",
@@ -708,23 +628,7 @@
         },
         "operationId": "SnapshotClone",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "indices": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "indices"
-                ],
-                "description": "The snapshot clone definition"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/snapshot.clone"
         },
         "parameters": [
           {
@@ -784,14 +688,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/_common.json#/components/schemas/AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/snapshot.clone#200"
           }
         },
         "x-operation-group": "snapshot.clone",
@@ -807,52 +704,7 @@
         },
         "operationId": "SnapshotRestore",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "feature_states": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "ignore_index_settings": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "ignore_unavailable": {
-                    "type": "boolean"
-                  },
-                  "include_aliases": {
-                    "type": "boolean"
-                  },
-                  "include_global_state": {
-                    "type": "boolean"
-                  },
-                  "index_settings": {
-                    "$ref": "../schemas/indices._common.json#/components/schemas/IndexSettings"
-                  },
-                  "indices": {
-                    "$ref": "../schemas/_common.json#/components/schemas/Indices"
-                  },
-                  "partial": {
-                    "type": "boolean"
-                  },
-                  "rename_pattern": {
-                    "type": "string"
-                  },
-                  "rename_replacement": {
-                    "type": "string"
-                  }
-                },
-                "description": "Details of what to restore"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/snapshot.restore"
         },
         "parameters": [
           {
@@ -911,22 +763,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "snapshot": {
-                      "$ref": "../schemas/snapshot.restore.json#/components/schemas/SnapshotRestore"
-                    }
-                  },
-                  "required": [
-                    "snapshot"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/snapshot.restore#200"
           }
         },
         "x-operation-group": "snapshot.restore",
@@ -1034,6 +871,73 @@
           }
         },
         "required": true
+      },
+      "snapshot.clone": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "indices": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "indices"
+              ],
+              "description": "The snapshot clone definition"
+            }
+          }
+        },
+        "required": true
+      },
+      "snapshot.restore": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "feature_states": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "ignore_index_settings": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "ignore_unavailable": {
+                  "type": "boolean"
+                },
+                "include_aliases": {
+                  "type": "boolean"
+                },
+                "include_global_state": {
+                  "type": "boolean"
+                },
+                "index_settings": {
+                  "$ref": "../schemas/indices._common.json#/components/schemas/IndexSettings"
+                },
+                "indices": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Indices"
+                },
+                "partial": {
+                  "type": "boolean"
+                },
+                "rename_pattern": {
+                  "type": "string"
+                },
+                "rename_replacement": {
+                  "type": "string"
+                }
+              },
+              "description": "Details of what to restore"
+            }
+          }
+        }
       }
     },
     "responses": {
@@ -1095,6 +999,129 @@
               },
               "required": [
                 "snapshots"
+              ]
+            }
+          }
+        }
+      },
+      "snapshot.delete_repository#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/_common.json#/components/schemas/AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "snapshot.cleanup_repository#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "results": {
+                  "$ref": "../schemas/snapshot.cleanup_repository.json#/components/schemas/CleanupRepositoryResults"
+                }
+              },
+              "required": [
+                "results"
+              ]
+            }
+          }
+        }
+      },
+      "snapshot.verify_repository#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nodes": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "../schemas/snapshot.verify_repository.json#/components/schemas/CompactNodeInfo"
+                  }
+                }
+              },
+              "required": [
+                "nodes"
+              ]
+            }
+          }
+        }
+      },
+      "snapshot.delete#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/_common.json#/components/schemas/AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "snapshot.get#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "responses": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/snapshot.get.json#/components/schemas/SnapshotResponseItem"
+                  }
+                },
+                "snapshots": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/snapshot._common.json#/components/schemas/SnapshotInfo"
+                  }
+                },
+                "total": {
+                  "description": "The total number of snapshots that match the request when ignoring size limit or after query parameter.",
+                  "type": "number"
+                },
+                "remaining": {
+                  "description": "The number of remaining snapshots that were not returned due to size limits and that can be fetched by additional requests using the next field value.",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "total",
+                "remaining"
+              ]
+            }
+          }
+        }
+      },
+      "snapshot.clone#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/_common.json#/components/schemas/AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "snapshot.restore#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "snapshot": {
+                  "$ref": "../schemas/snapshot.restore.json#/components/schemas/SnapshotRestore"
+                }
+              },
+              "required": [
+                "snapshot"
               ]
             }
           }

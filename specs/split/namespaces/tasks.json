@@ -102,14 +102,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/tasks._common.json#/components/schemas/TaskListResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/tasks.list#200"
           }
         },
         "x-operation-group": "tasks.list",
@@ -190,32 +183,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "completed": {
-                      "type": "boolean"
-                    },
-                    "task": {
-                      "$ref": "../schemas/tasks._common.json#/components/schemas/TaskInfo"
-                    },
-                    "response": {
-                      "type": "object"
-                    },
-                    "error": {
-                      "$ref": "../schemas/_common.json#/components/schemas/ErrorCause"
-                    }
-                  },
-                  "required": [
-                    "completed",
-                    "task"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/tasks.get#200"
           }
         },
         "x-operation-group": "tasks.get",
@@ -262,6 +230,44 @@
           "application/json": {
             "schema": {
               "$ref": "../schemas/tasks._common.json#/components/schemas/TaskListResponseBase"
+            }
+          }
+        }
+      },
+      "tasks.list#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/tasks._common.json#/components/schemas/TaskListResponseBase"
+            }
+          }
+        }
+      },
+      "tasks.get#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "completed": {
+                  "type": "boolean"
+                },
+                "task": {
+                  "$ref": "../schemas/tasks._common.json#/components/schemas/TaskInfo"
+                },
+                "response": {
+                  "type": "object"
+                },
+                "error": {
+                  "$ref": "../schemas/_common.json#/components/schemas/ErrorCause"
+                }
+              },
+              "required": [
+                "completed",
+                "task"
+              ]
             }
           }
         }

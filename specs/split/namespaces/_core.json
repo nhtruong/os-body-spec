@@ -16,38 +16,7 @@
         "operationId": "Info",
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "cluster_name": {
-                      "$ref": "../schemas/_common.json#/components/schemas/Name"
-                    },
-                    "cluster_uuid": {
-                      "$ref": "../schemas/_common.json#/components/schemas/Uuid"
-                    },
-                    "name": {
-                      "$ref": "../schemas/_common.json#/components/schemas/Name"
-                    },
-                    "tagline": {
-                      "type": "string"
-                    },
-                    "version": {
-                      "$ref": "../schemas/_common.json#/components/schemas/OpensearchVersionInfo"
-                    }
-                  },
-                  "required": [
-                    "cluster_name",
-                    "cluster_uuid",
-                    "name",
-                    "tagline",
-                    "version"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/info#200"
           }
         },
         "x-operation-group": "info",
@@ -63,10 +32,7 @@
         "operationId": "Ping",
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/ping#200"
           }
         },
         "x-operation-group": "ping",
@@ -339,14 +305,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/tasks._common.json#/components/schemas/TaskListResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/delete_by_query_rethrottle#200"
           }
         },
         "x-operation-group": "delete_by_query_rethrottle",
@@ -836,40 +795,7 @@
         },
         "operationId": "Reindex",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "conflicts": {
-                    "$ref": "../schemas/_common.json#/components/schemas/Conflicts"
-                  },
-                  "dest": {
-                    "$ref": "../schemas/_core.reindex.json#/components/schemas/Destination"
-                  },
-                  "max_docs": {
-                    "description": "The maximum number of documents to reindex.",
-                    "type": "number"
-                  },
-                  "script": {
-                    "$ref": "../schemas/_common.json#/components/schemas/Script"
-                  },
-                  "size": {
-                    "type": "number"
-                  },
-                  "source": {
-                    "$ref": "../schemas/_core.reindex.json#/components/schemas/Source"
-                  }
-                },
-                "required": [
-                  "dest",
-                  "source"
-                ],
-                "description": "The search definition using the Query DSL and the prototype for the index request."
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/reindex"
         },
         "parameters": [
           {
@@ -955,67 +881,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "batches": {
-                      "type": "number"
-                    },
-                    "created": {
-                      "type": "number"
-                    },
-                    "deleted": {
-                      "type": "number"
-                    },
-                    "failures": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "../schemas/_common.json#/components/schemas/BulkIndexByScrollFailure"
-                      }
-                    },
-                    "noops": {
-                      "type": "number"
-                    },
-                    "retries": {
-                      "$ref": "../schemas/_common.json#/components/schemas/Retries"
-                    },
-                    "requests_per_second": {
-                      "type": "number"
-                    },
-                    "slice_id": {
-                      "type": "number"
-                    },
-                    "task": {
-                      "$ref": "../schemas/_common.json#/components/schemas/TaskId"
-                    },
-                    "throttled_millis": {
-                      "$ref": "../schemas/_common.json#/components/schemas/EpochTimeUnitMillis"
-                    },
-                    "throttled_until_millis": {
-                      "$ref": "../schemas/_common.json#/components/schemas/EpochTimeUnitMillis"
-                    },
-                    "timed_out": {
-                      "type": "boolean"
-                    },
-                    "took": {
-                      "$ref": "../schemas/_common.json#/components/schemas/DurationValueUnitMillis"
-                    },
-                    "total": {
-                      "type": "number"
-                    },
-                    "updated": {
-                      "type": "number"
-                    },
-                    "version_conflicts": {
-                      "type": "number"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/reindex#200"
           }
         },
         "x-operation-group": "reindex",
@@ -1055,25 +921,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "nodes": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "$ref": "../schemas/_core.reindex_rethrottle.json#/components/schemas/ReindexNode"
-                      }
-                    }
-                  },
-                  "required": [
-                    "nodes"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/reindex_rethrottle#200"
           }
         },
         "x-operation-group": "reindex_rethrottle",
@@ -1166,25 +1014,7 @@
         "operationId": "GetScriptContext",
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "contexts": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "../schemas/_core.get_script_context.json#/components/schemas/Context"
-                      }
-                    }
-                  },
-                  "required": [
-                    "contexts"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/get_script_context#200"
           }
         },
         "x-operation-group": "get_script_context",
@@ -1202,32 +1032,7 @@
         "operationId": "GetScriptLanguages",
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "language_contexts": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "../schemas/_core.get_script_languages.json#/components/schemas/LanguageContext"
-                      }
-                    },
-                    "types_allowed": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "required": [
-                    "language_contexts",
-                    "types_allowed"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/get_script_languages#200"
           }
         },
         "x-operation-group": "get_script_languages",
@@ -1325,14 +1130,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/_common.json#/components/schemas/AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/delete_script#200"
           }
         },
         "x-operation-group": "delete_script",
@@ -1381,29 +1179,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "_id": {
-                      "$ref": "../schemas/_common.json#/components/schemas/Id"
-                    },
-                    "found": {
-                      "type": "boolean"
-                    },
-                    "script": {
-                      "$ref": "../schemas/_common.json#/components/schemas/StoredScript"
-                    }
-                  },
-                  "required": [
-                    "_id",
-                    "found"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/get_script#200"
           }
         },
         "x-operation-group": "get_script",
@@ -1875,24 +1651,11 @@
         },
         "operationId": "DeletePit",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "../schemas/DeletePit_BodyParams.json#/components/schemas/undefined"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/delete_pit"
         },
         "responses": {
           "200": {
-            "description": "DeletePit 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/DeletePitResponseContent.json#/components/schemas/undefined"
-                }
-              }
-            }
+            "$ref": "#/components/responses/delete_pit#200"
           }
         },
         "x-operation-group": "delete_pit",
@@ -1909,14 +1672,7 @@
         "operationId": "DeleteAllPits",
         "responses": {
           "200": {
-            "description": "DeleteAllPits 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/DeleteAllPitsResponseContent.json#/components/schemas/undefined"
-                }
-              }
-            }
+            "$ref": "#/components/responses/delete_all_pits#200"
           }
         },
         "x-operation-group": "delete_all_pits",
@@ -1931,14 +1687,7 @@
         "operationId": "GetAllPits",
         "responses": {
           "200": {
-            "description": "GetAllPits 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/GetAllPitsResponseContent.json#/components/schemas/undefined"
-                }
-              }
-            }
+            "$ref": "#/components/responses/get_all_pits#200"
           }
         },
         "x-operation-group": "get_all_pits",
@@ -2323,25 +2072,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "nodes": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "$ref": "../schemas/_core.update_by_query_rethrottle.json#/components/schemas/UpdateByQueryRethrottleNode"
-                      }
-                    }
-                  },
-                  "required": [
-                    "nodes"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/update_by_query_rethrottle#200"
           }
         },
         "x-operation-group": "update_by_query_rethrottle",
@@ -2685,27 +2416,7 @@
         },
         "operationId": "DeleteByQuery",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "max_docs": {
-                    "description": "The maximum number of documents to delete.",
-                    "type": "number"
-                  },
-                  "query": {
-                    "$ref": "../schemas/_common.query_dsl.json#/components/schemas/QueryContainer"
-                  },
-                  "slice": {
-                    "$ref": "../schemas/_common.json#/components/schemas/SlicedScroll"
-                  }
-                },
-                "description": "The search definition using the Query DSL"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/delete_by_query"
         },
         "parameters": [
           {
@@ -3070,67 +2781,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "batches": {
-                      "type": "number"
-                    },
-                    "deleted": {
-                      "type": "number"
-                    },
-                    "failures": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "../schemas/_common.json#/components/schemas/BulkIndexByScrollFailure"
-                      }
-                    },
-                    "noops": {
-                      "type": "number"
-                    },
-                    "requests_per_second": {
-                      "type": "number"
-                    },
-                    "retries": {
-                      "$ref": "../schemas/_common.json#/components/schemas/Retries"
-                    },
-                    "slice_id": {
-                      "type": "number"
-                    },
-                    "task": {
-                      "$ref": "../schemas/_common.json#/components/schemas/TaskId"
-                    },
-                    "throttled": {
-                      "$ref": "../schemas/_common.json#/components/schemas/Duration"
-                    },
-                    "throttled_millis": {
-                      "$ref": "../schemas/_common.json#/components/schemas/DurationValueUnitMillis"
-                    },
-                    "throttled_until": {
-                      "$ref": "../schemas/_common.json#/components/schemas/Duration"
-                    },
-                    "throttled_until_millis": {
-                      "$ref": "../schemas/_common.json#/components/schemas/DurationValueUnitMillis"
-                    },
-                    "timed_out": {
-                      "type": "boolean"
-                    },
-                    "took": {
-                      "$ref": "../schemas/_common.json#/components/schemas/DurationValueUnitMillis"
-                    },
-                    "total": {
-                      "type": "number"
-                    },
-                    "version_conflicts": {
-                      "type": "number"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/delete_by_query#200"
           }
         },
         "x-operation-group": "delete_by_query",
@@ -3309,14 +2960,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/_common.json#/components/schemas/WriteResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/delete#200"
           }
         },
         "x-operation-group": "delete",
@@ -3455,14 +3099,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/_core.get.json#/components/schemas/GetResult"
-                }
-              }
-            }
+            "$ref": "#/components/responses/get#200"
           }
         },
         "x-operation-group": "get",
@@ -3601,10 +3238,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/exists#200"
           }
         },
         "x-operation-group": "exists",
@@ -4712,14 +4346,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CreatePit 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/CreatePitResponseContent.json#/components/schemas/undefined"
-                }
-              }
-            }
+            "$ref": "#/components/responses/create_pit#200"
           }
         },
         "x-operation-group": "create_pit",
@@ -5038,14 +4665,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
+            "$ref": "#/components/responses/get_source#200"
           }
         },
         "x-operation-group": "get_source",
@@ -5174,10 +4794,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/exists_source#200"
           }
         },
         "x-operation-group": "exists_source",
@@ -5415,43 +5032,7 @@
         },
         "operationId": "Update",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "detect_noop": {
-                    "description": "Set to false to disable setting 'result' in the response\nto 'noop' if no change to the document occurred.",
-                    "type": "boolean"
-                  },
-                  "doc": {
-                    "description": "A partial update to an existing document.",
-                    "type": "object"
-                  },
-                  "doc_as_upsert": {
-                    "description": "Set to true to use the contents of 'doc' as the value of 'upsert'",
-                    "type": "boolean"
-                  },
-                  "script": {
-                    "$ref": "../schemas/_common.json#/components/schemas/Script"
-                  },
-                  "scripted_upsert": {
-                    "description": "Set to true to execute the script whether or not the document exists.",
-                    "type": "boolean"
-                  },
-                  "_source": {
-                    "$ref": "../schemas/_core.search.json#/components/schemas/SourceConfig"
-                  },
-                  "upsert": {
-                    "description": "If the document does not already exist, the contents of 'upsert' are inserted as a\nnew document. If the document exists, the 'script' is executed.",
-                    "type": "object"
-                  }
-                },
-                "description": "The request definition requires either `script` or partial `doc`"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/update"
         },
         "parameters": [
           {
@@ -5599,14 +5180,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/_core.update.json#/components/schemas/UpdateWriteResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/update#200"
           }
         },
         "x-operation-group": "update",
@@ -5622,32 +5196,7 @@
         },
         "operationId": "UpdateByQuery",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "max_docs": {
-                    "description": "The maximum number of documents to update.",
-                    "type": "number"
-                  },
-                  "query": {
-                    "$ref": "../schemas/_common.query_dsl.json#/components/schemas/QueryContainer"
-                  },
-                  "script": {
-                    "$ref": "../schemas/_common.json#/components/schemas/Script"
-                  },
-                  "slice": {
-                    "$ref": "../schemas/_common.json#/components/schemas/SlicedScroll"
-                  },
-                  "conflicts": {
-                    "$ref": "../schemas/_common.json#/components/schemas/Conflicts"
-                  }
-                },
-                "description": "The search definition using the Query DSL"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/update_by_query"
         },
         "parameters": [
           {
@@ -6021,67 +5570,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "batches": {
-                      "type": "number"
-                    },
-                    "failures": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "../schemas/_common.json#/components/schemas/BulkIndexByScrollFailure"
-                      }
-                    },
-                    "noops": {
-                      "type": "number"
-                    },
-                    "deleted": {
-                      "type": "number"
-                    },
-                    "requests_per_second": {
-                      "type": "number"
-                    },
-                    "retries": {
-                      "$ref": "../schemas/_common.json#/components/schemas/Retries"
-                    },
-                    "task": {
-                      "$ref": "../schemas/_common.json#/components/schemas/TaskId"
-                    },
-                    "timed_out": {
-                      "type": "boolean"
-                    },
-                    "took": {
-                      "$ref": "../schemas/_common.json#/components/schemas/DurationValueUnitMillis"
-                    },
-                    "total": {
-                      "type": "number"
-                    },
-                    "updated": {
-                      "type": "number"
-                    },
-                    "version_conflicts": {
-                      "type": "number"
-                    },
-                    "throttled": {
-                      "$ref": "../schemas/_common.json#/components/schemas/Duration"
-                    },
-                    "throttled_millis": {
-                      "$ref": "../schemas/_common.json#/components/schemas/DurationValueUnitMillis"
-                    },
-                    "throttled_until": {
-                      "$ref": "../schemas/_common.json#/components/schemas/Duration"
-                    },
-                    "throttled_until_millis": {
-                      "$ref": "../schemas/_common.json#/components/schemas/DurationValueUnitMillis"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/update_by_query#200"
           }
         },
         "x-operation-group": "update_by_query",
@@ -6631,6 +6120,153 @@
             }
           }
         }
+      },
+      "reindex": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "conflicts": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Conflicts"
+                },
+                "dest": {
+                  "$ref": "../schemas/_core.reindex.json#/components/schemas/Destination"
+                },
+                "max_docs": {
+                  "description": "The maximum number of documents to reindex.",
+                  "type": "number"
+                },
+                "script": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Script"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "source": {
+                  "$ref": "../schemas/_core.reindex.json#/components/schemas/Source"
+                }
+              },
+              "required": [
+                "dest",
+                "source"
+              ],
+              "description": "The search definition using the Query DSL and the prototype for the index request."
+            }
+          }
+        },
+        "required": true
+      },
+      "delete_pit": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "description": "The point-in-time ids to be deleted",
+              "properties": {
+                "pit_id": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "pit_id"
+              ]
+            }
+          }
+        }
+      },
+      "delete_by_query": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "max_docs": {
+                  "description": "The maximum number of documents to delete.",
+                  "type": "number"
+                },
+                "query": {
+                  "$ref": "../schemas/_common.query_dsl.json#/components/schemas/QueryContainer"
+                },
+                "slice": {
+                  "$ref": "../schemas/_common.json#/components/schemas/SlicedScroll"
+                }
+              },
+              "description": "The search definition using the Query DSL"
+            }
+          }
+        },
+        "required": true
+      },
+      "update": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "detect_noop": {
+                  "description": "Set to false to disable setting 'result' in the response\nto 'noop' if no change to the document occurred.",
+                  "type": "boolean"
+                },
+                "doc": {
+                  "description": "A partial update to an existing document.",
+                  "type": "object"
+                },
+                "doc_as_upsert": {
+                  "description": "Set to true to use the contents of 'doc' as the value of 'upsert'",
+                  "type": "boolean"
+                },
+                "script": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Script"
+                },
+                "scripted_upsert": {
+                  "description": "Set to true to execute the script whether or not the document exists.",
+                  "type": "boolean"
+                },
+                "_source": {
+                  "$ref": "../schemas/_core.search.json#/components/schemas/SourceConfig"
+                },
+                "upsert": {
+                  "description": "If the document does not already exist, the contents of 'upsert' are inserted as a\nnew document. If the document exists, the 'script' is executed.",
+                  "type": "object"
+                }
+              },
+              "description": "The request definition requires either `script` or partial `doc`"
+            }
+          }
+        },
+        "required": true
+      },
+      "update_by_query": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "max_docs": {
+                  "description": "The maximum number of documents to update.",
+                  "type": "number"
+                },
+                "query": {
+                  "$ref": "../schemas/_common.query_dsl.json#/components/schemas/QueryContainer"
+                },
+                "script": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Script"
+                },
+                "slice": {
+                  "$ref": "../schemas/_common.json#/components/schemas/SlicedScroll"
+                },
+                "conflicts": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Conflicts"
+                }
+              },
+              "description": "The search definition using the Query DSL"
+            }
+          }
+        }
       }
     },
     "responses": {
@@ -7106,6 +6742,499 @@
                 "took",
                 "_version"
               ]
+            }
+          }
+        }
+      },
+      "info#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cluster_name": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Name"
+                },
+                "cluster_uuid": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Uuid"
+                },
+                "name": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Name"
+                },
+                "tagline": {
+                  "type": "string"
+                },
+                "version": {
+                  "$ref": "../schemas/_common.json#/components/schemas/OpensearchVersionInfo"
+                }
+              },
+              "required": [
+                "cluster_name",
+                "cluster_uuid",
+                "name",
+                "tagline",
+                "version"
+              ]
+            }
+          }
+        }
+      },
+      "ping#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "delete_by_query_rethrottle#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/tasks._common.json#/components/schemas/TaskListResponseBase"
+            }
+          }
+        }
+      },
+      "reindex#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "batches": {
+                  "type": "number"
+                },
+                "created": {
+                  "type": "number"
+                },
+                "deleted": {
+                  "type": "number"
+                },
+                "failures": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/_common.json#/components/schemas/BulkIndexByScrollFailure"
+                  }
+                },
+                "noops": {
+                  "type": "number"
+                },
+                "retries": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Retries"
+                },
+                "requests_per_second": {
+                  "type": "number"
+                },
+                "slice_id": {
+                  "type": "number"
+                },
+                "task": {
+                  "$ref": "../schemas/_common.json#/components/schemas/TaskId"
+                },
+                "throttled_millis": {
+                  "$ref": "../schemas/_common.json#/components/schemas/EpochTimeUnitMillis"
+                },
+                "throttled_until_millis": {
+                  "$ref": "../schemas/_common.json#/components/schemas/EpochTimeUnitMillis"
+                },
+                "timed_out": {
+                  "type": "boolean"
+                },
+                "took": {
+                  "$ref": "../schemas/_common.json#/components/schemas/DurationValueUnitMillis"
+                },
+                "total": {
+                  "type": "number"
+                },
+                "updated": {
+                  "type": "number"
+                },
+                "version_conflicts": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      },
+      "reindex_rethrottle#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nodes": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "../schemas/_core.reindex_rethrottle.json#/components/schemas/ReindexNode"
+                  }
+                }
+              },
+              "required": [
+                "nodes"
+              ]
+            }
+          }
+        }
+      },
+      "get_script_context#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "contexts": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/_core.get_script_context.json#/components/schemas/Context"
+                  }
+                }
+              },
+              "required": [
+                "contexts"
+              ]
+            }
+          }
+        }
+      },
+      "get_script_languages#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "language_contexts": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/_core.get_script_languages.json#/components/schemas/LanguageContext"
+                  }
+                },
+                "types_allowed": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "language_contexts",
+                "types_allowed"
+              ]
+            }
+          }
+        }
+      },
+      "delete_script#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/_common.json#/components/schemas/AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "get_script#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "_id": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Id"
+                },
+                "found": {
+                  "type": "boolean"
+                },
+                "script": {
+                  "$ref": "../schemas/_common.json#/components/schemas/StoredScript"
+                }
+              },
+              "required": [
+                "_id",
+                "found"
+              ]
+            }
+          }
+        }
+      },
+      "delete_pit#200": {
+        "description": "DeletePit 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pits": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/_core._common.json#/components/schemas/DeletedPit"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete_all_pits#200": {
+        "description": "DeleteAllPits 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pits": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/_core._common.json#/components/schemas/PitsDetailsDeleteAll"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get_all_pits#200": {
+        "description": "GetAllPits 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pits": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/_core._common.json#/components/schemas/PitDetail"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "update_by_query_rethrottle#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nodes": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "../schemas/_core.update_by_query_rethrottle.json#/components/schemas/UpdateByQueryRethrottleNode"
+                  }
+                }
+              },
+              "required": [
+                "nodes"
+              ]
+            }
+          }
+        }
+      },
+      "delete_by_query#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "batches": {
+                  "type": "number"
+                },
+                "deleted": {
+                  "type": "number"
+                },
+                "failures": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/_common.json#/components/schemas/BulkIndexByScrollFailure"
+                  }
+                },
+                "noops": {
+                  "type": "number"
+                },
+                "requests_per_second": {
+                  "type": "number"
+                },
+                "retries": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Retries"
+                },
+                "slice_id": {
+                  "type": "number"
+                },
+                "task": {
+                  "$ref": "../schemas/_common.json#/components/schemas/TaskId"
+                },
+                "throttled": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Duration"
+                },
+                "throttled_millis": {
+                  "$ref": "../schemas/_common.json#/components/schemas/DurationValueUnitMillis"
+                },
+                "throttled_until": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Duration"
+                },
+                "throttled_until_millis": {
+                  "$ref": "../schemas/_common.json#/components/schemas/DurationValueUnitMillis"
+                },
+                "timed_out": {
+                  "type": "boolean"
+                },
+                "took": {
+                  "$ref": "../schemas/_common.json#/components/schemas/DurationValueUnitMillis"
+                },
+                "total": {
+                  "type": "number"
+                },
+                "version_conflicts": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/_common.json#/components/schemas/WriteResponseBase"
+            }
+          }
+        }
+      },
+      "get#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/_core.get.json#/components/schemas/GetResult"
+            }
+          }
+        }
+      },
+      "exists#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "create_pit#200": {
+        "description": "CreatePit 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pit_id": {
+                  "type": "string"
+                },
+                "_shards": {
+                  "$ref": "../schemas/_core._common.json#/components/schemas/ShardStatistics"
+                },
+                "creation_time": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get_source#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "exists_source#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "update#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/_core.update.json#/components/schemas/UpdateWriteResponseBase"
+            }
+          }
+        }
+      },
+      "update_by_query#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "batches": {
+                  "type": "number"
+                },
+                "failures": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/_common.json#/components/schemas/BulkIndexByScrollFailure"
+                  }
+                },
+                "noops": {
+                  "type": "number"
+                },
+                "deleted": {
+                  "type": "number"
+                },
+                "requests_per_second": {
+                  "type": "number"
+                },
+                "retries": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Retries"
+                },
+                "task": {
+                  "$ref": "../schemas/_common.json#/components/schemas/TaskId"
+                },
+                "timed_out": {
+                  "type": "boolean"
+                },
+                "took": {
+                  "$ref": "../schemas/_common.json#/components/schemas/DurationValueUnitMillis"
+                },
+                "total": {
+                  "type": "number"
+                },
+                "updated": {
+                  "type": "number"
+                },
+                "version_conflicts": {
+                  "type": "number"
+                },
+                "throttled": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Duration"
+                },
+                "throttled_millis": {
+                  "$ref": "../schemas/_common.json#/components/schemas/DurationValueUnitMillis"
+                },
+                "throttled_until": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Duration"
+                },
+                "throttled_until_millis": {
+                  "$ref": "../schemas/_common.json#/components/schemas/DurationValueUnitMillis"
+                }
+              }
             }
           }
         }

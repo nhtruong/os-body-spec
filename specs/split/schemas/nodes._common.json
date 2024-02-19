@@ -1315,6 +1315,15 @@
         "required": [
           "name"
         ]
+      },
+      "SampleType": {
+        "type": "string",
+        "description": "The type to sample.",
+        "enum": [
+          "cpu",
+          "wait",
+          "block"
+        ]
       }
     }
   }

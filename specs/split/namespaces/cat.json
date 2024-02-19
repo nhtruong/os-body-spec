@@ -42,17 +42,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "../schemas/cat.help.json#/components/schemas/HelpRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.help#200"
           }
         },
         "x-operation-group": "cat.help",
@@ -962,17 +952,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "../schemas/cat.health.json#/components/schemas/HealthRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.health#200"
           }
         },
         "x-operation-group": "cat.health",
@@ -1326,17 +1306,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "../schemas/cat.master.json#/components/schemas/MasterRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.master#200"
           }
         },
         "x-deprecation-message": "To promote inclusive language, please use '/_cat/cluster_manager' instead.",
@@ -1444,17 +1414,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "../schemas/cat.nodeattrs.json#/components/schemas/NodeAttributesRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.nodeattrs#200"
           }
         },
         "x-operation-group": "cat.nodeattrs",
@@ -1598,17 +1558,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "../schemas/cat.nodes.json#/components/schemas/NodesRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.nodes#200"
           }
         },
         "x-operation-group": "cat.nodes",
@@ -1722,17 +1672,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "../schemas/cat.pending_tasks.json#/components/schemas/PendingTasksRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.pending_tasks#200"
           }
         },
         "x-operation-group": "cat.pending_tasks",
@@ -1748,13 +1688,7 @@
         },
         "operationId": "CatPitSegments",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "../schemas/CatPitSegments_BodyParams.json#/components/schemas/undefined"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/cat.pit_segments"
         },
         "parameters": [
           {
@@ -1825,14 +1759,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CatPitSegments 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/CatPitSegmentsOutputPayload.json#/components/schemas/undefined"
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.pit_segments#200"
           }
         },
         "x-operation-group": "cat.pit_segments",
@@ -1916,14 +1843,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CatAllPitSegments 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/CatAllPitSegmentsOutputPayload.json#/components/schemas/undefined"
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.all_pit_segments#200"
           }
         },
         "x-operation-group": "cat.all_pit_segments",
@@ -2029,17 +1949,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "../schemas/cat.plugins.json#/components/schemas/PluginsRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.plugins#200"
           }
         },
         "x-operation-group": "cat.plugins",
@@ -2358,17 +2268,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "../schemas/cat.repositories.json#/components/schemas/RepositoriesRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.repositories#200"
           }
         },
         "x-operation-group": "cat.repositories",
@@ -2561,14 +2461,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CatSegmentReplication 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/CatSegmentReplicationOutputPayload.json#/components/schemas/undefined"
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.segment_replication#200"
           }
         },
         "x-operation-group": "cat.segment_replication",
@@ -2769,14 +2662,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CatSegmentReplication_WithIndex 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/CatSegmentReplication_WithIndexOutputPayload.json#/components/schemas/undefined"
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.segment_replication#200"
           }
         },
         "x-operation-group": "cat.segment_replication",
@@ -3550,17 +3436,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "../schemas/cat.tasks.json#/components/schemas/TasksRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.tasks#200"
           }
         },
         "x-operation-group": "cat.tasks",
@@ -4011,7 +3887,28 @@
     }
   },
   "components": {
-    "requestBodies": {},
+    "requestBodies": {
+      "cat.pit_segments": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pit_id": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "pit_id"
+              ]
+            }
+          }
+        }
+      }
+    },
     "responses": {
       "cat.aliases#200": {
         "description": "",
@@ -4151,6 +4048,162 @@
               "type": "array",
               "items": {
                 "$ref": "../schemas/cat.thread_pool.json#/components/schemas/ThreadPoolRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.help#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "../schemas/cat.help.json#/components/schemas/HelpRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.health#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "../schemas/cat.health.json#/components/schemas/HealthRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.master#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "../schemas/cat.master.json#/components/schemas/MasterRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.nodeattrs#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "../schemas/cat.nodeattrs.json#/components/schemas/NodeAttributesRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.nodes#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "../schemas/cat.nodes.json#/components/schemas/NodesRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.pending_tasks#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "../schemas/cat.pending_tasks.json#/components/schemas/PendingTasksRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.pit_segments#200": {
+        "description": "CatPitSegments 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "../schemas/cat._common.json#/components/schemas/CatPitSegmentsRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.all_pit_segments#200": {
+        "description": "CatAllPitSegments 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "../schemas/cat._common.json#/components/schemas/CatPitSegmentsRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.plugins#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "../schemas/cat.plugins.json#/components/schemas/PluginsRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.repositories#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "../schemas/cat.repositories.json#/components/schemas/RepositoriesRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.segment_replication#200": {
+        "description": "CatSegmentReplication_WithIndex 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "../schemas/cat._common.json#/components/schemas/CatSegmentReplicationRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.tasks#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "../schemas/cat.tasks.json#/components/schemas/TasksRecord"
               }
             }
           }

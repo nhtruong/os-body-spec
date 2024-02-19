@@ -135,14 +135,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/_common.json#/components/schemas/AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/ingest.delete_pipeline#200"
           }
         },
         "x-operation-group": "ingest.delete_pipeline",
@@ -184,41 +177,7 @@
         },
         "operationId": "IngestPutPipeline",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "_meta": {
-                    "$ref": "../schemas/_common.json#/components/schemas/Metadata"
-                  },
-                  "description": {
-                    "description": "Description of the ingest pipeline.",
-                    "type": "string"
-                  },
-                  "on_failure": {
-                    "description": "Processors to run immediately after a processor failure. Each processor supports a processor-level `on_failure` value. If a processor without an `on_failure` value fails, Opensearch uses this pipeline-level parameter as a fallback. The processors in this parameter run sequentially in the order specified. Opensearch will not attempt to run the pipeline's remaining processors.",
-                    "type": "array",
-                    "items": {
-                      "$ref": "../schemas/ingest._common.json#/components/schemas/ProcessorContainer"
-                    }
-                  },
-                  "processors": {
-                    "description": "Processors used to perform transformations on documents before indexing. Processors run sequentially in the order specified.",
-                    "type": "array",
-                    "items": {
-                      "$ref": "../schemas/ingest._common.json#/components/schemas/ProcessorContainer"
-                    }
-                  },
-                  "version": {
-                    "$ref": "../schemas/_common.json#/components/schemas/VersionNumber"
-                  }
-                },
-                "description": "The ingest definition"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/ingest.put_pipeline"
         },
         "parameters": [
           {
@@ -266,14 +225,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/_common.json#/components/schemas/AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/ingest.put_pipeline#200"
           }
         },
         "x-operation-group": "ingest.put_pipeline",
@@ -336,25 +288,7 @@
         "operationId": "IngestProcessorGrok",
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "patterns": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "required": [
-                    "patterns"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/ingest.processor_grok#200"
           }
         },
         "x-operation-group": "ingest.processor_grok",
@@ -383,6 +317,43 @@
                 }
               },
               "description": "The simulate definition"
+            }
+          }
+        },
+        "required": true
+      },
+      "ingest.put_pipeline": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "_meta": {
+                  "$ref": "../schemas/_common.json#/components/schemas/Metadata"
+                },
+                "description": {
+                  "description": "Description of the ingest pipeline.",
+                  "type": "string"
+                },
+                "on_failure": {
+                  "description": "Processors to run immediately after a processor failure. Each processor supports a processor-level `on_failure` value. If a processor without an `on_failure` value fails, Opensearch uses this pipeline-level parameter as a fallback. The processors in this parameter run sequentially in the order specified. Opensearch will not attempt to run the pipeline's remaining processors.",
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/ingest._common.json#/components/schemas/ProcessorContainer"
+                  }
+                },
+                "processors": {
+                  "description": "Processors used to perform transformations on documents before indexing. Processors run sequentially in the order specified.",
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/ingest._common.json#/components/schemas/ProcessorContainer"
+                  }
+                },
+                "version": {
+                  "$ref": "../schemas/_common.json#/components/schemas/VersionNumber"
+                }
+              },
+              "description": "The ingest definition"
             }
           }
         },
@@ -419,6 +390,47 @@
               },
               "required": [
                 "docs"
+              ]
+            }
+          }
+        }
+      },
+      "ingest.delete_pipeline#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/_common.json#/components/schemas/AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "ingest.put_pipeline#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/_common.json#/components/schemas/AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "ingest.processor_grok#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "patterns": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "patterns"
               ]
             }
           }

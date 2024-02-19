@@ -326,25 +326,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "tasks": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "../schemas/cluster.pending_tasks.json#/components/schemas/PendingTask"
-                      }
-                    }
-                  },
-                  "required": [
-                    "tasks"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/cluster.pending_tasks#200"
           }
         },
         "x-operation-group": "cluster.pending_tasks",
@@ -360,23 +342,7 @@
         },
         "operationId": "ClusterReroute",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "commands": {
-                    "description": "Defines the commands to perform.",
-                    "type": "array",
-                    "items": {
-                      "$ref": "../schemas/cluster.reroute.json#/components/schemas/Command"
-                    }
-                  }
-                },
-                "description": "The definition of `commands` to perform (`move`, `cancel`, `allocate`)"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/cluster.reroute"
         },
         "parameters": [
           {
@@ -453,32 +419,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "acknowledged": {
-                      "type": "boolean"
-                    },
-                    "explanations": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "../schemas/cluster.reroute.json#/components/schemas/RerouteExplanation"
-                      }
-                    },
-                    "state": {
-                      "description": "There aren't any guarantees on the output/structure of the raw cluster state.\nHere you will find the internal representation of the cluster, which can\ndiffer from the external representation.",
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "acknowledged"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/cluster.reroute#200"
           }
         },
         "x-operation-group": "cluster.reroute",
@@ -623,38 +564,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "persistent": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "type": "object"
-                      }
-                    },
-                    "transient": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "type": "object"
-                      }
-                    },
-                    "defaults": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "type": "object"
-                      }
-                    }
-                  },
-                  "required": [
-                    "persistent",
-                    "transient"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/cluster.get_settings#200"
           }
         },
         "x-operation-group": "cluster.get_settings",
@@ -668,29 +578,7 @@
         },
         "operationId": "ClusterPutSettings",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "persistent": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "object"
-                    }
-                  },
-                  "transient": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "object"
-                    }
-                  }
-                },
-                "description": "The settings to be updated. Can be either `transient` or `persistent` (survives cluster restart)."
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/cluster.put_settings"
         },
         "parameters": [
           {
@@ -737,36 +625,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "acknowledged": {
-                      "type": "boolean"
-                    },
-                    "persistent": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "type": "object"
-                      }
-                    },
-                    "transient": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "type": "object"
-                      }
-                    }
-                  },
-                  "required": [
-                    "acknowledged",
-                    "persistent",
-                    "transient"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/cluster.put_settings#200"
           }
         },
         "x-operation-group": "cluster.put_settings",
@@ -1001,10 +860,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/cluster.delete_voting_config_exclusions#200"
           }
         },
         "x-operation-group": "cluster.delete_voting_config_exclusions",
@@ -1051,10 +907,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/cluster.post_voting_config_exclusions#200"
           }
         },
         "x-operation-group": "cluster.post_voting_config_exclusions",
@@ -1149,14 +1002,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "../schemas/_common.json#/components/schemas/AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/cluster.delete_component_template#200"
           }
         },
         "x-operation-group": "cluster.delete_component_template",
@@ -1246,10 +1092,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/cluster.exists_component_template#200"
           }
         },
         "x-operation-group": "cluster.exists_component_template",
@@ -1354,17 +1197,7 @@
         "operationId": "ClusterRemoteInfo",
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "$ref": "../schemas/cluster.remote_info.json#/components/schemas/ClusterRemoteInfo"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cluster.remote_info#200"
           }
         },
         "x-operation-group": "cluster.remote_info",
@@ -1426,6 +1259,50 @@
                 "template"
               ],
               "description": "The template definition"
+            }
+          }
+        },
+        "required": true
+      },
+      "cluster.reroute": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "commands": {
+                  "description": "Defines the commands to perform.",
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/cluster.reroute.json#/components/schemas/Command"
+                  }
+                }
+              },
+              "description": "The definition of `commands` to perform (`move`, `cancel`, `allocate`)"
+            }
+          }
+        }
+      },
+      "cluster.put_settings": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "persistent": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                },
+                "transient": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              },
+              "description": "The settings to be updated. Can be either `transient` or `persistent` (survives cluster restart)."
             }
           }
         },
@@ -1592,6 +1469,162 @@
           "application/json": {
             "schema": {
               "$ref": "../schemas/cluster.stats.json#/components/schemas/StatsResponseBase"
+            }
+          }
+        }
+      },
+      "cluster.pending_tasks#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tasks": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/cluster.pending_tasks.json#/components/schemas/PendingTask"
+                  }
+                }
+              },
+              "required": [
+                "tasks"
+              ]
+            }
+          }
+        }
+      },
+      "cluster.reroute#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "acknowledged": {
+                  "type": "boolean"
+                },
+                "explanations": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../schemas/cluster.reroute.json#/components/schemas/RerouteExplanation"
+                  }
+                },
+                "state": {
+                  "description": "There aren't any guarantees on the output/structure of the raw cluster state.\nHere you will find the internal representation of the cluster, which can\ndiffer from the external representation.",
+                  "type": "object"
+                }
+              },
+              "required": [
+                "acknowledged"
+              ]
+            }
+          }
+        }
+      },
+      "cluster.get_settings#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "persistent": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                },
+                "transient": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                },
+                "defaults": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              },
+              "required": [
+                "persistent",
+                "transient"
+              ]
+            }
+          }
+        }
+      },
+      "cluster.put_settings#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "acknowledged": {
+                  "type": "boolean"
+                },
+                "persistent": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                },
+                "transient": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              },
+              "required": [
+                "acknowledged",
+                "persistent",
+                "transient"
+              ]
+            }
+          }
+        }
+      },
+      "cluster.delete_voting_config_exclusions#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "cluster.post_voting_config_exclusions#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "cluster.delete_component_template#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../schemas/_common.json#/components/schemas/AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "cluster.exists_component_template#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "cluster.remote_info#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "../schemas/cluster.remote_info.json#/components/schemas/ClusterRemoteInfo"
+              }
             }
           }
         }

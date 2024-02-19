@@ -61,7 +61,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "$ref": "../schemas/SampleType.json#/components/schemas/undefined"
+              "$ref": "../schemas/nodes._common.json#/components/schemas/SampleType"
             }
           },
           {
@@ -136,7 +136,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "$ref": "../schemas/SampleType.json#/components/schemas/undefined"
+              "$ref": "../schemas/nodes._common.json#/components/schemas/SampleType"
             }
           },
           {
@@ -223,7 +223,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "$ref": "../schemas/SampleType.json#/components/schemas/undefined"
+              "$ref": "../schemas/nodes._common.json#/components/schemas/SampleType"
             }
           },
           {
@@ -310,7 +310,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "$ref": "../schemas/SampleType.json#/components/schemas/undefined"
+              "$ref": "../schemas/nodes._common.json#/components/schemas/SampleType"
             }
           },
           {
@@ -443,7 +443,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "$ref": "../schemas/SampleType.json#/components/schemas/undefined"
+              "$ref": "../schemas/nodes._common.json#/components/schemas/SampleType"
             }
           },
           {
@@ -788,7 +788,7 @@
             "in": "query",
             "description": "The type to sample.",
             "schema": {
-              "$ref": "../schemas/SampleType.json#/components/schemas/undefined"
+              "$ref": "../schemas/nodes._common.json#/components/schemas/SampleType"
             }
           },
           {
