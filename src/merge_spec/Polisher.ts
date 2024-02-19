@@ -1,5 +1,8 @@
 import fs from "fs";
 import {extractNamespace, resolve} from "../helpers";
+import _ from "lodash";
+import {OpenAPIV3} from "openapi-types";
+import {OperationSpec} from "../types";
 
 export default class Polisher {
     doc: Record<string, any>;
@@ -14,6 +17,9 @@ export default class Polisher {
         this.rename_schemas();
         this.rename_schema_refs(this.doc);
         this.deref_bodies(this.doc.paths);
+        _.values(this.doc.paths).flatMap(_.values).forEach((op: OperationSpec) => {
+            this.move_bodies(op);
+        });
         this.determineSchemaNamespace(this.doc, undefined);
         fs.writeFileSync(output, JSON.stringify(this.doc, null, 2));
     }
@@ -23,7 +29,6 @@ export default class Polisher {
         if(app_json?.schema?.$ref) {
             const ref = app_json.schema.$ref;
             if(ref.endsWith('ResponseContent') || ref.endsWith('InputPayload') || ref.endsWith('OutputPayload')) {
-                console.log('removing', ref);
                 app_json.schema = resolve(app_json.schema);
             }
             return;
@@ -31,6 +36,15 @@ export default class Polisher {
 
         for(const key in obj) {
             if(typeof obj[key] === 'object') this.deref_bodies(obj[key]);
+        }
+    }
+
+    move_bodies(op: OperationSpec): void {
+        const requestBody = op.requestBody as OpenAPIV3.RequestBodyObject;
+        const requestContent = requestBody?.content;
+        if (requestContent) {
+            this.doc.components.requestBodies[op['x-operation-group']] = requestBody;
+            op.requestBody = {$ref: `#/components/requestBodies/${op['x-operation-group']}`};
         }
     }
 

@@ -175,24 +175,7 @@
         },
         "operationId": "IndicesUpdateAliases",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "actions": {
-                    "description": "Actions to perform.",
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/indices.update_aliases:Action"
-                    }
-                  }
-                },
-                "description": "The definition of `actions` to perform"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/indices.update_aliases"
         },
         "parameters": [
           {
@@ -2205,13 +2188,7 @@
         },
         "operationId": "CatPitSegments",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CatPitSegments_BodyParams"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/cat.pit_segments"
         },
         "parameters": [
           {
@@ -5160,23 +5137,7 @@
         },
         "operationId": "ClusterReroute",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "commands": {
-                    "description": "Defines the commands to perform.",
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/cluster.reroute:Command"
-                    }
-                  }
-                },
-                "description": "The definition of `commands` to perform (`move`, `cancel`, `allocate`)"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/cluster.reroute"
         },
         "parameters": [
           {
@@ -5468,29 +5429,7 @@
         },
         "operationId": "ClusterPutSettings",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "persistent": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "object"
-                    }
-                  },
-                  "transient": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "object"
-                    }
-                  }
-                },
-                "description": "The settings to be updated. Can be either `transient` or `persistent` (survives cluster restart)."
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/cluster.put_settings"
         },
         "parameters": [
           {
@@ -6554,13 +6493,7 @@
         },
         "operationId": "IndicesCreateDataStream",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IndicesCreateDataStream_BodyParams"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/indices.create_data_stream"
         },
         "parameters": [
           {
@@ -6965,46 +6898,7 @@
         },
         "operationId": "IndicesSimulateIndexTemplate",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "allow_auto_create": {
-                    "description": "This setting overrides the value of the `action.auto_create_index` cluster setting.\nIf set to `true` in a template, then indices can be automatically created using that template even if auto-creation of indices is disabled via `actions.auto_create_index`.\nIf set to `false`, then indices or data streams matching the template must always be explicitly created, and may never be automatically created.",
-                    "type": "boolean"
-                  },
-                  "index_patterns": {
-                    "$ref": "#/components/schemas/_common:Indices"
-                  },
-                  "composed_of": {
-                    "description": "An ordered list of component template names.\nComponent templates are merged in the order specified, meaning that the last component template specified has the highest precedence.",
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/_common:Name"
-                    }
-                  },
-                  "template": {
-                    "$ref": "#/components/schemas/indices.put_index_template:IndexTemplateMapping"
-                  },
-                  "data_stream": {
-                    "$ref": "#/components/schemas/indices._common:DataStreamVisibility"
-                  },
-                  "priority": {
-                    "description": "Priority to determine index template precedence when a new data stream or index is created.\nThe index template with the highest priority is chosen.\nIf no priority is specified the template is treated as though it is of priority 0 (lowest priority).\nThis number is not automatically generated by Opensearch.",
-                    "type": "number"
-                  },
-                  "version": {
-                    "$ref": "#/components/schemas/_common:VersionNumber"
-                  },
-                  "_meta": {
-                    "$ref": "#/components/schemas/_common:Metadata"
-                  }
-                },
-                "description": "New index template definition, which will be included in the simulation, as if it already exists in the system"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/indices.simulate_index_template"
         },
         "parameters": [
           {
@@ -7536,41 +7430,7 @@
         },
         "operationId": "IngestPutPipeline",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "_meta": {
-                    "$ref": "#/components/schemas/_common:Metadata"
-                  },
-                  "description": {
-                    "description": "Description of the ingest pipeline.",
-                    "type": "string"
-                  },
-                  "on_failure": {
-                    "description": "Processors to run immediately after a processor failure. Each processor supports a processor-level `on_failure` value. If a processor without an `on_failure` value fails, Opensearch uses this pipeline-level parameter as a fallback. The processors in this parameter run sequentially in the order specified. Opensearch will not attempt to run the pipeline's remaining processors.",
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/ingest._common:ProcessorContainer"
-                    }
-                  },
-                  "processors": {
-                    "description": "Processors used to perform transformations on documents before indexing. Processors run sequentially in the order specified.",
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/ingest._common:ProcessorContainer"
-                    }
-                  },
-                  "version": {
-                    "$ref": "#/components/schemas/_common:VersionNumber"
-                  }
-                },
-                "description": "The ingest definition"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/ingest.put_pipeline"
         },
         "parameters": [
           {
@@ -8878,14 +8738,7 @@
         },
         "operationId": "ChangePassword",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChangePasswordRequestContent"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.change_password"
         },
         "responses": {
           "200": {
@@ -8944,17 +8797,7 @@
         },
         "operationId": "PatchActionGroups",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PatchOperation"
-                }
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.patch_action_groups"
         },
         "responses": {
           "200": {
@@ -9069,17 +8912,7 @@
         },
         "operationId": "PatchActionGroup",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PatchOperation"
-                }
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.patch_action_group"
         },
         "parameters": [
           {
@@ -9124,14 +8957,7 @@
         },
         "operationId": "CreateActionGroup",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Action_Group"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.create_action_group"
         },
         "parameters": [
           {
@@ -9202,17 +9028,7 @@
         },
         "operationId": "PatchAuditConfiguration",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PatchOperation"
-                }
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.patch_audit_configuration"
         },
         "responses": {
           "200": {
@@ -9232,14 +9048,7 @@
         },
         "operationId": "UpdateAuditConfiguration",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AuditConfig"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.update_audit_configuration"
         },
         "responses": {
           "200": {
@@ -9332,17 +9141,7 @@
         },
         "operationId": "PatchUsers",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PatchOperation"
-                }
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.patch_users"
         },
         "responses": {
           "200": {
@@ -9453,17 +9252,7 @@
         },
         "operationId": "PatchUser",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PatchOperation"
-                }
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.patch_user"
         },
         "parameters": [
           {
@@ -9508,14 +9297,7 @@
         },
         "operationId": "CreateUser",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.create_user"
         },
         "parameters": [
           {
@@ -9584,17 +9366,7 @@
         },
         "operationId": "PatchDistinguishedNames",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PatchOperation"
-                }
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.patch_distinguished_names"
         },
         "responses": {
           "200": {
@@ -9701,13 +9473,7 @@
         },
         "operationId": "UpdateDistinguishedNames",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DistinguishedNames"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/security.update_distinguished_names"
         },
         "parameters": [
           {
@@ -9754,17 +9520,7 @@
         },
         "operationId": "PatchRoles",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PatchOperation"
-                }
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.patch_roles"
         },
         "responses": {
           "200": {
@@ -9899,17 +9655,7 @@
         },
         "operationId": "PatchRole",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PatchOperation"
-                }
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.patch_role"
         },
         "parameters": [
           {
@@ -9954,14 +9700,7 @@
         },
         "operationId": "CreateRole",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Role"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.create_role"
         },
         "parameters": [
           {
@@ -10030,17 +9769,7 @@
         },
         "operationId": "PatchRoleMappings",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PatchOperation"
-                }
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.patch_role_mappings"
         },
         "responses": {
           "200": {
@@ -10151,17 +9880,7 @@
         },
         "operationId": "PatchRoleMapping",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PatchOperation"
-                }
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.patch_role_mapping"
         },
         "parameters": [
           {
@@ -10206,14 +9925,7 @@
         },
         "operationId": "CreateRoleMapping",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RoleMapping"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.create_role_mapping"
         },
         "parameters": [
           {
@@ -10282,17 +9994,7 @@
         },
         "operationId": "PatchConfiguration",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PatchOperation"
-                }
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.patch_configuration"
         },
         "responses": {
           "200": {
@@ -10329,14 +10031,7 @@
         },
         "operationId": "UpdateConfiguration",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DynamicConfig"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.update_configuration"
         },
         "responses": {
           "200": {
@@ -10501,17 +10196,7 @@
         },
         "operationId": "PatchTenants",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PatchOperation"
-                }
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.patch_tenants"
         },
         "responses": {
           "200": {
@@ -10622,17 +10307,7 @@
         },
         "operationId": "PatchTenant",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PatchOperation"
-                }
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.patch_tenant"
         },
         "parameters": [
           {
@@ -10677,14 +10352,7 @@
         },
         "operationId": "CreateTenant",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateTenantParams"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/security.create_tenant"
         },
         "parameters": [
           {
@@ -10903,40 +10571,7 @@
         },
         "operationId": "Reindex",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "conflicts": {
-                    "$ref": "#/components/schemas/_common:Conflicts"
-                  },
-                  "dest": {
-                    "$ref": "#/components/schemas/_core.reindex:Destination"
-                  },
-                  "max_docs": {
-                    "description": "The maximum number of documents to reindex.",
-                    "type": "number"
-                  },
-                  "script": {
-                    "$ref": "#/components/schemas/_common:Script"
-                  },
-                  "size": {
-                    "type": "number"
-                  },
-                  "source": {
-                    "$ref": "#/components/schemas/_core.reindex:Source"
-                  }
-                },
-                "required": [
-                  "dest",
-                  "source"
-                ],
-                "description": "The search definition using the Query DSL and the prototype for the index request."
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/reindex"
         },
         "parameters": [
           {
@@ -11184,25 +10819,7 @@
         },
         "operationId": "RemoteStoreRestore",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RemoteStoreRestore_BodyParams"
-              },
-              "examples": {
-                "RemoteStoreRestore_example1": {
-                  "summary": "Examples for Post Remote Storage Restore Operation.",
-                  "description": "",
-                  "value": {
-                    "indices": [
-                      "books"
-                    ]
-                  }
-                }
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/remote_store.restore"
         },
         "parameters": [
           {
@@ -12134,13 +11751,7 @@
         },
         "operationId": "DeletePit",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DeletePit_BodyParams"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/delete_pit"
         },
         "responses": {
           "200": {
@@ -13484,23 +13095,7 @@
         },
         "operationId": "SnapshotClone",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "indices": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "indices"
-                ],
-                "description": "The snapshot clone definition"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/snapshot.clone"
         },
         "parameters": [
           {
@@ -13583,52 +13178,7 @@
         },
         "operationId": "SnapshotRestore",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "feature_states": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "ignore_index_settings": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "ignore_unavailable": {
-                    "type": "boolean"
-                  },
-                  "include_aliases": {
-                    "type": "boolean"
-                  },
-                  "include_global_state": {
-                    "type": "boolean"
-                  },
-                  "index_settings": {
-                    "$ref": "#/components/schemas/indices._common:IndexSettings"
-                  },
-                  "indices": {
-                    "$ref": "#/components/schemas/_common:Indices"
-                  },
-                  "partial": {
-                    "type": "boolean"
-                  },
-                  "rename_pattern": {
-                    "type": "string"
-                  },
-                  "rename_replacement": {
-                    "type": "string"
-                  }
-                },
-                "description": "Details of what to restore"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/snapshot.restore"
         },
         "parameters": [
           {
@@ -15052,29 +14602,7 @@
         },
         "operationId": "IndicesCreate",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "aliases": {
-                    "description": "Aliases for the index.",
-                    "type": "object",
-                    "additionalProperties": {
-                      "$ref": "#/components/schemas/indices._common:Alias"
-                    }
-                  },
-                  "mappings": {
-                    "$ref": "#/components/schemas/_common.mapping:TypeMapping"
-                  },
-                  "settings": {
-                    "$ref": "#/components/schemas/indices._common:IndexSettings"
-                  }
-                },
-                "description": "The configuration for the index (`settings` and `mappings`)"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/indices.create"
         },
         "parameters": [
           {
@@ -16307,27 +15835,7 @@
         },
         "operationId": "DeleteByQuery",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "max_docs": {
-                    "description": "The maximum number of documents to delete.",
-                    "type": "number"
-                  },
-                  "query": {
-                    "$ref": "#/components/schemas/_common.query_dsl:QueryContainer"
-                  },
-                  "slice": {
-                    "$ref": "#/components/schemas/_common:SlicedScroll"
-                  }
-                },
-                "description": "The search definition using the Query DSL"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/delete_by_query"
         },
         "parameters": [
           {
@@ -20125,43 +19633,7 @@
         },
         "operationId": "Update",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "detect_noop": {
-                    "description": "Set to false to disable setting 'result' in the response\nto 'noop' if no change to the document occurred.",
-                    "type": "boolean"
-                  },
-                  "doc": {
-                    "description": "A partial update to an existing document.",
-                    "type": "object"
-                  },
-                  "doc_as_upsert": {
-                    "description": "Set to true to use the contents of 'doc' as the value of 'upsert'",
-                    "type": "boolean"
-                  },
-                  "script": {
-                    "$ref": "#/components/schemas/_common:Script"
-                  },
-                  "scripted_upsert": {
-                    "description": "Set to true to execute the script whether or not the document exists.",
-                    "type": "boolean"
-                  },
-                  "_source": {
-                    "$ref": "#/components/schemas/_core.search:SourceConfig"
-                  },
-                  "upsert": {
-                    "description": "If the document does not already exist, the contents of 'upsert' are inserted as a\nnew document. If the document exists, the 'script' is executed.",
-                    "type": "object"
-                  }
-                },
-                "description": "The request definition requires either `script` or partial `doc`"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/update"
         },
         "parameters": [
           {
@@ -20332,32 +19804,7 @@
         },
         "operationId": "UpdateByQuery",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "max_docs": {
-                    "description": "The maximum number of documents to update.",
-                    "type": "number"
-                  },
-                  "query": {
-                    "$ref": "#/components/schemas/_common.query_dsl:QueryContainer"
-                  },
-                  "script": {
-                    "$ref": "#/components/schemas/_common:Script"
-                  },
-                  "slice": {
-                    "$ref": "#/components/schemas/_common:SlicedScroll"
-                  },
-                  "conflicts": {
-                    "$ref": "#/components/schemas/_common:Conflicts"
-                  }
-                },
-                "description": "The search definition using the Query DSL"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/update_by_query"
         },
         "parameters": [
           {
@@ -61541,6 +60988,673 @@
                 }
               },
               "description": "Define parameters and or supply a document to get termvectors for. See documentation."
+            }
+          }
+        }
+      },
+      "indices.update_aliases": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "actions": {
+                  "description": "Actions to perform.",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/indices.update_aliases:Action"
+                  }
+                }
+              },
+              "description": "The definition of `actions` to perform"
+            }
+          }
+        },
+        "required": true
+      },
+      "cat.pit_segments": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CatPitSegments_BodyParams"
+            }
+          }
+        }
+      },
+      "cluster.reroute": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "commands": {
+                  "description": "Defines the commands to perform.",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/cluster.reroute:Command"
+                  }
+                }
+              },
+              "description": "The definition of `commands` to perform (`move`, `cancel`, `allocate`)"
+            }
+          }
+        }
+      },
+      "cluster.put_settings": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "persistent": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                },
+                "transient": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              },
+              "description": "The settings to be updated. Can be either `transient` or `persistent` (survives cluster restart)."
+            }
+          }
+        },
+        "required": true
+      },
+      "indices.create_data_stream": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/IndicesCreateDataStream_BodyParams"
+            }
+          }
+        }
+      },
+      "indices.simulate_index_template": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "allow_auto_create": {
+                  "description": "This setting overrides the value of the `action.auto_create_index` cluster setting.\nIf set to `true` in a template, then indices can be automatically created using that template even if auto-creation of indices is disabled via `actions.auto_create_index`.\nIf set to `false`, then indices or data streams matching the template must always be explicitly created, and may never be automatically created.",
+                  "type": "boolean"
+                },
+                "index_patterns": {
+                  "$ref": "#/components/schemas/_common:Indices"
+                },
+                "composed_of": {
+                  "description": "An ordered list of component template names.\nComponent templates are merged in the order specified, meaning that the last component template specified has the highest precedence.",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/_common:Name"
+                  }
+                },
+                "template": {
+                  "$ref": "#/components/schemas/indices.put_index_template:IndexTemplateMapping"
+                },
+                "data_stream": {
+                  "$ref": "#/components/schemas/indices._common:DataStreamVisibility"
+                },
+                "priority": {
+                  "description": "Priority to determine index template precedence when a new data stream or index is created.\nThe index template with the highest priority is chosen.\nIf no priority is specified the template is treated as though it is of priority 0 (lowest priority).\nThis number is not automatically generated by Opensearch.",
+                  "type": "number"
+                },
+                "version": {
+                  "$ref": "#/components/schemas/_common:VersionNumber"
+                },
+                "_meta": {
+                  "$ref": "#/components/schemas/_common:Metadata"
+                }
+              },
+              "description": "New index template definition, which will be included in the simulation, as if it already exists in the system"
+            }
+          }
+        }
+      },
+      "ingest.put_pipeline": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "_meta": {
+                  "$ref": "#/components/schemas/_common:Metadata"
+                },
+                "description": {
+                  "description": "Description of the ingest pipeline.",
+                  "type": "string"
+                },
+                "on_failure": {
+                  "description": "Processors to run immediately after a processor failure. Each processor supports a processor-level `on_failure` value. If a processor without an `on_failure` value fails, Opensearch uses this pipeline-level parameter as a fallback. The processors in this parameter run sequentially in the order specified. Opensearch will not attempt to run the pipeline's remaining processors.",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ingest._common:ProcessorContainer"
+                  }
+                },
+                "processors": {
+                  "description": "Processors used to perform transformations on documents before indexing. Processors run sequentially in the order specified.",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ingest._common:ProcessorContainer"
+                  }
+                },
+                "version": {
+                  "$ref": "#/components/schemas/_common:VersionNumber"
+                }
+              },
+              "description": "The ingest definition"
+            }
+          }
+        },
+        "required": true
+      },
+      "security.change_password": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ChangePasswordRequestContent"
+            }
+          }
+        },
+        "required": true
+      },
+      "security.patch_action_groups": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchOperation"
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "security.patch_action_group": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchOperation"
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "security.create_action_group": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Action_Group"
+            }
+          }
+        },
+        "required": true
+      },
+      "security.patch_audit_configuration": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchOperation"
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "security.update_audit_configuration": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AuditConfig"
+            }
+          }
+        },
+        "required": true
+      },
+      "security.patch_users": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchOperation"
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "security.patch_user": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchOperation"
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "security.create_user": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/User"
+            }
+          }
+        },
+        "required": true
+      },
+      "security.patch_distinguished_names": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchOperation"
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "security.update_distinguished_names": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DistinguishedNames"
+            }
+          }
+        }
+      },
+      "security.patch_roles": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchOperation"
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "security.patch_role": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchOperation"
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "security.create_role": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Role"
+            }
+          }
+        },
+        "required": true
+      },
+      "security.patch_role_mappings": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchOperation"
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "security.patch_role_mapping": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchOperation"
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "security.create_role_mapping": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RoleMapping"
+            }
+          }
+        },
+        "required": true
+      },
+      "security.patch_configuration": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchOperation"
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "security.update_configuration": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DynamicConfig"
+            }
+          }
+        },
+        "required": true
+      },
+      "security.patch_tenants": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchOperation"
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "security.patch_tenant": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PatchOperation"
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "security.create_tenant": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CreateTenantParams"
+            }
+          }
+        },
+        "required": true
+      },
+      "reindex": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "conflicts": {
+                  "$ref": "#/components/schemas/_common:Conflicts"
+                },
+                "dest": {
+                  "$ref": "#/components/schemas/_core.reindex:Destination"
+                },
+                "max_docs": {
+                  "description": "The maximum number of documents to reindex.",
+                  "type": "number"
+                },
+                "script": {
+                  "$ref": "#/components/schemas/_common:Script"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "source": {
+                  "$ref": "#/components/schemas/_core.reindex:Source"
+                }
+              },
+              "required": [
+                "dest",
+                "source"
+              ],
+              "description": "The search definition using the Query DSL and the prototype for the index request."
+            }
+          }
+        },
+        "required": true
+      },
+      "remote_store.restore": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RemoteStoreRestore_BodyParams"
+            },
+            "examples": {
+              "RemoteStoreRestore_example1": {
+                "summary": "Examples for Post Remote Storage Restore Operation.",
+                "description": "",
+                "value": {
+                  "indices": [
+                    "books"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "delete_pit": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DeletePit_BodyParams"
+            }
+          }
+        }
+      },
+      "snapshot.clone": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "indices": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "indices"
+              ],
+              "description": "The snapshot clone definition"
+            }
+          }
+        },
+        "required": true
+      },
+      "snapshot.restore": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "feature_states": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "ignore_index_settings": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "ignore_unavailable": {
+                  "type": "boolean"
+                },
+                "include_aliases": {
+                  "type": "boolean"
+                },
+                "include_global_state": {
+                  "type": "boolean"
+                },
+                "index_settings": {
+                  "$ref": "#/components/schemas/indices._common:IndexSettings"
+                },
+                "indices": {
+                  "$ref": "#/components/schemas/_common:Indices"
+                },
+                "partial": {
+                  "type": "boolean"
+                },
+                "rename_pattern": {
+                  "type": "string"
+                },
+                "rename_replacement": {
+                  "type": "string"
+                }
+              },
+              "description": "Details of what to restore"
+            }
+          }
+        }
+      },
+      "indices.create": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "aliases": {
+                  "description": "Aliases for the index.",
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/indices._common:Alias"
+                  }
+                },
+                "mappings": {
+                  "$ref": "#/components/schemas/_common.mapping:TypeMapping"
+                },
+                "settings": {
+                  "$ref": "#/components/schemas/indices._common:IndexSettings"
+                }
+              },
+              "description": "The configuration for the index (`settings` and `mappings`)"
+            }
+          }
+        }
+      },
+      "delete_by_query": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "max_docs": {
+                  "description": "The maximum number of documents to delete.",
+                  "type": "number"
+                },
+                "query": {
+                  "$ref": "#/components/schemas/_common.query_dsl:QueryContainer"
+                },
+                "slice": {
+                  "$ref": "#/components/schemas/_common:SlicedScroll"
+                }
+              },
+              "description": "The search definition using the Query DSL"
+            }
+          }
+        },
+        "required": true
+      },
+      "update": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "detect_noop": {
+                  "description": "Set to false to disable setting 'result' in the response\nto 'noop' if no change to the document occurred.",
+                  "type": "boolean"
+                },
+                "doc": {
+                  "description": "A partial update to an existing document.",
+                  "type": "object"
+                },
+                "doc_as_upsert": {
+                  "description": "Set to true to use the contents of 'doc' as the value of 'upsert'",
+                  "type": "boolean"
+                },
+                "script": {
+                  "$ref": "#/components/schemas/_common:Script"
+                },
+                "scripted_upsert": {
+                  "description": "Set to true to execute the script whether or not the document exists.",
+                  "type": "boolean"
+                },
+                "_source": {
+                  "$ref": "#/components/schemas/_core.search:SourceConfig"
+                },
+                "upsert": {
+                  "description": "If the document does not already exist, the contents of 'upsert' are inserted as a\nnew document. If the document exists, the 'script' is executed.",
+                  "type": "object"
+                }
+              },
+              "description": "The request definition requires either `script` or partial `doc`"
+            }
+          }
+        },
+        "required": true
+      },
+      "update_by_query": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "max_docs": {
+                  "description": "The maximum number of documents to update.",
+                  "type": "number"
+                },
+                "query": {
+                  "$ref": "#/components/schemas/_common.query_dsl:QueryContainer"
+                },
+                "script": {
+                  "$ref": "#/components/schemas/_common:Script"
+                },
+                "slice": {
+                  "$ref": "#/components/schemas/_common:SlicedScroll"
+                },
+                "conflicts": {
+                  "$ref": "#/components/schemas/_common:Conflicts"
+                }
+              },
+              "description": "The search definition using the Query DSL"
             }
           }
         }
