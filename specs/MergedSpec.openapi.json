@@ -61362,7 +61362,18 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/CatPitSegments_BodyParams"
+              "type": "object",
+              "properties": {
+                "pit_id": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "pit_id"
+              ]
             }
           }
         }
@@ -61415,7 +61426,8 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/IndicesCreateDataStream_BodyParams"
+              "type": "object",
+              "description": "The data stream definition"
             }
           }
         }
@@ -61797,7 +61809,19 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/RemoteStoreRestore_BodyParams"
+              "type": "object",
+              "description": "Comma-separated list of index IDs",
+              "properties": {
+                "indices": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "indices"
+              ]
             },
             "examples": {
               "RemoteStoreRestore_example1": {
@@ -61818,7 +61842,19 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/DeletePit_BodyParams"
+              "type": "object",
+              "description": "The point-in-time ids to be deleted",
+              "properties": {
+                "pit_id": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "pit_id"
+              ]
             }
           }
         }

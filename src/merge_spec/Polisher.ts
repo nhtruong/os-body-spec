@@ -24,9 +24,9 @@ export default class Polisher {
 
     deref_bodies(obj: Record<string, any>): void {
         const app_json = obj['application/json'];
-        if(app_json?.schema?.$ref) {
-            const ref = app_json.schema.$ref;
-            if(ref.endsWith('ResponseContent') || ref.endsWith('InputPayload') || ref.endsWith('OutputPayload')) {
+        const ref = app_json?.schema?.$ref;
+        if(ref) {
+            if(ref.endsWith('ResponseContent') || ref.endsWith('InputPayload') || ref.endsWith('OutputPayload') || ref.endsWith('BodyParams')) {
                 app_json.schema = resolve(app_json.schema);
             }
             return;
