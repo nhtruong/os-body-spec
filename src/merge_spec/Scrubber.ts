@@ -2,15 +2,13 @@ import fs from 'fs';
 import {resolve} from '../helpers';
 
 export default class Scrubber {
-    file: string | undefined;
     doc: Record<string, any>;
 
     refs: Record<string, Set<string>>;
     seen: Set<string> = new Set();
 
-    constructor(doc: Record<string, any> | string) {
-        this.file = typeof doc === 'string' ? doc : undefined;
-        this.doc = typeof doc === 'string' ? JSON.parse(fs.readFileSync(doc).toString()) : doc;
+    constructor(file: string) {
+        this.doc = JSON.parse(fs.readFileSync(file).toString());
         this.refs = {
             schemas: new Set(),
             parameters: new Set(),
@@ -19,52 +17,18 @@ export default class Scrubber {
         };
     }
 
-    scrub(): void {
+    scrub(output: string): void {
         this.correct_schema_refs(this.doc);
         this.remove_unused_refs();
         this.remove_elastic_urls(this.doc);
         this.replace_es_with_os(this.doc);
-        this.rename_schemas();
-        this.rename_schema_refs(this.doc);
 
-        this.doc.components!.schemas!['_common:Duration'].pattern = "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$";
-        this.doc.components!.schemas!['_common:Duration'].type = "string";
-        delete this.doc.components!.schemas!['_common:Duration'].oneOf;
+        this.doc.components!.schemas!['_types:Duration'].pattern = "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$";
+        this.doc.components!.schemas!['_types:Duration'].type = "string";
+        delete this.doc.components!.schemas!['_types:Duration'].oneOf;
 
-
-        if (this.file) fs.writeFileSync(this.file, JSON.stringify(this.doc, null, 2));
+       fs.writeFileSync(output, JSON.stringify(this.doc, null, 2));
     }
-
-    newSchemaName(name: string): string {
-        const [category, type] = name.split(':');
-        const parts = category.split('.');
-        if(['_types', '_spec_utils'].includes(category)) return `_common:${type}`;
-        if(parts[0] === '_global') return `_core.${parts[1]}:${type}`;
-        if(parts[0] === '_types') return `_common.${parts[1]}:${type}`;
-        if(parts[1] === '_types') return `${parts[0]}._common:${type}`;
-        return name;
-    }
-
-    rename_schema_refs(obj: Record<string, any>): void {
-        const ref = obj.$ref;
-        if(ref?.startsWith('#/components/schemas/') && ref.includes(':')) {
-            const name = ref.split('#/components/schemas/')[1];
-            obj.$ref = '#/components/schemas/' + this.newSchemaName(name);
-        }
-
-        for(const key in obj) {
-            if(typeof obj[key] === 'object') this.rename_schema_refs(obj[key]);
-        }
-    }
-
-    rename_schemas(): void {
-        const schemas = this.doc.components.schemas;
-        Object.entries(schemas).forEach(([k, v]) => {
-            delete schemas[k];
-            schemas[this.newSchemaName(k)] = v;
-        });
-    }
-
     remove_unused_refs(): void {
         this.#find_refs(this.doc.paths);
         Object.keys(this.refs).forEach(k => this.remove_keys(this.doc.components[k], this.refs[k]));

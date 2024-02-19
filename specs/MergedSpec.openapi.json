@@ -2286,7 +2286,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CatPitSegmentsOutputPayload"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CatPitSegmentsRecord"
+                  }
                 }
               }
             }
@@ -2377,7 +2380,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CatAllPitSegmentsOutputPayload"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CatPitSegmentsRecord"
+                  }
                 }
               }
             }
@@ -3022,7 +3028,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CatSegmentReplicationOutputPayload"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CatSegmentReplicationRecord"
+                  }
                 }
               }
             }
@@ -3230,7 +3239,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CatSegmentReplication_WithIndexOutputPayload"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CatSegmentReplicationRecord"
+                  }
                 }
               }
             }
@@ -8881,7 +8893,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ChangePasswordResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -8925,7 +8947,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchActionGroupsInputPayload"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PatchOperation"
+                }
               }
             }
           },
@@ -8937,7 +8962,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchActionGroupsResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -8973,7 +9008,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteActionGroupResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9027,7 +9072,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchActionGroupInputPayload"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PatchOperation"
+                }
               }
             }
           },
@@ -9049,7 +9097,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchActionGroupResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9093,7 +9151,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateActionGroupResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9137,7 +9205,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchAuditConfigurationInputPayload"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PatchOperation"
+                }
               }
             }
           },
@@ -9176,7 +9247,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdateAuditConfigurationResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9200,7 +9281,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FlushCacheResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9244,7 +9335,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchUsersInputPayload"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PatchOperation"
+                }
               }
             }
           },
@@ -9256,7 +9350,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchUsersResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9290,7 +9394,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteUserResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9342,7 +9456,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchUserInputPayload"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PatchOperation"
+                }
               }
             }
           },
@@ -9364,7 +9481,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchUserResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9406,7 +9533,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateUserResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9450,7 +9587,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchDistinguishedNamesInputPayload"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PatchOperation"
+                }
               }
             }
           },
@@ -9462,7 +9602,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchDistinguishedNamesResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9496,7 +9646,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteDistinguishedNamesResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9565,7 +9725,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdateDistinguishedNamesResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9587,7 +9757,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchRolesInputPayload"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PatchOperation"
+                }
               }
             }
           },
@@ -9599,7 +9772,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchRolesResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9657,7 +9840,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteRoleResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9709,7 +9902,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchRoleInputPayload"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PatchOperation"
+                }
               }
             }
           },
@@ -9731,7 +9927,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchRoleResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9773,7 +9979,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateRoleResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9817,7 +10033,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchRoleMappingsInputPayload"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PatchOperation"
+                }
               }
             }
           },
@@ -9829,7 +10048,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchRoleMappingsResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9863,7 +10092,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteRoleMappingResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9915,7 +10154,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchRoleMappingInputPayload"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PatchOperation"
+                }
               }
             }
           },
@@ -9937,7 +10179,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchRoleMappingResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -9979,7 +10231,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateRoleMappingResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -10023,7 +10285,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchConfigurationInputPayload"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PatchOperation"
+                }
               }
             }
           },
@@ -10035,7 +10300,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchConfigurationResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -10069,7 +10344,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdateConfigurationResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -10093,7 +10378,21 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetCertificatesResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "http_certificates_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/CertificatesDetail"
+                      }
+                    },
+                    "transport_certificates_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/CertificatesDetail"
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -10117,7 +10416,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ReloadHttpCertificatesResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -10141,7 +10450,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ReloadTransportCertificatesResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -10185,7 +10504,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchTenantsInputPayload"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PatchOperation"
+                }
               }
             }
           },
@@ -10197,7 +10519,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchTenantsResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -10231,7 +10563,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteTenantResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -10283,7 +10625,10 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchTenantInputPayload"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PatchOperation"
+                }
               }
             }
           },
@@ -10305,7 +10650,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchTenantResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -10347,7 +10702,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateTenantResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Security Operation Status"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Security Operation Message"
+                    }
+                  }
                 }
               }
             }
@@ -10371,7 +10736,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SecurityHealthResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "mode": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -10855,7 +11231,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RemoteStoreRestoreResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "accepted": {
+                      "type": "boolean"
+                    },
+                    "remote_store": {
+                      "$ref": "#/components/schemas/RemoteStoreRestoreInfo"
+                    }
+                  }
                 },
                 "examples": {
                   "RemoteStoreRestore_example1": {
@@ -11764,7 +12148,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeletePitResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "pits": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/DeletedPit"
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -11788,7 +12180,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteAllPitsResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "pits": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PitsDetailsDeleteAll"
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -11810,7 +12210,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetAllPitsResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "pits": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PitDetail"
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -18421,7 +18829,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreatePitResponseContent"
+                  "type": "object",
+                  "properties": {
+                    "pit_id": {
+                      "type": "string"
+                    },
+                    "_shards": {
+                      "$ref": "#/components/schemas/ShardStatistics"
+                    },
+                    "creation_time": {
+                      "type": "integer",
+                      "format": "int64"
+                    }
+                  }
                 }
               }
             }
