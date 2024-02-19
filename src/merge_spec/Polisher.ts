@@ -17,9 +17,7 @@ export default class Polisher {
         this.rename_schemas();
         this.rename_schema_refs(this.doc);
         this.deref_bodies(this.doc.paths);
-        _.values(this.doc.paths).flatMap(_.values).forEach((op: OperationSpec) => {
-            this.move_bodies(op);
-        });
+        _.values(this.doc.paths).flatMap(_.values).forEach((op: OperationSpec) => { this.move_bodies(op); });
         this.determineSchemaNamespace(this.doc, undefined);
         fs.writeFileSync(output, JSON.stringify(this.doc, null, 2));
     }
@@ -46,6 +44,14 @@ export default class Polisher {
             this.doc.components.requestBodies[op['x-operation-group']] = requestBody;
             op.requestBody = {$ref: `#/components/requestBodies/${op['x-operation-group']}`};
         }
+
+        const response = op.responses['200'] as OpenAPIV3.ResponseObject;
+        const responseContent = response?.content;
+        if (responseContent) {
+            this.doc.components.responses[op['x-operation-group'] + '#200'] = response;
+            op.responses['200'] = {$ref: `#/components/responses/${op['x-operation-group']}#200`};
+        }
+
     }
 
     determineSchemaNamespace(obj: Record<string, any>, namespace: string | undefined): void {

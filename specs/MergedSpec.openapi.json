@@ -15,38 +15,7 @@
         "operationId": "Info",
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "cluster_name": {
-                      "$ref": "#/components/schemas/_common:Name"
-                    },
-                    "cluster_uuid": {
-                      "$ref": "#/components/schemas/_common:Uuid"
-                    },
-                    "name": {
-                      "$ref": "#/components/schemas/_common:Name"
-                    },
-                    "tagline": {
-                      "type": "string"
-                    },
-                    "version": {
-                      "$ref": "#/components/schemas/_common:OpensearchVersionInfo"
-                    }
-                  },
-                  "required": [
-                    "cluster_name",
-                    "cluster_uuid",
-                    "name",
-                    "tagline",
-                    "version"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/info#200"
           }
         },
         "x-operation-group": "info",
@@ -62,10 +31,7 @@
         "operationId": "Ping",
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/ping#200"
           }
         },
         "x-operation-group": "ping",
@@ -212,14 +178,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/indices.update_aliases#200"
           }
         },
         "x-operation-group": "indices.update_aliases",
@@ -482,17 +441,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/cat.help:HelpRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.help#200"
           }
         },
         "x-operation-group": "cat.help",
@@ -1402,17 +1351,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/cat.health:HealthRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.health#200"
           }
         },
         "x-operation-group": "cat.health",
@@ -1766,17 +1705,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/cat.master:MasterRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.master#200"
           }
         },
         "x-deprecation-message": "To promote inclusive language, please use '/_cat/cluster_manager' instead.",
@@ -1884,17 +1813,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/cat.nodeattrs:NodeAttributesRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.nodeattrs#200"
           }
         },
         "x-operation-group": "cat.nodeattrs",
@@ -2038,17 +1957,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/cat.nodes:NodesRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.nodes#200"
           }
         },
         "x-operation-group": "cat.nodes",
@@ -2162,17 +2071,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/cat.pending_tasks:PendingTasksRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.pending_tasks#200"
           }
         },
         "x-operation-group": "cat.pending_tasks",
@@ -2259,17 +2158,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CatPitSegments 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CatPitSegmentsRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.pit_segments#200"
           }
         },
         "x-operation-group": "cat.pit_segments",
@@ -2353,17 +2242,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CatAllPitSegments 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CatPitSegmentsRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.all_pit_segments#200"
           }
         },
         "x-operation-group": "cat.all_pit_segments",
@@ -2469,17 +2348,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/cat.plugins:PluginsRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.plugins#200"
           }
         },
         "x-operation-group": "cat.plugins",
@@ -2798,17 +2667,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/cat.repositories:RepositoriesRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.repositories#200"
           }
         },
         "x-operation-group": "cat.repositories",
@@ -3001,17 +2860,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CatSegmentReplication 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CatSegmentReplicationRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.segment_replication#200"
           }
         },
         "x-operation-group": "cat.segment_replication",
@@ -3212,17 +3061,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CatSegmentReplication_WithIndex 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CatSegmentReplicationRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.segment_replication#200"
           }
         },
         "x-operation-group": "cat.segment_replication",
@@ -3996,17 +3835,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/cat.tasks:TasksRecord"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cat.tasks#200"
           }
         },
         "x-operation-group": "cat.tasks",
@@ -5103,25 +4932,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "tasks": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/cluster.pending_tasks:PendingTask"
-                      }
-                    }
-                  },
-                  "required": [
-                    "tasks"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/cluster.pending_tasks#200"
           }
         },
         "x-operation-group": "cluster.pending_tasks",
@@ -5214,32 +5025,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "acknowledged": {
-                      "type": "boolean"
-                    },
-                    "explanations": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/cluster.reroute:RerouteExplanation"
-                      }
-                    },
-                    "state": {
-                      "description": "There aren't any guarantees on the output/structure of the raw cluster state.\nHere you will find the internal representation of the cluster, which can\ndiffer from the external representation.",
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "acknowledged"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/cluster.reroute#200"
           }
         },
         "x-operation-group": "cluster.reroute",
@@ -5384,38 +5170,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "persistent": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "type": "object"
-                      }
-                    },
-                    "transient": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "type": "object"
-                      }
-                    },
-                    "defaults": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "type": "object"
-                      }
-                    }
-                  },
-                  "required": [
-                    "persistent",
-                    "transient"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/cluster.get_settings#200"
           }
         },
         "x-operation-group": "cluster.get_settings",
@@ -5476,36 +5231,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "acknowledged": {
-                      "type": "boolean"
-                    },
-                    "persistent": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "type": "object"
-                      }
-                    },
-                    "transient": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "type": "object"
-                      }
-                    }
-                  },
-                  "required": [
-                    "acknowledged",
-                    "persistent",
-                    "transient"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/cluster.put_settings#200"
           }
         },
         "x-operation-group": "cluster.put_settings",
@@ -5740,10 +5466,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/cluster.delete_voting_config_exclusions#200"
           }
         },
         "x-operation-group": "cluster.delete_voting_config_exclusions",
@@ -5790,10 +5513,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/cluster.post_voting_config_exclusions#200"
           }
         },
         "x-operation-group": "cluster.post_voting_config_exclusions",
@@ -5888,14 +5608,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/cluster.delete_component_template#200"
           }
         },
         "x-operation-group": "cluster.delete_component_template",
@@ -5985,10 +5698,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/cluster.exists_component_template#200"
           }
         },
         "x-operation-group": "cluster.exists_component_template",
@@ -6215,25 +5925,7 @@
         "operationId": "DanglingIndicesListDanglingIndices",
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "dangling_indices": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/dangling_indices.list_dangling_indices:DanglingIndex"
-                      }
-                    }
-                  },
-                  "required": [
-                    "dangling_indices"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/dangling_indices.list_dangling_indices#200"
           }
         },
         "x-operation-group": "dangling_indices.list_dangling_indices",
@@ -6306,14 +5998,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/dangling_indices.delete_dangling_index#200"
           }
         },
         "x-operation-group": "dangling_indices.delete_dangling_index",
@@ -6383,14 +6068,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/dangling_indices.import_dangling_index#200"
           }
         },
         "x-operation-group": "dangling_indices.import_dangling_index",
@@ -6456,14 +6134,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/indices.delete_data_stream#200"
           }
         },
         "x-operation-group": "indices.delete_data_stream",
@@ -6510,14 +6181,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/indices.create_data_stream#200"
           }
         },
         "x-operation-group": "indices.create_data_stream",
@@ -6575,14 +6239,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/tasks._common:TaskListResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/delete_by_query_rethrottle#200"
           }
         },
         "x-operation-group": "delete_by_query_rethrottle",
@@ -6956,14 +6613,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
+            "$ref": "#/components/responses/indices.simulate_index_template#200"
           }
         },
         "x-operation-group": "indices.simulate_index_template",
@@ -7024,14 +6674,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/indices.delete_index_template#200"
           }
         },
         "x-operation-group": "indices.delete_index_template",
@@ -7134,10 +6777,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/indices.exists_index_template#200"
           }
         },
         "x-operation-group": "indices.exists_index_template",
@@ -7381,14 +7021,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/ingest.delete_pipeline#200"
           }
         },
         "x-operation-group": "ingest.delete_pipeline",
@@ -7478,14 +7111,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/ingest.put_pipeline#200"
           }
         },
         "x-operation-group": "ingest.put_pipeline",
@@ -7548,25 +7174,7 @@
         "operationId": "IngestProcessorGrok",
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "patterns": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "required": [
-                    "patterns"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/ingest.processor_grok#200"
           }
         },
         "x-operation-group": "ingest.processor_grok",
@@ -8717,14 +8325,7 @@
         "operationId": "GetAccountDetails",
         "responses": {
           "200": {
-            "description": "GetAccountDetails 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AccountDetails"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_account_details#200"
           }
         },
         "x-operation-group": "security.get_account_details",
@@ -8742,24 +8343,7 @@
         },
         "responses": {
           "200": {
-            "description": "ChangePassword 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.change_password#200"
           }
         },
         "x-operation-group": "security.change_password",
@@ -8776,14 +8360,7 @@
         "operationId": "GetActionGroups",
         "responses": {
           "200": {
-            "description": "GetActionGroups 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ActionGroupsMap"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_action_groups#200"
           }
         },
         "x-operation-group": "security.get_action_groups",
@@ -8801,24 +8378,7 @@
         },
         "responses": {
           "200": {
-            "description": "PatchActionGroups 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.patch_action_groups#200"
           }
         },
         "x-operation-group": "security.patch_action_groups",
@@ -8847,24 +8407,7 @@
         ],
         "responses": {
           "200": {
-            "description": "DeleteActionGroup 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.delete_action_group#200"
           }
         },
         "x-operation-group": "security.delete_action_group",
@@ -8891,14 +8434,7 @@
         ],
         "responses": {
           "200": {
-            "description": "GetActionGroup 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ActionGroupsMap"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_action_group#200"
           }
         },
         "x-operation-group": "security.get_action_group",
@@ -8926,24 +8462,7 @@
         ],
         "responses": {
           "200": {
-            "description": "PatchActionGroup 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.patch_action_group#200"
           }
         },
         "x-operation-group": "security.patch_action_group",
@@ -8973,24 +8492,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CreateActionGroup 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.create_action_group#200"
           }
         },
         "x-operation-group": "security.create_action_group",
@@ -9007,14 +8509,7 @@
         "operationId": "GetAuditConfiguration",
         "responses": {
           "200": {
-            "description": "GetAuditConfiguration 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuditConfigWithReadOnly"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_audit_configuration#200"
           }
         },
         "x-operation-group": "security.get_audit_configuration",
@@ -9052,24 +8547,7 @@
         },
         "responses": {
           "200": {
-            "description": "UpdateAuditConfiguration 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.update_audit_configuration#200"
           }
         },
         "x-operation-group": "security.update_audit_configuration",
@@ -9086,24 +8564,7 @@
         "operationId": "FlushCache",
         "responses": {
           "200": {
-            "description": "FlushCache 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.flush_cache#200"
           }
         },
         "x-operation-group": "security.flush_cache",
@@ -9120,14 +8581,7 @@
         "operationId": "GetUsers",
         "responses": {
           "200": {
-            "description": "GetUsers 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UsersMap"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_users#200"
           }
         },
         "x-operation-group": "security.get_users",
@@ -9145,24 +8599,7 @@
         },
         "responses": {
           "200": {
-            "description": "PatchUsers 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.patch_users#200"
           }
         },
         "x-operation-group": "security.patch_users",
@@ -9189,24 +8626,7 @@
         ],
         "responses": {
           "200": {
-            "description": "DeleteUser 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.delete_user#200"
           }
         },
         "x-operation-group": "security.delete_user",
@@ -9231,14 +8651,7 @@
         ],
         "responses": {
           "200": {
-            "description": "GetUser 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UsersMap"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_user#200"
           }
         },
         "x-operation-group": "security.get_user",
@@ -9266,24 +8679,7 @@
         ],
         "responses": {
           "200": {
-            "description": "PatchUser 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.patch_user#200"
           }
         },
         "x-operation-group": "security.patch_user",
@@ -9311,24 +8707,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CreateUser 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.create_user#200"
           }
         },
         "x-operation-group": "security.create_user",
@@ -9345,14 +8724,7 @@
         "operationId": "GetDistinguishedNames",
         "responses": {
           "200": {
-            "description": "GetDistinguishedNames 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DistinguishedNamesMap"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_distinguished_names#200"
           }
         },
         "x-operation-group": "security.get_distinguished_names",
@@ -9370,24 +8742,7 @@
         },
         "responses": {
           "200": {
-            "description": "PatchDistinguishedNames 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.patch_distinguished_names#200"
           }
         },
         "x-operation-group": "security.patch_distinguished_names",
@@ -9414,24 +8769,7 @@
         ],
         "responses": {
           "200": {
-            "description": "DeleteDistinguishedNames 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.delete_distinguished_names#200"
           }
         },
         "x-operation-group": "security.delete_distinguished_names",
@@ -9452,14 +8790,7 @@
         ],
         "responses": {
           "200": {
-            "description": "GetDistinguishedNamesWithClusterName 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DistinguishedNamesMap"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_distinguished_names#200"
           }
         },
         "x-operation-group": "security.get_distinguished_names",
@@ -9487,24 +8818,7 @@
         ],
         "responses": {
           "200": {
-            "description": "UpdateDistinguishedNames 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.update_distinguished_names#200"
           }
         },
         "x-operation-group": "security.update_distinguished_names",
@@ -9524,24 +8838,7 @@
         },
         "responses": {
           "200": {
-            "description": "PatchRoles 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.patch_roles#200"
           }
         },
         "x-operation-group": "security.patch_roles",
@@ -9558,14 +8855,7 @@
         "operationId": "GetRoles",
         "responses": {
           "200": {
-            "description": "GetRoles 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RolesMap"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_roles#200"
           }
         },
         "x-operation-group": "security.get_roles",
@@ -9592,24 +8882,7 @@
         ],
         "responses": {
           "200": {
-            "description": "DeleteRole 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.delete_role#200"
           }
         },
         "x-operation-group": "security.delete_role",
@@ -9634,14 +8907,7 @@
         ],
         "responses": {
           "200": {
-            "description": "GetRole 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RolesMap"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_role#200"
           }
         },
         "x-operation-group": "security.get_role",
@@ -9669,24 +8935,7 @@
         ],
         "responses": {
           "200": {
-            "description": "PatchRole 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.patch_role#200"
           }
         },
         "x-operation-group": "security.patch_role",
@@ -9714,24 +8963,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CreateRole 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.create_role#200"
           }
         },
         "x-operation-group": "security.create_role",
@@ -9748,14 +8980,7 @@
         "operationId": "GetRoleMappings",
         "responses": {
           "200": {
-            "description": "GetRoleMappings 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleMappings"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_role_mappings#200"
           }
         },
         "x-operation-group": "security.get_role_mappings",
@@ -9773,24 +8998,7 @@
         },
         "responses": {
           "200": {
-            "description": "PatchRoleMappings 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.patch_role_mappings#200"
           }
         },
         "x-operation-group": "security.patch_role_mappings",
@@ -9817,24 +9025,7 @@
         ],
         "responses": {
           "200": {
-            "description": "DeleteRoleMapping 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.delete_role_mapping#200"
           }
         },
         "x-operation-group": "security.delete_role_mapping",
@@ -9859,14 +9050,7 @@
         ],
         "responses": {
           "200": {
-            "description": "GetRoleMapping 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleMappings"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_role_mapping#200"
           }
         },
         "x-operation-group": "security.get_role_mapping",
@@ -9894,24 +9078,7 @@
         ],
         "responses": {
           "200": {
-            "description": "PatchRoleMapping 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.patch_role_mapping#200"
           }
         },
         "x-operation-group": "security.patch_role_mapping",
@@ -9939,24 +9106,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CreateRoleMapping 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.create_role_mapping#200"
           }
         },
         "x-operation-group": "security.create_role_mapping",
@@ -9973,14 +9123,7 @@
         "operationId": "GetConfiguration",
         "responses": {
           "200": {
-            "description": "GetConfiguration 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DynamicConfig"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_configuration#200"
           }
         },
         "x-operation-group": "security.get_configuration",
@@ -9998,24 +9141,7 @@
         },
         "responses": {
           "200": {
-            "description": "PatchConfiguration 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.patch_configuration#200"
           }
         },
         "x-operation-group": "security.patch_configuration",
@@ -10035,24 +9161,7 @@
         },
         "responses": {
           "200": {
-            "description": "UpdateConfiguration 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.update_configuration#200"
           }
         },
         "x-operation-group": "security.update_configuration",
@@ -10069,28 +9178,7 @@
         "operationId": "GetCertificates",
         "responses": {
           "200": {
-            "description": "GetCertificates 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "http_certificates_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/CertificatesDetail"
-                      }
-                    },
-                    "transport_certificates_list": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/CertificatesDetail"
-                      }
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_certificates#200"
           }
         },
         "x-operation-group": "security.get_certificates",
@@ -10107,24 +9195,7 @@
         "operationId": "ReloadHttpCertificates",
         "responses": {
           "200": {
-            "description": "ReloadHttpCertificates 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.reload_http_certificates#200"
           }
         },
         "x-operation-group": "security.reload_http_certificates",
@@ -10141,24 +9212,7 @@
         "operationId": "ReloadTransportCertificates",
         "responses": {
           "200": {
-            "description": "ReloadTransportCertificates 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.reload_transport_certificates#200"
           }
         },
         "x-operation-group": "security.reload_transport_certificates",
@@ -10175,14 +9229,7 @@
         "operationId": "GetTenants",
         "responses": {
           "200": {
-            "description": "GetTenants 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TenantsMap"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_tenants#200"
           }
         },
         "x-operation-group": "security.get_tenants",
@@ -10200,24 +9247,7 @@
         },
         "responses": {
           "200": {
-            "description": "PatchTenants 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.patch_tenants#200"
           }
         },
         "x-operation-group": "security.patch_tenants",
@@ -10244,24 +9274,7 @@
         ],
         "responses": {
           "200": {
-            "description": "DeleteTenant 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.delete_tenant#200"
           }
         },
         "x-operation-group": "security.delete_tenant",
@@ -10286,14 +9299,7 @@
         ],
         "responses": {
           "200": {
-            "description": "GetTenant 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TenantsMap"
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.get_tenant#200"
           }
         },
         "x-operation-group": "security.get_tenant",
@@ -10321,24 +9327,7 @@
         ],
         "responses": {
           "200": {
-            "description": "PatchTenant 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.patch_tenant#200"
           }
         },
         "x-operation-group": "security.patch_tenant",
@@ -10366,24 +9355,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CreateTenant 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Security Operation Status"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Security Operation Message"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.create_tenant#200"
           }
         },
         "x-operation-group": "security.create_tenant",
@@ -10400,25 +9372,7 @@
         "operationId": "SecurityHealth",
         "responses": {
           "200": {
-            "description": "SecurityHealth 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    },
-                    "mode": {
-                      "type": "string"
-                    },
-                    "status": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/security.health#200"
           }
         },
         "x-operation-group": "security.health",
@@ -10657,67 +9611,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "batches": {
-                      "type": "number"
-                    },
-                    "created": {
-                      "type": "number"
-                    },
-                    "deleted": {
-                      "type": "number"
-                    },
-                    "failures": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/_common:BulkIndexByScrollFailure"
-                      }
-                    },
-                    "noops": {
-                      "type": "number"
-                    },
-                    "retries": {
-                      "$ref": "#/components/schemas/_common:Retries"
-                    },
-                    "requests_per_second": {
-                      "type": "number"
-                    },
-                    "slice_id": {
-                      "type": "number"
-                    },
-                    "task": {
-                      "$ref": "#/components/schemas/_common:TaskId"
-                    },
-                    "throttled_millis": {
-                      "$ref": "#/components/schemas/_common:EpochTimeUnitMillis"
-                    },
-                    "throttled_until_millis": {
-                      "$ref": "#/components/schemas/_common:EpochTimeUnitMillis"
-                    },
-                    "timed_out": {
-                      "type": "boolean"
-                    },
-                    "took": {
-                      "$ref": "#/components/schemas/_common:DurationValueUnitMillis"
-                    },
-                    "total": {
-                      "type": "number"
-                    },
-                    "updated": {
-                      "type": "number"
-                    },
-                    "version_conflicts": {
-                      "type": "number"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/reindex#200"
           }
         },
         "x-operation-group": "reindex",
@@ -10757,25 +9651,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "nodes": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "$ref": "#/components/schemas/_core.reindex_rethrottle:ReindexNode"
-                      }
-                    }
-                  },
-                  "required": [
-                    "nodes"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/reindex_rethrottle#200"
           }
         },
         "x-operation-group": "reindex_rethrottle",
@@ -10792,17 +9668,7 @@
         "operationId": "ClusterRemoteInfo",
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "$ref": "#/components/schemas/cluster.remote_info:ClusterRemoteInfo"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/cluster.remote_info#200"
           }
         },
         "x-operation-group": "cluster.remote_info",
@@ -10844,40 +9710,7 @@
         ],
         "responses": {
           "200": {
-            "description": "RemoteStoreRestore 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "accepted": {
-                      "type": "boolean"
-                    },
-                    "remote_store": {
-                      "$ref": "#/components/schemas/RemoteStoreRestoreInfo"
-                    }
-                  }
-                },
-                "examples": {
-                  "RemoteStoreRestore_example1": {
-                    "summary": "Examples for Post Remote Storage Restore Operation.",
-                    "description": "",
-                    "value": {
-                      "remote_store": {
-                        "indices": [
-                          "books"
-                        ],
-                        "shards": {
-                          "total": 1,
-                          "failed": 0,
-                          "successful": 1
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/remote_store.restore#200"
           }
         },
         "x-operation-group": "remote_store.restore",
@@ -10993,39 +9826,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "indices": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/indices.resolve_index:ResolveIndexItem"
-                      }
-                    },
-                    "aliases": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/indices.resolve_index:ResolveIndexAliasItem"
-                      }
-                    },
-                    "data_streams": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/indices.resolve_index:ResolveIndexDataStreamsItem"
-                      }
-                    }
-                  },
-                  "required": [
-                    "indices",
-                    "aliases",
-                    "data_streams"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/indices.resolve_index#200"
           }
         },
         "x-operation-group": "indices.resolve_index",
@@ -11042,25 +9843,7 @@
         "operationId": "GetScriptContext",
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "contexts": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/_core.get_script_context:Context"
-                      }
-                    }
-                  },
-                  "required": [
-                    "contexts"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/get_script_context#200"
           }
         },
         "x-operation-group": "get_script_context",
@@ -11078,32 +9861,7 @@
         "operationId": "GetScriptLanguages",
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "language_contexts": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/_core.get_script_languages:LanguageContext"
-                      }
-                    },
-                    "types_allowed": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  },
-                  "required": [
-                    "language_contexts",
-                    "types_allowed"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/get_script_languages#200"
           }
         },
         "x-operation-group": "get_script_languages",
@@ -11201,14 +9959,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/delete_script#200"
           }
         },
         "x-operation-group": "delete_script",
@@ -11257,29 +10008,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "_id": {
-                      "$ref": "#/components/schemas/_common:Id"
-                    },
-                    "found": {
-                      "type": "boolean"
-                    },
-                    "script": {
-                      "$ref": "#/components/schemas/_common:StoredScript"
-                    }
-                  },
-                  "required": [
-                    "_id",
-                    "found"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/get_script#200"
           }
         },
         "x-operation-group": "get_script",
@@ -11755,22 +10484,7 @@
         },
         "responses": {
           "200": {
-            "description": "DeletePit 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "pits": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/DeletedPit"
-                      }
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/delete_pit#200"
           }
         },
         "x-operation-group": "delete_pit",
@@ -11787,22 +10501,7 @@
         "operationId": "DeleteAllPits",
         "responses": {
           "200": {
-            "description": "DeleteAllPits 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "pits": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/PitsDetailsDeleteAll"
-                      }
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/delete_all_pits#200"
           }
         },
         "x-operation-group": "delete_all_pits",
@@ -11817,22 +10516,7 @@
         "operationId": "GetAllPits",
         "responses": {
           "200": {
-            "description": "GetAllPits 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "pits": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/PitDetail"
-                      }
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/get_all_pits#200"
           }
         },
         "x-operation-group": "get_all_pits",
@@ -12515,14 +11199,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/snapshot.delete_repository#200"
           }
         },
         "x-operation-group": "snapshot.delete_repository",
@@ -12692,22 +11369,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "results": {
-                      "$ref": "#/components/schemas/snapshot.cleanup_repository:CleanupRepositoryResults"
-                    }
-                  },
-                  "required": [
-                    "results"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/snapshot.cleanup_repository#200"
           }
         },
         "x-operation-group": "snapshot.cleanup_repository",
@@ -12801,25 +11463,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "nodes": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "$ref": "#/components/schemas/snapshot.verify_repository:CompactNodeInfo"
-                      }
-                    }
-                  },
-                  "required": [
-                    "nodes"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/snapshot.verify_repository#200"
           }
         },
         "x-operation-group": "snapshot.verify_repository",
@@ -12881,14 +11525,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/snapshot.delete#200"
           }
         },
         "x-operation-group": "snapshot.delete",
@@ -12968,40 +11605,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "responses": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/snapshot.get:SnapshotResponseItem"
-                      }
-                    },
-                    "snapshots": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/snapshot._common:SnapshotInfo"
-                      }
-                    },
-                    "total": {
-                      "description": "The total number of snapshots that match the request when ignoring size limit or after query parameter.",
-                      "type": "number"
-                    },
-                    "remaining": {
-                      "description": "The number of remaining snapshots that were not returned due to size limits and that can be fetched by additional requests using the next field value.",
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "total",
-                    "remaining"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/snapshot.get#200"
           }
         },
         "x-operation-group": "snapshot.get",
@@ -13155,14 +11759,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/snapshot.clone#200"
           }
         },
         "x-operation-group": "snapshot.clone",
@@ -13237,22 +11834,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "snapshot": {
-                      "$ref": "#/components/schemas/snapshot.restore:SnapshotRestore"
-                    }
-                  },
-                  "required": [
-                    "snapshot"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/snapshot.restore#200"
           }
         },
         "x-operation-group": "snapshot.restore",
@@ -13482,14 +12064,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/tasks._common:TaskListResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/tasks.list#200"
           }
         },
         "x-operation-group": "tasks.list",
@@ -13570,32 +12145,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "completed": {
-                      "type": "boolean"
-                    },
-                    "task": {
-                      "$ref": "#/components/schemas/tasks._common:TaskInfo"
-                    },
-                    "response": {
-                      "type": "object"
-                    },
-                    "error": {
-                      "$ref": "#/components/schemas/_common:ErrorCause"
-                    }
-                  },
-                  "required": [
-                    "completed",
-                    "task"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/tasks.get#200"
           }
         },
         "x-operation-group": "tasks.get",
@@ -13723,14 +12273,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/indices.delete_template#200"
           }
         },
         "x-operation-group": "indices.delete_template",
@@ -13833,10 +12376,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/indices.exists_template#200"
           }
         },
         "x-operation-group": "indices.exists_template",
@@ -13954,25 +12494,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "nodes": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "$ref": "#/components/schemas/_core.update_by_query_rethrottle:UpdateByQueryRethrottleNode"
-                      }
-                    }
-                  },
-                  "required": [
-                    "nodes"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/update_by_query_rethrottle#200"
           }
         },
         "x-operation-group": "update_by_query_rethrottle",
@@ -14371,14 +12893,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:IndicesResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/indices.delete#200"
           }
         },
         "x-operation-group": "indices.delete",
@@ -14487,17 +13002,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "$ref": "#/components/schemas/indices._common:IndexState"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/indices.get#200"
           }
         },
         "x-operation-group": "indices.get",
@@ -14585,10 +13090,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/indices.exists#200"
           }
         },
         "x-operation-group": "indices.exists",
@@ -14660,30 +13162,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "index": {
-                      "$ref": "#/components/schemas/_common:IndexName"
-                    },
-                    "shards_acknowledged": {
-                      "type": "boolean"
-                    },
-                    "acknowledged": {
-                      "type": "boolean"
-                    }
-                  },
-                  "required": [
-                    "index",
-                    "shards_acknowledged",
-                    "acknowledged"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/indices.create#200"
           }
         },
         "x-operation-group": "indices.create",
@@ -15163,33 +13642,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "acknowledged": {
-                      "type": "boolean"
-                    },
-                    "shards_acknowledged": {
-                      "type": "boolean"
-                    },
-                    "indices": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/indices.add_block:IndicesBlockStatus"
-                      }
-                    }
-                  },
-                  "required": [
-                    "acknowledged",
-                    "shards_acknowledged",
-                    "indices"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/indices.add_block#200"
           }
         },
         "x-operation-group": "indices.add_block",
@@ -15577,33 +14030,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "acknowledged": {
-                      "type": "boolean"
-                    },
-                    "indices": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "$ref": "#/components/schemas/indices.close:CloseIndexResult"
-                      }
-                    },
-                    "shards_acknowledged": {
-                      "type": "boolean"
-                    }
-                  },
-                  "required": [
-                    "acknowledged",
-                    "indices",
-                    "shards_acknowledged"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/indices.close#200"
           }
         },
         "x-operation-group": "indices.close",
@@ -16200,67 +14627,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "batches": {
-                      "type": "number"
-                    },
-                    "deleted": {
-                      "type": "number"
-                    },
-                    "failures": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/_common:BulkIndexByScrollFailure"
-                      }
-                    },
-                    "noops": {
-                      "type": "number"
-                    },
-                    "requests_per_second": {
-                      "type": "number"
-                    },
-                    "retries": {
-                      "$ref": "#/components/schemas/_common:Retries"
-                    },
-                    "slice_id": {
-                      "type": "number"
-                    },
-                    "task": {
-                      "$ref": "#/components/schemas/_common:TaskId"
-                    },
-                    "throttled": {
-                      "$ref": "#/components/schemas/_common:Duration"
-                    },
-                    "throttled_millis": {
-                      "$ref": "#/components/schemas/_common:DurationValueUnitMillis"
-                    },
-                    "throttled_until": {
-                      "$ref": "#/components/schemas/_common:Duration"
-                    },
-                    "throttled_until_millis": {
-                      "$ref": "#/components/schemas/_common:DurationValueUnitMillis"
-                    },
-                    "timed_out": {
-                      "type": "boolean"
-                    },
-                    "took": {
-                      "$ref": "#/components/schemas/_common:DurationValueUnitMillis"
-                    },
-                    "total": {
-                      "type": "number"
-                    },
-                    "version_conflicts": {
-                      "type": "number"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/delete_by_query#200"
           }
         },
         "x-operation-group": "delete_by_query",
@@ -16439,14 +14806,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_common:WriteResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/delete#200"
           }
         },
         "x-operation-group": "delete",
@@ -16585,14 +14945,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_core.get:GetResult"
-                }
-              }
-            }
+            "$ref": "#/components/responses/get#200"
           }
         },
         "x-operation-group": "get",
@@ -16731,10 +15084,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/exists#200"
           }
         },
         "x-operation-group": "exists",
@@ -17784,26 +16134,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "acknowledged": {
-                      "type": "boolean"
-                    },
-                    "shards_acknowledged": {
-                      "type": "boolean"
-                    }
-                  },
-                  "required": [
-                    "acknowledged",
-                    "shards_acknowledged"
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/indices.open#200"
           }
         },
         "x-operation-group": "indices.open",
@@ -18333,26 +16664,7 @@
         ],
         "responses": {
           "200": {
-            "description": "CreatePit 200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "pit_id": {
-                      "type": "string"
-                    },
-                    "_shards": {
-                      "$ref": "#/components/schemas/ShardStatistics"
-                    },
-                    "creation_time": {
-                      "type": "integer",
-                      "format": "int64"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/create_pit#200"
           }
         },
         "x-operation-group": "create_pit",
@@ -19021,14 +17333,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
+            "$ref": "#/components/responses/get_source#200"
           }
         },
         "x-operation-group": "get_source",
@@ -19157,10 +17462,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {}
-            }
+            "$ref": "#/components/responses/exists_source#200"
           }
         },
         "x-operation-group": "exists_source",
@@ -19781,14 +18083,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/_core.update:UpdateWriteResponseBase"
-                }
-              }
-            }
+            "$ref": "#/components/responses/update#200"
           }
         },
         "x-operation-group": "update",
@@ -20178,67 +18473,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "batches": {
-                      "type": "number"
-                    },
-                    "failures": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/_common:BulkIndexByScrollFailure"
-                      }
-                    },
-                    "noops": {
-                      "type": "number"
-                    },
-                    "deleted": {
-                      "type": "number"
-                    },
-                    "requests_per_second": {
-                      "type": "number"
-                    },
-                    "retries": {
-                      "$ref": "#/components/schemas/_common:Retries"
-                    },
-                    "task": {
-                      "$ref": "#/components/schemas/_common:TaskId"
-                    },
-                    "timed_out": {
-                      "type": "boolean"
-                    },
-                    "took": {
-                      "$ref": "#/components/schemas/_common:DurationValueUnitMillis"
-                    },
-                    "total": {
-                      "type": "number"
-                    },
-                    "updated": {
-                      "type": "number"
-                    },
-                    "version_conflicts": {
-                      "type": "number"
-                    },
-                    "throttled": {
-                      "$ref": "#/components/schemas/_common:Duration"
-                    },
-                    "throttled_millis": {
-                      "$ref": "#/components/schemas/_common:DurationValueUnitMillis"
-                    },
-                    "throttled_until": {
-                      "$ref": "#/components/schemas/_common:Duration"
-                    },
-                    "throttled_until_millis": {
-                      "$ref": "#/components/schemas/_common:DurationValueUnitMillis"
-                    }
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/update_by_query#200"
           }
         },
         "x-operation-group": "update_by_query",
@@ -55020,6 +53255,2117 @@
                 "took",
                 "_version"
               ]
+            }
+          }
+        }
+      },
+      "info#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cluster_name": {
+                  "$ref": "#/components/schemas/_common:Name"
+                },
+                "cluster_uuid": {
+                  "$ref": "#/components/schemas/_common:Uuid"
+                },
+                "name": {
+                  "$ref": "#/components/schemas/_common:Name"
+                },
+                "tagline": {
+                  "type": "string"
+                },
+                "version": {
+                  "$ref": "#/components/schemas/_common:OpensearchVersionInfo"
+                }
+              },
+              "required": [
+                "cluster_name",
+                "cluster_uuid",
+                "name",
+                "tagline",
+                "version"
+              ]
+            }
+          }
+        }
+      },
+      "ping#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "indices.update_aliases#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "cat.help#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/cat.help:HelpRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.health#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/cat.health:HealthRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.master#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/cat.master:MasterRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.nodeattrs#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/cat.nodeattrs:NodeAttributesRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.nodes#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/cat.nodes:NodesRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.pending_tasks#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/cat.pending_tasks:PendingTasksRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.pit_segments#200": {
+        "description": "CatPitSegments 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CatPitSegmentsRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.all_pit_segments#200": {
+        "description": "CatAllPitSegments 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CatPitSegmentsRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.plugins#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/cat.plugins:PluginsRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.repositories#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/cat.repositories:RepositoriesRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.segment_replication#200": {
+        "description": "CatSegmentReplication_WithIndex 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/CatSegmentReplicationRecord"
+              }
+            }
+          }
+        }
+      },
+      "cat.tasks#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/cat.tasks:TasksRecord"
+              }
+            }
+          }
+        }
+      },
+      "cluster.pending_tasks#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tasks": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/cluster.pending_tasks:PendingTask"
+                  }
+                }
+              },
+              "required": [
+                "tasks"
+              ]
+            }
+          }
+        }
+      },
+      "cluster.reroute#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "acknowledged": {
+                  "type": "boolean"
+                },
+                "explanations": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/cluster.reroute:RerouteExplanation"
+                  }
+                },
+                "state": {
+                  "description": "There aren't any guarantees on the output/structure of the raw cluster state.\nHere you will find the internal representation of the cluster, which can\ndiffer from the external representation.",
+                  "type": "object"
+                }
+              },
+              "required": [
+                "acknowledged"
+              ]
+            }
+          }
+        }
+      },
+      "cluster.get_settings#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "persistent": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                },
+                "transient": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                },
+                "defaults": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              },
+              "required": [
+                "persistent",
+                "transient"
+              ]
+            }
+          }
+        }
+      },
+      "cluster.put_settings#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "acknowledged": {
+                  "type": "boolean"
+                },
+                "persistent": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                },
+                "transient": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              },
+              "required": [
+                "acknowledged",
+                "persistent",
+                "transient"
+              ]
+            }
+          }
+        }
+      },
+      "cluster.delete_voting_config_exclusions#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "cluster.post_voting_config_exclusions#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "cluster.delete_component_template#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "cluster.exists_component_template#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "dangling_indices.list_dangling_indices#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "dangling_indices": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/dangling_indices.list_dangling_indices:DanglingIndex"
+                  }
+                }
+              },
+              "required": [
+                "dangling_indices"
+              ]
+            }
+          }
+        }
+      },
+      "dangling_indices.delete_dangling_index#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "dangling_indices.import_dangling_index#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "indices.delete_data_stream#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "indices.create_data_stream#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "delete_by_query_rethrottle#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/tasks._common:TaskListResponseBase"
+            }
+          }
+        }
+      },
+      "indices.simulate_index_template#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "indices.delete_index_template#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "indices.exists_index_template#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "ingest.delete_pipeline#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "ingest.put_pipeline#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "ingest.processor_grok#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "patterns": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "patterns"
+              ]
+            }
+          }
+        }
+      },
+      "security.get_account_details#200": {
+        "description": "GetAccountDetails 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AccountDetails"
+            }
+          }
+        }
+      },
+      "security.change_password#200": {
+        "description": "ChangePassword 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_action_groups#200": {
+        "description": "GetActionGroups 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ActionGroupsMap"
+            }
+          }
+        }
+      },
+      "security.patch_action_groups#200": {
+        "description": "PatchActionGroups 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.delete_action_group#200": {
+        "description": "DeleteActionGroup 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_action_group#200": {
+        "description": "GetActionGroup 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ActionGroupsMap"
+            }
+          }
+        }
+      },
+      "security.patch_action_group#200": {
+        "description": "PatchActionGroup 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.create_action_group#200": {
+        "description": "CreateActionGroup 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_audit_configuration#200": {
+        "description": "GetAuditConfiguration 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/AuditConfigWithReadOnly"
+            }
+          }
+        }
+      },
+      "security.update_audit_configuration#200": {
+        "description": "UpdateAuditConfiguration 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.flush_cache#200": {
+        "description": "FlushCache 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_users#200": {
+        "description": "GetUsers 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsersMap"
+            }
+          }
+        }
+      },
+      "security.patch_users#200": {
+        "description": "PatchUsers 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.delete_user#200": {
+        "description": "DeleteUser 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_user#200": {
+        "description": "GetUser 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UsersMap"
+            }
+          }
+        }
+      },
+      "security.patch_user#200": {
+        "description": "PatchUser 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.create_user#200": {
+        "description": "CreateUser 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_distinguished_names#200": {
+        "description": "GetDistinguishedNamesWithClusterName 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DistinguishedNamesMap"
+            }
+          }
+        }
+      },
+      "security.patch_distinguished_names#200": {
+        "description": "PatchDistinguishedNames 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.delete_distinguished_names#200": {
+        "description": "DeleteDistinguishedNames 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.update_distinguished_names#200": {
+        "description": "UpdateDistinguishedNames 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.patch_roles#200": {
+        "description": "PatchRoles 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_roles#200": {
+        "description": "GetRoles 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RolesMap"
+            }
+          }
+        }
+      },
+      "security.delete_role#200": {
+        "description": "DeleteRole 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_role#200": {
+        "description": "GetRole 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RolesMap"
+            }
+          }
+        }
+      },
+      "security.patch_role#200": {
+        "description": "PatchRole 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.create_role#200": {
+        "description": "CreateRole 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_role_mappings#200": {
+        "description": "GetRoleMappings 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RoleMappings"
+            }
+          }
+        }
+      },
+      "security.patch_role_mappings#200": {
+        "description": "PatchRoleMappings 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.delete_role_mapping#200": {
+        "description": "DeleteRoleMapping 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_role_mapping#200": {
+        "description": "GetRoleMapping 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RoleMappings"
+            }
+          }
+        }
+      },
+      "security.patch_role_mapping#200": {
+        "description": "PatchRoleMapping 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.create_role_mapping#200": {
+        "description": "CreateRoleMapping 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_configuration#200": {
+        "description": "GetConfiguration 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DynamicConfig"
+            }
+          }
+        }
+      },
+      "security.patch_configuration#200": {
+        "description": "PatchConfiguration 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.update_configuration#200": {
+        "description": "UpdateConfiguration 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_certificates#200": {
+        "description": "GetCertificates 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "http_certificates_list": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CertificatesDetail"
+                  }
+                },
+                "transport_certificates_list": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CertificatesDetail"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.reload_http_certificates#200": {
+        "description": "ReloadHttpCertificates 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.reload_transport_certificates#200": {
+        "description": "ReloadTransportCertificates 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_tenants#200": {
+        "description": "GetTenants 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/TenantsMap"
+            }
+          }
+        }
+      },
+      "security.patch_tenants#200": {
+        "description": "PatchTenants 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.delete_tenant#200": {
+        "description": "DeleteTenant 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.get_tenant#200": {
+        "description": "GetTenant 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/TenantsMap"
+            }
+          }
+        }
+      },
+      "security.patch_tenant#200": {
+        "description": "PatchTenant 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.create_tenant#200": {
+        "description": "CreateTenant 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "description": "Security Operation Status"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Security Operation Message"
+                }
+              }
+            }
+          }
+        }
+      },
+      "security.health#200": {
+        "description": "SecurityHealth 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string"
+                },
+                "mode": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "reindex#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "batches": {
+                  "type": "number"
+                },
+                "created": {
+                  "type": "number"
+                },
+                "deleted": {
+                  "type": "number"
+                },
+                "failures": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/_common:BulkIndexByScrollFailure"
+                  }
+                },
+                "noops": {
+                  "type": "number"
+                },
+                "retries": {
+                  "$ref": "#/components/schemas/_common:Retries"
+                },
+                "requests_per_second": {
+                  "type": "number"
+                },
+                "slice_id": {
+                  "type": "number"
+                },
+                "task": {
+                  "$ref": "#/components/schemas/_common:TaskId"
+                },
+                "throttled_millis": {
+                  "$ref": "#/components/schemas/_common:EpochTimeUnitMillis"
+                },
+                "throttled_until_millis": {
+                  "$ref": "#/components/schemas/_common:EpochTimeUnitMillis"
+                },
+                "timed_out": {
+                  "type": "boolean"
+                },
+                "took": {
+                  "$ref": "#/components/schemas/_common:DurationValueUnitMillis"
+                },
+                "total": {
+                  "type": "number"
+                },
+                "updated": {
+                  "type": "number"
+                },
+                "version_conflicts": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      },
+      "reindex_rethrottle#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nodes": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/_core.reindex_rethrottle:ReindexNode"
+                  }
+                }
+              },
+              "required": [
+                "nodes"
+              ]
+            }
+          }
+        }
+      },
+      "cluster.remote_info#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/components/schemas/cluster.remote_info:ClusterRemoteInfo"
+              }
+            }
+          }
+        }
+      },
+      "remote_store.restore#200": {
+        "description": "RemoteStoreRestore 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "accepted": {
+                  "type": "boolean"
+                },
+                "remote_store": {
+                  "$ref": "#/components/schemas/RemoteStoreRestoreInfo"
+                }
+              }
+            },
+            "examples": {
+              "RemoteStoreRestore_example1": {
+                "summary": "Examples for Post Remote Storage Restore Operation.",
+                "description": "",
+                "value": {
+                  "remote_store": {
+                    "indices": [
+                      "books"
+                    ],
+                    "shards": {
+                      "total": 1,
+                      "failed": 0,
+                      "successful": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "indices.resolve_index#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "indices": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/indices.resolve_index:ResolveIndexItem"
+                  }
+                },
+                "aliases": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/indices.resolve_index:ResolveIndexAliasItem"
+                  }
+                },
+                "data_streams": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/indices.resolve_index:ResolveIndexDataStreamsItem"
+                  }
+                }
+              },
+              "required": [
+                "indices",
+                "aliases",
+                "data_streams"
+              ]
+            }
+          }
+        }
+      },
+      "get_script_context#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "contexts": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/_core.get_script_context:Context"
+                  }
+                }
+              },
+              "required": [
+                "contexts"
+              ]
+            }
+          }
+        }
+      },
+      "get_script_languages#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "language_contexts": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/_core.get_script_languages:LanguageContext"
+                  }
+                },
+                "types_allowed": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "language_contexts",
+                "types_allowed"
+              ]
+            }
+          }
+        }
+      },
+      "delete_script#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "get_script#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "_id": {
+                  "$ref": "#/components/schemas/_common:Id"
+                },
+                "found": {
+                  "type": "boolean"
+                },
+                "script": {
+                  "$ref": "#/components/schemas/_common:StoredScript"
+                }
+              },
+              "required": [
+                "_id",
+                "found"
+              ]
+            }
+          }
+        }
+      },
+      "delete_pit#200": {
+        "description": "DeletePit 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pits": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeletedPit"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete_all_pits#200": {
+        "description": "DeleteAllPits 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pits": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PitsDetailsDeleteAll"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get_all_pits#200": {
+        "description": "GetAllPits 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pits": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PitDetail"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "snapshot.delete_repository#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "snapshot.cleanup_repository#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "results": {
+                  "$ref": "#/components/schemas/snapshot.cleanup_repository:CleanupRepositoryResults"
+                }
+              },
+              "required": [
+                "results"
+              ]
+            }
+          }
+        }
+      },
+      "snapshot.verify_repository#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nodes": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/snapshot.verify_repository:CompactNodeInfo"
+                  }
+                }
+              },
+              "required": [
+                "nodes"
+              ]
+            }
+          }
+        }
+      },
+      "snapshot.delete#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "snapshot.get#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "responses": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/snapshot.get:SnapshotResponseItem"
+                  }
+                },
+                "snapshots": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/snapshot._common:SnapshotInfo"
+                  }
+                },
+                "total": {
+                  "description": "The total number of snapshots that match the request when ignoring size limit or after query parameter.",
+                  "type": "number"
+                },
+                "remaining": {
+                  "description": "The number of remaining snapshots that were not returned due to size limits and that can be fetched by additional requests using the next field value.",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "total",
+                "remaining"
+              ]
+            }
+          }
+        }
+      },
+      "snapshot.clone#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "snapshot.restore#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "snapshot": {
+                  "$ref": "#/components/schemas/snapshot.restore:SnapshotRestore"
+                }
+              },
+              "required": [
+                "snapshot"
+              ]
+            }
+          }
+        }
+      },
+      "tasks.list#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/tasks._common:TaskListResponseBase"
+            }
+          }
+        }
+      },
+      "tasks.get#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "completed": {
+                  "type": "boolean"
+                },
+                "task": {
+                  "$ref": "#/components/schemas/tasks._common:TaskInfo"
+                },
+                "response": {
+                  "type": "object"
+                },
+                "error": {
+                  "$ref": "#/components/schemas/_common:ErrorCause"
+                }
+              },
+              "required": [
+                "completed",
+                "task"
+              ]
+            }
+          }
+        }
+      },
+      "indices.delete_template#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:AcknowledgedResponseBase"
+            }
+          }
+        }
+      },
+      "indices.exists_template#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "update_by_query_rethrottle#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nodes": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/_core.update_by_query_rethrottle:UpdateByQueryRethrottleNode"
+                  }
+                }
+              },
+              "required": [
+                "nodes"
+              ]
+            }
+          }
+        }
+      },
+      "indices.delete#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:IndicesResponseBase"
+            }
+          }
+        }
+      },
+      "indices.get#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/components/schemas/indices._common:IndexState"
+              }
+            }
+          }
+        }
+      },
+      "indices.exists#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "indices.create#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "$ref": "#/components/schemas/_common:IndexName"
+                },
+                "shards_acknowledged": {
+                  "type": "boolean"
+                },
+                "acknowledged": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "index",
+                "shards_acknowledged",
+                "acknowledged"
+              ]
+            }
+          }
+        }
+      },
+      "indices.add_block#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "acknowledged": {
+                  "type": "boolean"
+                },
+                "shards_acknowledged": {
+                  "type": "boolean"
+                },
+                "indices": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/indices.add_block:IndicesBlockStatus"
+                  }
+                }
+              },
+              "required": [
+                "acknowledged",
+                "shards_acknowledged",
+                "indices"
+              ]
+            }
+          }
+        }
+      },
+      "indices.close#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "acknowledged": {
+                  "type": "boolean"
+                },
+                "indices": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/indices.close:CloseIndexResult"
+                  }
+                },
+                "shards_acknowledged": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "acknowledged",
+                "indices",
+                "shards_acknowledged"
+              ]
+            }
+          }
+        }
+      },
+      "delete_by_query#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "batches": {
+                  "type": "number"
+                },
+                "deleted": {
+                  "type": "number"
+                },
+                "failures": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/_common:BulkIndexByScrollFailure"
+                  }
+                },
+                "noops": {
+                  "type": "number"
+                },
+                "requests_per_second": {
+                  "type": "number"
+                },
+                "retries": {
+                  "$ref": "#/components/schemas/_common:Retries"
+                },
+                "slice_id": {
+                  "type": "number"
+                },
+                "task": {
+                  "$ref": "#/components/schemas/_common:TaskId"
+                },
+                "throttled": {
+                  "$ref": "#/components/schemas/_common:Duration"
+                },
+                "throttled_millis": {
+                  "$ref": "#/components/schemas/_common:DurationValueUnitMillis"
+                },
+                "throttled_until": {
+                  "$ref": "#/components/schemas/_common:Duration"
+                },
+                "throttled_until_millis": {
+                  "$ref": "#/components/schemas/_common:DurationValueUnitMillis"
+                },
+                "timed_out": {
+                  "type": "boolean"
+                },
+                "took": {
+                  "$ref": "#/components/schemas/_common:DurationValueUnitMillis"
+                },
+                "total": {
+                  "type": "number"
+                },
+                "version_conflicts": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_common:WriteResponseBase"
+            }
+          }
+        }
+      },
+      "get#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_core.get:GetResult"
+            }
+          }
+        }
+      },
+      "exists#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "indices.open#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "acknowledged": {
+                  "type": "boolean"
+                },
+                "shards_acknowledged": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "acknowledged",
+                "shards_acknowledged"
+              ]
+            }
+          }
+        }
+      },
+      "create_pit#200": {
+        "description": "CreatePit 200 response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pit_id": {
+                  "type": "string"
+                },
+                "_shards": {
+                  "$ref": "#/components/schemas/ShardStatistics"
+                },
+                "creation_time": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get_source#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "exists_source#200": {
+        "description": "",
+        "content": {
+          "application/json": {}
+        }
+      },
+      "update#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/_core.update:UpdateWriteResponseBase"
+            }
+          }
+        }
+      },
+      "update_by_query#200": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "batches": {
+                  "type": "number"
+                },
+                "failures": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/_common:BulkIndexByScrollFailure"
+                  }
+                },
+                "noops": {
+                  "type": "number"
+                },
+                "deleted": {
+                  "type": "number"
+                },
+                "requests_per_second": {
+                  "type": "number"
+                },
+                "retries": {
+                  "$ref": "#/components/schemas/_common:Retries"
+                },
+                "task": {
+                  "$ref": "#/components/schemas/_common:TaskId"
+                },
+                "timed_out": {
+                  "type": "boolean"
+                },
+                "took": {
+                  "$ref": "#/components/schemas/_common:DurationValueUnitMillis"
+                },
+                "total": {
+                  "type": "number"
+                },
+                "updated": {
+                  "type": "number"
+                },
+                "version_conflicts": {
+                  "type": "number"
+                },
+                "throttled": {
+                  "$ref": "#/components/schemas/_common:Duration"
+                },
+                "throttled_millis": {
+                  "$ref": "#/components/schemas/_common:DurationValueUnitMillis"
+                },
+                "throttled_until": {
+                  "$ref": "#/components/schemas/_common:Duration"
+                },
+                "throttled_until_millis": {
+                  "$ref": "#/components/schemas/_common:DurationValueUnitMillis"
+                }
+              }
             }
           }
         }
