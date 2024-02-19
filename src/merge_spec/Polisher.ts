@@ -14,14 +14,32 @@ export default class Polisher {
     }
 
     polish(output: string): void {
-        this.rename_schemas();
-        this.rename_schema_refs(this.doc);
+        this.correct_body_refs();
+        this.correct_schema_namespaces();
+        fs.writeFileSync(output, JSON.stringify(this.doc, null, 2));
+    }
+
+    correct_body_refs(): void {
         this.deref_bodies(this.doc.paths);
         _.values(this.doc.paths).flatMap(_.values).forEach((op: OperationSpec) => { this.move_bodies(op); });
+    }
+
+    correct_schema_namespaces(): void {
+        const schemas = this.doc.components.schemas;
+        Object.entries(schemas).forEach(([k, v]) => {
+            delete schemas[k];
+            schemas[this.newSchemaName(k)] = v;
+        });
+        this.rename_schema_refs(this.doc);
+
+        this.seenRefs = new Set();
         this.determineSchemaNamespace(this.doc, undefined);
-        this.applySchemaNamespace();
+        for(const [name, namespace] of Object.entries(this.schemaNamespaces)) {
+            const schema = schemas[name];
+            delete schemas[name];
+            schemas[`${namespace}._common:${name}`] = schema;
+        }
         this.applySchemaNamespaceRefs(this.doc);
-        fs.writeFileSync(output, JSON.stringify(this.doc, null, 2));
     }
 
     deref_bodies(obj: Record<string, any>): void {
@@ -53,7 +71,6 @@ export default class Polisher {
             this.doc.components.responses[op['x-operation-group'] + '#200'] = response;
             op.responses['200'] = {$ref: `#/components/responses/${op['x-operation-group']}#200`};
         }
-
     }
 
     determineSchemaNamespace(obj: Record<string, any>, namespace: string | undefined): void {
@@ -85,23 +102,6 @@ export default class Polisher {
             if(typeof obj[key] === 'object') this.rename_schema_refs(obj[key]);
         }
     }
-
-    rename_schemas(): void {
-        const schemas = this.doc.components.schemas;
-        Object.entries(schemas).forEach(([k, v]) => {
-            delete schemas[k];
-            schemas[this.newSchemaName(k)] = v;
-        });
-    }
-
-    applySchemaNamespace() {
-        const schemas = this.doc.components.schemas;
-        for(const [name, namespace] of Object.entries(this.schemaNamespaces)) {
-            const schema = schemas[name];
-            delete schemas[name];
-            schemas[`${namespace}._common:${name}`] = schema;
-        }
-    };
     applySchemaNamespaceRefs(obj: Record<string, any>) {
         const ref = obj.$ref;
         if(ref?.startsWith('#/components/schemas/') && !ref.includes(':')) {

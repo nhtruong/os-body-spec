@@ -6,12 +6,11 @@ const start = async () => {
     // const merger = await Merger.init('specs/ElasticSearch.openapi.json', 'specs/OpenSearch.openapi.json');
     // merger.merge('specs/CrudSpec.openapi.json')
     //
-    // const scrubber = new Scrubber('specs/CrudSpec.openapi.json');
-    // scrubber.scrub('specs/ScrubbedSpec.openapi.json');
+    const scrubber = new Scrubber('specs/CrudSpec.openapi.json');
+    scrubber.scrub('specs/ScrubbedSpec.openapi.json');
 
     const polisher = new Polisher('specs/ScrubbedSpec.openapi.json');
     polisher.polish('specs/MergedSpec.openapi.json');
-    console.log(polisher.schemaNamespaces);
 }
 
 start();

@@ -4,12 +4,13 @@ import {resolve} from '../helpers';
 export default class Scrubber {
     doc: Record<string, any>;
 
-    refs: Record<string, Set<string>>;
-    seen: Set<string> = new Set();
+    schemaNamespaces: Record<string, string> = {};
+    usedRefs: Record<string, Set<string>>;
+    seenRefs: Set<string> = new Set();
 
     constructor(file: string) {
         this.doc = JSON.parse(fs.readFileSync(file).toString());
-        this.refs = {
+        this.usedRefs = {
             schemas: new Set(),
             parameters: new Set(),
             responses: new Set(),
@@ -18,20 +19,24 @@ export default class Scrubber {
     }
 
     scrub(output: string): void {
+        this.correct_duration_schema();
         this.correct_schema_refs(this.doc);
         this.remove_unused_refs();
         this.remove_elastic_urls(this.doc);
         this.replace_es_with_os(this.doc);
 
+       fs.writeFileSync(output, JSON.stringify(this.doc, null, 2));
+    }
+
+    correct_duration_schema(): void {
         this.doc.components!.schemas!['_types:Duration'].pattern = "^([0-9]+)(?:d|h|m|s|ms|micros|nanos)$";
         this.doc.components!.schemas!['_types:Duration'].type = "string";
         delete this.doc.components!.schemas!['_types:Duration'].oneOf;
-
-       fs.writeFileSync(output, JSON.stringify(this.doc, null, 2));
     }
     remove_unused_refs(): void {
+        this.seenRefs = new Set();
         this.#find_refs(this.doc.paths);
-        Object.keys(this.refs).forEach(k => this.remove_keys(this.doc.components[k], this.refs[k]));
+        Object.keys(this.usedRefs).forEach(k => this.remove_keys(this.doc.components[k], this.usedRefs[k]));
     }
 
     remove_elastic_urls(obj: Record<string, any>): void {
@@ -89,11 +94,11 @@ export default class Scrubber {
     #find_refs(target: any): void {
         if(typeof target !== 'object') return;
 
-        if(target.$ref !== undefined || this.seen.has(target.$ref)) {
-            if(this.seen.has(target.$ref)) return;
-            this.seen.add(target.$ref);
-            const ref = (target.$ref as string).split('/');
-            this.refs[ref[2]].add(ref[3]);
+        if(target.$ref !== undefined || this.seenRefs.has(target.$ref)) {
+            if(this.seenRefs.has(target.$ref)) return;
+            this.seenRefs.add(target.$ref);
+            const [_pound, _components, type, name] = (target.$ref as string).split('/');
+            this.usedRefs[type].add(name);
             this.#find_refs(resolve(target, this.doc));
             return;
         }
