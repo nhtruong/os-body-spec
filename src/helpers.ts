@@ -1,3 +1,5 @@
+import fs from 'fs';
+import YAML from 'yaml';
 
 declare global {
     var spec_root: Record<string, any>;
@@ -10,6 +12,21 @@ export function resolve(obj: Record<string, any> | undefined, root: Record<strin
     paths.shift();
     for(const p of paths) { root = root[p]; }
     return root;
+}
+
+export function write2file(file: string, content: Record<string, any>, format: 'json' | 'yaml'): void {
+    if (format === 'json') fs.writeFileSync(file + '.json', JSON.stringify(content, null, 2));
+    if (format === 'yaml') fs.writeFileSync(file + '.yaml', quoteRefs(YAML.stringify(content, {lineWidth: 120, singleQuote: true})));
+}
+
+function quoteRefs(str: string): string {
+    return str.split('\n').map((line) => {
+        if(line.includes('$ref')) {
+            const [key, value] = line.split(': ');
+            if(!value.startsWith("'")) line = `${key}: '${value}'`;
+        }
+        return line
+    }).join('\n');
 }
 
 export function extractNamespace(ops_group: string, empty = '_core'): string {

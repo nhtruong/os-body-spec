@@ -3,9 +3,11 @@ import {OpenAPIV3} from "openapi-types";
 export default class SchemaFile {
     category: string;
     schemas: { [key: string]: OpenAPIV3.SchemaObject; } = {};
+    format: 'json' | 'yaml';
 
-    constructor(category: string) {
+    constructor(category: string, format: 'json' | 'yaml') {
         this.category = category;
+        this.format = format;
     }
 
     contents(): Record<string, any> {
@@ -31,7 +33,7 @@ export default class SchemaFile {
             const name = ref.split('#/components/schemas/')[1];
             const [category, type] = name.split(':');
 
-            if(category !== this.category) { obj.$ref = `${category}.json#/components/schemas/${type}`; }
+            if(category !== this.category) { obj.$ref = `${category}.${this.format}#/components/schemas/${type}`; }
             else { obj.$ref = `#/components/schemas/${type}`; }
         }
 

@@ -19,18 +19,18 @@ export default class SpecSplitter {
         global.spec_root = spec;
     }
 
-    split(outputDir: string): void {
+    split(outputDir: string, format: 'json' | 'yaml' = 'json'): void {
         if (fs.existsSync(outputDir)) { fs.rmSync(outputDir, {recursive: true}); }
 
-        const ns = new NamespaceFileBuilder();
+        const ns = new NamespaceFileBuilder(format);
         ns.parse(global.spec_root as OpenAPIV3.Document);
         ns.writeToFiles(outputDir);
 
-        const sk = new SchemaFileBuilder();
+        const sk = new SchemaFileBuilder(format);
         sk.parse(global.spec_root as OpenAPIV3.Document);
         sk.writeToFiles(outputDir);
 
-        const rt = new RootFileBuilder(ns.namespaces)
+        const rt = new RootFileBuilder(ns.namespaces, format)
         rt.writeToFile(outputDir);
     }
 }

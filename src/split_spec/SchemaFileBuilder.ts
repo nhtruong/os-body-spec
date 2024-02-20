@@ -1,13 +1,19 @@
 import SchemaFile from "./SchemaFile";
 import {OpenAPIV3} from "openapi-types";
 import fs from 'fs';
+import {write2file} from "../helpers";
 
 export default class SchemaFileBuilder {
     schemas: Record<string, SchemaFile> = {};
+    format: 'json' | 'yaml';
+
+    constructor(format: 'json' | 'yaml') {
+        this.format = format;
+    }
 
     #sf(category: string): SchemaFile {
         if (!this.schemas[category]) {
-            this.schemas[category] = new SchemaFile(category);
+            this.schemas[category] = new SchemaFile(category, this.format);
         }
         return this.schemas[category];
     }
@@ -18,12 +24,12 @@ export default class SchemaFileBuilder {
         });
     }
 
-    writeToFiles(outputDir: string): void {
+    writeToFiles(outputDir: string,): void {
         const folder = `${outputDir}/schemas`;
         fs.mkdirSync(folder, {recursive: true});
         Object.entries(this.schemas).forEach(([name, sf]) => {
-            const file = `${folder}/${name}.json`;
-            fs.writeFileSync(file, JSON.stringify(sf.contents(), null, 2));
+            const file =  `${folder}/${name}`;
+            write2file(file, sf.contents(), this.format);
         });
     }
 

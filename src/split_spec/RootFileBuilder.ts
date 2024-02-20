@@ -1,20 +1,22 @@
 import NamespaceFile from "./NamespaceFile";
 import _ from "lodash";
-import fs from 'fs';
 import {OpenAPIV3} from "openapi-types";
+import {write2file} from "../helpers";
 
 export default class RootFileBuilder {
     namespacePaths: [string, string[]][]; // [namespace, paths[]]
+    format: 'json' | 'yaml';
 
-    constructor(namespaces: Record<string, NamespaceFile>) {
+    constructor(namespaces: Record<string, NamespaceFile>, format: 'json' | 'yaml') {
+        this.format = format;
         this.namespacePaths = _.entries(namespaces).map(([name, ns]) => {
             return [name, _.keys(ns.paths)]
         });
     }
 
     writeToFile(outputDir: string): void {
-        const file = `${outputDir}/OpenSearch.openapi.json`;
-        fs.writeFileSync(file, JSON.stringify(this.#contents(), null, 2));
+        const file = `${outputDir}/OpenSearch.openapi`;
+        write2file(file, this.#contents(), this.format);
     }
 
     #contents(): Record<string, any> {
@@ -34,7 +36,7 @@ export default class RootFileBuilder {
         this.namespacePaths.forEach(([namespace, paths]) => {
             paths.forEach(path => {
                 const refPath = path.replaceAll('~', '~0').replaceAll('/', '~1');
-                pathsObj[path] = { $ref: `namespaces/${namespace}.json#/paths/${refPath}` };
+                pathsObj[path] = { $ref: `namespaces/${namespace}.${this.format}#/paths/${refPath}` };
             });
         });
         return pathsObj;

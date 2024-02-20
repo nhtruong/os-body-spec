@@ -1,19 +1,25 @@
 import NamespaceFile from "./NamespaceFile";
 import {OpenAPIV3} from "openapi-types";
-import {extractNamespace} from "../helpers";
+import {extractNamespace, write2file} from "../helpers";
 import _ from "lodash";
 import {OperationSpec} from "../types";
 import fs from 'fs';
+import YAML from 'yaml';
 
 
 const HTTP_VERBS = ['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'];
 
 export default class NamespaceFileBuilder {
     namespaces: Record<string, NamespaceFile> = {};
+    format: 'json' | 'yaml';
+
+    constructor(format: 'json' | 'yaml') {
+        this.format = format;
+    }
 
     #ns(name: string): NamespaceFile {
         if (!this.namespaces[name]) {
-            this.namespaces[name] = new NamespaceFile(name);
+            this.namespaces[name] = new NamespaceFile(name, this.format);
         }
         return this.namespaces[name];
     }
@@ -39,9 +45,9 @@ export default class NamespaceFileBuilder {
     writeToFiles(outputDir: string): void {
         Object.entries(this.namespaces).forEach(([name, ns]) => {
             const folder = `${outputDir}/namespaces`;
-            const file = `${folder}/${name}.json`;
+            const file = `${folder}/${name}`;
             fs.mkdirSync(folder, {recursive: true});
-            fs.writeFileSync(file, JSON.stringify(ns.contents(), null, 2));
+            write2file(file, ns.contents(), this.format);
         });
     }
 

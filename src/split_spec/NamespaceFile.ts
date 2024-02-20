@@ -3,13 +3,15 @@ import {capitalize} from "lodash";
 
 export default class NamespaceFile {
     name: string;
+    format: 'json' | 'yaml';
     paths: OpenAPIV3.PathsObject = {};
     requestBodies: { [key: string]: OpenAPIV3.RequestBodyObject; } = {};
     responses: { [key: string]: OpenAPIV3.ResponseObject; } = {};
     parameters: { [key: string]: OpenAPIV3.ParameterObject; } = {};
 
-    constructor(name: string) {
+    constructor(name: string, format: 'json' | 'yaml') {
         this.name = name;
+        this.format = format;
     }
 
     contents(): Record<string, any> {
@@ -31,7 +33,7 @@ export default class NamespaceFile {
         if(ref?.startsWith('#/components/schemas/')) {
             const name = ref.split('#/components/schemas/')[1];
             const [category, type] = name.split(':');
-            obj.$ref = `../schemas/${category}.json#/components/schemas/${type}`;
+            obj.$ref = `../schemas/${category}.${this.format}#/components/schemas/${type}`;
         }
 
         for(const key in obj) {
