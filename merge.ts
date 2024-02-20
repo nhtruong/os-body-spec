@@ -1,5 +1,6 @@
 import Merger from "./src/merge_spec/Merger"
 import Scrubber from "./src/merge_spec/Scrubber";
+import {write2file} from "./src/helpers";
 
 const start = async () => {
     const merger = await Merger.init('specs/ElasticSearch.openapi.json', 'specs/OpenSearch.openapi.json');
@@ -7,6 +8,8 @@ const start = async () => {
 
     const scrubber = new Scrubber('specs/CrudMergedSpec.openapi.json');
     scrubber.scrub('specs/MergedSpec.openapi.json');
+
+    write2file('specs/MergedSpec.openapi', scrubber.doc, 'yaml');
 }
 
-start();
+start().then(r => console.log('done'));
