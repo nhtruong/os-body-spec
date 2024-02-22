@@ -10,6 +10,7 @@ export default class Scrubber {
     schemaNamespaces: Record<string, string> = {};
     usedRefs: Record<string, Set<string>>;
     seenRefs: Set<string> = new Set();
+    actions: Record<string, number> = {};
 
     constructor(file: string) {
         this.doc = JSON.parse(fs.readFileSync(file).toString());
@@ -30,6 +31,7 @@ export default class Scrubber {
         this.correct_body_refs();
         this.correct_schema_namespaces();
         _.values(this.doc.paths).flatMap(_.values).forEach((op: OperationSpec) => { this.#move_params(op); })
+        _.values(this.doc.paths).flatMap(_.values).forEach((op: OperationSpec) => { this.#rename_operation(op); })
         _.values(this.doc.components.responses).forEach((r: OpenAPIV3.ResponseObject) => { r.description = '' });
         this.remove_redundant_items(this.doc);
         this.remove_unused_refs();
@@ -213,6 +215,12 @@ export default class Scrubber {
         for(const key in obj) {
             if(typeof obj[key] === 'object') this.#determine_schema_namespace(obj[key], namespace);
         }
+    }
+
+    #rename_operation(op: OperationSpec): void {
+        const action = op['x-operation-group'];
+        this.actions[action] = this.actions[action] !== undefined ? this.actions[action] + 1 : 0;
+        op['operationId'] = `${action}.${this.actions[action]}`;
     }
 
     #rename_schema_refs(obj: Record<string, any>): void {
