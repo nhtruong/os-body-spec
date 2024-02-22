@@ -30,9 +30,19 @@ export default class Scrubber {
         this.correct_body_refs();
         this.correct_schema_namespaces();
         _.values(this.doc.paths).flatMap(_.values).forEach((op: OperationSpec) => { this.#move_params(op); })
+        _.values(this.doc.components.responses).forEach((r: OpenAPIV3.ResponseObject) => { r.description = '' });
+        this.remove_redundant_items(this.doc);
         this.remove_unused_refs();
 
        fs.writeFileSync(output, JSON.stringify(this.doc, null, 2));
+    }
+
+    remove_redundant_items(obj: Record<string, any>): void {
+        if(obj.deprecated === false) delete obj.deprecated;
+
+        for(const key in obj) {
+            if(typeof obj[key] === 'object') this.remove_redundant_items(obj[key]);
+        }
     }
 
     correct_duration_schema(): void {
