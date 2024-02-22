@@ -29,6 +29,7 @@ export default class Scrubber {
         this.replace_es_with_os(this.doc);
         this.correct_body_refs();
         this.correct_schema_namespaces();
+        _.values(this.doc.paths).flatMap(_.values).forEach((op: OperationSpec) => { this.#move_params(op); })
         this.remove_unused_refs();
 
        fs.writeFileSync(output, JSON.stringify(this.doc, null, 2));
@@ -166,6 +167,24 @@ export default class Scrubber {
             this.doc.components.responses[op['x-operation-group'] + '#200'] = response;
             op.responses['200'] = {$ref: `#/components/responses/${op['x-operation-group']}#200`};
         }
+    }
+
+    #move_params(op: OperationSpec): void {
+        if(!op.parameters) return;
+        const parameters = op.parameters.map((p: Record<string, any>) => {
+            if(p.$ref) return resolve(p) as OpenAPIV3.ParameterObject;
+            else return p as OpenAPIV3.ParameterObject;
+        });
+        const dupNames = new Set(parameters.map(p => p.name));
+        _.values(parameters.map(p => p.name)).forEach((name) => {
+            if(dupNames.has(name)) dupNames.delete(name);
+            else dupNames.add(name);
+        });
+        op.parameters = parameters.map((p) => {
+            let ref : string = `${op['x-operation-group']}#${p.in}:${p.name}`;
+            this.doc.components.parameters[ref] = p;
+            return { $ref: `#/components/parameters/${ref}` };
+        });
     }
 
     #determine_schema_namespace(obj: Record<string, any>, namespace: string | undefined): void {
