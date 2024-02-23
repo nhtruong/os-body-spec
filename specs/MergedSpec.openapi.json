@@ -15,7 +15,7 @@
         "operationId": "info.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/info#200"
+            "$ref": "#/components/responses/info.200"
           }
         },
         "x-operation-group": "info",
@@ -31,7 +31,7 @@
         "operationId": "ping.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ping#200"
+            "$ref": "#/components/responses/ping.200"
           }
         },
         "x-operation-group": "ping",
@@ -63,7 +63,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_alias#200"
+            "$ref": "#/components/responses/indices.get_alias.200"
           }
         },
         "x-operation-group": "indices.get_alias",
@@ -93,7 +93,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_alias#200"
+            "$ref": "#/components/responses/indices.get_alias.200"
           }
         },
         "x-operation-group": "indices.get_alias",
@@ -125,7 +125,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.exists_alias#200"
+            "$ref": "#/components/responses/indices.exists_alias.200"
           }
         },
         "x-operation-group": "indices.exists_alias",
@@ -156,7 +156,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.update_aliases#200"
+            "$ref": "#/components/responses/indices.update_aliases.200"
           }
         },
         "x-operation-group": "indices.update_aliases",
@@ -178,7 +178,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.analyze#200"
+            "$ref": "#/components/responses/indices.analyze.200"
           }
         },
         "x-operation-group": "indices.analyze",
@@ -200,7 +200,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.analyze#200"
+            "$ref": "#/components/responses/indices.analyze.200"
           }
         },
         "x-operation-group": "indices.analyze",
@@ -252,7 +252,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/bulk#200"
+            "$ref": "#/components/responses/bulk.200"
           }
         },
         "x-operation-group": "bulk",
@@ -298,7 +298,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/bulk#200"
+            "$ref": "#/components/responses/bulk.200"
           }
         },
         "x-operation-group": "bulk",
@@ -341,7 +341,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.clear_cache#200"
+            "$ref": "#/components/responses/indices.clear_cache.200"
           }
         },
         "x-operation-group": "indices.clear_cache",
@@ -366,7 +366,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.help#200"
+            "$ref": "#/components/responses/cat.help.200"
           }
         },
         "x-operation-group": "cat.help",
@@ -406,7 +406,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.aliases#200"
+            "$ref": "#/components/responses/cat.aliases.200"
           }
         },
         "x-operation-group": "cat.aliases",
@@ -445,7 +445,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.aliases#200"
+            "$ref": "#/components/responses/cat.aliases.200"
           }
         },
         "x-operation-group": "cat.aliases",
@@ -491,7 +491,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.allocation#200"
+            "$ref": "#/components/responses/cat.allocation.200"
           }
         },
         "x-operation-group": "cat.allocation",
@@ -536,7 +536,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.allocation#200"
+            "$ref": "#/components/responses/cat.allocation.200"
           }
         },
         "x-operation-group": "cat.allocation",
@@ -613,7 +613,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.count#200"
+            "$ref": "#/components/responses/cat.count.200"
           }
         },
         "x-operation-group": "cat.count",
@@ -646,7 +646,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.count#200"
+            "$ref": "#/components/responses/cat.count.200"
           }
         },
         "x-operation-group": "cat.count",
@@ -686,7 +686,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.fielddata#200"
+            "$ref": "#/components/responses/cat.fielddata.200"
           }
         },
         "x-operation-group": "cat.fielddata",
@@ -725,7 +725,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.fielddata#200"
+            "$ref": "#/components/responses/cat.fielddata.200"
           }
         },
         "x-operation-group": "cat.fielddata",
@@ -765,7 +765,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.health#200"
+            "$ref": "#/components/responses/cat.health.200"
           }
         },
         "x-operation-group": "cat.health",
@@ -826,7 +826,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.indices#200"
+            "$ref": "#/components/responses/cat.indices.200"
           }
         },
         "x-operation-group": "cat.indices",
@@ -886,7 +886,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.indices#200"
+            "$ref": "#/components/responses/cat.indices.200"
           }
         },
         "x-operation-group": "cat.indices",
@@ -930,7 +930,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.master#200"
+            "$ref": "#/components/responses/cat.master.200"
           }
         },
         "x-deprecation-message": "To promote inclusive language, please use '/_cat/cluster_manager' instead.",
@@ -975,7 +975,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.nodeattrs#200"
+            "$ref": "#/components/responses/cat.nodeattrs.200"
           }
         },
         "x-operation-group": "cat.nodeattrs",
@@ -1027,7 +1027,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.nodes#200"
+            "$ref": "#/components/responses/cat.nodes.200"
           }
         },
         "x-operation-group": "cat.nodes",
@@ -1073,7 +1073,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.pending_tasks#200"
+            "$ref": "#/components/responses/cat.pending_tasks.200"
           }
         },
         "x-operation-group": "cat.pending_tasks",
@@ -1113,7 +1113,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.pit_segments#200"
+            "$ref": "#/components/responses/cat.pit_segments.200"
           }
         },
         "x-operation-group": "cat.pit_segments",
@@ -1150,7 +1150,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.all_pit_segments#200"
+            "$ref": "#/components/responses/cat.all_pit_segments.200"
           }
         },
         "x-operation-group": "cat.all_pit_segments",
@@ -1193,7 +1193,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.plugins#200"
+            "$ref": "#/components/responses/cat.plugins.200"
           }
         },
         "x-operation-group": "cat.plugins",
@@ -1242,7 +1242,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.recovery#200"
+            "$ref": "#/components/responses/cat.recovery.200"
           }
         },
         "x-operation-group": "cat.recovery",
@@ -1290,7 +1290,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.recovery#200"
+            "$ref": "#/components/responses/cat.recovery.200"
           }
         },
         "x-operation-group": "cat.recovery",
@@ -1333,7 +1333,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.repositories#200"
+            "$ref": "#/components/responses/cat.repositories.200"
           }
         },
         "x-operation-group": "cat.repositories",
@@ -1403,7 +1403,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.segment_replication#200"
+            "$ref": "#/components/responses/cat.segment_replication.200"
           }
         },
         "x-operation-group": "cat.segment_replication",
@@ -1472,7 +1472,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.segment_replication#200"
+            "$ref": "#/components/responses/cat.segment_replication.200"
           }
         },
         "x-operation-group": "cat.segment_replication",
@@ -1515,7 +1515,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.segments#200"
+            "$ref": "#/components/responses/cat.segments.200"
           }
         },
         "x-operation-group": "cat.segments",
@@ -1557,7 +1557,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.segments#200"
+            "$ref": "#/components/responses/cat.segments.200"
           }
         },
         "x-operation-group": "cat.segments",
@@ -1606,7 +1606,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.shards#200"
+            "$ref": "#/components/responses/cat.shards.200"
           }
         },
         "x-operation-group": "cat.shards",
@@ -1654,7 +1654,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.shards#200"
+            "$ref": "#/components/responses/cat.shards.200"
           }
         },
         "x-operation-group": "cat.shards",
@@ -1700,7 +1700,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.snapshots#200"
+            "$ref": "#/components/responses/cat.snapshots.200"
           }
         },
         "x-operation-group": "cat.snapshots",
@@ -1745,7 +1745,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.snapshots#200"
+            "$ref": "#/components/responses/cat.snapshots.200"
           }
         },
         "x-operation-group": "cat.snapshots",
@@ -1794,7 +1794,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.tasks#200"
+            "$ref": "#/components/responses/cat.tasks.200"
           }
         },
         "x-operation-group": "cat.tasks",
@@ -1837,7 +1837,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.templates#200"
+            "$ref": "#/components/responses/cat.templates.200"
           }
         },
         "x-operation-group": "cat.templates",
@@ -1879,7 +1879,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.templates#200"
+            "$ref": "#/components/responses/cat.templates.200"
           }
         },
         "x-operation-group": "cat.templates",
@@ -1925,7 +1925,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.thread_pool#200"
+            "$ref": "#/components/responses/cat.thread_pool.200"
           }
         },
         "x-operation-group": "cat.thread_pool",
@@ -1970,7 +1970,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cat.thread_pool#200"
+            "$ref": "#/components/responses/cat.thread_pool.200"
           }
         },
         "x-operation-group": "cat.thread_pool",
@@ -1995,7 +1995,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.allocation_explain#200"
+            "$ref": "#/components/responses/cluster.allocation_explain.200"
           }
         },
         "x-operation-group": "cluster.allocation_explain",
@@ -2020,7 +2020,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.allocation_explain#200"
+            "$ref": "#/components/responses/cluster.allocation_explain.200"
           }
         },
         "x-operation-group": "cluster.allocation_explain",
@@ -2142,7 +2142,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.health#200"
+            "$ref": "#/components/responses/cluster.health.200"
           }
         },
         "x-operation-group": "cluster.health",
@@ -2199,7 +2199,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.health#200"
+            "$ref": "#/components/responses/cluster.health.200"
           }
         },
         "x-operation-group": "cluster.health",
@@ -2385,7 +2385,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.pending_tasks#200"
+            "$ref": "#/components/responses/cluster.pending_tasks.200"
           }
         },
         "x-operation-group": "cluster.pending_tasks",
@@ -2428,7 +2428,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.reroute#200"
+            "$ref": "#/components/responses/cluster.reroute.200"
           }
         },
         "x-operation-group": "cluster.reroute",
@@ -2521,7 +2521,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.get_settings#200"
+            "$ref": "#/components/responses/cluster.get_settings.200"
           }
         },
         "x-operation-group": "cluster.get_settings",
@@ -2553,7 +2553,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.put_settings#200"
+            "$ref": "#/components/responses/cluster.put_settings.200"
           }
         },
         "x-operation-group": "cluster.put_settings",
@@ -2599,7 +2599,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.state#200"
+            "$ref": "#/components/responses/cluster.state.200"
           }
         },
         "x-operation-group": "cluster.state",
@@ -2644,7 +2644,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.state#200"
+            "$ref": "#/components/responses/cluster.state.200"
           }
         },
         "x-operation-group": "cluster.state",
@@ -2692,7 +2692,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.state#200"
+            "$ref": "#/components/responses/cluster.state.200"
           }
         },
         "x-operation-group": "cluster.state",
@@ -2717,7 +2717,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.stats#200"
+            "$ref": "#/components/responses/cluster.stats.200"
           }
         },
         "x-operation-group": "cluster.stats",
@@ -2741,7 +2741,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.stats#200"
+            "$ref": "#/components/responses/cluster.stats.200"
           }
         },
         "x-operation-group": "cluster.stats",
@@ -2763,7 +2763,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.delete_voting_config_exclusions#200"
+            "$ref": "#/components/responses/cluster.delete_voting_config_exclusions.200"
           }
         },
         "x-operation-group": "cluster.delete_voting_config_exclusions",
@@ -2789,7 +2789,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.post_voting_config_exclusions#200"
+            "$ref": "#/components/responses/cluster.post_voting_config_exclusions.200"
           }
         },
         "x-operation-group": "cluster.post_voting_config_exclusions",
@@ -2817,7 +2817,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.get_component_template#200"
+            "$ref": "#/components/responses/cluster.get_component_template.200"
           }
         },
         "x-operation-group": "cluster.get_component_template",
@@ -2848,7 +2848,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.delete_component_template#200"
+            "$ref": "#/components/responses/cluster.delete_component_template.200"
           }
         },
         "x-operation-group": "cluster.delete_component_template",
@@ -2873,7 +2873,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.get_component_template#200"
+            "$ref": "#/components/responses/cluster.get_component_template.200"
           }
         },
         "x-operation-group": "cluster.get_component_template",
@@ -2902,7 +2902,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.exists_component_template#200"
+            "$ref": "#/components/responses/cluster.exists_component_template.200"
           }
         },
         "x-operation-group": "cluster.exists_component_template",
@@ -2933,7 +2933,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.put_component_template#200"
+            "$ref": "#/components/responses/cluster.put_component_template.200"
           }
         },
         "x-operation-group": "cluster.put_component_template",
@@ -2968,7 +2968,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.put_component_template#200"
+            "$ref": "#/components/responses/cluster.put_component_template.200"
           }
         },
         "x-operation-group": "cluster.put_component_template",
@@ -3025,7 +3025,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/count#200"
+            "$ref": "#/components/responses/count.200"
           }
         },
         "x-operation-group": "count",
@@ -3090,7 +3090,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/count#200"
+            "$ref": "#/components/responses/count.200"
           }
         },
         "x-operation-group": "count",
@@ -3107,7 +3107,7 @@
         "operationId": "dangling_indices.list_dangling_indices.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/dangling_indices.list_dangling_indices#200"
+            "$ref": "#/components/responses/dangling_indices.list_dangling_indices.200"
           }
         },
         "x-operation-group": "dangling_indices.list_dangling_indices",
@@ -3142,7 +3142,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/dangling_indices.delete_dangling_index#200"
+            "$ref": "#/components/responses/dangling_indices.delete_dangling_index.200"
           }
         },
         "x-operation-group": "dangling_indices.delete_dangling_index",
@@ -3174,7 +3174,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/dangling_indices.import_dangling_index#200"
+            "$ref": "#/components/responses/dangling_indices.import_dangling_index.200"
           }
         },
         "x-operation-group": "dangling_indices.import_dangling_index",
@@ -3191,7 +3191,7 @@
         "operationId": "indices.get_data_stream.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_data_stream#200"
+            "$ref": "#/components/responses/indices.get_data_stream.200"
           }
         },
         "x-operation-group": "indices.get_data_stream",
@@ -3209,7 +3209,7 @@
         "operationId": "indices.data_streams_stats.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.data_streams_stats#200"
+            "$ref": "#/components/responses/indices.data_streams_stats.200"
           }
         },
         "x-operation-group": "indices.data_streams_stats",
@@ -3232,7 +3232,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.delete_data_stream#200"
+            "$ref": "#/components/responses/indices.delete_data_stream.200"
           }
         },
         "x-operation-group": "indices.delete_data_stream",
@@ -3248,7 +3248,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_data_stream#200"
+            "$ref": "#/components/responses/indices.get_data_stream.200"
           }
         },
         "x-operation-group": "indices.get_data_stream",
@@ -3271,7 +3271,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.create_data_stream#200"
+            "$ref": "#/components/responses/indices.create_data_stream.200"
           }
         },
         "x-operation-group": "indices.create_data_stream",
@@ -3289,7 +3289,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.data_streams_stats#200"
+            "$ref": "#/components/responses/indices.data_streams_stats.200"
           }
         },
         "x-operation-group": "indices.data_streams_stats",
@@ -3314,7 +3314,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/delete_by_query_rethrottle#200"
+            "$ref": "#/components/responses/delete_by_query_rethrottle.200"
           }
         },
         "x-operation-group": "delete_by_query_rethrottle",
@@ -3348,7 +3348,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/field_caps#200"
+            "$ref": "#/components/responses/field_caps.200"
           }
         },
         "x-operation-group": "field_caps",
@@ -3382,7 +3382,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/field_caps#200"
+            "$ref": "#/components/responses/field_caps.200"
           }
         },
         "x-operation-group": "field_caps",
@@ -3412,7 +3412,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.flush#200"
+            "$ref": "#/components/responses/indices.flush.200"
           }
         },
         "x-operation-group": "indices.flush",
@@ -3444,7 +3444,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.flush#200"
+            "$ref": "#/components/responses/indices.flush.200"
           }
         },
         "x-operation-group": "indices.flush",
@@ -3484,7 +3484,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.forcemerge#200"
+            "$ref": "#/components/responses/indices.forcemerge.200"
           }
         },
         "x-operation-group": "indices.forcemerge",
@@ -3515,7 +3515,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_index_template#200"
+            "$ref": "#/components/responses/indices.get_index_template.200"
           }
         },
         "x-operation-group": "indices.get_index_template",
@@ -3549,7 +3549,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.simulate_template#200"
+            "$ref": "#/components/responses/indices.simulate_template.200"
           }
         },
         "x-operation-group": "indices.simulate_template",
@@ -3582,7 +3582,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.simulate_template#200"
+            "$ref": "#/components/responses/indices.simulate_template.200"
           }
         },
         "x-operation-group": "indices.simulate_template",
@@ -3619,7 +3619,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.simulate_index_template#200"
+            "$ref": "#/components/responses/indices.simulate_index_template.200"
           }
         },
         "x-operation-group": "indices.simulate_index_template",
@@ -3650,7 +3650,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.delete_index_template#200"
+            "$ref": "#/components/responses/indices.delete_index_template.200"
           }
         },
         "x-operation-group": "indices.delete_index_template",
@@ -3678,7 +3678,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_index_template#200"
+            "$ref": "#/components/responses/indices.get_index_template.200"
           }
         },
         "x-operation-group": "indices.get_index_template",
@@ -3710,7 +3710,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.exists_index_template#200"
+            "$ref": "#/components/responses/indices.exists_index_template.200"
           }
         },
         "x-operation-group": "indices.exists_index_template",
@@ -3741,7 +3741,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.put_index_template#200"
+            "$ref": "#/components/responses/indices.put_index_template.200"
           }
         },
         "x-operation-group": "indices.put_index_template",
@@ -3776,7 +3776,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.put_index_template#200"
+            "$ref": "#/components/responses/indices.put_index_template.200"
           }
         },
         "x-operation-group": "indices.put_index_template",
@@ -3801,7 +3801,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ingest.get_pipeline#200"
+            "$ref": "#/components/responses/ingest.get_pipeline.200"
           }
         },
         "x-operation-group": "ingest.get_pipeline",
@@ -3823,7 +3823,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ingest.simulate#200"
+            "$ref": "#/components/responses/ingest.simulate.200"
           }
         },
         "x-operation-group": "ingest.simulate",
@@ -3845,7 +3845,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ingest.simulate#200"
+            "$ref": "#/components/responses/ingest.simulate.200"
           }
         },
         "x-operation-group": "ingest.simulate",
@@ -3876,7 +3876,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ingest.delete_pipeline#200"
+            "$ref": "#/components/responses/ingest.delete_pipeline.200"
           }
         },
         "x-operation-group": "ingest.delete_pipeline",
@@ -3898,7 +3898,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ingest.get_pipeline#200"
+            "$ref": "#/components/responses/ingest.get_pipeline.200"
           }
         },
         "x-operation-group": "ingest.get_pipeline",
@@ -3930,7 +3930,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ingest.put_pipeline#200"
+            "$ref": "#/components/responses/ingest.put_pipeline.200"
           }
         },
         "x-operation-group": "ingest.put_pipeline",
@@ -3951,7 +3951,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ingest.simulate#200"
+            "$ref": "#/components/responses/ingest.simulate.200"
           }
         },
         "x-operation-group": "ingest.simulate",
@@ -3976,7 +3976,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ingest.simulate#200"
+            "$ref": "#/components/responses/ingest.simulate.200"
           }
         },
         "x-operation-group": "ingest.simulate",
@@ -3993,7 +3993,7 @@
         "operationId": "ingest.processor_grok.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ingest.processor_grok#200"
+            "$ref": "#/components/responses/ingest.processor_grok.200"
           }
         },
         "x-operation-group": "ingest.processor_grok",
@@ -4031,7 +4031,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_mapping#200"
+            "$ref": "#/components/responses/indices.get_mapping.200"
           }
         },
         "x-operation-group": "indices.get_mapping",
@@ -4068,7 +4068,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_field_mapping#200"
+            "$ref": "#/components/responses/indices.get_field_mapping.200"
           }
         },
         "x-operation-group": "indices.get_field_mapping",
@@ -4111,7 +4111,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/mget#200"
+            "$ref": "#/components/responses/mget.200"
           }
         },
         "x-operation-group": "mget",
@@ -4154,7 +4154,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/mget#200"
+            "$ref": "#/components/responses/mget.200"
           }
         },
         "x-operation-group": "mget",
@@ -4194,7 +4194,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/msearch#200"
+            "$ref": "#/components/responses/msearch.200"
           }
         },
         "x-operation-group": "msearch",
@@ -4234,7 +4234,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/msearch#200"
+            "$ref": "#/components/responses/msearch.200"
           }
         },
         "x-operation-group": "msearch",
@@ -4268,7 +4268,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/msearch_template#200"
+            "$ref": "#/components/responses/msearch_template.200"
           }
         },
         "x-operation-group": "msearch_template",
@@ -4302,7 +4302,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/msearch_template#200"
+            "$ref": "#/components/responses/msearch_template.200"
           }
         },
         "x-operation-group": "msearch_template",
@@ -4357,7 +4357,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/mtermvectors#200"
+            "$ref": "#/components/responses/mtermvectors.200"
           }
         },
         "x-operation-group": "mtermvectors",
@@ -4412,7 +4412,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/mtermvectors#200"
+            "$ref": "#/components/responses/mtermvectors.200"
           }
         },
         "x-operation-group": "mtermvectors",
@@ -4437,7 +4437,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.info#200"
+            "$ref": "#/components/responses/nodes.info.200"
           }
         },
         "x-operation-group": "nodes.info",
@@ -4470,7 +4470,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.hot_threads#200"
+            "$ref": "#/components/responses/nodes.hot_threads.200"
           }
         },
         "x-operation-group": "nodes.hot_threads",
@@ -4532,7 +4532,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.reload_secure_settings#200"
+            "$ref": "#/components/responses/nodes.reload_secure_settings.200"
           }
         },
         "x-operation-group": "nodes.reload_secure_settings",
@@ -4575,7 +4575,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.stats#200"
+            "$ref": "#/components/responses/nodes.stats.200"
           }
         },
         "x-operation-group": "nodes.stats",
@@ -4617,7 +4617,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.stats#200"
+            "$ref": "#/components/responses/nodes.stats.200"
           }
         },
         "x-operation-group": "nodes.stats",
@@ -4662,7 +4662,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.stats#200"
+            "$ref": "#/components/responses/nodes.stats.200"
           }
         },
         "x-operation-group": "nodes.stats",
@@ -4684,7 +4684,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.usage#200"
+            "$ref": "#/components/responses/nodes.usage.200"
           }
         },
         "x-operation-group": "nodes.usage",
@@ -4705,7 +4705,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.usage#200"
+            "$ref": "#/components/responses/nodes.usage.200"
           }
         },
         "x-operation-group": "nodes.usage",
@@ -4729,7 +4729,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.info#200"
+            "$ref": "#/components/responses/nodes.info.200"
           }
         },
         "x-operation-group": "nodes.info",
@@ -4765,7 +4765,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.hot_threads#200"
+            "$ref": "#/components/responses/nodes.hot_threads.200"
           }
         },
         "x-operation-group": "nodes.hot_threads",
@@ -4829,7 +4829,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.reload_secure_settings#200"
+            "$ref": "#/components/responses/nodes.reload_secure_settings.200"
           }
         },
         "x-operation-group": "nodes.reload_secure_settings",
@@ -4871,7 +4871,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.stats#200"
+            "$ref": "#/components/responses/nodes.stats.200"
           }
         },
         "x-operation-group": "nodes.stats",
@@ -4916,7 +4916,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.stats#200"
+            "$ref": "#/components/responses/nodes.stats.200"
           }
         },
         "x-operation-group": "nodes.stats",
@@ -4964,7 +4964,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.stats#200"
+            "$ref": "#/components/responses/nodes.stats.200"
           }
         },
         "x-operation-group": "nodes.stats",
@@ -4985,7 +4985,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.usage#200"
+            "$ref": "#/components/responses/nodes.usage.200"
           }
         },
         "x-operation-group": "nodes.usage",
@@ -5009,7 +5009,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.usage#200"
+            "$ref": "#/components/responses/nodes.usage.200"
           }
         },
         "x-operation-group": "nodes.usage",
@@ -5036,7 +5036,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/nodes.info#200"
+            "$ref": "#/components/responses/nodes.info.200"
           }
         },
         "x-operation-group": "nodes.info",
@@ -5053,7 +5053,7 @@
         "operationId": "security.get_account_details.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_account_details#200"
+            "$ref": "#/components/responses/security.get_account_details.200"
           }
         },
         "x-operation-group": "security.get_account_details",
@@ -5071,7 +5071,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.change_password#200"
+            "$ref": "#/components/responses/security.change_password.200"
           }
         },
         "x-operation-group": "security.change_password",
@@ -5088,7 +5088,7 @@
         "operationId": "security.get_action_groups.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_action_groups#200"
+            "$ref": "#/components/responses/security.get_action_groups.200"
           }
         },
         "x-operation-group": "security.get_action_groups",
@@ -5106,7 +5106,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.patch_action_groups#200"
+            "$ref": "#/components/responses/security.patch_action_groups.200"
           }
         },
         "x-operation-group": "security.patch_action_groups",
@@ -5128,7 +5128,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.delete_action_group#200"
+            "$ref": "#/components/responses/security.delete_action_group.200"
           }
         },
         "x-operation-group": "security.delete_action_group",
@@ -5148,7 +5148,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_action_group#200"
+            "$ref": "#/components/responses/security.get_action_group.200"
           }
         },
         "x-operation-group": "security.get_action_group",
@@ -5171,7 +5171,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.patch_action_group#200"
+            "$ref": "#/components/responses/security.patch_action_group.200"
           }
         },
         "x-operation-group": "security.patch_action_group",
@@ -5194,7 +5194,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.create_action_group#200"
+            "$ref": "#/components/responses/security.create_action_group.200"
           }
         },
         "x-operation-group": "security.create_action_group",
@@ -5211,7 +5211,7 @@
         "operationId": "security.get_audit_configuration.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_audit_configuration#200"
+            "$ref": "#/components/responses/security.get_audit_configuration.200"
           }
         },
         "x-operation-group": "security.get_audit_configuration",
@@ -5249,7 +5249,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.update_audit_configuration#200"
+            "$ref": "#/components/responses/security.update_audit_configuration.200"
           }
         },
         "x-operation-group": "security.update_audit_configuration",
@@ -5266,7 +5266,7 @@
         "operationId": "security.flush_cache.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.flush_cache#200"
+            "$ref": "#/components/responses/security.flush_cache.200"
           }
         },
         "x-operation-group": "security.flush_cache",
@@ -5283,7 +5283,7 @@
         "operationId": "security.get_users.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_users#200"
+            "$ref": "#/components/responses/security.get_users.200"
           }
         },
         "x-operation-group": "security.get_users",
@@ -5301,7 +5301,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.patch_users#200"
+            "$ref": "#/components/responses/security.patch_users.200"
           }
         },
         "x-operation-group": "security.patch_users",
@@ -5323,7 +5323,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.delete_user#200"
+            "$ref": "#/components/responses/security.delete_user.200"
           }
         },
         "x-operation-group": "security.delete_user",
@@ -5343,7 +5343,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_user#200"
+            "$ref": "#/components/responses/security.get_user.200"
           }
         },
         "x-operation-group": "security.get_user",
@@ -5366,7 +5366,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.patch_user#200"
+            "$ref": "#/components/responses/security.patch_user.200"
           }
         },
         "x-operation-group": "security.patch_user",
@@ -5389,7 +5389,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.create_user#200"
+            "$ref": "#/components/responses/security.create_user.200"
           }
         },
         "x-operation-group": "security.create_user",
@@ -5406,7 +5406,7 @@
         "operationId": "security.get_distinguished_names.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_distinguished_names#200"
+            "$ref": "#/components/responses/security.get_distinguished_names.200"
           }
         },
         "x-operation-group": "security.get_distinguished_names",
@@ -5424,7 +5424,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.patch_distinguished_names#200"
+            "$ref": "#/components/responses/security.patch_distinguished_names.200"
           }
         },
         "x-operation-group": "security.patch_distinguished_names",
@@ -5446,7 +5446,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.delete_distinguished_names#200"
+            "$ref": "#/components/responses/security.delete_distinguished_names.200"
           }
         },
         "x-operation-group": "security.delete_distinguished_names",
@@ -5462,7 +5462,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_distinguished_names#200"
+            "$ref": "#/components/responses/security.get_distinguished_names.200"
           }
         },
         "x-operation-group": "security.get_distinguished_names",
@@ -5485,7 +5485,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.update_distinguished_names#200"
+            "$ref": "#/components/responses/security.update_distinguished_names.200"
           }
         },
         "x-operation-group": "security.update_distinguished_names",
@@ -5505,7 +5505,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.patch_roles#200"
+            "$ref": "#/components/responses/security.patch_roles.200"
           }
         },
         "x-operation-group": "security.patch_roles",
@@ -5522,7 +5522,7 @@
         "operationId": "security.get_roles.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_roles#200"
+            "$ref": "#/components/responses/security.get_roles.200"
           }
         },
         "x-operation-group": "security.get_roles",
@@ -5544,7 +5544,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.delete_role#200"
+            "$ref": "#/components/responses/security.delete_role.200"
           }
         },
         "x-operation-group": "security.delete_role",
@@ -5564,7 +5564,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_role#200"
+            "$ref": "#/components/responses/security.get_role.200"
           }
         },
         "x-operation-group": "security.get_role",
@@ -5587,7 +5587,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.patch_role#200"
+            "$ref": "#/components/responses/security.patch_role.200"
           }
         },
         "x-operation-group": "security.patch_role",
@@ -5610,7 +5610,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.create_role#200"
+            "$ref": "#/components/responses/security.create_role.200"
           }
         },
         "x-operation-group": "security.create_role",
@@ -5627,7 +5627,7 @@
         "operationId": "security.get_role_mappings.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_role_mappings#200"
+            "$ref": "#/components/responses/security.get_role_mappings.200"
           }
         },
         "x-operation-group": "security.get_role_mappings",
@@ -5645,7 +5645,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.patch_role_mappings#200"
+            "$ref": "#/components/responses/security.patch_role_mappings.200"
           }
         },
         "x-operation-group": "security.patch_role_mappings",
@@ -5667,7 +5667,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.delete_role_mapping#200"
+            "$ref": "#/components/responses/security.delete_role_mapping.200"
           }
         },
         "x-operation-group": "security.delete_role_mapping",
@@ -5687,7 +5687,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_role_mapping#200"
+            "$ref": "#/components/responses/security.get_role_mapping.200"
           }
         },
         "x-operation-group": "security.get_role_mapping",
@@ -5710,7 +5710,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.patch_role_mapping#200"
+            "$ref": "#/components/responses/security.patch_role_mapping.200"
           }
         },
         "x-operation-group": "security.patch_role_mapping",
@@ -5733,7 +5733,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.create_role_mapping#200"
+            "$ref": "#/components/responses/security.create_role_mapping.200"
           }
         },
         "x-operation-group": "security.create_role_mapping",
@@ -5750,7 +5750,7 @@
         "operationId": "security.get_configuration.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_configuration#200"
+            "$ref": "#/components/responses/security.get_configuration.200"
           }
         },
         "x-operation-group": "security.get_configuration",
@@ -5768,7 +5768,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.patch_configuration#200"
+            "$ref": "#/components/responses/security.patch_configuration.200"
           }
         },
         "x-operation-group": "security.patch_configuration",
@@ -5788,7 +5788,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.update_configuration#200"
+            "$ref": "#/components/responses/security.update_configuration.200"
           }
         },
         "x-operation-group": "security.update_configuration",
@@ -5805,7 +5805,7 @@
         "operationId": "security.get_certificates.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_certificates#200"
+            "$ref": "#/components/responses/security.get_certificates.200"
           }
         },
         "x-operation-group": "security.get_certificates",
@@ -5822,7 +5822,7 @@
         "operationId": "security.reload_http_certificates.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.reload_http_certificates#200"
+            "$ref": "#/components/responses/security.reload_http_certificates.200"
           }
         },
         "x-operation-group": "security.reload_http_certificates",
@@ -5839,7 +5839,7 @@
         "operationId": "security.reload_transport_certificates.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.reload_transport_certificates#200"
+            "$ref": "#/components/responses/security.reload_transport_certificates.200"
           }
         },
         "x-operation-group": "security.reload_transport_certificates",
@@ -5856,7 +5856,7 @@
         "operationId": "security.get_tenants.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_tenants#200"
+            "$ref": "#/components/responses/security.get_tenants.200"
           }
         },
         "x-operation-group": "security.get_tenants",
@@ -5874,7 +5874,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.patch_tenants#200"
+            "$ref": "#/components/responses/security.patch_tenants.200"
           }
         },
         "x-operation-group": "security.patch_tenants",
@@ -5896,7 +5896,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.delete_tenant#200"
+            "$ref": "#/components/responses/security.delete_tenant.200"
           }
         },
         "x-operation-group": "security.delete_tenant",
@@ -5916,7 +5916,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.get_tenant#200"
+            "$ref": "#/components/responses/security.get_tenant.200"
           }
         },
         "x-operation-group": "security.get_tenant",
@@ -5939,7 +5939,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.patch_tenant#200"
+            "$ref": "#/components/responses/security.patch_tenant.200"
           }
         },
         "x-operation-group": "security.patch_tenant",
@@ -5962,7 +5962,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.create_tenant#200"
+            "$ref": "#/components/responses/security.create_tenant.200"
           }
         },
         "x-operation-group": "security.create_tenant",
@@ -5979,7 +5979,7 @@
         "operationId": "security.health.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/security.health#200"
+            "$ref": "#/components/responses/security.health.200"
           }
         },
         "x-operation-group": "security.health",
@@ -6010,7 +6010,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/rank_eval#200"
+            "$ref": "#/components/responses/rank_eval.200"
           }
         },
         "x-operation-group": "rank_eval",
@@ -6041,7 +6041,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/rank_eval#200"
+            "$ref": "#/components/responses/rank_eval.200"
           }
         },
         "x-operation-group": "rank_eval",
@@ -6066,7 +6066,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.recovery#200"
+            "$ref": "#/components/responses/indices.recovery.200"
           }
         },
         "x-operation-group": "indices.recovery",
@@ -6090,7 +6090,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.refresh#200"
+            "$ref": "#/components/responses/indices.refresh.200"
           }
         },
         "x-operation-group": "indices.refresh",
@@ -6116,7 +6116,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.refresh#200"
+            "$ref": "#/components/responses/indices.refresh.200"
           }
         },
         "x-operation-group": "indices.refresh",
@@ -6162,7 +6162,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/reindex#200"
+            "$ref": "#/components/responses/reindex.200"
           }
         },
         "x-operation-group": "reindex",
@@ -6187,7 +6187,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/reindex_rethrottle#200"
+            "$ref": "#/components/responses/reindex_rethrottle.200"
           }
         },
         "x-operation-group": "reindex_rethrottle",
@@ -6204,7 +6204,7 @@
         "operationId": "cluster.remote_info.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/cluster.remote_info#200"
+            "$ref": "#/components/responses/cluster.remote_info.200"
           }
         },
         "x-operation-group": "cluster.remote_info",
@@ -6233,7 +6233,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/remote_store.restore#200"
+            "$ref": "#/components/responses/remote_store.restore.200"
           }
         },
         "x-operation-group": "remote_store.restore",
@@ -6250,7 +6250,7 @@
         "operationId": "render_search_template.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/render_search_template#200"
+            "$ref": "#/components/responses/render_search_template.200"
           }
         },
         "x-operation-group": "render_search_template",
@@ -6268,7 +6268,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/render_search_template#200"
+            "$ref": "#/components/responses/render_search_template.200"
           }
         },
         "x-operation-group": "render_search_template",
@@ -6287,7 +6287,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/render_search_template#200"
+            "$ref": "#/components/responses/render_search_template.200"
           }
         },
         "x-operation-group": "render_search_template",
@@ -6309,7 +6309,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/render_search_template#200"
+            "$ref": "#/components/responses/render_search_template.200"
           }
         },
         "x-operation-group": "render_search_template",
@@ -6334,7 +6334,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.resolve_index#200"
+            "$ref": "#/components/responses/indices.resolve_index.200"
           }
         },
         "x-operation-group": "indices.resolve_index",
@@ -6351,7 +6351,7 @@
         "operationId": "get_script_context.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/get_script_context#200"
+            "$ref": "#/components/responses/get_script_context.200"
           }
         },
         "x-operation-group": "get_script_context",
@@ -6369,7 +6369,7 @@
         "operationId": "get_script_languages.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/get_script_languages#200"
+            "$ref": "#/components/responses/get_script_languages.200"
           }
         },
         "x-operation-group": "get_script_languages",
@@ -6387,7 +6387,7 @@
         "operationId": "scripts_painless_execute.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/scripts_painless_execute#200"
+            "$ref": "#/components/responses/scripts_painless_execute.200"
           }
         },
         "x-operation-group": "scripts_painless_execute",
@@ -6405,7 +6405,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/scripts_painless_execute#200"
+            "$ref": "#/components/responses/scripts_painless_execute.200"
           }
         },
         "x-operation-group": "scripts_painless_execute",
@@ -6437,7 +6437,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/delete_script#200"
+            "$ref": "#/components/responses/delete_script.200"
           }
         },
         "x-operation-group": "delete_script",
@@ -6463,7 +6463,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/get_script#200"
+            "$ref": "#/components/responses/get_script.200"
           }
         },
         "x-operation-group": "get_script",
@@ -6491,7 +6491,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/put_script#200"
+            "$ref": "#/components/responses/put_script.200"
           }
         },
         "x-operation-group": "put_script",
@@ -6523,7 +6523,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/put_script#200"
+            "$ref": "#/components/responses/put_script.200"
           }
         },
         "x-operation-group": "put_script",
@@ -6556,7 +6556,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/put_script#200"
+            "$ref": "#/components/responses/put_script.200"
           }
         },
         "x-operation-group": "put_script",
@@ -6587,7 +6587,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/put_script#200"
+            "$ref": "#/components/responses/put_script.200"
           }
         },
         "x-operation-group": "put_script",
@@ -6735,7 +6735,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/search#200"
+            "$ref": "#/components/responses/search.200"
           }
         },
         "x-operation-group": "search",
@@ -6883,7 +6883,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/search#200"
+            "$ref": "#/components/responses/search.200"
           }
         },
         "x-operation-group": "search",
@@ -6903,7 +6903,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/delete_pit#200"
+            "$ref": "#/components/responses/delete_pit.200"
           }
         },
         "x-operation-group": "delete_pit",
@@ -6920,7 +6920,7 @@
         "operationId": "delete_all_pits.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/delete_all_pits#200"
+            "$ref": "#/components/responses/delete_all_pits.200"
           }
         },
         "x-operation-group": "delete_all_pits",
@@ -6935,7 +6935,7 @@
         "operationId": "get_all_pits.0",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/get_all_pits#200"
+            "$ref": "#/components/responses/get_all_pits.200"
           }
         },
         "x-operation-group": "get_all_pits",
@@ -6955,7 +6955,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/clear_scroll#200"
+            "$ref": "#/components/responses/clear_scroll.200"
           }
         },
         "x-operation-group": "clear_scroll",
@@ -6982,7 +6982,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/scroll#200"
+            "$ref": "#/components/responses/scroll.200"
           }
         },
         "x-operation-group": "scroll",
@@ -7010,7 +7010,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/scroll#200"
+            "$ref": "#/components/responses/scroll.200"
           }
         },
         "x-operation-group": "scroll",
@@ -7032,7 +7032,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/clear_scroll#200"
+            "$ref": "#/components/responses/clear_scroll.200"
           }
         },
         "x-deprecation-message": "A scroll id can be quite large and should be specified as part of the body",
@@ -7060,7 +7060,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/scroll#200"
+            "$ref": "#/components/responses/scroll.200"
           }
         },
         "x-deprecation-message": "A scroll id can be quite large and should be specified as part of the body",
@@ -7094,7 +7094,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/scroll#200"
+            "$ref": "#/components/responses/scroll.200"
           }
         },
         "x-deprecation-message": "A scroll id can be quite large and should be specified as part of the body",
@@ -7154,7 +7154,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/search_template#200"
+            "$ref": "#/components/responses/search_template.200"
           }
         },
         "x-operation-group": "search_template",
@@ -7212,7 +7212,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/search_template#200"
+            "$ref": "#/components/responses/search_template.200"
           }
         },
         "x-operation-group": "search_template",
@@ -7249,7 +7249,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/search_shards#200"
+            "$ref": "#/components/responses/search_shards.200"
           }
         },
         "x-operation-group": "search_shards",
@@ -7280,7 +7280,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/search_shards#200"
+            "$ref": "#/components/responses/search_shards.200"
           }
         },
         "x-operation-group": "search_shards",
@@ -7311,7 +7311,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.segments#200"
+            "$ref": "#/components/responses/indices.segments.200"
           }
         },
         "x-operation-group": "indices.segments",
@@ -7354,7 +7354,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_settings#200"
+            "$ref": "#/components/responses/indices.get_settings.200"
           }
         },
         "x-operation-group": "indices.get_settings",
@@ -7398,7 +7398,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.put_settings#200"
+            "$ref": "#/components/responses/indices.put_settings.200"
           }
         },
         "x-operation-group": "indices.put_settings",
@@ -7440,7 +7440,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_settings#200"
+            "$ref": "#/components/responses/indices.get_settings.200"
           }
         },
         "x-operation-group": "indices.get_settings",
@@ -7471,7 +7471,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.shard_stores#200"
+            "$ref": "#/components/responses/indices.shard_stores.200"
           }
         },
         "x-operation-group": "indices.shard_stores",
@@ -7499,7 +7499,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.get_repository#200"
+            "$ref": "#/components/responses/snapshot.get_repository.200"
           }
         },
         "x-operation-group": "snapshot.get_repository",
@@ -7527,7 +7527,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.status#200"
+            "$ref": "#/components/responses/snapshot.status.200"
           }
         },
         "x-operation-group": "snapshot.status",
@@ -7558,7 +7558,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.delete_repository#200"
+            "$ref": "#/components/responses/snapshot.delete_repository.200"
           }
         },
         "x-operation-group": "snapshot.delete_repository",
@@ -7583,7 +7583,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.get_repository#200"
+            "$ref": "#/components/responses/snapshot.get_repository.200"
           }
         },
         "x-operation-group": "snapshot.get_repository",
@@ -7614,7 +7614,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.create_repository#200"
+            "$ref": "#/components/responses/snapshot.create_repository.200"
           }
         },
         "x-operation-group": "snapshot.create_repository",
@@ -7649,7 +7649,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.create_repository#200"
+            "$ref": "#/components/responses/snapshot.create_repository.200"
           }
         },
         "x-operation-group": "snapshot.create_repository",
@@ -7680,7 +7680,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.cleanup_repository#200"
+            "$ref": "#/components/responses/snapshot.cleanup_repository.200"
           }
         },
         "x-operation-group": "snapshot.cleanup_repository",
@@ -7707,7 +7707,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.status#200"
+            "$ref": "#/components/responses/snapshot.status.200"
           }
         },
         "x-operation-group": "snapshot.status",
@@ -7738,7 +7738,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.verify_repository#200"
+            "$ref": "#/components/responses/snapshot.verify_repository.200"
           }
         },
         "x-operation-group": "snapshot.verify_repository",
@@ -7769,7 +7769,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.delete#200"
+            "$ref": "#/components/responses/snapshot.delete.200"
           }
         },
         "x-operation-group": "snapshot.delete",
@@ -7804,7 +7804,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.get#200"
+            "$ref": "#/components/responses/snapshot.get.200"
           }
         },
         "x-operation-group": "snapshot.get",
@@ -7835,7 +7835,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.create#200"
+            "$ref": "#/components/responses/snapshot.create.200"
           }
         },
         "x-operation-group": "snapshot.create",
@@ -7870,7 +7870,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.create#200"
+            "$ref": "#/components/responses/snapshot.create.200"
           }
         },
         "x-operation-group": "snapshot.create",
@@ -7907,7 +7907,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.clone#200"
+            "$ref": "#/components/responses/snapshot.clone.200"
           }
         },
         "x-operation-group": "snapshot.clone",
@@ -7944,7 +7944,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.restore#200"
+            "$ref": "#/components/responses/snapshot.restore.200"
           }
         },
         "x-operation-group": "snapshot.restore",
@@ -7974,7 +7974,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/snapshot.status#200"
+            "$ref": "#/components/responses/snapshot.status.200"
           }
         },
         "x-operation-group": "snapshot.status",
@@ -8020,7 +8020,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.stats#200"
+            "$ref": "#/components/responses/indices.stats.200"
           }
         },
         "x-operation-group": "indices.stats",
@@ -8065,7 +8065,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.stats#200"
+            "$ref": "#/components/responses/indices.stats.200"
           }
         },
         "x-operation-group": "indices.stats",
@@ -8105,7 +8105,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/tasks.list#200"
+            "$ref": "#/components/responses/tasks.list.200"
           }
         },
         "x-operation-group": "tasks.list",
@@ -8136,7 +8136,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/tasks.cancel#200"
+            "$ref": "#/components/responses/tasks.cancel.200"
           }
         },
         "x-operation-group": "tasks.cancel",
@@ -8164,7 +8164,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/tasks.get#200"
+            "$ref": "#/components/responses/tasks.get.200"
           }
         },
         "x-operation-group": "tasks.get",
@@ -8194,7 +8194,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/tasks.cancel#200"
+            "$ref": "#/components/responses/tasks.cancel.200"
           }
         },
         "x-operation-group": "tasks.cancel",
@@ -8225,7 +8225,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_template#200"
+            "$ref": "#/components/responses/indices.get_template.200"
           }
         },
         "x-operation-group": "indices.get_template",
@@ -8256,7 +8256,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.delete_template#200"
+            "$ref": "#/components/responses/indices.delete_template.200"
           }
         },
         "x-operation-group": "indices.delete_template",
@@ -8284,7 +8284,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_template#200"
+            "$ref": "#/components/responses/indices.get_template.200"
           }
         },
         "x-operation-group": "indices.get_template",
@@ -8316,7 +8316,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.exists_template#200"
+            "$ref": "#/components/responses/indices.exists_template.200"
           }
         },
         "x-operation-group": "indices.exists_template",
@@ -8347,7 +8347,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.put_template#200"
+            "$ref": "#/components/responses/indices.put_template.200"
           }
         },
         "x-operation-group": "indices.put_template",
@@ -8382,7 +8382,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.put_template#200"
+            "$ref": "#/components/responses/indices.put_template.200"
           }
         },
         "x-operation-group": "indices.put_template",
@@ -8407,7 +8407,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/update_by_query_rethrottle#200"
+            "$ref": "#/components/responses/update_by_query_rethrottle.200"
           }
         },
         "x-operation-group": "update_by_query_rethrottle",
@@ -8522,7 +8522,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.validate_query#200"
+            "$ref": "#/components/responses/indices.validate_query.200"
           }
         },
         "x-operation-group": "indices.validate_query",
@@ -8577,7 +8577,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.validate_query#200"
+            "$ref": "#/components/responses/indices.validate_query.200"
           }
         },
         "x-operation-group": "indices.validate_query",
@@ -8617,7 +8617,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.rollover#200"
+            "$ref": "#/components/responses/indices.rollover.200"
           }
         },
         "x-operation-group": "indices.rollover",
@@ -8656,7 +8656,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.rollover#200"
+            "$ref": "#/components/responses/indices.rollover.200"
           }
         },
         "x-operation-group": "indices.rollover",
@@ -8696,7 +8696,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.delete#200"
+            "$ref": "#/components/responses/indices.delete.200"
           }
         },
         "x-operation-group": "indices.delete",
@@ -8740,7 +8740,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get#200"
+            "$ref": "#/components/responses/indices.get.200"
           }
         },
         "x-operation-group": "indices.get",
@@ -8778,7 +8778,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.exists#200"
+            "$ref": "#/components/responses/indices.exists.200"
           }
         },
         "x-operation-group": "indices.exists",
@@ -8813,7 +8813,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.create#200"
+            "$ref": "#/components/responses/indices.create.200"
           }
         },
         "x-operation-group": "indices.create",
@@ -8843,7 +8843,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_alias#200"
+            "$ref": "#/components/responses/indices.get_alias.200"
           }
         },
         "x-operation-group": "indices.get_alias",
@@ -8877,7 +8877,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.delete_alias#200"
+            "$ref": "#/components/responses/indices.delete_alias.200"
           }
         },
         "x-operation-group": "indices.delete_alias",
@@ -8908,7 +8908,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_alias#200"
+            "$ref": "#/components/responses/indices.get_alias.200"
           }
         },
         "x-operation-group": "indices.get_alias",
@@ -8939,7 +8939,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.exists_alias#200"
+            "$ref": "#/components/responses/indices.exists_alias.200"
           }
         },
         "x-operation-group": "indices.exists_alias",
@@ -8970,7 +8970,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.put_alias#200"
+            "$ref": "#/components/responses/indices.put_alias.200"
           }
         },
         "x-operation-group": "indices.put_alias",
@@ -9005,7 +9005,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.put_alias#200"
+            "$ref": "#/components/responses/indices.put_alias.200"
           }
         },
         "x-operation-group": "indices.put_alias",
@@ -9035,7 +9035,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.delete_alias#200"
+            "$ref": "#/components/responses/indices.delete_alias.200"
           }
         },
         "x-operation-group": "indices.delete_alias",
@@ -9066,7 +9066,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.put_alias#200"
+            "$ref": "#/components/responses/indices.put_alias.200"
           }
         },
         "x-operation-group": "indices.put_alias",
@@ -9097,7 +9097,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.put_alias#200"
+            "$ref": "#/components/responses/indices.put_alias.200"
           }
         },
         "x-operation-group": "indices.put_alias",
@@ -9118,7 +9118,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.analyze#200"
+            "$ref": "#/components/responses/indices.analyze.200"
           }
         },
         "x-operation-group": "indices.analyze",
@@ -9143,7 +9143,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.analyze#200"
+            "$ref": "#/components/responses/indices.analyze.200"
           }
         },
         "x-operation-group": "indices.analyze",
@@ -9186,7 +9186,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.add_block#200"
+            "$ref": "#/components/responses/indices.add_block.200"
           }
         },
         "x-operation-group": "indices.add_block",
@@ -9237,7 +9237,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/bulk#200"
+            "$ref": "#/components/responses/bulk.200"
           }
         },
         "x-operation-group": "bulk",
@@ -9286,7 +9286,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/bulk#200"
+            "$ref": "#/components/responses/bulk.200"
           }
         },
         "x-operation-group": "bulk",
@@ -9328,7 +9328,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.clear_cache#200"
+            "$ref": "#/components/responses/indices.clear_cache.200"
           }
         },
         "x-operation-group": "indices.clear_cache",
@@ -9370,7 +9370,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.clone#200"
+            "$ref": "#/components/responses/indices.clone.200"
           }
         },
         "x-operation-group": "indices.clone",
@@ -9414,7 +9414,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.clone#200"
+            "$ref": "#/components/responses/indices.clone.200"
           }
         },
         "x-operation-group": "indices.clone",
@@ -9457,7 +9457,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.close#200"
+            "$ref": "#/components/responses/indices.close.200"
           }
         },
         "x-operation-group": "indices.close",
@@ -9517,7 +9517,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/count#200"
+            "$ref": "#/components/responses/count.200"
           }
         },
         "x-operation-group": "count",
@@ -9581,7 +9581,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/count#200"
+            "$ref": "#/components/responses/count.200"
           }
         },
         "x-operation-group": "count",
@@ -9626,7 +9626,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/create#200"
+            "$ref": "#/components/responses/create.200"
           }
         },
         "x-operation-group": "create",
@@ -9673,7 +9673,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/create#200"
+            "$ref": "#/components/responses/create.200"
           }
         },
         "x-operation-group": "create",
@@ -9797,7 +9797,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/delete_by_query#200"
+            "$ref": "#/components/responses/delete_by_query.200"
           }
         },
         "x-operation-group": "delete_by_query",
@@ -9855,7 +9855,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/index#200"
+            "$ref": "#/components/responses/index.200"
           }
         },
         "x-operation-group": "index",
@@ -9904,7 +9904,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/delete#200"
+            "$ref": "#/components/responses/delete.200"
           }
         },
         "x-operation-group": "delete",
@@ -9957,7 +9957,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/get#200"
+            "$ref": "#/components/responses/get.200"
           }
         },
         "x-operation-group": "get",
@@ -10010,7 +10010,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/exists#200"
+            "$ref": "#/components/responses/exists.200"
           }
         },
         "x-operation-group": "exists",
@@ -10065,7 +10065,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/index#200"
+            "$ref": "#/components/responses/index.200"
           }
         },
         "x-operation-group": "index",
@@ -10120,7 +10120,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/index#200"
+            "$ref": "#/components/responses/index.200"
           }
         },
         "x-operation-group": "index",
@@ -10181,7 +10181,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/explain#200"
+            "$ref": "#/components/responses/explain.200"
           }
         },
         "x-operation-group": "explain",
@@ -10242,7 +10242,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/explain#200"
+            "$ref": "#/components/responses/explain.200"
           }
         },
         "x-operation-group": "explain",
@@ -10275,7 +10275,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/field_caps#200"
+            "$ref": "#/components/responses/field_caps.200"
           }
         },
         "x-operation-group": "field_caps",
@@ -10312,7 +10312,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/field_caps#200"
+            "$ref": "#/components/responses/field_caps.200"
           }
         },
         "x-operation-group": "field_caps",
@@ -10345,7 +10345,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.flush#200"
+            "$ref": "#/components/responses/indices.flush.200"
           }
         },
         "x-operation-group": "indices.flush",
@@ -10376,7 +10376,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.flush#200"
+            "$ref": "#/components/responses/indices.flush.200"
           }
         },
         "x-operation-group": "indices.flush",
@@ -10415,7 +10415,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.forcemerge#200"
+            "$ref": "#/components/responses/indices.forcemerge.200"
           }
         },
         "x-operation-group": "indices.forcemerge",
@@ -10451,7 +10451,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_mapping#200"
+            "$ref": "#/components/responses/indices.get_mapping.200"
           }
         },
         "x-operation-group": "indices.get_mapping",
@@ -10491,7 +10491,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.put_mapping#200"
+            "$ref": "#/components/responses/indices.put_mapping.200"
           }
         },
         "x-operation-group": "indices.put_mapping",
@@ -10535,7 +10535,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.put_mapping#200"
+            "$ref": "#/components/responses/indices.put_mapping.200"
           }
         },
         "x-operation-group": "indices.put_mapping",
@@ -10571,7 +10571,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_field_mapping#200"
+            "$ref": "#/components/responses/indices.get_field_mapping.200"
           }
         },
         "x-operation-group": "indices.get_field_mapping",
@@ -10613,7 +10613,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/mget#200"
+            "$ref": "#/components/responses/mget.200"
           }
         },
         "x-operation-group": "mget",
@@ -10659,7 +10659,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/mget#200"
+            "$ref": "#/components/responses/mget.200"
           }
         },
         "x-operation-group": "mget",
@@ -10698,7 +10698,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/msearch#200"
+            "$ref": "#/components/responses/msearch.200"
           }
         },
         "x-operation-group": "msearch",
@@ -10741,7 +10741,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/msearch#200"
+            "$ref": "#/components/responses/msearch.200"
           }
         },
         "x-operation-group": "msearch",
@@ -10774,7 +10774,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/msearch_template#200"
+            "$ref": "#/components/responses/msearch_template.200"
           }
         },
         "x-operation-group": "msearch_template",
@@ -10811,7 +10811,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/msearch_template#200"
+            "$ref": "#/components/responses/msearch_template.200"
           }
         },
         "x-operation-group": "msearch_template",
@@ -10865,7 +10865,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/mtermvectors#200"
+            "$ref": "#/components/responses/mtermvectors.200"
           }
         },
         "x-operation-group": "mtermvectors",
@@ -10923,7 +10923,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/mtermvectors#200"
+            "$ref": "#/components/responses/mtermvectors.200"
           }
         },
         "x-operation-group": "mtermvectors",
@@ -10972,7 +10972,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.open#200"
+            "$ref": "#/components/responses/indices.open.200"
           }
         },
         "x-operation-group": "indices.open",
@@ -11002,7 +11002,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/rank_eval#200"
+            "$ref": "#/components/responses/rank_eval.200"
           }
         },
         "x-operation-group": "rank_eval",
@@ -11036,7 +11036,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/rank_eval#200"
+            "$ref": "#/components/responses/rank_eval.200"
           }
         },
         "x-operation-group": "rank_eval",
@@ -11060,7 +11060,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.recovery#200"
+            "$ref": "#/components/responses/indices.recovery.200"
           }
         },
         "x-operation-group": "indices.recovery",
@@ -11087,7 +11087,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.refresh#200"
+            "$ref": "#/components/responses/indices.refresh.200"
           }
         },
         "x-operation-group": "indices.refresh",
@@ -11112,7 +11112,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.refresh#200"
+            "$ref": "#/components/responses/indices.refresh.200"
           }
         },
         "x-operation-group": "indices.refresh",
@@ -11259,7 +11259,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/search#200"
+            "$ref": "#/components/responses/search.200"
           }
         },
         "x-operation-group": "search",
@@ -11410,7 +11410,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/search#200"
+            "$ref": "#/components/responses/search.200"
           }
         },
         "x-operation-group": "search",
@@ -11447,7 +11447,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/create_pit#200"
+            "$ref": "#/components/responses/create_pit.200"
           }
         },
         "x-operation-group": "create_pit",
@@ -11504,7 +11504,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/search_template#200"
+            "$ref": "#/components/responses/search_template.200"
           }
         },
         "x-operation-group": "search_template",
@@ -11565,7 +11565,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/search_template#200"
+            "$ref": "#/components/responses/search_template.200"
           }
         },
         "x-operation-group": "search_template",
@@ -11601,7 +11601,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/search_shards#200"
+            "$ref": "#/components/responses/search_shards.200"
           }
         },
         "x-operation-group": "search_shards",
@@ -11635,7 +11635,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/search_shards#200"
+            "$ref": "#/components/responses/search_shards.200"
           }
         },
         "x-operation-group": "search_shards",
@@ -11665,7 +11665,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.segments#200"
+            "$ref": "#/components/responses/indices.segments.200"
           }
         },
         "x-operation-group": "indices.segments",
@@ -11707,7 +11707,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_settings#200"
+            "$ref": "#/components/responses/indices.get_settings.200"
           }
         },
         "x-operation-group": "indices.get_settings",
@@ -11750,7 +11750,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.put_settings#200"
+            "$ref": "#/components/responses/indices.put_settings.200"
           }
         },
         "x-operation-group": "indices.put_settings",
@@ -11795,7 +11795,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.get_settings#200"
+            "$ref": "#/components/responses/indices.get_settings.200"
           }
         },
         "x-operation-group": "indices.get_settings",
@@ -11825,7 +11825,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.shard_stores#200"
+            "$ref": "#/components/responses/indices.shard_stores.200"
           }
         },
         "x-operation-group": "indices.shard_stores",
@@ -11870,7 +11870,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.shrink#200"
+            "$ref": "#/components/responses/indices.shrink.200"
           }
         },
         "x-operation-group": "indices.shrink",
@@ -11917,7 +11917,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.shrink#200"
+            "$ref": "#/components/responses/indices.shrink.200"
           }
         },
         "x-operation-group": "indices.shrink",
@@ -11969,7 +11969,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/get_source#200"
+            "$ref": "#/components/responses/get_source.200"
           }
         },
         "x-operation-group": "get_source",
@@ -12019,7 +12019,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/exists_source#200"
+            "$ref": "#/components/responses/exists_source.200"
           }
         },
         "x-operation-group": "exists_source",
@@ -12064,7 +12064,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.split#200"
+            "$ref": "#/components/responses/indices.split.200"
           }
         },
         "x-operation-group": "indices.split",
@@ -12111,7 +12111,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.split#200"
+            "$ref": "#/components/responses/indices.split.200"
           }
         },
         "x-operation-group": "indices.split",
@@ -12156,7 +12156,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.stats#200"
+            "$ref": "#/components/responses/indices.stats.200"
           }
         },
         "x-operation-group": "indices.stats",
@@ -12204,7 +12204,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.stats#200"
+            "$ref": "#/components/responses/indices.stats.200"
           }
         },
         "x-operation-group": "indices.stats",
@@ -12259,7 +12259,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/termvectors#200"
+            "$ref": "#/components/responses/termvectors.200"
           }
         },
         "x-operation-group": "termvectors",
@@ -12314,7 +12314,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/termvectors#200"
+            "$ref": "#/components/responses/termvectors.200"
           }
         },
         "x-operation-group": "termvectors",
@@ -12368,7 +12368,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/termvectors#200"
+            "$ref": "#/components/responses/termvectors.200"
           }
         },
         "x-operation-group": "termvectors",
@@ -12426,7 +12426,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/termvectors#200"
+            "$ref": "#/components/responses/termvectors.200"
           }
         },
         "x-operation-group": "termvectors",
@@ -12490,7 +12490,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/update#200"
+            "$ref": "#/components/responses/update.200"
           }
         },
         "x-operation-group": "update",
@@ -12617,7 +12617,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/update_by_query#200"
+            "$ref": "#/components/responses/update_by_query.200"
           }
         },
         "x-operation-group": "update_by_query",
@@ -12729,7 +12729,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.validate_query#200"
+            "$ref": "#/components/responses/indices.validate_query.200"
           }
         },
         "x-operation-group": "indices.validate_query",
@@ -12787,7 +12787,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/indices.validate_query#200"
+            "$ref": "#/components/responses/indices.validate_query.200"
           }
         },
         "x-operation-group": "indices.validate_query",
@@ -45206,7 +45206,7 @@
       }
     },
     "responses": {
-      "bulk#200": {
+      "bulk.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45243,7 +45243,7 @@
           }
         }
       },
-      "cat.aliases#200": {
+      "cat.aliases.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45256,7 +45256,7 @@
           }
         }
       },
-      "cat.allocation#200": {
+      "cat.allocation.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45269,7 +45269,7 @@
           }
         }
       },
-      "cat.count#200": {
+      "cat.count.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45282,7 +45282,7 @@
           }
         }
       },
-      "cat.fielddata#200": {
+      "cat.fielddata.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45295,7 +45295,7 @@
           }
         }
       },
-      "cat.indices#200": {
+      "cat.indices.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45308,7 +45308,7 @@
           }
         }
       },
-      "cat.recovery#200": {
+      "cat.recovery.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45321,7 +45321,7 @@
           }
         }
       },
-      "cat.segments#200": {
+      "cat.segments.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45334,7 +45334,7 @@
           }
         }
       },
-      "cat.shards#200": {
+      "cat.shards.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45347,7 +45347,7 @@
           }
         }
       },
-      "cat.snapshots#200": {
+      "cat.snapshots.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45360,7 +45360,7 @@
           }
         }
       },
-      "cat.templates#200": {
+      "cat.templates.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45373,7 +45373,7 @@
           }
         }
       },
-      "cat.thread_pool#200": {
+      "cat.thread_pool.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45386,7 +45386,7 @@
           }
         }
       },
-      "clear_scroll#200": {
+      "clear_scroll.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45408,7 +45408,7 @@
           }
         }
       },
-      "cluster.allocation_explain#200": {
+      "cluster.allocation_explain.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45510,7 +45510,7 @@
           }
         }
       },
-      "cluster.get_component_template#200": {
+      "cluster.get_component_template.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45531,7 +45531,7 @@
           }
         }
       },
-      "cluster.health#200": {
+      "cluster.health.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45541,7 +45541,7 @@
           }
         }
       },
-      "cluster.put_component_template#200": {
+      "cluster.put_component_template.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45551,7 +45551,7 @@
           }
         }
       },
-      "cluster.state#200": {
+      "cluster.state.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45561,7 +45561,7 @@
           }
         }
       },
-      "cluster.stats#200": {
+      "cluster.stats.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45571,7 +45571,7 @@
           }
         }
       },
-      "count#200": {
+      "count.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45593,7 +45593,7 @@
           }
         }
       },
-      "create#200": {
+      "create.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45603,7 +45603,7 @@
           }
         }
       },
-      "explain#200": {
+      "explain.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45635,7 +45635,7 @@
           }
         }
       },
-      "field_caps#200": {
+      "field_caps.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45663,7 +45663,7 @@
           }
         }
       },
-      "index#200": {
+      "index.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45673,7 +45673,7 @@
           }
         }
       },
-      "indices.analyze#200": {
+      "indices.analyze.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45694,7 +45694,7 @@
           }
         }
       },
-      "indices.clear_cache#200": {
+      "indices.clear_cache.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45704,7 +45704,7 @@
           }
         }
       },
-      "indices.clone#200": {
+      "indices.clone.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45730,7 +45730,7 @@
           }
         }
       },
-      "indices.data_streams_stats#200": {
+      "indices.data_streams_stats.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45774,7 +45774,7 @@
           }
         }
       },
-      "indices.delete_alias#200": {
+      "indices.delete_alias.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45784,13 +45784,13 @@
           }
         }
       },
-      "indices.exists_alias#200": {
+      "indices.exists_alias.200": {
         "description": "",
         "content": {
           "application/json": {}
         }
       },
-      "indices.flush#200": {
+      "indices.flush.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45800,7 +45800,7 @@
           }
         }
       },
-      "indices.forcemerge#200": {
+      "indices.forcemerge.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45810,7 +45810,7 @@
           }
         }
       },
-      "indices.get_alias#200": {
+      "indices.get_alias.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45823,7 +45823,7 @@
           }
         }
       },
-      "indices.get_data_stream#200": {
+      "indices.get_data_stream.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45844,7 +45844,7 @@
           }
         }
       },
-      "indices.get_field_mapping#200": {
+      "indices.get_field_mapping.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45857,7 +45857,7 @@
           }
         }
       },
-      "indices.get_index_template#200": {
+      "indices.get_index_template.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45878,7 +45878,7 @@
           }
         }
       },
-      "indices.get_mapping#200": {
+      "indices.get_mapping.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45891,7 +45891,7 @@
           }
         }
       },
-      "indices.get_settings#200": {
+      "indices.get_settings.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45904,7 +45904,7 @@
           }
         }
       },
-      "indices.get_template#200": {
+      "indices.get_template.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45917,7 +45917,7 @@
           }
         }
       },
-      "indices.put_alias#200": {
+      "indices.put_alias.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45927,7 +45927,7 @@
           }
         }
       },
-      "indices.put_index_template#200": {
+      "indices.put_index_template.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45937,7 +45937,7 @@
           }
         }
       },
-      "indices.put_mapping#200": {
+      "indices.put_mapping.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45947,7 +45947,7 @@
           }
         }
       },
-      "indices.put_settings#200": {
+      "indices.put_settings.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45957,7 +45957,7 @@
           }
         }
       },
-      "indices.put_template#200": {
+      "indices.put_template.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45967,7 +45967,7 @@
           }
         }
       },
-      "indices.recovery#200": {
+      "indices.recovery.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45980,7 +45980,7 @@
           }
         }
       },
-      "indices.refresh#200": {
+      "indices.refresh.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -45990,7 +45990,7 @@
           }
         }
       },
-      "indices.rollover#200": {
+      "indices.rollover.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46035,7 +46035,7 @@
           }
         }
       },
-      "indices.segments#200": {
+      "indices.segments.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46060,7 +46060,7 @@
           }
         }
       },
-      "indices.shard_stores#200": {
+      "indices.shard_stores.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46081,7 +46081,7 @@
           }
         }
       },
-      "indices.shrink#200": {
+      "indices.shrink.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46107,7 +46107,7 @@
           }
         }
       },
-      "indices.simulate_template#200": {
+      "indices.simulate_template.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46131,7 +46131,7 @@
           }
         }
       },
-      "indices.split#200": {
+      "indices.split.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46157,7 +46157,7 @@
           }
         }
       },
-      "indices.stats#200": {
+      "indices.stats.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46185,7 +46185,7 @@
           }
         }
       },
-      "indices.validate_query#200": {
+      "indices.validate_query.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46215,7 +46215,7 @@
           }
         }
       },
-      "ingest.get_pipeline#200": {
+      "ingest.get_pipeline.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46228,7 +46228,7 @@
           }
         }
       },
-      "ingest.simulate#200": {
+      "ingest.simulate.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46249,7 +46249,7 @@
           }
         }
       },
-      "mget#200": {
+      "mget.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46270,7 +46270,7 @@
           }
         }
       },
-      "msearch#200": {
+      "msearch.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46280,7 +46280,7 @@
           }
         }
       },
-      "msearch_template#200": {
+      "msearch_template.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46290,7 +46290,7 @@
           }
         }
       },
-      "mtermvectors#200": {
+      "mtermvectors.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46311,7 +46311,7 @@
           }
         }
       },
-      "nodes.hot_threads#200": {
+      "nodes.hot_threads.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46332,7 +46332,7 @@
           }
         }
       },
-      "nodes.info#200": {
+      "nodes.info.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46342,7 +46342,7 @@
           }
         }
       },
-      "nodes.reload_secure_settings#200": {
+      "nodes.reload_secure_settings.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46352,7 +46352,7 @@
           }
         }
       },
-      "nodes.stats#200": {
+      "nodes.stats.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46362,7 +46362,7 @@
           }
         }
       },
-      "nodes.usage#200": {
+      "nodes.usage.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46372,7 +46372,7 @@
           }
         }
       },
-      "put_script#200": {
+      "put_script.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46382,7 +46382,7 @@
           }
         }
       },
-      "rank_eval#200": {
+      "rank_eval.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46416,7 +46416,7 @@
           }
         }
       },
-      "render_search_template#200": {
+      "render_search_template.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46437,7 +46437,7 @@
           }
         }
       },
-      "scripts_painless_execute#200": {
+      "scripts_painless_execute.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46455,7 +46455,7 @@
           }
         }
       },
-      "scroll#200": {
+      "scroll.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46465,7 +46465,7 @@
           }
         }
       },
-      "search#200": {
+      "search.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46475,7 +46475,7 @@
           }
         }
       },
-      "search_shards#200": {
+      "search_shards.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46513,7 +46513,7 @@
           }
         }
       },
-      "search_template#200": {
+      "search_template.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46585,7 +46585,7 @@
           }
         }
       },
-      "security.change_password#200": {
+      "security.change_password.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46605,7 +46605,7 @@
           }
         }
       },
-      "security.get_role#200": {
+      "security.get_role.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46615,7 +46615,7 @@
           }
         }
       },
-      "security.get_role_mapping#200": {
+      "security.get_role_mapping.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46625,7 +46625,7 @@
           }
         }
       },
-      "security.get_user#200": {
+      "security.get_user.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46635,7 +46635,7 @@
           }
         }
       },
-      "snapshot.create#200": {
+      "snapshot.create.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46654,7 +46654,7 @@
           }
         }
       },
-      "snapshot.create_repository#200": {
+      "snapshot.create_repository.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46664,7 +46664,7 @@
           }
         }
       },
-      "snapshot.get_repository#200": {
+      "snapshot.get_repository.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46677,7 +46677,7 @@
           }
         }
       },
-      "snapshot.status#200": {
+      "snapshot.status.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46698,7 +46698,7 @@
           }
         }
       },
-      "tasks.cancel#200": {
+      "tasks.cancel.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46708,7 +46708,7 @@
           }
         }
       },
-      "termvectors#200": {
+      "termvectors.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46748,7 +46748,7 @@
           }
         }
       },
-      "info#200": {
+      "info.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46782,13 +46782,13 @@
           }
         }
       },
-      "ping#200": {
+      "ping.200": {
         "description": "",
         "content": {
           "application/json": {}
         }
       },
-      "indices.update_aliases#200": {
+      "indices.update_aliases.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46798,7 +46798,7 @@
           }
         }
       },
-      "cat.help#200": {
+      "cat.help.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46811,7 +46811,7 @@
           }
         }
       },
-      "cat.health#200": {
+      "cat.health.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46824,7 +46824,7 @@
           }
         }
       },
-      "cat.master#200": {
+      "cat.master.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46837,7 +46837,7 @@
           }
         }
       },
-      "cat.nodeattrs#200": {
+      "cat.nodeattrs.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46850,7 +46850,7 @@
           }
         }
       },
-      "cat.nodes#200": {
+      "cat.nodes.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46863,7 +46863,7 @@
           }
         }
       },
-      "cat.pending_tasks#200": {
+      "cat.pending_tasks.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46876,7 +46876,7 @@
           }
         }
       },
-      "cat.pit_segments#200": {
+      "cat.pit_segments.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46889,7 +46889,7 @@
           }
         }
       },
-      "cat.all_pit_segments#200": {
+      "cat.all_pit_segments.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46902,7 +46902,7 @@
           }
         }
       },
-      "cat.plugins#200": {
+      "cat.plugins.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46915,7 +46915,7 @@
           }
         }
       },
-      "cat.repositories#200": {
+      "cat.repositories.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46928,7 +46928,7 @@
           }
         }
       },
-      "cat.segment_replication#200": {
+      "cat.segment_replication.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46941,7 +46941,7 @@
           }
         }
       },
-      "cat.tasks#200": {
+      "cat.tasks.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46954,7 +46954,7 @@
           }
         }
       },
-      "cluster.pending_tasks#200": {
+      "cluster.pending_tasks.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -46975,7 +46975,7 @@
           }
         }
       },
-      "cluster.reroute#200": {
+      "cluster.reroute.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47003,7 +47003,7 @@
           }
         }
       },
-      "cluster.get_settings#200": {
+      "cluster.get_settings.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47037,7 +47037,7 @@
           }
         }
       },
-      "cluster.put_settings#200": {
+      "cluster.put_settings.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47069,19 +47069,19 @@
           }
         }
       },
-      "cluster.delete_voting_config_exclusions#200": {
+      "cluster.delete_voting_config_exclusions.200": {
         "description": "",
         "content": {
           "application/json": {}
         }
       },
-      "cluster.post_voting_config_exclusions#200": {
+      "cluster.post_voting_config_exclusions.200": {
         "description": "",
         "content": {
           "application/json": {}
         }
       },
-      "cluster.delete_component_template#200": {
+      "cluster.delete_component_template.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47091,13 +47091,13 @@
           }
         }
       },
-      "cluster.exists_component_template#200": {
+      "cluster.exists_component_template.200": {
         "description": "",
         "content": {
           "application/json": {}
         }
       },
-      "dangling_indices.list_dangling_indices#200": {
+      "dangling_indices.list_dangling_indices.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47118,7 +47118,7 @@
           }
         }
       },
-      "dangling_indices.delete_dangling_index#200": {
+      "dangling_indices.delete_dangling_index.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47128,7 +47128,7 @@
           }
         }
       },
-      "dangling_indices.import_dangling_index#200": {
+      "dangling_indices.import_dangling_index.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47138,7 +47138,7 @@
           }
         }
       },
-      "indices.delete_data_stream#200": {
+      "indices.delete_data_stream.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47148,7 +47148,7 @@
           }
         }
       },
-      "indices.create_data_stream#200": {
+      "indices.create_data_stream.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47158,7 +47158,7 @@
           }
         }
       },
-      "delete_by_query_rethrottle#200": {
+      "delete_by_query_rethrottle.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47168,7 +47168,7 @@
           }
         }
       },
-      "indices.simulate_index_template#200": {
+      "indices.simulate_index_template.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47178,7 +47178,7 @@
           }
         }
       },
-      "indices.delete_index_template#200": {
+      "indices.delete_index_template.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47188,13 +47188,13 @@
           }
         }
       },
-      "indices.exists_index_template#200": {
+      "indices.exists_index_template.200": {
         "description": "",
         "content": {
           "application/json": {}
         }
       },
-      "ingest.delete_pipeline#200": {
+      "ingest.delete_pipeline.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47204,7 +47204,7 @@
           }
         }
       },
-      "ingest.put_pipeline#200": {
+      "ingest.put_pipeline.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47214,7 +47214,7 @@
           }
         }
       },
-      "ingest.processor_grok#200": {
+      "ingest.processor_grok.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47235,7 +47235,7 @@
           }
         }
       },
-      "security.get_account_details#200": {
+      "security.get_account_details.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47245,7 +47245,7 @@
           }
         }
       },
-      "security.get_action_groups#200": {
+      "security.get_action_groups.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47255,7 +47255,7 @@
           }
         }
       },
-      "security.patch_action_groups#200": {
+      "security.patch_action_groups.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47275,7 +47275,7 @@
           }
         }
       },
-      "security.delete_action_group#200": {
+      "security.delete_action_group.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47295,7 +47295,7 @@
           }
         }
       },
-      "security.get_action_group#200": {
+      "security.get_action_group.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47305,7 +47305,7 @@
           }
         }
       },
-      "security.patch_action_group#200": {
+      "security.patch_action_group.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47325,7 +47325,7 @@
           }
         }
       },
-      "security.create_action_group#200": {
+      "security.create_action_group.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47345,7 +47345,7 @@
           }
         }
       },
-      "security.get_audit_configuration#200": {
+      "security.get_audit_configuration.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47355,7 +47355,7 @@
           }
         }
       },
-      "security.update_audit_configuration#200": {
+      "security.update_audit_configuration.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47375,7 +47375,7 @@
           }
         }
       },
-      "security.flush_cache#200": {
+      "security.flush_cache.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47395,7 +47395,7 @@
           }
         }
       },
-      "security.get_users#200": {
+      "security.get_users.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47405,7 +47405,7 @@
           }
         }
       },
-      "security.patch_users#200": {
+      "security.patch_users.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47425,7 +47425,7 @@
           }
         }
       },
-      "security.delete_user#200": {
+      "security.delete_user.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47445,7 +47445,7 @@
           }
         }
       },
-      "security.patch_user#200": {
+      "security.patch_user.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47465,7 +47465,7 @@
           }
         }
       },
-      "security.create_user#200": {
+      "security.create_user.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47485,7 +47485,7 @@
           }
         }
       },
-      "security.get_distinguished_names#200": {
+      "security.get_distinguished_names.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47495,7 +47495,7 @@
           }
         }
       },
-      "security.patch_distinguished_names#200": {
+      "security.patch_distinguished_names.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47515,7 +47515,7 @@
           }
         }
       },
-      "security.delete_distinguished_names#200": {
+      "security.delete_distinguished_names.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47535,7 +47535,7 @@
           }
         }
       },
-      "security.update_distinguished_names#200": {
+      "security.update_distinguished_names.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47555,7 +47555,7 @@
           }
         }
       },
-      "security.patch_roles#200": {
+      "security.patch_roles.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47575,7 +47575,7 @@
           }
         }
       },
-      "security.get_roles#200": {
+      "security.get_roles.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47585,7 +47585,7 @@
           }
         }
       },
-      "security.delete_role#200": {
+      "security.delete_role.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47605,7 +47605,7 @@
           }
         }
       },
-      "security.patch_role#200": {
+      "security.patch_role.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47625,7 +47625,7 @@
           }
         }
       },
-      "security.create_role#200": {
+      "security.create_role.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47645,7 +47645,7 @@
           }
         }
       },
-      "security.get_role_mappings#200": {
+      "security.get_role_mappings.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47655,7 +47655,7 @@
           }
         }
       },
-      "security.patch_role_mappings#200": {
+      "security.patch_role_mappings.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47675,7 +47675,7 @@
           }
         }
       },
-      "security.delete_role_mapping#200": {
+      "security.delete_role_mapping.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47695,7 +47695,7 @@
           }
         }
       },
-      "security.patch_role_mapping#200": {
+      "security.patch_role_mapping.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47715,7 +47715,7 @@
           }
         }
       },
-      "security.create_role_mapping#200": {
+      "security.create_role_mapping.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47735,7 +47735,7 @@
           }
         }
       },
-      "security.get_configuration#200": {
+      "security.get_configuration.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47745,7 +47745,7 @@
           }
         }
       },
-      "security.patch_configuration#200": {
+      "security.patch_configuration.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47765,7 +47765,7 @@
           }
         }
       },
-      "security.update_configuration#200": {
+      "security.update_configuration.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47785,7 +47785,7 @@
           }
         }
       },
-      "security.get_certificates#200": {
+      "security.get_certificates.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47809,7 +47809,7 @@
           }
         }
       },
-      "security.reload_http_certificates#200": {
+      "security.reload_http_certificates.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47829,7 +47829,7 @@
           }
         }
       },
-      "security.reload_transport_certificates#200": {
+      "security.reload_transport_certificates.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47849,7 +47849,7 @@
           }
         }
       },
-      "security.get_tenants#200": {
+      "security.get_tenants.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47859,7 +47859,7 @@
           }
         }
       },
-      "security.patch_tenants#200": {
+      "security.patch_tenants.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47879,7 +47879,7 @@
           }
         }
       },
-      "security.delete_tenant#200": {
+      "security.delete_tenant.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47899,7 +47899,7 @@
           }
         }
       },
-      "security.get_tenant#200": {
+      "security.get_tenant.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47909,7 +47909,7 @@
           }
         }
       },
-      "security.patch_tenant#200": {
+      "security.patch_tenant.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47929,7 +47929,7 @@
           }
         }
       },
-      "security.create_tenant#200": {
+      "security.create_tenant.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47949,7 +47949,7 @@
           }
         }
       },
-      "security.health#200": {
+      "security.health.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -47970,7 +47970,7 @@
           }
         }
       },
-      "reindex#200": {
+      "reindex.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48033,7 +48033,7 @@
           }
         }
       },
-      "reindex_rethrottle#200": {
+      "reindex_rethrottle.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48054,7 +48054,7 @@
           }
         }
       },
-      "cluster.remote_info#200": {
+      "cluster.remote_info.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48067,7 +48067,7 @@
           }
         }
       },
-      "remote_store.restore#200": {
+      "remote_store.restore.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48103,7 +48103,7 @@
           }
         }
       },
-      "indices.resolve_index#200": {
+      "indices.resolve_index.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48138,7 +48138,7 @@
           }
         }
       },
-      "get_script_context#200": {
+      "get_script_context.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48159,7 +48159,7 @@
           }
         }
       },
-      "get_script_languages#200": {
+      "get_script_languages.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48187,7 +48187,7 @@
           }
         }
       },
-      "delete_script#200": {
+      "delete_script.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48197,7 +48197,7 @@
           }
         }
       },
-      "get_script#200": {
+      "get_script.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48222,7 +48222,7 @@
           }
         }
       },
-      "delete_pit#200": {
+      "delete_pit.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48240,7 +48240,7 @@
           }
         }
       },
-      "delete_all_pits#200": {
+      "delete_all_pits.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48258,7 +48258,7 @@
           }
         }
       },
-      "get_all_pits#200": {
+      "get_all_pits.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48276,7 +48276,7 @@
           }
         }
       },
-      "snapshot.delete_repository#200": {
+      "snapshot.delete_repository.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48286,7 +48286,7 @@
           }
         }
       },
-      "snapshot.cleanup_repository#200": {
+      "snapshot.cleanup_repository.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48304,7 +48304,7 @@
           }
         }
       },
-      "snapshot.verify_repository#200": {
+      "snapshot.verify_repository.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48325,7 +48325,7 @@
           }
         }
       },
-      "snapshot.delete#200": {
+      "snapshot.delete.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48335,7 +48335,7 @@
           }
         }
       },
-      "snapshot.get#200": {
+      "snapshot.get.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48371,7 +48371,7 @@
           }
         }
       },
-      "snapshot.clone#200": {
+      "snapshot.clone.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48381,7 +48381,7 @@
           }
         }
       },
-      "snapshot.restore#200": {
+      "snapshot.restore.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48399,7 +48399,7 @@
           }
         }
       },
-      "tasks.list#200": {
+      "tasks.list.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48409,7 +48409,7 @@
           }
         }
       },
-      "tasks.get#200": {
+      "tasks.get.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48437,7 +48437,7 @@
           }
         }
       },
-      "indices.delete_template#200": {
+      "indices.delete_template.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48447,13 +48447,13 @@
           }
         }
       },
-      "indices.exists_template#200": {
+      "indices.exists_template.200": {
         "description": "",
         "content": {
           "application/json": {}
         }
       },
-      "update_by_query_rethrottle#200": {
+      "update_by_query_rethrottle.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48474,7 +48474,7 @@
           }
         }
       },
-      "indices.delete#200": {
+      "indices.delete.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48484,7 +48484,7 @@
           }
         }
       },
-      "indices.get#200": {
+      "indices.get.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48497,13 +48497,13 @@
           }
         }
       },
-      "indices.exists#200": {
+      "indices.exists.200": {
         "description": "",
         "content": {
           "application/json": {}
         }
       },
-      "indices.create#200": {
+      "indices.create.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48529,7 +48529,7 @@
           }
         }
       },
-      "indices.add_block#200": {
+      "indices.add_block.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48558,7 +48558,7 @@
           }
         }
       },
-      "indices.close#200": {
+      "indices.close.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48587,7 +48587,7 @@
           }
         }
       },
-      "delete_by_query#200": {
+      "delete_by_query.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48650,7 +48650,7 @@
           }
         }
       },
-      "delete#200": {
+      "delete.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48660,7 +48660,7 @@
           }
         }
       },
-      "get#200": {
+      "get.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48670,13 +48670,13 @@
           }
         }
       },
-      "exists#200": {
+      "exists.200": {
         "description": "",
         "content": {
           "application/json": {}
         }
       },
-      "indices.open#200": {
+      "indices.open.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48698,7 +48698,7 @@
           }
         }
       },
-      "create_pit#200": {
+      "create_pit.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48720,7 +48720,7 @@
           }
         }
       },
-      "get_source#200": {
+      "get_source.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48730,13 +48730,13 @@
           }
         }
       },
-      "exists_source#200": {
+      "exists_source.200": {
         "description": "",
         "content": {
           "application/json": {}
         }
       },
-      "update#200": {
+      "update.200": {
         "description": "",
         "content": {
           "application/json": {
@@ -48746,7 +48746,7 @@
           }
         }
       },
-      "update_by_query#200": {
+      "update_by_query.200": {
         "description": "",
         "content": {
           "application/json": {
