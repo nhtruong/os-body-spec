@@ -24,6 +24,7 @@ export default class Scrubber {
     }
 
     scrub(output: string): void {
+        this.doc.info.version = '1.0.0';
         this.correct_duration_schema();
         this.correct_schema_refs(this.doc);
         this.remove_elastic_urls(this.doc);
@@ -33,27 +34,15 @@ export default class Scrubber {
         _.values(this.doc.paths).flatMap(_.values).forEach((op: OperationSpec) => { this.#move_params(op); })
         _.values(this.doc.paths).flatMap(_.values).forEach((op: OperationSpec) => { this.#rename_operation(op); })
         _.values(this.doc.components.responses).forEach((r: OpenAPIV3.ResponseObject) => { r.description = '' });
-        this.correct_response_refs(this.doc.paths);
-        _.entries(this.doc.components.responses).forEach(([k, v]) => {
-            this.doc.components.responses[k.replace('#200', '.200')] = v;
-            delete this.doc.components.responses[k];
-        });
         this.remove_redundant_items(this.doc);
         this.remove_unused_refs();
 
        fs.writeFileSync(output, JSON.stringify(this.doc, null, 2));
     }
 
-    correct_response_refs(obj: Record<string, any>): void {
-        if(obj.$ref?.endsWith('#200')) obj.$ref = obj.$ref.replace('#200', '.200');
-
-        for(const key in obj) {
-            if(typeof obj[key] === 'object') this.correct_response_refs(obj[key]);
-        }
-    }
-
     remove_redundant_items(obj: Record<string, any>): void {
         if(obj.deprecated === false) delete obj.deprecated;
+        if(obj.description === 'API Reference') delete obj.description;
 
         for(const key in obj) {
             if(typeof obj[key] === 'object') this.remove_redundant_items(obj[key]);
