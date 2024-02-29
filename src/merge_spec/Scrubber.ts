@@ -195,15 +195,11 @@ export default class Scrubber {
             if(p.$ref) return resolve(p) as OpenAPIV3.ParameterObject;
             else return p as OpenAPIV3.ParameterObject;
         });
-        const dupNames = new Set(parameters.map(p => p.name));
-        _.values(parameters.map(p => p.name)).forEach((name) => {
-            if(dupNames.has(name)) dupNames.delete(name);
-            else dupNames.add(name);
-        });
+
         op.parameters = parameters.map((p) => {
-            let ref : string = `${op['x-operation-group']}#${p.in}:${p.name}`;
-            this.doc.components.parameters[ref] = p;
-            return { $ref: `#/components/parameters/${ref}` };
+            let key : string = `${op['x-operation-group']}::${p.in}.${p.name}`;
+            this.doc.components.parameters[key] = p;
+            return { $ref: `#/components/parameters/${key}` };
         });
     }
 

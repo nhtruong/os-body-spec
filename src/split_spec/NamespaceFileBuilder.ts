@@ -63,12 +63,12 @@ export default class NamespaceFileBuilder {
     }
 
     parseResponse(name: string, spec: OpenAPIV3.ResponseObject): void {
-        const namespace = extractNamespace(name.split('#')[0]);
+        const namespace = extractNamespace(name.split('@')[0]);
         this.#ns(namespace).responses[name] = spec;
     }
 
     parseParameter(name: string, spec: OpenAPIV3.ParameterObject): void {
-        const namespace = extractNamespace(name.split('#')[0]);
+        const namespace = extractNamespace(name.split('::')[0]);
         this.#ns(namespace).parameters[name] = spec;
     }
 }
