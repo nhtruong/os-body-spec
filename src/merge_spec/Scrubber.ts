@@ -175,11 +175,17 @@ export default class Scrubber {
             op.requestBody = {$ref: `#/components/requestBodies/${op['x-operation-group']}`};
         }
 
-        const response = op.responses['200'] as OpenAPIV3.ResponseObject;
-        const responseContent = response?.content;
-        if (responseContent) {
-            this.doc.components.responses[op['x-operation-group'] + '#200'] = response;
-            op.responses['200'] = {$ref: `#/components/responses/${op['x-operation-group']}#200`};
+        const response = op.responses['200'] as Record<string, any>;
+        if(!response) console.log(op['x-operation-group']);
+        const ref = response.$ref;
+        if (!ref) {
+            this.doc.components.responses[op['x-operation-group'] + '@200'] = response;
+            op.responses['200'] = {$ref: `#/components/responses/${op['x-operation-group']}@200`};
+        } else {
+            const key = ref.split('#/components/responses/')[1]!;
+            const new_key = key.replace('#', '@');
+            this.doc.components.responses[new_key] = this.doc.components.responses[key];
+            response.$ref = `#/components/responses/${new_key}`;
         }
     }
 
