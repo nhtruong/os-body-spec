@@ -9,7 +9,7 @@ const start = async () => {
     const scrubber = new Scrubber('specs/CrudMergedSpec.openapi.json');
     scrubber.scrub('specs/MergedSpec.openapi.json');
 
-    write2file('/Users/theotr/IdeaProjects/opensearch-api-specification/OpenSearch.openapi', scrubber.doc, 'yaml');
+    // write2file('/Users/theotr/IdeaProjects/opensearch-api-specification/OpenSearch.openapi', scrubber.doc, 'yaml');
 }
 
 start().then(r => console.log('done'));
