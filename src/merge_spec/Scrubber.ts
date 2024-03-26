@@ -254,6 +254,8 @@ export default class Scrubber {
         const [category, type] = name.split(':');
         const parts = category.split('.');
         if(['_types', '_spec_utils'].includes(category)) return `_common:${type}`;
+        if(parts[0] === 'watcher') return `_common:${type}`;
+        if(parts[0] === 'ml') return `_common.aggregations:${type}`;
         if(parts[0] === '_global') return `_core.${parts[1]}:${type}`;
         if(parts[0] === '_types') return `_common.${parts[1]}:${type}`;
         if(parts[1] === '_types') return `${parts[0]}._common:${type}`;

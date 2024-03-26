@@ -23141,16 +23141,16 @@
         "type": "object",
         "properties": {
           "regression": {
-            "$ref": "#/components/schemas/ml._common:RegressionInferenceOptions"
+            "$ref": "#/components/schemas/_common.aggregations:RegressionInferenceOptions"
           },
           "classification": {
-            "$ref": "#/components/schemas/ml._common:ClassificationInferenceOptions"
+            "$ref": "#/components/schemas/_common.aggregations:ClassificationInferenceOptions"
           }
         },
         "minProperties": 1,
         "maxProperties": 1
       },
-      "ml._common:RegressionInferenceOptions": {
+      "_common.aggregations:RegressionInferenceOptions": {
         "type": "object",
         "properties": {
           "results_field": {
@@ -23162,7 +23162,7 @@
           }
         }
       },
-      "ml._common:ClassificationInferenceOptions": {
+      "_common.aggregations:ClassificationInferenceOptions": {
         "type": "object",
         "properties": {
           "num_top_classes": {
@@ -26983,7 +26983,7 @@
             "$ref": "#/components/schemas/_common:StringifiedEpochTimeUnitSeconds"
           },
           "start_time": {
-            "$ref": "#/components/schemas/watcher._common:ScheduleTimeOfDay"
+            "$ref": "#/components/schemas/_common:ScheduleTimeOfDay"
           },
           "end_epoch": {
             "$ref": "#/components/schemas/_common:StringifiedEpochTimeUnitSeconds"
@@ -27016,18 +27016,18 @@
           }
         }
       },
-      "watcher._common:ScheduleTimeOfDay": {
+      "_common:ScheduleTimeOfDay": {
         "description": "A time of day, expressed either as `hh:mm`, `noon`, `midnight`, or an hour/minutes structure.",
         "oneOf": [
           {
             "type": "string"
           },
           {
-            "$ref": "#/components/schemas/watcher._common:HourAndMinute"
+            "$ref": "#/components/schemas/_common:HourAndMinute"
           }
         ]
       },
-      "watcher._common:HourAndMinute": {
+      "_common:HourAndMinute": {
         "type": "object",
         "properties": {
           "hour": {
@@ -40162,7 +40162,7 @@
             "type": "string"
           },
           "status": {
-            "$ref": "#/components/schemas/watcher._common:ActionStatusOptions"
+            "$ref": "#/components/schemas/_common:ActionStatusOptions"
           }
         }
       },
@@ -40228,7 +40228,7 @@
           }
         ]
       },
-      "watcher._common:ActionStatusOptions": {
+      "_common:ActionStatusOptions": {
         "type": "string",
         "enum": [
           "success",
