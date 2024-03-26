@@ -1,5 +1,6 @@
 import fs from 'fs';
 import YAML from 'yaml';
+import _ from 'lodash';
 
 declare global {
     var spec_root: Record<string, any>;
@@ -12,6 +13,19 @@ export function resolve(obj: Record<string, any> | undefined, root: Record<strin
     paths.shift();
     for(const p of paths) { root = root[p]; }
     return root;
+}
+
+export function sort_by_key(obj: Record<string, any>, priority?: string[]): Record<string, any> {
+    const top: Record<string, any> = {};
+    if(priority)
+        for(const key of priority) {
+            if(key in obj) {
+                top[key] = obj[key];
+                delete obj[key];
+            }
+        }
+    const bot: Record<string, any> = _.fromPairs(Object.entries(obj).sort());
+    return {...top, ...bot};
 }
 
 export function write2file(file: string, content: Record<string, any>, format: 'json' | 'yaml'): void {
