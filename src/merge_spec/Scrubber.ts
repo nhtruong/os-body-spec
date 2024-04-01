@@ -25,6 +25,7 @@ export default class Scrubber {
 
     scrub(output: string): void {
         this.doc.info.version = '1.0.0';
+        this.delete_xpack();
         this.correct_duration_schema();
         this.correct_schema_refs(this.doc);
         this.remove_elastic_urls(this.doc);
@@ -38,6 +39,11 @@ export default class Scrubber {
         this.remove_unused_refs();
 
        fs.writeFileSync(output, JSON.stringify(this.doc, null, 2));
+    }
+
+    delete_xpack(): void {
+        delete this.doc.components.schemas['nodes.info:NodeInfoSettings'].properties.xpack;
+        delete this.doc.components.schemas['nodes.info:NodeInfoSettingsTransport'].properties.features;
     }
 
     remove_redundant_items(obj: Record<string, any>): void {

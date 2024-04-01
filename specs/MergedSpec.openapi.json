@@ -42155,9 +42155,6 @@
           },
           "type.default": {
             "type": "string"
-          },
-          "features": {
-            "$ref": "#/components/schemas/nodes.info:NodeInfoSettingsTransportFeatures"
           }
         },
         "required": [
@@ -42173,17 +42170,6 @@
         },
         "required": [
           "default"
-        ]
-      },
-      "nodes.info:NodeInfoSettingsTransportFeatures": {
-        "type": "object",
-        "properties": {
-          "x-pack": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "x-pack"
         ]
       },
       "nodes.info:NodeInfoSettingsNetwork": {
