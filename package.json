@@ -7,6 +7,7 @@
     "merge_spec": "ts-node merge.ts",
     "split_spec": "ts-node split.ts",
     "translate_spec": "ts-node translate.ts",
+    "restore_defaults": "ts-node restore.ts",
     "download_os_spec": "curl -X GET \"https://raw.githubusercontent.com/opensearch-project/opensearch-api-specification/main/OpenSearch.openapi.json\" -o ./specs/OpenSearch.openapi.json"
   },
   "keywords": [],
