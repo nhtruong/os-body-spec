@@ -45,11 +45,9 @@ export default class MissingDefaultsFinder {
         return this.defaults[ref];
     }
 
-    process_param(origin: OpenAPIV3.ParameterObject | undefined, current: OpenAPIV3.ParameterObject | undefined, ref_obj: OpenAPIV3.ReferenceObject): void {
+    process_param(origin: OpenAPIV3.ParameterObject, current: OpenAPIV3.ParameterObject, ref_obj: OpenAPIV3.ReferenceObject): void {
         const def = this._default(ref_obj.$ref);
-        def.origin.add(resolve(origin?.schema, this.origin)?.default);
-        def.current = resolve(current?.schema, this.current)?.default;
+        def.origin.add(resolve(origin.schema, this.origin)?.default);
+        def.current = resolve(current.schema, this.current)?.default;
     }
-
-
 }
