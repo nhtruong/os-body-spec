@@ -17,7 +17,7 @@ export default class MissingDefaultsFinder {
         this.current = current;
     }
 
-    find(): Record<string, Default> {
+    find(): Record<string, any> {
         this.defaults = {};
         _.entries(this.origin.paths).map(([path, pathItem]) => {
             return _.entries(pathItem).map(([method, operation]) => {
@@ -32,8 +32,10 @@ export default class MissingDefaultsFinder {
                 }
             })
         });
-        // Filter out defaults that are the same in origin and current
-        return this.defaults;
+
+        return _.fromPairs(_.entries(this.defaults)
+            .filter(([_, def]) => !def.origin.has(def.current))
+            .map(([ref, def]) => [ref, def.origin.values().next().value]));
     }
 
     _default(ref: string): Default {
